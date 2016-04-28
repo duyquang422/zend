@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="wrapbread">
+        <div class="rowtop">
+            <h1>Thông Tin Tìm Kiếm</h1>
+            <div class="clr"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10">
+            <div id="products-listing-filter-load">
+                <div class="products-listing util-clearfix">
+                    <div class="row">
+                        <?php foreach($this->products as $val){ ?>
+                            <div class="box_product col-md-3 col-sm-4 col-xs-6">
+                                <div class="content_item content_item_hover">
+                                    <div class="overflow_box">
+                                        <input type='hidden' class="track-info" name='track-info' value=''/>
+                                        <div class="box-go">
+                                            <span class="track-search interested" title="Yêu thích"><svg class="icon-favorite2">
+                                                    <use xlink:href="#icon-favorite2"></use>
+                                                </svg>
+                                            </span>
+                                            <span class="track-search quick-view" title="Xem nhanh">
+                                                <svg class="icon icon-iconview">
+                                                    <use xlink:href="#icon-iconview"></use>
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <a class="img_product" href="<?php echo $this->basePath('/' . $val['alias'] . '-' . $val['id'] . '.html') ?>" title="<?php echo $val['name'] ?>">
+                                            <img alt="<?php echo $val['name'] ?>" class="track-search imgtodrag" src="<?php echo $this->basePath('public/files/product/203x235/' . $val['image']) ?>" width="200" height="200"/>
+                                        </a>
+                                        <div class="price-box">
+                                            <?php if($val['sale_off']){ ?>
+                                                <span class="current_price"> <?php echo number_format($val['sale_off'],0,',','.') ?> VNĐ </span>
+                                                <span class="old_price"> <?php echo number_format($val['price'],0,',','.') ?> </span>
+                                            <?php }else{ ?>
+                                                <span class="current_price"> <?php echo number_format($val['price'],0,',','.') ?> VNĐ </span>
+                                            <?php } ?>
+                                        </div>
+                                        <?php
+                                        if($val['percent_discount'])
+                                            echo '<div class="discount-tag"></div>';
+                                        ?>
+                                        <a class="name_product fullname" href="" title="<?php echo $val['name'] ?>">
+                                            <?php echo $val['name'] ?>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php }?>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- right col -->
+        <div class="col-md-2">
+            <div class="policy_sendo">
+                <div class='policy_sendo_box buystep'><a class="buystep"
+                                                         href="https://www.sendo.vn/huong-dan/huong-dan-mua-hang/"
+                                                         title="Các bước mua hàng" rel="nofollow" target="_blank">Các
+                        bước mua hàng</a></div>
+                <div class='policy_sendo_box shippingstep'><a
+                        href="https://www.sendo.vn/huong-dan/giao-hang-toan-quoc/" class="shippingstep"
+                        title="Phương thức vận chuyển" rel="nofollow" target="_blank">Phương thức vận chuyển</a>
+                </div>
+                <div class='policy_sendo_box paymentstep'><a
+                        href="https://www.sendo.vn/huong-dan/cach-thuc-thanh-toan/" class="paymentstep"
+                        title="Cách thức thanh toán" rel="nofollow" target="_blank">Cách thức thanh toán</a></div>
+            </div>
+            <div class="help_all nologin">
+                <div class="cs">
+                    <div class="title">hỗ trợ khách hàng</div>
+                    <div class="phoneno">
+                        <p>Toàn quốc: <b>1900 6000</b></p>
+                        <span>(1.000 đồng/phút)</span>
+                    </div>
+                </div>
+                <div class="email">
+                    Email: <a href="mailto:hotro@sendo.vn" title="Email hỗ trợ của sendo.vn">hotro@webseo.vn</a>
+                </div>
+            </div>
+            <?php echo $this->nominationProducts('nomination-category') ?>
+        </div>
+    </div>
+</div>

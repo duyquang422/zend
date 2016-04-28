@@ -1,0 +1,33 @@
+<!--start block slide home top module-->
+<div id="slide_home_top">
+    <!--<img src="http://media3.scdn.vn/img1/2015/10_14/d8371a.jpg" id="image_banner" class="tmp-img" width="430" height="290"/>-->
+    <div id="owl-home-top" class="owl-carousel owl-theme">
+        <div class="item">
+            <a href="#">
+                <img src="public/files/slider/slide3.jpg"/>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="public/files/slider/slide2.jpg" width="430" height="290"/>
+            </a>
+        </div>
+        <div class="item">
+            <a href="#">
+                <img src="public/files/slider/slide1.jpg" width="430" height="290"/>
+            </a>
+        </div>
+    </div>
+</div>
+<!--end block slide home top module-->
+
+<script>
+    $(document).ready(function() {
+        $("#owl-home-top").owlCarousel({
+            slideSpeed : 300,
+            paginationSpeed : 400,
+            singleItem:true
+        });
+
+    });
+</script>

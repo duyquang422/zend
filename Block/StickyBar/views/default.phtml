@@ -1,0 +1,21 @@
+<?php
+$url='http://mocmeo.com';
+$content=@file_get_contents('https://graph.facebook.com/?ids='.urlencode($url));
+if($content) {
+    $likeInfo = json_decode($content);
+}
+else
+    echo 'Không kết nối đc với facebook';
+?>
+
+<ul class="stickybar">
+    <li id="liSpec">
+        <a href="#contentdetail"><i class="icondetail-parameter"></i>Thông tin</a>
+    </li>
+    <li id="liImg">
+        <a href="#characteristics"><i class="icondetail-pictures"></i>Hình ảnh</a>
+    </li>
+    <li id="liCmt">
+        <a href="#comment"><i class="icondetail-comment"></i>Bình luận<label><?php echo (int)($likeInfo->$url->comments - 3) ?></label></a>
+    </li>
+</ul>

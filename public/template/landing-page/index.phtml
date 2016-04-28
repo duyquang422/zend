@@ -1,0 +1,90 @@
+<?php
+    $urlCSS = $this->basePath(URL_TEMPLATE . '/landing-page/css');
+    $urlJS = $this->basePath(URL_TEMPLATE . '/landing-page/js');
+    $urlImage = $this->basePath(URL_TEMPLATE . '/landing-page/img');
+?>
+
+<?php echo $this->doctype(); ?>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?php
+    echo $this->headTitle();
+    echo $this->headMeta()->appendName('description','Chuyên cung cấp hệ thống website với những công nghệ hiện đại.')
+        ->appendName('keywords','Thiết kế web, thiết kế web giá rẻ, web hiện đại')
+        ->appendName('robots','INDEX,FOLLOW')
+        ->appendName('viewport','width=device-width, initial-scale=1.0')
+        ->appendName('distribution','Global')
+        ->appendName('revisit','1 days')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendName('geo.region','VN')
+        ->appendName('dc.creator','Webseo')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendHttpEquiv('content-language','vi')
+        ->appendHttpEquiv('REFRESH','600')
+        ->setProperty('og:url','https://www.webseo.vn/')
+        ->setProperty('og:url','https://www.webseo.vn/')
+        ->setProperty('og:type','website')
+        ->setProperty('og:site_name','web.vn')
+        ->setProperty('og:title','WEB.VN - Mang đến cho bạn hệ thống website hiện đại')
+        ->setProperty('og:description','Chuyên cung cấp hệ thống website với những công nghệ hiện đại.')
+        ->setProperty('og:image','https://static.scdn.vn/images/ecom/sendo-dambao.jpg')
+        ->setProperty('fb:admins','100002920093435')
+        ->setProperty('fb:app_id','1239429816072262');
+    echo $this->headLink(array('rel' => 'icon', 'href' => 'https://static.scdn.vn/images/ecom/favicon.ico'), 'PREPEND')
+        ->prependStylesheet($urlCSS . '/bjqs.css')
+//        ->prependStylesheet($urlCSS . '/global.responsive.css')
+        ->prependStylesheet($urlCSS . '/item.global.css')
+        ->prependStylesheet($urlCSS . '/font-awesome.min.css')
+        ->prependStylesheet($urlCSS . '/bootstrap.min.css');
+    ?>
+    <script type="text/javascript" src="<?php echo $urlJS?>/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $urlJS?>/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="<?php echo $urlJS?>/bjqs-1.3.min.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
+    <script type="text/javascript">
+        var map;
+        function initialize() {
+            var myLatlng = new google.maps.LatLng(10.843928,106.717672);
+            var myOptions = {
+                zoom: 16,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            map = new google.maps.Map(document.getElementById("div_id"), myOptions);
+            // Biến text chứa nội dung sẽ được hiển thị
+//            var text;
+//            text= "<b style='color:#00F' ";
+//                "style='text-align:center'>Địa Chỉ Công Ty!<br />";
+//                "<img src='citihouse-logo.jpg'  /></b>";
+            var infowindow = new google.maps.InfoWindow(
+                {
+                    content: false,
+                    size: new google.maps.Size(100,50),
+                    position: myLatlng
+                });
+            infowindow.open(map);
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map,
+                title:"Trường ĐH GTVT TP.HCM!"
+            });
+        }
+    </script>
+</head>
+
+<body onLoad="initialize()">
+    <section class="content">
+        <?php echo $this->content; ?>
+    </section>
+</body>
+
+<footer>
+    <?php
+    echo $this->headScript()
+        ->prependFile($urlJS. '/global.js')
+        ->prependFile($urlJS. '/bootstrap.min.js')
+    ?>
+</footer>
+</html>

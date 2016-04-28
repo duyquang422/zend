@@ -1,0 +1,38 @@
+<?php
+$totalMoney = 0;
+if(isset($cart->quantity) && $cart->quantity)
+    echo '<dl class="products">';
+    foreach ($cart->quantity as $productId => $val)
+                foreach ($val as $size => $val1) {
+                    $totalMoney += $val1['price'] * $val1['quantity'];
+?>
+<dt class="first_item" id="<?php echo $productId, '-', $size?>">
+    <a class="cart-images" href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>">
+        <img src="<?php echo $this->basePath('public/files/product/100x100/'. $val1['image']) ?>" class="cart-img" alt="<?php echo $val1['name']?>">
+</a>
+<div class="cart-info">
+    <div class="product-name">
+
+        <a href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>"><?php echo $val1['name']?><span class="quantity">&nbsp;&nbsp;x<?php echo $val1['quantity'] ?></span></a>
+    </div>
+    <div class="product-atributes">
+        <a href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>">kích thước : <?php echo $size == 'default' ? 'mặc định' : $size ?></a>
+    </div>
+    <span class="price"><?php echo number_format($val1['price'],0,',','.') ?>đ</span>
+</div>
+<span class="remove_link">
+    <a rel="nofollow" class="ajax_cart_block_remove_link" href="javascript:removeProductFromCart(<?php echo $productId, ',\'', $size , '\''?>)" ></a>
+</span>
+</dt>
+</dl>
+<?php } ?>
+<div class="cart-prices">
+    <div class="cart-prices-line last-line">
+        <span>Tổng</span><span class="price cart_block_total ajax_block_cart_total"><?php echo number_format($totalMoney,0,',','.')?>đ</b></span>
+    </div>
+</div>
+<p class="cart-buttons">
+    <a id="button_order_cart" class="btn btn-default button button-small" href="/home/user/order" title="Check out" rel="nofollow">
+        <span> Thanh Toán </span>
+    </a>
+</p>

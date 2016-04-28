@@ -1,0 +1,98 @@
+<div class="container-wrap -page">
+    <div id="jsMenuMarkLayer">&nbsp;</div>
+    <div id="content">
+        <!--profile-follow-product-->
+        <div class="container">
+            <div class="wrapper-profile profile-user-account">
+                <?php echo $this->identity() ? $this->leftProfileUser('order') : '' ?>
+                <!--right-profile-->
+                <div class="right-profile" <?php echo !$this->identity() ? 'style="margin-left: 0px ;margin-top: 5px;"' : ''?>>
+                    <div class="ttl-box-profile">Thông tin đơn hàng</div>
+                    <div class="article">
+                        <div class="icons">
+                            <form action="<?php echo $this->url('frontendRoute/default',array('controller'=>'user','action'=>'checkout'))?>" method="post" name="order" id="order-form">
+                                <table width="100%" class="yourCart" id="yourCart">
+                                    <tbody>
+                                    <tr>
+                                        <th>Thứ tự</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Hình SP</th>
+                                        <th>Size</th>
+                                        <th>Giá bán</th>
+                                        <th>Số lượng</th>
+                                        <th>Thành tiền</th>
+                                        <th>Hủy đặt mua</th>
+                                    </tr>
+                                    <?php
+                                    $totalMoney = 0; $count = 0;
+                                    if($order)
+                                        foreach ($order as $productId => $val)
+                                            foreach ($val as $size => $val1) {
+                                                $totalMoney += $val1['price'] * $val1['quantity'];
+                                                $count++;
+                                    ?>
+                                    <tr id="<?php echo $productId , '-' , $size ?>">
+                                        <td><?php echo $count?></td>
+                                        <td>
+                                            <a href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>"><?php echo $val1['name']?></a>
+                                        </td>
+                                        <td>
+                                            <a href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>">
+                                                <img src="<?php echo $this->basePath('public/files/product/100x100/'. $val1['image']) ?>" class="cart-img">
+                                            </a>
+                                        </td>
+                                        <td class="size"><?php echo $size == 'default' ? 'mặc định' : $size ?></td>
+                                        <td class="price"><?php echo number_format($val1['price'],0,',','.') ?>đ</td>
+                                        <td>
+                                            <label for="select">
+                                                <input name="quantity[]" class="number" id="quantity"
+                                                       type="text" value="<?php echo $val1['quantity']?>">
+                                            </label>
+                                        </td>
+                                        <td class="total-amount-892"><?php echo number_format($val1['price'] * $val1['quantity'],0,',','.')?>đ</td>
+                                        <td>
+                                            <a href="" title="Hủy đặt mua">Hủy</a>
+                                        </td>
+                                    </tr>
+                                    <input type="hidden" name="productId[]" value="<?php echo $productId?>">
+                                    <input type="hidden" name="productSize[]" value="<?php echo $size?>">
+                                    <input type="hidden" name="productPrice[]" value="<?php echo $val1['price']?>">
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                                <table width="100%" id="pannel" class="yourCart">
+                                    <tbody>
+                                    <?php if ($order){?>
+                                    <tr>
+                                        <td class="noborderTop" width="494">
+                                            <a class="delall" href="cart/delete-all">Làm sạch giỏ hàng</a>
+                                        </td>
+                                        <td class="noborderTop" width="450">
+                                            <a class="toltall">Tổng tiền: <span id="tonggia" style="color:#CD0A0A"><?php echo number_format($totalMoney,0,',','.') ?> VNĐ</span>
+                                            </a>
+                                            <input type="hidden" name="totalMoney" value="<?php echo $totalMoney?>">
+                                        </td>
+                                        <td class="noborderTop">
+                                            <?php
+                                            if($this->identity())
+                                                echo '<button type="submit" class="btn btn-warning">ĐẶT MUA</button>';
+                                            else
+                                                echo '<button type="button" onclick="purchases()" class="btn btn-warning">ĐẶT MUA</button>';
+                                            ?>
+                                        </td>
+                                    </tr>
+                                    <?php }else {
+                                        echo '<tr><td>Không có đơn hàng nào. Vui lòng chọn sản phẩm để thực hiện chức năng thanh toán đơn hàng.</tr></td>';
+                                    }?>
+                                    </tbody>
+                                </table>
+                                <?php echo $this->purchase()?>
+                            </form>
+                            <div style="clear:both"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

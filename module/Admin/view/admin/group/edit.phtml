@@ -1,0 +1,77 @@
+<div class="container-fluid container-main" style="top: 74px;">
+    <section id="content">
+        <!-- Begin Content -->
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="system-message-container">
+                </div>
+                <?php echo $this->form()->openTag($this->form) ?>
+
+                <div class="form-inline form-inline-header">
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('name')->get('name')->setOptions(array('label' => 'Tên Group: '))); ?>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+
+                    <ul class="nav nav-tabs" id="myTabTabs">
+                        <li class="active"><a href="#general" data-toggle="tab">Hệ Thống Phân Quyền</a></li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div id="general" class="tab-pane active">
+                            <div id="permission">
+                                <?php
+                                    $controllers = '<ul>';
+                                    $arrAction = array();
+                                    $temp = '';
+                                    $i = 0;
+                                    foreach($this->permissions as $key => $permission){
+                                            $class = !$i ? 'class="active"' : '';
+                                            $arrAction[$permission->controller][$key]['id'] = $permission->id;
+                                            $arrAction[$permission->controller][$key]['action'] = $permission->action;
+                                            $arrAction[$permission->controller][$key]['name'] = $permission->name;
+                                            if ($temp != $permission->controller)
+                                                $controllers .= '<li data-controller="' . $permission->controller . '"' . $class . '>' . $permission->controller . '</li>';
+                                        $temp = $permission->controller;
+                                        $i++;
+                                    }
+                                $controllers .='</ul>';
+                                ?>
+                                <div class="list-controller">
+                                    <?php echo $controllers ?>
+                                </div>
+                                <div class="list-action">
+                                    <?php
+                                        foreach($arrAction as $key => $val){
+                                            echo '<ul data-controller="'. $key .'">';
+                                            foreach($val as $action){
+                                                echo '<li>
+                                                        <span class="name">'. $action['name'] .'</span>
+                                                        <div class="controls">
+                                                            <fieldset class="radio btn-group btn-group-yesno">
+                                                                <input type="checkbox" id="permission-'.$action['id'].'" name="permissionId[]" value="'. $action['id'] .'">
+                                                                <label for="jform_permission" data-id="'. $action['id'] .'" id="yes-'. $action['id'] .'" class="btn btn-success">Có</label>
+                                                                <label for="jform_permission" data-id="'. $action['id'] .'" id="no-'. $action['id'] .'" class="btn btn-danger active">Không</label>
+                                                            </fieldset>
+                                                        </div>
+                                                      </li>';
+                                            }
+                                            echo '</ul>';
+                                        }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="action" id="action"/>
+                    <input type="hidden" id="controller" value="posts"/>
+                    <input type="hidden" id="username" value="<?php echo $this->identity()->username?>">
+                    <?php echo $this->form()->closeTag($this->form) ?>
+                </div>
+            </div>
+            <!-- End Content -->
+    </section>
+
+</div>

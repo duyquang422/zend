@@ -1,0 +1,206 @@
+<div class="menu-fixed">
+    <div class="mini-bar">
+	<div class="mini-bar-menu">
+		<ul>
+			<li data-object="viewed">
+				<i class="fa fa-eye"></i>
+				<span>Đã xem</span>
+			</li>
+			<li data-object="bought-products">
+				<i class="fa fa-credit-card"></i>
+				<span>Đã Mua</span>
+			</li>
+			<li data-object="products-in-cart">
+				<i class="fa fa-shopping-cart"></i>
+				<span>Giỏ Hàng</span>
+			</li>
+			<li data-object="compare-products">
+				<i class="fa fa-retweet"></i>
+				<span>So Sánh</span>
+			</li>
+			<li data-object="like-products">
+				<i class="fa fa-heart-o"></i>
+				<span>Yêu Thích</span>
+			</li>
+			<li>
+				<i class="fa fa-phone"></i>
+				<span>Liên Hệ</span>
+			</li>
+            <li>
+                <i class="fa fa-hand-o-right"></i>
+                <span>Ẩn Menu</span>
+            </li>
+		</ul>
+	</div>
+	<div class="mini-bar-content" style="display: none">
+        <div class="viewed" id="viewed" style="display: none">
+            <ul>
+                <?php
+                if($this->getViewedProducts()){
+                    foreach($this->getViewedProducts() as $key => $val)
+                        if($key < 10){?>
+                            <li>
+                                <a title="Xóa" class="delete" onclick="deleteViewedProduct()"></a>
+                                <div class="picture">
+                                    <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                                    </a>
+                                </div>
+                                <div class="information">
+                                    <div class="name">
+                                        <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                            <?php echo $val['name']?>
+                                        </a>
+                                    </div>
+                                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                                <div class="clear"></div>
+                            </li>
+                <?php }
+                }else{
+                    echo '<li class="no-product"><span>Không có sản phẩm nào.</span></li>';
+                }?>
+            </ul>
+        </div>
+        <div id="bought-products" class="viewed" style="display: none">
+            <ul>
+                <?php
+                if($this->getBoughtProducts()){
+                    foreach($this->getBoughtProducts() as $key => $val)
+                        if($key < 10){?>
+                            <li>
+                                <a title="Xóa" class="delete" onclick="deleteBoughtProduct()"></a>
+                                <div class="picture">
+                                    <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                                    </a>
+                                </div>
+                                <div class="information">
+                                    <div class="name">
+                                        <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                            <?php echo $val['name']?>
+                                        </a>
+                                    </div>
+                                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                                <div class="clear"></div>
+                            </li>
+                        <?php }
+                }else{
+                    echo '<li class="no-product"><span>Không có sản phẩm nào.</span></li>';
+                }?>
+            </ul>
+        </div>
+        <div id="products-in-cart" class="viewed" style="display: none">
+            <ul>
+                <?php
+                if($this->getProductsInCart()){
+                    foreach($this->getProductsInCart() as $key => $val)
+                        if($key < 10){?>
+                            <li>
+                                <a title="Xóa" class="delete" onclick="deleteProductInCart()"></a>
+                                <div class="picture">
+                                    <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                                    </a>
+                                </div>
+                                <div class="information">
+                                    <div class="name">
+                                        <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                            <?php echo $val['name']?>
+                                        </a>
+                                    </div>
+                                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                                <div class="clear"></div>
+                            </li>
+                        <?php }
+                }else{
+                    echo '<li class="no-product"><span>Không có sản phẩm nào.</span></li>';
+                }?>
+            </ul>
+        </div>
+        <div id="like-products" class="viewed" style="display: none">
+            <ul>
+                <?php
+                if($this->getLikeProducts()){
+                    foreach($this->getLikeProducts() as $key => $val)
+                        if($key < 10){?>
+                            <li>
+                                <a title="Xóa" class="delete" onclick="deleteLikeProducts()"></a>
+                                <div class="picture">
+                                    <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                                    </a>
+                                </div>
+                                <div class="information">
+                                    <div class="name">
+                                        <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                            <?php echo $val['name']?>
+                                        </a>
+                                    </div>
+                                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                                <div class="clear"></div>
+                            </li>
+                        <?php }
+                }else{
+                    echo '<li class="no-product"><span>Không có sản phẩm nào.</span></li>';
+                }?>
+            </ul>
+        </div>
+        <div id="like-products" class="viewed" style="display: none">
+            <ul>
+                <?php
+                if($this->getLikeProducts()){
+                    foreach($this->getLikeProducts() as $key => $val)
+                        if($key < 10){?>
+                            <li>
+                                <a title="Xóa" class="delete" onclick="deleteLikeProducts()"></a>
+                                <div class="picture">
+                                    <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                                    </a>
+                                </div>
+                                <div class="information">
+                                    <div class="name">
+                                        <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                            <?php echo $val['name']?>
+                                        </a>
+                                    </div>
+                                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                                <div class="clear"></div>
+                            </li>
+                        <?php }
+                }else{
+                    echo '<li class="no-product"><span>Không có sản phẩm nào.</span></li>';
+                }?>
+            </ul>
+        </div>
+        <div id="compare-products" class="viewed" style="display: none">
+            <ul>
+                <?php
+                if($this->getCompareProducts()){
+                    foreach($this->getCompareProducts() as $key => $val)
+                        if($key < 10){?>
+                            <li>
+                                <a title="Xóa" class="delete" onclick="deleteCompareProducts()"></a>
+                                <div class="picture">
+                                    <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                                    </a>
+                                </div>
+                                <div class="information">
+                                    <div class="name">
+                                        <a href="<?php echo $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                                            <?php echo $val['name']?>
+                                        </a>
+                                    </div>
+                                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                                <div class="clear"></div>
+                            </li>
+                        <?php }
+                }else{
+                    echo '<li class="no-product"><span>Không có sản phẩm nào.</span></li>';
+                }?>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>

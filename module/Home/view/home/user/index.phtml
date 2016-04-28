@@ -1,0 +1,84 @@
+<div class="container-wrap -page">
+	<div id="jsMenuMarkLayer">&nbsp;</div>
+	<div id="content">
+		<!--profile-follow-product-->
+		<div class="container">
+			<div class="wrapper-profile profile-user-account">
+				<?php echo $this->leftProfileUser('user-info') ?>    
+				<!--right-profile-->
+				<div class="right-profile">
+					<div class="ttl-box-profile">Thông tin tài khoản</div>
+					<div class="cont-user-account util-clearfix">
+						<div class="row">
+						<form action="#" method="post">
+								<div class="img-user col-sm-2">
+									<img src="https://media3.scdn.vn/img/2014/7_23/avatar_user_2jb6apgefrjn9_simg_3a7818_100x100_maxb.gif" alt="" class="img-avatar">
+									<input type="hidden" name="avatar" value="/img/2014/7_23/avatar_user_2jb6apgefrjn9.gif">
+									<a href="#" onclick="upload_avatar();" title="Upload hình" class="bt-update">Upload hình</a>
+								</div>
+								<div class="user-info col-sm-10">
+									<div class="user-inf">
+						            	<div class="row-inf">
+						                	<label>Họ và tên<span>*</span></label>
+						                	<input type="text" class="username" value="<?php echo $this->identity()->username?>" name="username">
+						                </div>
+						                <div class="row-inf">
+						                	<label>Email</label>
+						                    <input disabled="disabled" type="text" name="email" value="<?php echo $this->identity()->email ?>">
+						                </div>
+						                <div class="row-inf">
+						                	<label>Số điện thoại<span>*</span></label>
+						                     <input type="text" value="<?php echo $this->identity()->phone ? $this->identity()->phone : '' ?>" name="phone">
+						                </div>
+						                <div class="row-inf">
+						                	<label>Ngày sinh</label>
+						                	<?php 
+						                		$date = new DateTime($this->identity()->birthday);
+						                		$day = (int)$date->format('d');
+						                		$month = (int)$date->format('m');
+						                		$year = (int)$date->format('Y');
+						                	?>
+						                    <select class="day" name="day">
+						                    	<?php
+
+						                    		for($i = 1; $i <= 31; $i++){
+						                    			echo '<option value="', $i ,'"', $i == $day ? 'selected' : '', '>', $i ,'</option>';
+						                    		}
+						                    	?>
+						                    </select>
+						                    <select class="month" name="month">
+						                    	<?php 
+						                    		for($i = 1; $i <= 12; $i++){
+						                    			echo '<option value="', $i ,'"',$i == $month ? 'selected' : '','>', $i ,'</option>';
+						                    		}
+						                    	?>
+						                    </select>
+						                    <select class="year" name="year">
+						                    	<?php 
+						                    		for($i = 1940; $i <= date('Y') - 16; $i++){
+						                    			echo '<option value="', $i ,'"',$i == $year ? 'selected' : '','>', $i ,'</option>';
+						                    		}
+						                    	?>
+						                    </select>
+						                </div>
+						                <div class="row-inf">
+						                	<label>Giới tính</label>
+						                	<select class="sex" name="sex">
+						                		<option value="0" <?php echo $this->identity()->sex ? '' : 'selected' ?>>Nữ</option>
+						                		<option value="1" <?php echo $this->identity()->sex ? 'selected' : '' ?>>Nam</option>
+						                	</select>
+						                </div>
+						                <div class="row-inf">
+						                	<label>&nbsp;</label>
+						                    <button class="bt-save">Lưu thông tin</button>
+						                </div>
+		            				</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>

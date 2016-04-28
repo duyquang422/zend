@@ -1,0 +1,28 @@
+<?php
+$html = '';
+$html .= '<div class="break-login-social">
+                      <div class="break">Bạn cũng có thể đăng nhập với:</div>
+                      <div class="ic-login login-fb" onclick="OpenIDConnect.fb_login()">
+							<span class="icon icon-fb"></span>
+                      </div>
+                      <div class="ic-login login-go" onclick="OpenIDConnect.gg_login()">
+							<span class="icon icon-gmail"></span>
+                      </div>
+                    </div>';
+$html .= $this->view->form()->openTag($form);
+$html .= $this->view->formRow($form->get('email')->get('email-sign-up'));
+$html .= $this->view->formRow($form->get('password')->get('password'));
+$html .= $this->view->formRow($form->get('password')->get('re-password'));
+$html .= $this->view->formRow($form->get('username')->get('username'));
+// $html .= $this->view->formRow($form->get('captcha')->get('captcha'));
+$html .= $this->view->form()->closeTag();
+
+echo $this->view->modal('sign-in',$html,'','Đăng Ký Thành Viên');
+
+$loginSuccess = '<p>Đăng ký thành công</p>
+				<p>Chúc mừng bạn đã trở thành thành viên của Webseo.vn</p>
+				<img src="public/template/frontend/images/buy-success.png" alt="signout sucess">
+				<p class="home">Quay về trang chủ</p>
+      			<p>Tự động chuyển đến trang chủ sau <b class="s">5</b> giây nữa</p>';
+
+echo $this->view->modal('sign-up-success',$loginSuccess,'','','',false);

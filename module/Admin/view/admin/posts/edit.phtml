@@ -1,0 +1,125 @@
+<div class="container-fluid container-main" style="top: 74px;">
+    <section id="content">
+        <!-- Begin Content -->
+
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="system-message-container">
+                </div>
+                <?php echo $this->form()->openTag($this->form) ?>
+
+                <div class="form-inline form-inline-header">
+
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('name')->get('name')); ?>
+                    </div>
+
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('alias')->get('alias')); ?>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+
+                    <ul class="nav nav-tabs" id="myTabTabs">
+                        <li class="active"><a href="#general" data-toggle="tab">Mô Tả</a></li>
+                        <li class=""><a href="#publishing" data-toggle="tab">Thông Tin</a></li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+
+                        <div id="general" class="tab-pane active">
+                            <div class="row-fluid">
+                                <div class="span9">
+                                    <div class="fckeditor">
+                                        <?php $this->fck('', 'description') ?>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <fieldset class="form-vertical">
+                                        <div class="control-group">
+                                            <label for="status" class="control-label"><span>Chuyên Mục Cha</span>
+                                                <?php
+                                                $html = '<select name="parent" class="form-control col-sm-2" style="margin-top: 6px;" id="parent"><option value="1">-- Không cha --</option>';
+                                                foreach ($this->itemSelectBox as $val) {
+                                                    $str = str_repeat('- ', $val['level'] - 1);
+                                                    if ($val['level'] > 1) {
+                                                        $html .= '<option value="' . $val['id'] . '">' . $str . $val['name'] . '</option>';
+                                                    } else {
+                                                        $html .= '<option value="' . $val['id'] . '">' . $val['name'] . '</option>';
+                                                    }
+                                                }
+                                                $html .= '</option>';
+                                                echo $html;
+                                                ?>
+                                                </select>
+                                            </label>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <?php echo $this->formRow($this->form->get('status')->get('status')); ?>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <label for="status" class="control-label">Ảnh đại diện</label>
+                                            <div class="control-group" id="posts-image"></div>
+                                            <?php echo $this->formRow($this->form->get('upload')->get('picture')->setName('image')); ?>
+                                            <input type="submit" value="upload" id="upload"/>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="publishing" class="tab-pane">
+                            <div class="row-fluid form-horizontal-desktop">
+                                <div class="span6 col-md-4">
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('created_date')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('created_by')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('hits')); ?>
+                                    </div>
+                                </div>
+                                <div class="span6 col-md-4">
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('tag')); ?>
+                                        <i class="fa fa-search"></i>
+                                        <i class="fa fa-plus" onclick="addTag()"></i>
+                                        <div class="tag-drop">
+                                            <ul class="tag-results"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="list-tag" style="display: none">
+                                        <ul class="chzn-choices"></ul>
+                                    </div>
+                                </div>
+                                <div class="span6 col-md-4">
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('SEO')->get('meta_description')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('SEO')->get('meta_keyword')); ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="action" id="action"/>
+                    <input type="hidden" id="controller" value="posts"/>
+                    <input type="hidden" id="username" value="<?php echo $this->identity()->username?>">
+                    <?php echo $this->form()->closeTag($this->form) ?>
+
+                </div>
+            </div>
+            <!-- End Content -->
+    </section>
+
+</div>

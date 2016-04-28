@@ -1,0 +1,20 @@
+<?php
+$arr = [
+    ['title' => 'Mã đơn hàng'],
+    ['title' => 'Người mua'],
+    ['title' => 'Điện Thoại'],
+    ['title' => 'TT'],
+    ['title' => 'Tổng tiền'],
+    ['title' => 'Ngày đặt hàng'],
+    ['title' => 'Trạng Thái'],
+    ['title' => 'Chức năng'],
+    ['title' => 'Id']
+];
+$this->datatable('cart', $arr);
+$button = '<div class="modal-footer">
+                 <button type="button" class="btn btn-default" id="order-canceled">Hủy đơn hàng</button>
+                 <button type="button" class="btn btn-warning" id="order-shipping">Giao Hàng</button>
+                 <button type="button" class="btn btn-success" id="order-complete">Hoàn tất</button>
+           </div>';
+$this->modal('order', $this->render('view.phtml') ,'modal-md','',$button);
+?>

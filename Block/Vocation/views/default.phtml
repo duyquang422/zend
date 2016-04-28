@@ -1,0 +1,14 @@
+<!--start block vocation module-->
+    <div id="t_home_trend" class="block-silde-coll">
+            <?php
+                foreach($this->_data as $val){
+                    echo '<div class="trend-pro_item saq_trend_pro_item">
+                        <a title="'. $val['name'] .'" href="'. $this->view->basePath($val['alias'] . '-' . $val['id']) .'" class="item-col">
+                            <img alt="'. $val['name'] .'" title="'. $val['name'] .'" src="public/files/category/215x230/'. $val['image'] .'"/>
+                            <span>'. $val['name'] .'</span>
+                        </a>
+                    </div>';
+                }
+            ?>
+    </div>
+<!--end block vocation module-->

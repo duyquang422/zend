@@ -1,0 +1,17 @@
+<!--Block menu Category-->
+<div class="filter filter--listing" id="menu-category">
+    <div class="filter-title">
+        <i class="fa fa-list"></i> DANH MỤC
+    </div>
+    <div class="filter-active-items"></div>
+    <div class="filter-body">
+        <?php
+        foreach($this->getCategoriesSameParent($parentId) as $val){
+                $class = $val->id == $id ? 'active': '';
+                echo '<div class="filter-button '.$class.'" data-id="'.$val->id.'">
+                    '. $val->name .'
+                </div>';
+        }?>
+    </div>
+</div>
+<!--End Block menu Category-->

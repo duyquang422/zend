@@ -1,0 +1,77 @@
+.switch-board {
+    padding: 20px 20px 5px 20px;
+    margin-bottom: 20px;
+}
+.switch-item {
+    text-align: center;
+    margin: 0px;
+}
+.switch-item li {
+    border: none !important;
+    box-shadow: none !important;
+    width: 82px;
+    height: 82px;
+    display: inline-block;
+    margin: 0px 15px 15px 0px;
+    position: relative;
+    list-style: none;
+}
+.notify-tip {
+    display: inline-block !important;
+    background: #F60;
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 3px 5px;
+}
+.switch-item li a {
+    box-shadow: none !important;
+    width: 82px;
+    height: 82px;
+    padding: 0px !important;
+    display: block;
+    text-decoration: none;
+}
+.brown {
+    background: #b51c44;
+}
+.switch-item li a i {
+    font-size: 30px !important;
+    display: block !important;
+    text-align: center;
+    padding: 10px 0 10px 0 !important;
+    width: auto !important;
+    color: #fff !important;
+}
+.switch-item li a span {
+    display: block;
+    text-align: center;
+    padding: 0px 5px !important;
+    font-size: 12px !important;
+    color: #eee !important;
+}
+.orange {
+    background: #ce4b27;
+}
+.blue-violate {
+    background: #5b3ab6;
+}
+.magenta {
+    background: #a300aa;
+}
+.green {
+    background: #009600;
+}
+.bondi-blue {
+    background: #0093a8;
+}
+.dark-yellow {
+    background: #e88a05;
+}
+.blue {
+    background: #3498DB;
+}
+.icon-user:before {
+    content: "\f007";
+}

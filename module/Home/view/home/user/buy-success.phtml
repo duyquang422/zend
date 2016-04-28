@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="purchase">
+        <h2>Mua Hàng Thành Công!</h2>
+        <p>Cám ơn bạn đã đặt mua hàng của chúng tôi.</p>
+        <img src="<?php echo $this->basePath('public/template/frontend/images/buy-success.png')?>" alt="buy sucess"><br>
+        <a href="<?php echo $this->url('home')?>" class="home">Quay về trang chủ</a>
+        <p>Tự động chuyển đến trang chủ sau <b class="s">5</b> giây nữa</p>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+        var interval = setInterval(function(){
+            if(!parseInt($('.s').html())){
+                document.location.href="/";
+                $('.s').html('0');
+                clearInterval(interval);
+            }else{
+                $('.s').html(parseInt($('.s').html() - 1));
+            }
+        },1000);
+    })
+</script>

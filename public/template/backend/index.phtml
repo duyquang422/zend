@@ -1,0 +1,110 @@
+<?php
+$urlCSS = $this->basePath(URL_TEMPLATE . '/backend/css');
+$urlJS = $this->basePath(URL_TEMPLATE . '/backend/js');
+$urlImage = $this->basePath(URL_TEMPLATE . '/backend/img');
+?>
+<?php echo $this->doctype(); ?>
+<html>
+<head>
+    <?php
+    echo $this->headTitle()->prepend('Admin Manager');
+    echo $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')
+    ->appendName('description', 'ZendVN - Zend framework 2.x')
+    ->setCharset('utf-8');
+
+    echo $this->headLink()->appendStylesheet(array(
+    'rel' => 'shortcut icon',
+    'type' => 'image/x-icon',
+    'href' => $urlImage . '/favicon.ico'
+    ), 'PREPEND')
+    ->prependStylesheet($urlCSS . '/template.css')
+    ->prependStylesheet($urlCSS . '/AdminLTE.css')
+    ->prependStylesheet($urlCSS . '/datatables/dataTables.bootstrap.css')
+    ->prependStylesheet($urlCSS . '/jquery.dataTables.min.css')
+    ->prependStylesheet($urlCSS . '/datatables.css')
+    ->prependStylesheet($urlCSS . '/font-awesome.min.css')
+    ->prependStylesheet($urlCSS . '/fileinput.min.css')
+    ->prependStylesheet($urlCSS . '/bootstrap.min.css');
+    ?>
+    <script src="<?php echo $urlJS . '/jquery.min.js' ?>" type="text/javascript"></script>
+    <script src="<?php echo $urlJS . '/fileinput.min.js' ?>" type="text/javascript"></script>
+    <script src="<?php echo $this->basePath(URL_PUBLIC . '/scripts/ckeditor/ckeditor.js') ?>" type="text/javascript"></script>
+    <?php if($this->controller == 'index'){?>
+        <script src="<?php echo $urlJS . '/chart.min.js' ?>" type="text/javascript"></script>
+        <script src="<?php echo $urlJS . '/easypiechart.min.js' ?>" type="text/javascript"></script>
+    <?php } ?>
+    <script>
+        var SourcePath = '<?php echo $this->basePath() ?>';
+        if(SourcePath)
+            var basePath = window.location.origin + SourcePath + '/';
+        else
+            var basePath = window.location.origin + '/';
+    </script>
+</head>
+<body class="skin-blue">
+<?php if($this->controller == 'index'){?>
+<div class="loading-container">
+    <div class="loading-progress">
+        <div class="rotator">
+            <div class="rotator">
+                <div class="rotator colored">
+                    <div class="rotator">
+                        <div class="rotator colored">
+                            <div class="rotator colored"></div>
+                            <div class="rotator"></div>
+                        </div>
+                        <div class="rotator colored"></div>
+                    </div>
+                    <div class="rotator"></div>
+                </div>
+                <div class="rotator"></div>
+            </div>
+            <div class="rotator"></div>
+        </div>
+        <div class="rotator"></div>
+    </div>
+</div>
+<?php } ?>
+<!-- HEADER START -->
+<header class="header">
+    <?php include_once 'html/nav-left.php'; ?>
+    <?php include_once 'html/nav-right.php'; ?>
+</header>
+<!-- HEADER END -->
+<div class="wrapper row-offcanvas row-offcanvas-left"
+     style="min-height: 599px;">
+    <!-- SIDEBAR START -->
+    <aside class="left-side sidebar-offcanvas" style="min-height: 1772px;">
+        <?php include_once 'html/sidebar.php'; ?>
+    </aside>
+    <!-- SIDEBAR END -->
+
+    <!-- CONTENT START -->
+    <aside class="right-side">
+        <section class="content-header">
+            <?php include_once 'html/header.php'; ?>
+        </section>
+        <section class="content">
+            <?php echo $this->content; ?>
+        </section>
+    </aside>
+    <!-- CONTENT END -->
+</div>
+<?php
+echo $this->headScript()->appendFile($urlJS . '/bootstrap.min.js')
+//							    ->appendFile($urlJS . '/jquery-ui.min.js')
+                        ->appendFile($urlJS . '/AdminLTE/app.js')
+                        ->appendFile($urlJS . '/jquery.dataTables.min.js')
+                        ->appendFile($urlJS . '/datatables.js')
+                        ->appendFile($urlJS . '/function.js')
+                        ->appendFile($urlJS . '/ajax.js')
+                        ;
+?>
+<script type="text/javascript">
+    var classParent = '<?php echo $this->module . "-" . $this->controller;?>';
+    var classChild = '<?php echo $this->module . "-" . $this->controller . "-" . $this->action;?>';
+    $('ul.sidebar-menu > li.' + classParent).addClass('active');
+    $('ul.treeview-menu > li.' + classChild).addClass('active');
+</script>
+</body>
+</html>

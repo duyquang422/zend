@@ -1,0 +1,127 @@
+<!-- start block products by category -->
+    <div class="block_cat_home woman check-onscreen-woman saq_default">
+        <div class="block-collection home util-clearfix">
+            <div class="col-sm-2 women-col1">
+                <div class="title_extra_menu">
+                    <h3><a title="<?php echo $this->_data['category'][0]['name'] ?>" href="" class="tl">Top <?php echo $this->_data['category'][0]['name'] ?></a></h3>
+                </div>
+                <div class="slide-brand owl-carousel" id="slide-brand-<?php echo $id?>">
+                    <?php
+                    $count = count($this->_data['manufacturer']);
+                    foreach($this->_data['manufacturer'] as $key => $val) {
+
+                        if($key % 2 == 0) {
+                            echo '<div class="item">';
+                        }
+                            echo '<a href="#" title="">
+                                <img alt="' . $val['manufacturerName'] . '" src="public/files/manufacturer/120x60/' . $val['manufacturerImage'] . '" class="owl-lazy"/>
+                            </a>';
+                        if($key % 2 == 1 || $key == $count - 1) {
+                            echo '</div>';
+                        }
+
+                    }?>
+                </div>
+
+                <div class="slide-collection slide-run" id="slide-collection-<?php echo $id?>">
+                        <?php
+                        $rowSum = count($this->_data['category']);
+                        foreach($this->_data['category'] as $key => $val){
+                            if ($key % 2 == 0) {
+                                echo '<div class="item">';
+                            }
+                            echo '<a title="' . $val['name'] . '" href="', $val['alias'] , '-' , $val['id'] ,'">
+                                    <img alt="' . $val['name'] . '" title="' . $val['name'] . '" src="public/files/category/100x100/' . $val['image'] . '"/>
+                                    <span>' . $val['name'] . '</span>
+                                </a>';
+                            if($key % 2 == 1 || $key == $rowSum - 1) {
+                                echo '</div>';
+                            }
+                        }?>
+                </div>
+            </div>
+            <div class="women-col2 col-sm-4">
+                <?php
+                    echo '<a title="'. $this->_data['category'][0]['name'] .'" href="" class="big">
+                        <img class="lazy" alt="'. $this->_data['category'][0]['name'] .'" title="'. $this->_data['category'][0]['name'] .'" src="public/files/category/430x465/'. $this->_data['category'][0]['image'] .'" />
+                        <span>'. $this->_data['category'][0]['name'] .'</span>
+                    </a>';
+                ?>
+            </div>
+            <div class="women-col3 col-sm-6">
+                <div class="product-list">
+                    <?php foreach($this->_data['productInCategory'] as $val){ ?>
+                          <div class="product col-sm-4">
+                                <a title="<?php echo $val['productName']?>" href="<?php echo $this->view->basePath('/'. $val['productAlias'] . '-' . $val['productId'] . '.html')?>" title="<?php echo $val['name'] ?>" class="big">
+                                    <img class="lazy" alt="<?php echo $val['productName'] ?>" title="<?php echo $val['productName'] ?>" src="public/files/product/203x235/<?php echo $val['productImage'] ?>" />
+                                </a>
+                                <span class="product-name">
+                                    <div class="csframe_product">
+                                        <div class="product-title">
+                                            <h5 class="name_product">
+                                                <a class="product-name" href="<?php echo $this->view->basePath('/'. $val['productAlias'] . '-' . $val['productId'] . '.html') ?>" title="<?php echo  $val['productName'] ?>"><?php echo $val['productName'] ?></a>                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div class="hover-box">
+                                            <div class="wishlist" data-id="<?php echo $val['productId']?>">
+                                                <a class="addToWishlist" href="javascript:" rel="nofollow">
+                                                    <span>thêm vào yêu thích</span>
+                                                </a>
+                                            </div>
+                                            <div class="quickview" data-id="<?php echo $val['productId']?>">
+                                                <a class="addquickview" href="javascript:" rel="nofollow">
+                                                    <span>Xem nhanh</span>
+                                                </a>
+                                            </div>
+                                            <div class="compare" data-id="<?php echo $val['productId']?>">
+                                                <a class="addcompare" href="javascript:" rel="nofollow">
+                                                    <span>So sánh sản phẩm</span>
+                                                </a>
+                                            </div>
+                                            <div class="addtocart" data-id="<?php echo $val['productId']?>">
+                                                <a href="javascript:" rel="nofollow">
+                                                    <span>Thêm vào giỏ hàng</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="content_price">
+                                            <?php if($val['sale_off']) {
+                                                echo '<span class=" old-price product-price">'. number_format($val['price'],0,',','.') .' đ</span>';
+                                            }?>
+                                            <?php
+                                                if($val['sale_off'])
+                                                    echo '<span class="price product-price">'. number_format($val['sale_off'],0,',','.') .' đ</span>';
+                                                else
+                                                    echo '<span class="price product-price">'. number_format($val['price'],0,',','.') .' đ</span>';
+                                            ?>
+                                        </div>
+                                    </div>
+                                </span>
+                          </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    $('#slide-brand-' + '<?php echo $id?>').owlCarousel({
+        itemsCustom : [
+            [0, 1],
+            [1600, 1]
+        ],
+        navigation : true,
+        pagination: false,
+        autoPlay: false,
+        navigationText: ['','']
+    });
+    $('#slide-collection-' + '<?php echo $id?>').owlCarousel({
+        itemsCustom : [
+            [0, 2],
+            [1600, 2]
+        ],
+        pagination: true,
+        autoPlay: false
+    })
+</script>
+<!-- end block products by category -->

@@ -1,0 +1,12 @@
+<!--Block Filter Manufacturer-->
+<div class="title-manu"><i class="fa fa-hospital-o"></i> Thương Hiệu</div>
+<div class="manu-list">
+    <ul>
+        <?php foreach($this->getManufacturer($categoryId) as $val){
+            echo '<li data-manuid="'. $val['manuId'] .'" class="manu">
+                <label for="manufacturer" class="label-manu"><span></span>'. $val['manuname'] .'</label>
+            </li>';
+        } ?>
+    </ul>
+</div>
+<!--End Filter Price-->

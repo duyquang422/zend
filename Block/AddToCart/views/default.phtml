@@ -1,0 +1,58 @@
+<div class="modal fade in" id="modalAddtocart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>       
+            </div>
+            <div class="modal-body">
+                <div class="addtocart_modal">
+                    <div class="box_product_incart util-clearfix">
+                        <span class="ic">
+                            <i class="fa fa-check"></i>
+                        </span>
+                        <img src="<?php echo $this->view->basePath('public/files/product/100x100/' . $product->image) ?>" alt="Giày cao gót 2 dây xéo" width="100" height="100">
+                        <p class="name">
+                            <strong><?php echo $product->name ?></strong> đã được đưa vào giỏ hàng
+                        </p>
+                        <p class="sp">Hiện đang có <b class="numb">1</b> sản phẩm trong giỏ hàng</p>
+                        <div class="buttons box-btn-buy">
+                            <a href="<?php echo $this->view->url('frontendRoute/default',['controller' => 'user','action' => 'order'])?>" class="btn btn-view-cart" title="Xem giỏ hàng">
+                                <i class="fa fa-shopping-cart"></i>Xem giỏ hàng
+                            </a>
+                            <button type="button" class="btn buynow-btn" title="Mua ngay" onclick="purchase(<?php echo $productId?>)">
+                                <i class="fa fa-check"></i>Mua ngay
+                            </button>
+                        </div>
+                    </div>
+                    <div class="recommend" style="display: block;">
+                        <h3 class="title">Các sản phẩm liên quan</h3>
+                        <ul class="related-products">
+                            <?php foreach ($productsByCategory as $val) {
+                                echo '<li class="item">
+                                        <a href="'. $this->view->basePath('/' . $val['alias'] . '-' . $val['id'] . '.html') .'">
+                                            <img src="'.$this->view->basePath('public/files/product/100x100/'.$val['image']). '" alt="'. $val['name'] .'">
+                                        </a>
+                                    </li>';
+                            } ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('.related-products').owlCarousel({
+        autoPlay: 5000,
+        itemsCustom : [
+            [0, 5],
+            [1600, 5]
+        ],
+        navigation : true,
+        pagination: false,
+        navigationText: ['','']
+    })
+})
+</script>

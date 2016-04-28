@@ -1,0 +1,382 @@
+<section id="content">
+    <div class="container">
+        <div class="row" id="content-wrapper">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-sm-6 box" id="order">
+                        <div class="box-header">
+                            <div class="title">
+                                <i class="icon-inbox"></i>
+                                Đơn Hàng
+                            </div>
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <span class="btn btn-white week active">Tuần</span>
+                                    <span class="btn btn-white month">Tháng</span>
+                                    <span class="btn btn-white year">Năm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <canvas id="weekly-statistics" width="497" height="200"></canvas>
+                            <canvas id="monthly-statistics" width="497" height="200" style="display:none"></canvas>
+                            <canvas id="yearly-statistics" width="497" height="200" style="display:none"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 box" id="income">
+                        <div class="box-header">
+                            <div class="title">
+                                <i class="fa fa-money"></i>
+                                Doanh Thu
+                            </div>
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <span class="btn btn-white week-income active">Tuần</span>
+                                    <span class="btn btn-white month-income">Tháng</span>
+                                    <span class="btn btn-white year-income">Năm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-content">
+                            <canvas id="income-weekly" width="497" height="200"></canvas>
+                            <canvas id="income-monthly" width="497" height="200" style="display:none"></canvas>
+                            <canvas id="income-yearly" width="497" height="200" style="display:none"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-6">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="title">
+                                    <div class="icon-inbox"></div>
+                                    Đơn Hàng
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-error"><?php echo $this->order['new']?></h3>
+                                        <small>Mới</small>
+                                        <div class="text-error icon-inbox align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-warning"><?php echo $this->order['inProcess']?></h3>
+                                        <small>Chờ duyệt</small>
+                                        <div class="text-warning icon-check align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-info"><?php echo $this->order['pending']?></h3>
+                                        <small>Đang xử lý</small>
+                                        <div class="text-info icon-time align-right"></div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-primary"><?php echo $this->order['shipped']?></h3>
+                                        <small>Chuyển giao</small>
+                                        <div class="text-primary icon-truck align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-success"><?php echo $this->order['complete']?></h3>
+                                        <small>Hoàn tất</small>
+                                        <div class="text-success icon-flag align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-muted"><?php echo $this->order['canceled']?></h3>
+                                        <small>Hủy</small>
+                                        <div class="text-muted icon-remove align-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="title">
+                                    <i class="icon-group"></i>
+                                    Truy Cập
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-error"><?php echo $this->onlineUser ?></h3>
+                                        <small>Đang online</small>
+                                        <div class="text-error icon-user align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-warning">117</h3>
+                                        <small>Tổng lượt truy cập</small>
+                                        <div class="text-warning icon-book align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-primary">1:21</h3>
+                                        <small>Thời gian trung bình</small>
+                                        <div class="text-primary icon-time align-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-md-3">
+                        <div class="box">
+                            <div class="box-header">
+                                <div class="title">
+                                    <i class="icon-comments"></i>
+                                    Sản Phẩm
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-error"><?php echo $this->productsSold[0]['total_product']?></h3>
+                                        <small>Đã Bán</small>
+                                        <div class="text-error icon-plus align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-success">1</h3>
+                                        <small>Hết Hàng</small>
+                                        <div class="text-success icon-ok align-right"></div>
+                                    </div>
+                                    <div class="box-content box-statistic">
+                                        <h3 class="title text-info"><?php echo $this->productTotal ?></h3>
+                                        <small>Tổng Sản Phẩm</small>
+                                        <div class="text-info icon-time align-right"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+
+    var label = new Array();
+    switch (<?php echo $this->day?>){
+        case 1:
+            label = ['T3','T4','T5','T6','T7','CN','T2'];
+            break;
+        case 2:
+            label = ['T4','T5','T6','T7','CN','T2','T3'];
+            break;
+        case 3:
+            label = ['T5','T6','T7','CN','T2','T3','T4'];
+            break;
+        case 4:
+            label = ['T6','T7','CN','T2','T3','T4','T5'];
+            break;
+        case 5:
+            label = ['T7','CN','T2','T3','T4','T5','T6'];
+            break;
+        case 7:
+            label = ['CN','T2','T3','T4','T5','T6','T7'];
+            break;
+        default :
+            label = ['T2','T3','T4','T5','T6','T7','CN'];
+            break;
+    }
+
+    <?php
+        echo 'var data = '. json_encode(array_values($this->weeklyStatistics)) . ';';
+    ?>
+    var weeklyStatistic = {
+        labels : label,
+        datasets : [
+            {
+                fillColor : "rgba(0, 172, 236, 0.35)",
+                strokeColor : "#ACC26D",
+                pointColor : "#fff",
+                pointStrokeColor : "#9DB86D",
+                data : data
+            }
+        ]
+    }
+
+    <?php
+        $data = array();
+        foreach($this->weeklyIncomeStatistics as $key => $val){
+            if($val)
+                $data[$key] = $val[0]['income'];
+            else
+                $data[$key] = 0;
+        }
+        echo 'var data = '. json_encode(array_values($data)) . ';';
+    ?>
+    var weeklyIncomeStatistic = {
+        labels: label,
+        datasets: [
+            {
+                fillColor : "rgba(248, 163, 38, 0.52)",
+                strokeColor : "#ACC26D",
+                pointColor : "#fff",
+                pointStrokeColor : "#9DB86D",
+                data : data
+            }
+        ]
+    }
+
+    <?php
+        echo 'var data = '. json_encode(array_values($this->monthlyStatistics)) . ';';
+    ?>
+    var monthlyStatistic = {
+        labels: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+        datasets: [
+            {
+                fillColor : "rgba(244, 84, 60, 0.61)",
+                strokeColor : "#ACC26D",
+                pointColor : "#fff",
+                pointStrokeColor : "#9DB86D",
+                data : data
+            }
+        ]
+    }
+
+    <?php
+        $arr = array();
+        foreach($this->year as $key => $val)
+            $arr[$key] = $val['year'];
+        echo 'var labels = ' . json_encode($arr) .';';
+        echo 'var data = '. json_encode($this->yearlyStatistics). ';';
+    ?>
+
+
+    <?php
+        $data = array();
+        foreach($this->monthlyIncomeStatistics as $key => $val){
+            if($val)
+                $data[$key] = $val[0]['income'];
+            else
+                $data[$key] = 0;
+        }
+        echo 'var data = '. json_encode(array_values($data)) . ';';
+    ?>
+    var monthlyIncomeStatistic = {
+        labels: ['1','2','3','4','5','6','7','8','9','10','11','12'],
+        datasets: [
+            {
+                fillColor : "rgba(244, 84, 60, 0.61)",
+                strokeColor : "#ACC26D",
+                pointColor : "#fff",
+                pointStrokeColor : "#9DB86D",
+                data : data
+            }
+        ]
+    }
+
+    <?php
+        $arr = array();
+        foreach($this->year as $key => $val)
+            $arr[$key] = $val['year'];
+        echo 'var labels = ' . json_encode($arr) .';';
+        echo 'var data = '. json_encode($this->yearlyStatistics). ';';
+    ?>
+
+
+    var yearlyStatistic = {
+        labels: labels,
+        datasets: [
+            {
+                fillColor : "rgba(18, 165, 16, 0.42)",
+                strokeColor : "#ACC26D",
+                pointColor : "#fff",
+                pointStrokeColor : "#9DB86D",
+                data : data
+            }
+        ]
+    }
+
+    <?php
+        $data = array();
+        foreach($this->yearlyIncomeStatistics as $key => $val){
+            if($val)
+                $data[$key] = $val[0]['income'];
+            else
+                $data[$key] = 0;
+        }
+        echo 'var data = '. json_encode(array_values($data)) . ';';
+    ?>
+    var yearlyIncomeStatistic = {
+        labels: labels,
+        datasets: [
+            {
+                fillColor : "rgba(244, 84, 60, 0.61)",
+                strokeColor : "#ACC26D",
+                pointColor : "#fff",
+                pointStrokeColor : "#9DB86D",
+                data : data
+            }
+        ]
+    }
+
+
+    var elm = document.getElementById('weekly-statistics').getContext('2d');
+    new Chart(elm).Line(weeklyStatistic);
+
+    var elm = document.getElementById('income-weekly').getContext('2d')
+    new Chart(elm).Line(weeklyIncomeStatistic);
+
+    var elm = document.getElementById('monthly-statistics').getContext('2d');
+    new Chart(elm).Line(monthlyStatistic);
+
+    var elm = document.getElementById('income-monthly').getContext('2d');
+    new Chart(elm).Line(monthlyIncomeStatistic);
+
+    var elm = document.getElementById('yearly-statistics').getContext('2d')
+    new Chart(elm).Line(yearlyStatistic);
+
+    var elm = document.getElementById('income-yearly').getContext('2d')
+    new Chart(elm).Line(yearlyIncomeStatistic);
+
+    $(document).ready(function(){
+        $('.month').click(function(){
+            $('#order .btn-white').removeClass('active');
+            $(this).addClass('active');
+            $('#weekly-statistics').hide();
+            $('#monthly-statistics').show();
+            $('#yearly-statistics').hide();
+        })
+        $('.week').click(function(){
+            $('#order .btn-white').removeClass('active');
+            $(this).addClass('active');
+            $('#weekly-statistics').show();
+            $('#monthly-statistics').hide();
+            $('#yearly-statistics').hide();
+        })
+        $('.year').click(function(){
+            $('#order .btn-white').removeClass('active');
+            $(this).addClass('active');
+            $('#weekly-statistics').hide();
+            $('#monthly-statistics').hide();
+            $('#yearly-statistics').show();
+        })
+
+        $('.month-income').click(function(){
+            $('#income .btn-white').removeClass('active');
+            $(this).addClass('active');
+            $('#income-weekly').hide();
+            $('#income-monthly').show();
+            $('#income-yearly').hide();
+        })
+
+        $('.year-income').click(function(){
+            $('#income .btn-white').removeClass('active');
+            $(this).addClass('active');
+            $('#income-weekly').hide();
+            $('#income-monthly').hide();
+            $('#income-yearly').show();
+        })
+
+        $('.week-income').click(function(){
+            $('#income .btn-white').removeClass('active');
+            $(this).addClass('active');
+            $('#income-weekly').show();
+            $('#income-monthly').hide();
+            $('#income-yearly').hide();
+        })
+    })
+</script>

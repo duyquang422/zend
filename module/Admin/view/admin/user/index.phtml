@@ -1,0 +1,74 @@
+<div class="page-body">
+    <div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div class="widget">
+                <div class="widget-body">
+                    <table id="user-table" class="datatables display table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr role="row">
+                                <th><span class="ttl-col">ID</span></th>
+                                <th><span class="ttl-col">Họ và tên</span></th>
+                                <th><span class="ttl-col">Email</span></th>
+                                <th><span class="ttl-col">Nhóm</span></th>
+                                <th><span class="ttl-col">Ngày Tạo</span></th>
+                                <th><span class="ttl-col">Đăng Nhập Gần Đây</span></th>
+                                <th><span class="ttl-col">Địa Chỉ IP</span></th>
+                                <th><span class="ttl-col">Status</span></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+$(function(){
+    $('#user-table').dataTable({
+            "processing": false,
+            "serverSide": true,
+            "ajax": {
+                url: "load-config-dataTables",
+                dataType: "json"
+            },
+            "columns": [
+                {data: 'id'},
+                {data: 'username'},
+                {data: 'email'},
+                {
+                    data: null,
+                    render: function(data){
+                        var slbGroup = '<?php echo json_encode($this->slbGroup); ?>';
+                        var selectboxGroup = "<select class='form-control list-box-group' id='group-name-"+ data.id +"'><option value='0'>"+ data.name +"</option>";
+                        $.each(JSON.parse(slbGroup),function(key,val){
+                            if(val != data.name)
+                                selectboxGroup += "<option value='"+ key +"'>"+ val +"</option>";
+                        });
+                        selectboxGroup += "</select>";
+                        return '<span name="group_name" id="span-group-name-'+ data.id +'" class="group_name" onclick="showPopover('+ data.id +')" data-toggle="popover" data-placement="top" data-html="true" data-content="'+ selectboxGroup +'<button type=\'button\' class=\'btn btn-default\' onclick=\'closePopover()\'>Đóng</button><img class=\'img-load\'/><button type=\'button\' class=\'btn btn-warning update-group-name\' onclick=\'updateGroup(' + data.id + ')\'>Cập nhật</button>" title="Cập nhật nhóm"">'+ data.name +'</span>';
+                    }
+                },
+                {data: 'created'},
+                {data: 'last_sign'},
+                {data: 'register_ip'},
+                {
+                    data: null,
+                    class: 'status',
+                    render: function (data) {
+                        if (data.status == 1)
+                            return '<i class="icon public" onclick="changeStatus('+ data.id +',0)"></i>';
+                        else
+                            return '<i class="icon un-public" onclick="changeStatus('+ data.id +',1)"></i>';
+                    }
+                }
+            ],
+            "order": [0, 'asc'],
+            fnCreatedRow: function (nRow, aData, iDataIndex) {
+                $(nRow).attr('id', 'row-' + aData.id);
+            },
+            "dom": '<"top"lf>rt<"bottom"ip><"clear">'
+        });
+});
+</script>

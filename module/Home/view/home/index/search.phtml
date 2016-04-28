@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-sm-8">
+        <?php if(isset($this->searchResult['product'][0])){ ?>
+        <div class="title-box-result"><span>Shop Đề Cử</span></div>
+        <a href="<?php echo $this->basePath($this->searchResult['product'][0]['alias'] .'-' . $this->searchResult['product'][0]['id'])?>.html" class="image-for-search">
+            <img src="<?php echo $this->basePath('public/files/product/203x235/'. $this->searchResult['product'][0]['image'])?>">
+        </a>
+        <div class="des-pro">
+            <p><b><?php echo $this->searchResult['product'][0]['name']?></b></p>
+            <?php
+                if($this->searchResult['product'][0]['sale_off'])
+                    echo '<p>giá gốc: <span style="text-decoration:  line-through">', number_format($this->searchResult['product'][0]['price'],0,',','.') ,'đ</span></p><p>giảm còn: </strong><b style="color:red">', number_format($this->searchResult['product'][0]['sale_off'],0,',','.') ,'đ</b></p>';
+                else
+                    echo '<p>giá chỉ: </strong><b style="color:red">', number_format($this->searchResult['product'][0]['price'],0,',','.') ,'đ</b></p>';
+            ?>
+        </div>
+        <?php }else{
+                echo '<p>Không tìm thấy sản phẩm theo từ khóa tìm kiếm</p>';
+        } ?>
+    </div>
+    <?php if($this->searchResult['category']){ ?>
+    <div class="col-sm-4" id="category-result">
+        <div class="title-box-result"><span>Gợi Ý Chuyên Mục</span></div>
+        <ul class="list-cat">
+            <?php
+                foreach($this->searchResult['category'] as $val){
+                    echo '<li><a href="', $val['alias'], '-', $val['id'] ,'">', $val['name'] ,'</a></li>';
+                }
+            ?>
+        </ul>
+    </div>
+    <?php } ?>
+    <button type="button" class="close" id="close-boxsearch" aria-hidden="true">x</button>
+</div>
+<?php if(count($this->searchResult['product']) > 1){ ?>
+<div class="row" id="product-result">
+    <div class="title-box-result"><span>Các Sản Phẩm Liên Quan</span></div>
+    <ul class="list-img">
+        <?php
+            foreach($this->searchResult['product'] as $key => $val){
+                if($key > 0)
+                    echo '<li><a href="', $val['alias'], '-', $val['id'] ,'.html"><img src="', $this->basePath('public/files/product/203x235/'. $val['image'] ) ,'" alt="', $val['name'] ,'"></a></li>';
+            }
+        ?>
+    </ul>
+</div>
+<?php } ?>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.list-img').owlCarousel({
+            autoPlay: 5000,
+            items : 4,
+            itemsDesktop : [1199,3],
+            itemsDesktopSmall : [979,3],
+            navigation : true,
+            pagination: false,
+            navigationText: ['','']
+        })
+    })
+</script>

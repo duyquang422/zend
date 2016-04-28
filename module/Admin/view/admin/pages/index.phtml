@@ -1,0 +1,13 @@
+<?php
+$arr  = array(
+    array('title' => 'Tên trang'),
+    array('title' => 'Mô tả'),
+    array('title' => 'Đường dẫn SEO'),
+    array('title' => 'Tạo bởi'),
+    array('title' => 'Xem'),
+    array('title' => 'Hiện'),
+    array('title' => 'Chức năng'),
+    array('title' => 'id'),
+);
+$this->datatable('pages',$arr);
+$this->modal('pages', $this->render('edit.phtml') ,'modal-lg');

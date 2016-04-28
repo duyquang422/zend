@@ -1,0 +1,159 @@
+<div class="row">
+    <div class="top-content ">
+        <div class="breadcrumb_detail util-clearfix">
+            <div class="br first">
+                <a title="Sendo" href="<?php echo $this->url('home') ?>">
+                    <span> Trang chủ</span>
+                </a>
+            </div>
+            <div class="br">
+                <a href="<?php echo $this->basePath('/' . $this->categoryParent->alias . '-' . $this->categoryParent->id) ?>"
+                   title="<?php echo $this->categoryParent->name ?>">
+                    <span><?php echo $this->categoryParent->name ?></span>
+                </a>
+            </div>
+            <div class="br">
+                <a href="<?php echo $this->basePath('/' . $this->product->categoryAlias . '-' . $this->product->categoryId) ?>"
+                   title="<?php echo $this->product->categoryName ?>">
+                    <span><?php echo $this->product->categoryName ?></span>
+                </a>
+            </div>
+            <div class="br-end">
+                <span><?php echo $this->product->name ?></span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div id="topdetail" class="">
+    <div class="wrapbread">
+        <div class="rowtop">
+            <h1><?php echo $this->product->name ?></h1>
+
+            <div class="clr"></div>
+        </div>
+    </div>
+    <section id="product-info">
+        <?php echo $this->stickyBar()?>
+        <div class="boxright">
+            <aside class="picture">
+                <img alt="<?php echo $this->product->name ?>"
+                     src="<?php echo $this->basePath('public/files/product/400x400/' . $this->product->image) ?>">
+            </aside>
+            <aside class="price_sale">
+                <div class="detail_product_price">
+                    <span>Giá:</span>
+                    <strong><?php echo number_format($this->product->sale_off ? $this->product->sale_off : $this->product->price, 0, ',', '.') ?>
+                        ₫</strong>
+                </div>
+                <label class="infopromotion"><b>Quà khuyến mãi</b></label>
+
+                <div class="detailpromotion">
+                    <span class="pro239331">Tặng ngay ông già noel trị giá 100 ngàn đồng
+                        <label class="infoend">(đến 1/1)</label>
+                    </span>
+                    <i class="icondetail-gift"></i>
+                </div>
+                <div class="quantity">
+                    <span>Số lượng</span>
+                    <button type="button">-</button>
+                    <input type="number" class="form-control" id="numberOfProducts" value="1"/>
+                    <button type="button">+</button>
+                </div>
+                <?php if ($this->size) { ?>
+                    <div class="size">
+                        <span>Kích Thước</span>
+                        <select name="size" id="product-size" class="form-control">
+                            <option value="0">--- Vui lòng chọn ---</option>
+                            <?php foreach ($this->size as $val) {
+                                echo '<option value="', $val['price'], '">', $val['sizeName'], '</option>';
+                            } ?>
+                        </select>
+                    </div>
+                <?php } ?>
+                <ul class="infocomes">
+                    <li>
+                        <i class="icondetail-check"></i>
+                        <span>Giao hàng tận nơi miễn phí trong</span>
+                        <strong>30 phút</strong>
+                    </li>
+                    <li>
+                        <i class="icondetail-check"></i>
+                        <span>Đổi trả sản phẩm lỗi miễn phí trong</span>
+                        <strong>30 ngày</strong>
+                    </li>
+                </ul>
+                <a class="buynow" href="<?php echo $this->basePath('home/product/index?id=' . $this->product->id) ?>"
+                   onclick="purchase(<?php echo $this->product->id ?>); return false">
+                    Mua ngay<span>Giao tận nơi hoặc nhận ở cửa hàng</span>
+                </a>
+                <a class="buyinstall" id="add-to-cart" data-id="<?php echo $this->product->id ?>">Thêm vào giỏ
+                    hàng<span>Mua càng nhiều, quà càng lớn</span>
+                </a>
+
+                <div class="buycall">Gọi đặt mua <b>1800.1060</b> hoặc <b>(08) 38 102.102</b> <span>(7h30 - 22h)</span>
+                </div>
+            </aside>
+            <aside class="choosemarket ">
+                <div class="boxmaket">
+                    <?php echo $this->support() ?>
+                    <div class="ship">
+                        <i class="icondetail-ship"></i>
+
+                        <div>
+                            Gọi 1800.1060 giao hàng tận nơi miễn phí
+                            <div class="note"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="customcan">
+                    <i class="icondetail-handmoney"></i>
+
+                    <p>Thanh toán khi nhận hàng bằng tiền mặt, thẻ ATM, Visa, Master</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+</div>
+</div>
+<section id="contentdetail">
+    <!--start product description-->
+    <?php echo $this->productDescription($this->product->id) ?>
+    <!--end product description-->
+</section>
+
+<div class="clr"></div>
+<section id="coment">
+    <div class="boxright">
+        <div class="col-sm-6">
+            <?php echo $this->comment($this->product->id)?>
+        </div>
+        <div class="col-sm-6">
+            <?php echo $this->facebookComment($this->product) ?>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!--start product purchase-->
+<?php echo $this->purchase() ?>
+<!--end product purchase-->
+
+<!--start AddToCart-->
+<?php echo $this->addToCart($this->product->id) ?>
+<!--end AddToCart-->
+
+<!--start product sucessfulPurchase-->
+<?php echo $this->buysuccess() ?>
+<!--end product sucessfulPurchase-->
+
+<div class="hidden">
+    <input type="hidden" id="productPrice"
+           value="<?php echo $this->product->sale_off ? $this->product->sale_off : $this->product->price ?>">
+    <input type="hidden" id="productImage" value="<?php echo $this->product->image ?>">
+    <input type="hidden" id="productName" value="<?php echo $this->product->name ?>">
+    <input type="hidden" id="productAlias" value="<?php echo $this->product->alias ?>">
+</div>

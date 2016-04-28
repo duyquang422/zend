@@ -1,0 +1,101 @@
+<?php foreach($this->products as $val){ ?>
+    <div class="box_product col-md-3 col-sm-3 col-xs-6">
+        <div class="content_item content_item_hover">
+            <div class="overflow_box">
+                <input type='hidden' class="track-info" name='track-info' value=''/>
+                <div class="box-go">
+                                <span class="track-search interested" title="Yêu thích"><svg class="icon-favorite2">
+                                        <use xlink:href="#icon-favorite2"></use>
+                                    </svg>
+                                </span>
+                                <span class="track-search quick-view" title="Xem nhanh">
+                                    <svg class="icon icon-iconview">
+                                        <use xlink:href="#icon-iconview"></use>
+                                    </svg>
+                                </span>
+                </div>
+                <div class="description">
+                    <a class="img_product" href="<?php echo $this->basePath('/' . $val['alias'] . '-' . $val['id'] . '.html') ?>" title="<?php echo $val['name'] ?>">
+                        <img alt="<?php echo $val['name'] ?>"
+                             class="track-search imgtodrag no-hover"
+                             src="public/files/product/293x293/<?php echo $val['image']?>"/>
+                    <?php
+                        if($val['zoom_image'])
+                            if(strpos($val['zoom_image'],',')) {
+                                $arrZoomImages = explode(',', $val['zoom_image']);
+                                foreach($arrZoomImages as $key => $arrZoomImage)
+                                    if(!$key){?>
+                                        <img alt="<?php echo $val['name'] ?>"
+                                             class="track-search imgtodrag alt-hover"
+                                             src="public/files/product/293x293/<?php echo $arrZoomImage ?>"/>
+                            <?php }}else{?>
+                                    <img alt="<?php echo $val['name'] ?>"
+                                         class="track-search imgtodrag alt-hover"
+                                         src="public/files/product/293x293/<?php echo $val['zoom_image'] ?>"/>
+                            <?php } ?>
+                        </a>
+                    <div class="mota-them">
+                        <ul>
+                            <li>
+                                <i class="fa fa-trophy"></i>
+                                <span><?php echo $val['point'] ? $val['point'] : 0 ?></span>
+                            </li>
+                            <li>
+                                <i class="fa fa-eye"></i>
+                                <span><?php echo $val['hits'] ? $val['hits'] : 0 ?></span>
+                            </li>
+                            <li>
+                                <i class="fa fa-star"></i>
+                                <span><?php echo $val['total_votes'] ? $val['total_votes'] : 0?></span>
+                            </li>
+                            <li>
+                                <i class="fa fa-shopping-cart"></i>
+                                <span><?php echo $val['bought'] ? $val['bought'] : 0?></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product__header">
+                    <h3 class="product_title">
+                        <a class="name_product fullname" href="<?php echo $this->basePath('/' . $val['alias'] . '-' . $val['id'] . '.html') ?>" title="<?php echo $val['name'] ?>">
+                            <?php echo $val['name'] ?>
+                        </a>
+                    </h3>
+                </div>
+                <div class="price-box">
+                    <div class="content-price">
+                        <?php if($val['sale_off']){ ?>
+                            <span class="current_price"> <?php echo number_format($val['sale_off'],0,',','.') ?>
+                                <span class="price__symbol">đ</span>
+                                <?php echo $val['percent_discount'] ? '<span class="price__discount">- ' . $val['percent_discount'] . '%</span>' : '' ?>
+                                                </span>
+                            <span class="old_price"> <?php echo number_format($val['price'],0,',','.') ?> <span class="price__symbol">đ</span></span>
+                        <?php }else{ ?>
+                            <span class="current_price"> <?php echo number_format($val['price'],0,',','.') ?><span class="price__symbol">đ</span> </span>
+                        <?php } ?>
+                    </div>
+                    <div class="product-card__rating__stars">
+                        <div class="">
+                            <span class="icon-svg product-card__rating__icon-star-grey"></span>
+                            <span class="icon-svg product-card__rating__icon-star-grey"></span>
+                            <span class="icon-svg product-card__rating__icon-star-grey"></span>
+                            <span class="icon-svg product-card__rating__icon-star-grey"></span>
+                            <span class="icon-svg product-card__rating__icon-star-grey"></span>
+                        </div>
+                        <div style="width: <?php echo $val['total_value'] ? $val['total_value'] / $val['total_votes'] * 10 : 100 ?>%;">
+                            <span class="icon-svg product-card__rating__icon-star-orange"></span>
+                            <span class="icon-svg product-card__rating__icon-star-orange"></span>
+                            <span class="icon-svg product-card__rating__icon-star-orange"></span>
+                            <span class="icon-svg product-card__rating__icon-star-orange"></span>
+                            <span class="icon-svg product-card__rating__icon-star-orange"></span>
+                        </div>
+                    </div>
+                </div>
+                <?php
+                if($val['percent_discount'])
+                    echo '<div class="discount-tag"></div>';
+                ?>
+            </div>
+        </div>
+    </div>
+<?php }?>

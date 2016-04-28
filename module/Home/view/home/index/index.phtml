@@ -1,0 +1,55 @@
+<div class="row nav-bar-menu">
+    <div class="col-md-2 nav-category">
+        <span class="category">Danh Mục</span>
+    </div>
+    <div class="col-md-10">
+        <div class="list-menu">
+            <ul>
+                <li><a href="#">DEAL Mới</a></li>
+                <li><a href="#">DEAL Bán Chạy</a></li>
+                <li><a href="#">DEAL Hot</a></li>
+                <li><a href="#">Thông Tin</a></li>
+                <li><a href="#">Liên Hệ</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-2">
+        <?php echo $this->navLeftHomePage() ?>
+    </div>
+    <div class="col-sm-6">
+        <?php echo $this->slideHomeTop() ?>
+    </div>
+    <div class="col-sm-2">
+        <?php echo $this->productDeal() ?>
+    </div>
+    <div class="col-sm-2">
+        <?php echo $this->news()?>
+    </div>
+    <div class="col-sm-2">
+        <?php echo $this->history()?>
+    </div>
+</div>
+<div class="row">
+    <?php echo $this->productsFilter()?>
+</div>
+<div class="row">
+    <?php echo $this->productsByCategory(139) ?>
+</div>
+<div class="row">
+    <?php echo $this->productsByCategory(133) ?>
+</div>
+<div class="row">
+    <?php echo $this->productsByCategory(137) ?>
+</div>
+<?php echo $this->miniBarMenu()?>
+    <!--<div class="col-md-2 col-right">
+        <?php /*echo $this->news() */?>
+        <?php /*echo $this->support() */?>
+        <?php /*echo $this->nominationProducts('nomination-product') */?>
+    </div>
+</div>
+</div>-->
+
+<?php echo $this->showModal()?>

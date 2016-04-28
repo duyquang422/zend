@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="top-content">
+    <div class="breadcrumb_detail util-clearfix">
+        <div class="br first">
+            <a href="<?php echo $this->url('home') ?>">
+                <span>Trang Chủ</span> </a>
+        </div>
+        <div class="br first link">
+            <a href="" title="">
+                <span>Danh mục sản phẩm</span>
+            </a>
+        </div>
+        <?php if($this->parentCategory && $this->parentCategory->id != 1){ ?>
+            <div class="br">
+                <a href="<?php echo $this->basePath($this->parentCategory->alias . '-' . $this->parentCategory->id)?>" title="Thời trang nữ" alt="Thời trang nữ">
+                    <span><?php echo $this->parentCategory->name?></span>
+                </a>
+            </div>
+            <div class="br-end">
+                <a href="<?php echo $this->basePath($this->category->alias . '-' . $this->category->id)?>" class="title">
+                    <span><?php echo $this->category->name?></span>
+                </a>
+            </div>
+        <?php }else{ ?>
+            <div class="br-end">
+                <a href="<?php echo $this->basePath($this->category->alias . '-' . $this->category->id)?>" class="title">
+                    <span><?php echo $this->category->name?></span>
+                </a>
+            </div>
+        <?php } ?>
+
+    </div>
+</div>
+</div>
+<div class="row">
+    <?php echo $this->filterAttr($this->category->id)?>
+</div>
+<div class="row">
+    <!-- left col -->
+    <div class="col-left">
+        <div class="filter-list">
+            <?php echo $this->menuCategories($this->category->id,$this->parentCategory->id) ?>
+            <?php echo $this->filterRate()?>
+            <?php echo $this->filterPrice() ?>
+        </div>
+    </div>
+    <div class="col-right">
+        <div id="products-listing-filter-load">
+            <div class="products-listing util-clearfix">
+                <div class="row">
+                    <?php echo $this->partial('home/list-products.phtml',['products' => $this->products])?>
+                </div>
+            </div>
+        </div>
+        <div class="bg-load-ajax"><img src="/public/template/frontend/images/load.gif" alt=""></div>
+    </div>
+</div>
+
+<div class="hide">
+    <input type="hidden" value="<?php echo $this->category->id ?>" id="category-id">
+</div>
+
+<?php echo $this->miniBarMenu()?>

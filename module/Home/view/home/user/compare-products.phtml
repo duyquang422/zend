@@ -1,0 +1,21 @@
+<?php
+if($this->arrCompareProductId){
+    foreach($this->arrCompareProductId as $key => $val)
+        if($key < 10){?>
+            <li>
+                <a title="Xóa" class="delete" onclick="deleteLikeProduct()"></a>
+                <div class="picture">
+                    <a href="<?php echo $this->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                        <img src="<?php echo $this->basePath('public/files/product/100x100/'. $val['image']) ?>">
+                    </a>
+                </div>
+                <div class="information">
+                    <div class="name">
+                        <a href="<?php echo $this->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') ?>" target="_blank">
+                            <?php echo $val['name']?>
+                        </a>
+                    </div>
+                    <div class="price"><?php echo number_format($val['sale_off'] ? $val['sale_off'] : $val['price'],0,',','.') ?>₫</div></div>
+                <div class="clear"></div>
+            </li>
+<?php } }?>

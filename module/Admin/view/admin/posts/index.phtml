@@ -1,0 +1,13 @@
+<?php
+$arr  = array(
+    array('title' => 'Tên bài viết'),
+    array('title' => 'Hình ảnh'),
+    array('title' => 'Mô tả'),
+    array('title' => 'Chuyên Mục'),
+    array('title' => 'Xem'),
+    array('title' => 'Hiện'),
+    array('title' => 'Chức năng'),
+    array('title' => 'id'),
+);
+$this->datatable('posts',$arr);
+$this->modal('posts', $this->render('edit.phtml') ,'modal-lg');

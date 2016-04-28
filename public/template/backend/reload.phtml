@@ -1,0 +1,5 @@
+<?php
+$urlJS = URL_TEMPLATE . '/backend/js';
+echo $this->content;
+echo $this->headScript()->appendFile($urlJS . '/jquery.dataTables.min.js')
+    ->appendFile($urlJS . '/datatables.js');

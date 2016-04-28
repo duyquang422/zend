@@ -1,0 +1,13 @@
+<?php
+$arr  = array(
+    array('title' => 'Tên Nhóm'),
+    array('title' => 'Đăng Nhập Sau Cùng'),
+    array('title' => 'Tạo Bởi'),
+    array('title' => 'Ngày Cập Nhật'),
+    array('title' => 'Sửa Bởi'),
+    array('title' => 'Chặn'),
+    array('title' => 'Chức Năng'),
+    array('title' => 'ID')
+);
+$this->datatable('group',$arr);
+$this->modal('group', $this->render('edit.phtml') ,'modal-lg');

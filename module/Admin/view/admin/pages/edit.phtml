@@ -1,0 +1,50 @@
+<div class="container-fluid container-main" style="top: 74px;">
+    <section id="content">
+        <!-- Begin Content -->
+
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="system-message-container">
+                </div>
+                <?php echo $this->form()->openTag($this->form) ?>
+
+                <div class="form-inline form-inline-header">
+
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('name')->get('name')); ?>
+                    </div>
+
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('alias')->get('alias')); ?>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+
+                    <ul class="nav nav-tabs" id="myTabTabs">
+                        <li class="active"><a href="#general" data-toggle="tab">Mô Tả</a></li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+
+                        <div id="general" class="tab-pane active">
+                            <div class="row-fluid">
+                                <div class="span9">
+                                    <div class="fckeditor">
+                                        <?php $this->fck('', 'description') ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" name="action" id="action"/>
+                    <input type="hidden" id="controller" value="posts"/>
+                    <?php echo $this->form()->closeTag($this->form) ?>
+
+                </div>
+            </div>
+            <!-- End Content -->
+    </section>
+
+</div>

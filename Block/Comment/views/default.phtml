@@ -1,0 +1,69 @@
+<?php require($this->view->basePath('public/rating/_drawrating.php')); ?>
+<div id="comment" class="wrapcomment">
+    <span style="font-size: 18px">Mời bạn đánh giá hoặc đặt câu hỏi về</span> <h2>Gối gòn cao cấp Wean sale off 25%</h2>
+    <form method="post" id="js_activity_feed_form" class="js_cmt_form" action="home/comment/add">
+        <div class="dropfirst textarea" id="content" name="content">
+            <textarea class="dropfirst textarea txtEditor" name="content" placeholder="Mời bạn tham gia đánh giá, thảo luận về sản phẩm của chúng tôi." id="txtEditor"></textarea>
+            <div class="wrap-attaddsend">
+                <div class="showdropdown" id="showdropdown" style="display: none">
+                    <div class="closeIfo">
+                        <i class="fa fa-times"></i>
+                    </div>
+                    <div class="asideleft">
+                        <label>Hãy <a href="javascript:" data-toggle="modal" data-target="#myModal">đăng nhập hoặc đăng ký</a>  để trả lời một cách nhanh chóng</label>
+                        <img src="/public/template/frontend/images/login-icon.jpg" alt="đăng nhập">
+                    </div>
+                    <div class="asideright">
+                        <label>Nhập thông tin của bạn</label>
+                        <input class="infoname form-control" name="objectName" id="sendwithname" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50">
+                        <input class="infoname form-control" name="objectEmail" id="sendwithemail" type="email" placeholder="Email (để nhận thông báo khi có trả lời)">
+                        <button class="finalpost" type="submit">Hoàn tất &amp; gửi</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="product-id" value="<?php echo $productId?>">
+        <input type="hidden" name="comment-parent" value="0">
+    </form>
+    <div id="sortcomment">
+        <div style="float: left;">
+
+            <span>Xin Vui Lòng Cho Chúng Tôi Một Lời Nhận Xét: </span>
+            <?php echo rating_bar($productId); ?>
+        </div>
+    </div>
+    <div class="comment-list">
+        <div class="ask">
+        <?php
+            foreach($this->getComments($productId) as $val) {
+                ?>
+                    <i class="icon-comment-user">
+                        <?php
+                            if($val->username)
+                                echo substr($val->username,strrpos($val->username,' '),2);
+                            else
+                                echo substr($val->uusername,strrpos($val->uusername,' '),2);
+                        ?>
+                    </i>
+                    <strong>
+                        <?php echo $val->username ? $val->username : $val->uusername;
+                        ?>
+                    </strong>
+                    <div class="content-com"><?php echo $val->content?></div>
+                    <div class="info-com">
+                        <span class="reply">trả lời</span>
+                        <b class="dot">●</b>
+                        <span class="date">
+                            <?php
+                                $time = new Zendvn\Time\Time();
+                                echo $time->time_ago(strtotime($val->date));
+                            ?>
+                        </span>
+                    </div>
+                <?php
+            }
+        ?>
+        </div>
+    </div>
+</div>

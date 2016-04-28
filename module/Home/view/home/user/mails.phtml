@@ -1,0 +1,48 @@
+<div class="container-wrap -page">
+    <div id="jsMenuMarkLayer">&nbsp;</div>
+    <div id="content">
+        <!--profile-follow-product-->
+        <div class="container">
+            <div class="wrapper-profile profile-user-account">
+                <?php echo $this->leftProfileUser('email') ?>
+                <!--right-profile-->
+                <div class="right-profile">
+                    <div class="ttl-box-profile">Hộp Thư</div>
+                    <div class="cont-user-mailbox">
+                    <div class="block-filter-mailbox">
+                        <!--sort-mailbox-->
+                        <div class="sort-mailbox">
+                            <div class="bt-sort-mail mailbox">
+                                <a href="https://www.sendo.vn/thong-tin-tai-khoan/hop-thu/" title="Hộp thư đến" class="active"><span class="ic">&nbsp;</span>Hộp thư đến</a>
+                            </div>
+                            <div class="bt-sort-mail sent-item">
+                                <a href="https://www.sendo.vn/thong-tin-tai-khoan/hop-thu/?box=sent" title="Hộp thư đi"><span class="ic">&nbsp;</span>Hộp thư đi</a>
+                            </div>
+                        </div>
+                        
+                        <div class="select-all">
+                            <input type="checkbox" name="all_checkbox" id="checkAll">
+                            <a href="#" title="Xóa thư" id="linkdelete">Xóa thư</a>
+                        </div>
+                    </div>
+                    <!--list mail-->
+                    <table class="list-mails">
+                        <tbody><tr class="head">
+                            <th class="th1">Nhận từ</th>
+                            <th class="th2">Tiêu đề</th>
+                            <th>Ngày nhận</th>
+                        </tr>
+                                            <tr><td colspan="3" class="no-box">Hộp thư trống.</td>
+                                    </tr></tbody></table>
+                    <!--paging-->
+                    <div class="pagination-block">
+                        <div class="pagination">
+                                                                </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

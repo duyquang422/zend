@@ -1,0 +1,103 @@
+<?php
+$urlCSS = $this->basePath(URL_TEMPLATE . '/frontend/css');
+$urlJS = $this->basePath(URL_TEMPLATE . '/frontend/js');
+$urlImage = $this->basePath(URL_TEMPLATE . '/frontend/img');
+?>
+
+<?php echo $this->doctype(); ?>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <?php
+    echo $this->headTitle();
+    echo $this->headMeta()->appendName('description','Chuyên cung cấp hệ thống website với những công nghệ hiện đại.')
+        ->appendName('keywords','Thiết kế web, thiết kế web giá rẻ, web hiện đại')
+        ->appendName('robots','INDEX,FOLLOW')
+        ->appendName('viewport','width=device-width, initial-scale=1.0')
+        ->appendName('distribution','Global')
+        ->appendName('revisit','1 days')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendName('geo.region','VN')
+        ->appendName('dc.creator','Webseo')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendName('geo.placename','Vietnamese')
+        ->appendHttpEquiv('content-language','vi')
+        ->appendHttpEquiv('REFRESH','600')
+        ->setProperty('og:url','https://www.webseo.vn/')
+        ->setProperty('og:url','https://www.webseo.vn/')
+        ->setProperty('og:type','website')
+        ->setProperty('og:site_name','web.vn')
+        ->setProperty('og:title','WEB.VN - Mang đến cho bạn hệ thống website hiện đại')
+        ->setProperty('og:description','Chuyên cung cấp hệ thống website với những công nghệ hiện đại.')
+        ->setProperty('og:image','https://static.scdn.vn/images/ecom/sendo-dambao.jpg')
+        ->setProperty('fb:admins','100002920093435')
+        ->setProperty('fb:app_id','1239429816072262');
+    echo $this->headLink(array('rel' => 'icon', 'href' => 'https://static.scdn.vn/images/ecom/favicon.ico'), 'PREPEND')
+        ->prependStylesheet($urlCSS . '/global.responsive.css')
+        ->prependStylesheet($urlCSS . '/item.global.css')
+        ->prependStylesheet($urlCSS . '/font-awesome.min.css')
+        ->prependStylesheet($urlCSS . '/bootstrap.min.css');
+    ?>
+    <script type="text/javascript" src="<?php echo $urlJS?>/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="<?php echo $urlJS?>/owl.carousel.min.js"></script>
+     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&language=vi"></script>
+    <script>
+        var SourcePath = '<?php echo $this->basePath() ?>';
+        if(SourcePath)
+            var basePath = window.location.origin + SourcePath + '/';
+        else
+            var basePath = window.location.origin + '/';
+
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1239429816072262',
+                xfbml      : true,
+                version    : 'v2.5'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script lang="javascript">(function() {var pname = document.title;var ga = document.createElement('script'); ga.type = 'text/javascript';ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=90de27bdf55b00867bd3aa16abf6ca93&data=eyJzc29faWQiOjE1MTc3NjksImhhc2giOiI1MDc5MWNmNTVjNTI5ZTIzNTQ3ZDYyZWUwMDE1Zjg1MyJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script><noscript><a href="http://www.vatgia.com" title="vatgia.com" target="_blank">Tài trợ bởi vatgia.com</a></noscript><noscript><a href="http://vchat.vn" title="vchat.vn" target="_blank">Phát triển bởi vchat.vn</a></noscript><noscript><a href="http://123doc.org" title="123doc.org" target="_blank">Partner vchat.vn</a></noscript>
+</head>
+
+<body>
+    <?php if($this->controller != 'login'){?>
+    <?php include_once 'symboy/symboy.html'; ?>
+    <section class="header-wrap">
+        <?php echo $this->bartop() ?>
+        <?php echo $this->header() ?>
+    </section>
+    <section id="container" class="container-fluid">
+        <div class="stop-menu-fixed"></div>
+        <?php echo $this->content; ?>
+    </section>
+    <div class="cls">&nbsp;</div>
+    <section id="footer">
+        <?php echo $this->policy() ?>
+    </section>
+    <!-- <section id="fixed">
+        <?php echo $this->miniBarMenu()?>
+    </section> -->
+    <section id="modal">
+        <?php echo $this->signUp()?>
+    </section>
+<?php }else{
+        echo $this->content;
+    } ?>
+</body>
+
+<footer>
+    <?php
+    echo $this->headScript()
+        ->prependFile($urlJS. '/bootstrap.min.js')
+        ->prependFile($urlJS. '/global.js');
+    ?>
+</footer>
+</html>

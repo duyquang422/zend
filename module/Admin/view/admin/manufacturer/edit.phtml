@@ -1,0 +1,182 @@
+<div class="container-fluid container-main" style="top: 74px;">
+    <section id="content">
+        <!-- Begin Content -->
+
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="system-message-container">
+                </div>
+                <?php echo $this->form()->openTag($this->form) ?>
+
+                <div class="form-inline form-inline-header">
+
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('name')->get('name')); ?>
+                    </div>
+
+                    <div class="control-group">
+                        <?php echo $this->formRow($this->form->get('alias')->get('alias')); ?>
+                    </div>
+                </div>
+
+                <div class="form-horizontal">
+
+                    <ul class="nav nav-tabs" id="myTabTabs">
+                        <li class="active"><a href="#general" data-toggle="tab">Mô Tả</a></li>
+                        <li class=""><a href="#publishing" data-toggle="tab">Thông Tin</a></li>
+                        <li class=""><a href="#attrib-basic" data-toggle="tab">Options</a></li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+
+                        <div id="general" class="tab-pane active">
+                            <div class="row-fluid">
+                                <div class="span9">
+                                    <div class="fckeditor">
+                                        <?php $this->fck('', 'description') ?>
+                                    </div>
+                                </div>
+                                <div class="span3">
+                                    <fieldset class="form-vertical">
+                                        <div class="control-group">
+                                            <?php echo $this->formRow($this->form->get('status')->get('status')); ?>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="span3" id="upload-img">
+                                    <label for="status" class="control-label">Logo thương hiệu</label>
+                                    <div class="control-group" id="manufacturer-image"></div>
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('upload')->get('picture')); ?>
+                                        <input type="submit" value="upload" id="upload"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="publishing" class="tab-pane">
+                            <div class="row-fluid form-horizontal-desktop">
+                                <div class="span6">
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('created_date')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('created_by')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('modified_date')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('modified_by')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('info')->get('hits')); ?>
+                                    </div>
+                                </div>
+                                <div class="span6">
+
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('SEO')->get('meta_description')); ?>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <?php echo $this->formRow($this->form->get('SEO')->get('meta_keyword')); ?>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div id="attrib-basic" class="tab-pane">
+
+                            <div class="control-group">
+                                <div class="control-label"><label id="jform_params_category_layout-lbl"
+                                                                  for="jform_params_category_layout"
+                                                                  class="hasTooltip" title=""
+                                                                  data-original-title="<strong>Alternative Layout</strong><br />Use a different layout from the supplied component view or overrides in the templates.">
+                                        Alternative Layout</label></div>
+                                <div class="controls"><select id="jform_params_category_layout"
+                                                              name="jform[params][category_layout]"
+                                                              class="chzn-done" style="display: none;">
+                                        <optgroup label="---From Global Options---">
+                                            <option value="" selected="selected">Use Global</option>
+                                        </optgroup>
+                                        <optgroup id="jform_params_category_layout__" label="---From Component---">
+                                            <option value="_:blog">Blog</option>
+                                            <option value="_:default">List</option>
+                                        </optgroup>
+                                    </select>
+
+                                    <div class="chzn-container chzn-container-single chzn-container-single-nosearch"
+                                         style="width: 220px;"
+                                         title="" id="jform_params_category_layout_chzn"><a class="chzn-single"
+                                                                                            tabindex="-1"><span>Use Global</span>
+
+                                            <div><b></b></div>
+                                        </a>
+
+                                        <div class="chzn-drop">
+                                            <div class="chzn-search"><input type="text" autocomplete="off" readonly="">
+                                            </div>
+                                            <ul class="chzn-results"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="control-label"><label id="jform_params_image-lbl" for="jform_params_image"
+                                                                  class="hasTooltip"
+                                                                  title=""
+                                                                  data-original-title="<strong>Image</strong><br />Select or upload an image for this category.">
+                                        Image</label></div>
+                                <div class="controls">
+                                    <div class="input-prepend input-append">
+                                        <div class="media-preview add-on">
+                                            <span class="hasTipPreview" title=""><span class="icon-eye"></span></span>
+                                        </div>
+                                        <input type="text" name="jform[params][image]" id="jform_params_image" value=""
+                                               readonly="readonly"
+                                               title="" class="input-small hasTipImgpath">
+                                        <a class="modal btn" title="Select"
+                                           href="index.php?option=com_media&amp;view=images&amp;tmpl=component&amp;asset=63&amp;author=&amp;fieldid=jform_params_image&amp;folder="
+                                           rel="{handler: 'iframe', size: {x: 800, y: 500}}">
+                                            Select</a><a class="btn hasTooltip" title="" href="#" onclick="
+                jInsertFieldValue('', 'jform_params_image');
+                return false;
+                " data-original-title="Clear">
+                                            <span class="icon-remove"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="control-group">
+                                <div class="control-label"><label id="jform_params_image_alt-lbl"
+                                                                  for="jform_params_image_alt"
+                                                                  class="hasTooltip" title=""
+                                                                  data-original-title="<strong>Alt Text</strong><br />Alternative text used for visitors without access to images.">
+                                        Alt Text</label></div>
+                                <div class="controls"><input type="text" name="jform[params][image_alt]"
+                                                             id="jform_params_image_alt" value=""
+                                                             size="20"></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <input type="hidden" name="id" id="id" />
+                    <input type="hidden" id="action"/>
+                    <input type="hidden" id="controller" value="manufacturer"/>
+                    <?php echo $this->form()->closeTag($this->form) ?>
+
+                </div>
+            </div>
+            <!-- End Content -->
+    </section>
+
+</div>

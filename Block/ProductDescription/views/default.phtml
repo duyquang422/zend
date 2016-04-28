@@ -1,0 +1,24 @@
+<?php if($this->_data->picture && $this->_data->description){ ?>
+    <div class="boxright boxtable">
+        <aside class="characteristics">
+            <h2>Đặc điểm nổi bật của <?php echo $this->_data->name ?></h2>
+            <div id="characteristics">
+                <?php
+                $arrPicture = explode(',', $this->_data->picture);
+                $arrDes = explode('</p>', str_replace('<p>','',$this->_data->description));
+                for($i = 0; $i < count($arrPicture); $i++) {
+                    if($arrPicture[$i] && $arrDes[$i])
+                        echo '<div class="item">
+            <a class="preventdefault" href="">
+                <img src="'. $this->view->basePath('public/files/product/780x434/'. $arrPicture[$i]) . '">
+            </a>
+            <p>'. $arrDes[$i] .'</p>
+        </div>';
+                }?>
+            </div>
+        </aside>
+        <aside class="tableparameter">
+            <?php echo $this->view->nominationProducts('page-product') ?>
+        </aside>
+    </div>
+<?php } ?>

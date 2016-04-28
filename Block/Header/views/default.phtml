@@ -1,0 +1,255 @@
+<!--start block header module-->
+<div id="header" class="header">
+    <div class="container-fluid">
+	    <div class="row">
+		<div class="logo col-sm-3 col-md-4 col-xs-12">
+			<h1>
+				<a href="<?php echo $this->view->serverUrl() ?>">
+					<img src="<?php echo $this->view->basePath('public/template/frontend/images/logo.jpg') ?>"
+						 width="220" height="54"/>
+				</a>
+			</h1>
+            <?php
+            /*if(isset($this->view->identity()->group_id) && $this->view->identity()->group_id == 1)
+            {
+                echo '<div id="change-logo" class="isDown">
+                        <i class="fa fa-wrench"></i>
+                    </div>';
+            }*/
+            ?>
+		</div>
+        <div class="col-md-2 nav-category">
+            <div class="title-category-fixed">
+                <span class="category">Danh Mục</span>
+                <i class="fa fa-angle-down"></i>
+            </div>
+        </div>
+        <div class="logo-menu-fixed col-md-2">
+            <a href="#">
+                <img src="<?php echo $this->view->basePath('public/template/frontend/images/logo-menu-fixed.png') ?>" alt="">
+            </a>
+        </div>
+		<div class="block-search-wrap col-sm-5 col-md-4 col-xs-12">
+			<div class="block-search">
+				<div class="search-bar">
+					<form method="GET" action="<?php echo $this->view->url('frontendRoute/default',['controller'=> 'product','action' => 'search'])?>" class="ng-pristine ng-valid">
+						<div class="search-input-select">
+							<svg class="icon-search_red">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search_red"></use>
+							</svg>
+							<input id="search_keyword" name="q" value="" placeholder="Nhập từ khoá tìm kiếm"
+								   type="search" class="search-txt" autocomplete="off">
+							<input id="input_search" type="hidden" value="1" name="category_id">
+							<input id="category_search_selected" type="hidden" value="Tất cả danh mục">
+							<div class="search-autocomplete" id="search_autocomplete"></div>
+							<button type="submit" class="search-btn" title="Tìm">Tìm kiếm</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="box-info col-sm-4 col-md-4 col-xs-12">
+			<div class="box-link util-clearfix login-roi" id="Notify-controller">
+				<div class="box-l-c cart">
+					<a class="shopping_cart_modal" rel="nofollow" title="Giỏ hàng">
+						<svg class="icon icon-cart-new">
+							<use xlink:href="#icon-cart-new"></use>
+						</svg>
+						<span class="tl">Giỏ hàng </span>
+						<b class="cart_qty">
+                            <?php
+                            $count = 0;
+                            if(isset($cart->quantity) && $cart->quantity)
+                                foreach ($cart->quantity as $productId => $val) {
+                                    foreach ($val as $size => $val1) {
+                                        $count += $val1['quantity'];
+                                    }
+                                }
+                            echo $count;
+                            ?>
+						</b>
+					</a>
+
+					<div class="cart_block block exclusive">
+						<div class="block_content">
+							<div class="cart_block_list">
+                                    <?php
+                                        $totalMoney = 0;
+                                        if(isset($cart->quantity) && $cart->quantity){
+                                            echo '<dl class="products">';
+                                            foreach ($cart->quantity as $productId => $val)
+                                                        foreach ($val as $size => $val1) {
+                                                            $totalMoney += $val1['price'] * $val1['quantity'];
+                                    ?>
+									<dt class="first_item" id="<?php echo $productId, '-', $size?>">
+                                            <a class="cart-images" href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>">
+                                                <img src="<?php echo $this->view->basePath('public/files/product/100x100/'. $val1['image']) ?>" class="cart-img" alt="<?php echo $val1['name']?>">
+                                        </a>
+                                        <div class="cart-info">
+                                            <div class="product-name">
+
+                                                <a href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>"><?php echo $val1['name']?><span class="quantity">&nbsp;&nbsp;x<?php echo $val1['quantity'] ?></span></a>
+                                            </div>
+                                            <div class="product-atributes">
+                                                <a href="/<?php echo $val1['alias'],'-',$productId  ?>.html" title="<?php echo $val1['name']?>">kích thước : <?php echo $size == 'default' ? 'mặc định' : $size ?></a>
+                                            </div>
+                                            <span class="price"><?php echo number_format($val1['price'],0,',','.') ?>đ</span>
+                                        </div>
+                                        <span class="remove_link">
+                                            <a rel="nofollow" class="ajax_cart_block_remove_link" href="javascript:removeProductFromCart(<?php echo $productId, ',\'', $size , '\''?>)" ></a>
+                                        </span>
+                                    </dt>
+								</dl>
+                                <?php }
+                                 }else{
+                                    echo '<p class="cart_block_no_products">Không có sản phẩm nào trong giỏ hàng.</p>';
+                                }
+								if($count){?>
+								<div class="cart-prices">
+									<div class="cart-prices-line last-line">
+                                        <span>Tổng</span><span class="price cart_block_total ajax_block_cart_total"><?php echo number_format($totalMoney,0,',','.')?>đ</b></span>
+									</div>
+								</div>
+								<p class="cart-buttons">
+                                    <a id="button_order_cart" class="btn btn-default button button-small" href="/home/user/order" title="Check out" rel="nofollow">
+                                        <span> Thanh Toán </span>
+									</a>
+                                </p>
+								<?php }?>
+                            </div>
+						</div>
+					</div>
+				</div>
+				<div id="box_link_notify" class="box-l-c mess">
+					<a class="box-link-svg" rel="nofollow">
+						<svg class="icon-earth">
+							<use xlink:href="#icon-earth"></use>
+						</svg>
+						<span class="tl">Thông báo</span>
+
+						<div ng-if="count_notify > 0">
+							<span class="notify-count angular" renderdata data="{{count_notify}}"></span>
+						</div>
+					</a>
+					<ul class="sub-link sub-link-show mess">
+						<listnotify></listnotify>
+					</ul>
+				</div>
+				<div class="box-l-c favorite" id="boxFavorite">
+					<a class="box-link-svg">
+						<svg class="icon icon-fav-new">
+							<use xlink:href="#icon-chat"></use>
+						</svg>
+						<span class="tl">0128 648 3732</span>
+					</a>
+				</div>
+				<?php
+				if ($this->view->identity()) {
+					?>
+					<div class="box-l-c da-login">
+						<a class="box-link-svg" rel="nofollow" href="javascript:void(0);" title="Thông tin tài khoản"
+						   quang="">
+							<svg class="icon icon-login-new">
+								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-login-new"></use>
+							</svg>
+							<?php
+                                if(isset($this->view->identity()->username))
+                                    echo '<span class="tl">Chào <b>',$this->view->identity()->username,'</b></span>';
+//                                if($userSession->offsetGet('user_facebook'))
+//                                    echo '<span class="tl">Chào <b>',$userSession->offsetGet('user_facebook')->username,'</b></span>';
+                            ?>
+						</a>
+						<ul class="tk-box sub-link-show">
+							<?php if($this->view->identity()->group_id == 1 || $this->view->identity()->group_id == 2){?>
+							<li class="tttk">
+								<a title="Trang quản trị" href="<?php echo $this->view->url('adminRoute') ?>" target="_blank">Trang Quản Trị
+								</a>
+							</li>
+							<?php } ?>
+							<li class="tttk">
+								<a title="Thông tin tài khoản"
+								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'User', 'action' => 'index']) ?>">Thông
+									tin tài khoản</a>
+							</li>
+							<li class="tddh">
+								<a title="Theo dõi đơn hàng"
+								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'order']) ?>">Theo
+									dõi đơn hàng</a>
+							</li>
+							<li class="ds">
+								<a title="Ví điểm SEN"
+								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'payment-orders']) ?>">Đơn
+									hàng đã mua</a>
+							</li>
+							<li class="sqt">
+								<a title="Shop yêu thích"
+								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'favorite-products']) ?>">Shop
+									yêu thích</a>
+							</li>
+							<li class="ht">
+								<a title="Hộp thư"
+								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'mails']) ?>">Hộp
+									thư</a>
+							</li>
+							<li class="thoat">
+								<a title="Thoát" rel="nofollow"
+								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'index', 'action' => 'log-out']) ?>">Thoát</a>
+							</li>
+						</ul>
+					</div>
+					<?php
+				} else {
+					?>
+					<div class="box-l-c login " id="login-default">
+						<a class="box-link-svg" rel="nofollow" title="Đăng nhập - Đăng ký">
+							<svg class="icon icon-login-new">
+								<use xlink:href="#icon-login-new"></use>
+							</svg>
+							<span class="tl">Đăng nhập</span>
+						</a>
+
+						<div class="login-block sub-link-show">
+							<div class="ajax-load-qa" id="loading">&nbsp;</div>
+							<form method="post" id="login-form-validate-header">
+								<div class="login-ext">
+									<strong>Đăng nhập bằng: </strong>
+									<a title="facebook" rel="nofollow" href="https://www.facebook.com/dialog/oauth?client_id=703725616396652&redirect_uri=<?php echo $this->view->url('frontendRoute/default',['controller' => 'user','action' => 'login-facebook'],array('force_canonical' => true))?>" class="abc login-fb">
+										&nbsp;</a>
+									<a title="google" rel="nofollow" href="" onclick="" class="abc login-go">&nbsp;</a>
+								</div>
+								<div class="login-form">
+									<label class="lb-username">
+										<input type="email" name="email" value="" placeholder="Vui lòng nhập email"
+											   id="log_email_header"></label>
+									<label class="lb-pass">
+										<input type="password" name="password" value=""
+											   placeholder="Vui lòng nhập mật khẩu" id="log_password_header">
+									</label>
+									<label class="lb-qmk">
+										<a rel="nofollow" target="_blank"
+										   href="https://id.sendo.vn/Account/ForgetPassword" title="Quên mật khẩu?">Quên
+											mật khẩu?</a>
+									</label>
+									<label>
+										<div class="login_error" id="login_error_header"></div>
+									</label>
+								</div>
+								<button class="" type="submit" title="Đăng nhập"> Đăng nhập</button>
+								<div class="a-signup">
+									<span>Bạn chưa có tài khoản?</span>
+									<a rel="nofollow" title="Đăng ký" onclick="showModalSignUp()">Đăng ký ngay</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<?php
+				}
+				?>
+			</div>
+		</div>
+	</div>
+    </div>
+</div>
+<div id="overlay_login">&nbsp;</div>
+
+<!--end block header module-->

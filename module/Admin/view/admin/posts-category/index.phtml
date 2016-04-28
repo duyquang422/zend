@@ -1,0 +1,13 @@
+<?php
+$arr  = array(
+    array('title' => 'Tên chuyên mục'),
+    array('title' => 'Hình ảnh'),
+    array('title' => 'Mô tả'),
+    array('title' => 'xem'),
+    array('title' => 'Hiện'),
+    array('title' => 'Sắp xếp'),
+    array('title' => 'Chức năng'),
+    array('title' => 'id'),
+);
+$this->datatable('posts-category',$arr);
+$this->modal('category', $this->render('edit.phtml') ,'modal-lg');

@@ -1,0 +1,26 @@
+<div id="blanklayout">
+    <div class="login">
+        <div class="logincontainer logindomain">
+            <h3 class="color-black text-center mb30">Đăng nhập vào quản trị</h3>
+            <div class="alert alert-danger" role="alert" id="login_error_header" style="display: none"></div>
+            <div id="login">
+                <form action="/admin/auth/login" class="form-signin form-signin_admin" id="login-form-validate-header" method="post">
+                    <ul class="list-group">
+                        <li class="form-group list-group-item">
+                            <input id="ShopName" name="ShopName" type="hidden" value="">
+                            <input class="form-control username" id="UserName" maxlength="50" name="email" placeholder="Email đăng nhập" type="email" value="">
+
+                        </li>
+                        <li class="form-group list-group-item">
+                            <input class="form-control" id="Password" maxlength="50" name="pass" placeholder="Mật khẩu" type="password">
+
+                        </li>
+                        <li class="list-group-item">
+                            <button class="btn-login" type="submit">Đăng nhập</button>
+                        </li>
+                    </ul>
+                </form>        </div>
+        </div>
+    </div>
+    <div class="vertical-helper"></div>
+</div>
