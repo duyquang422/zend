@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2016 at 01:35 AM
+-- Generation Time: Apr 28, 2016 at 08:13 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -773,7 +773,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `sex`, `email`, `password`, `avatar`, `sign`, `phone`, `birthday`, `address`, `created`, `created_by`, `modified`, `modified_by`, `last_sign`, `register_time`, `register_ip`, `active_code`, `active_time`, `status`, `ordering`, `group_id`) VALUES
-(1, 'Duy Quang', 1, 'Admin01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user_h6MNE8eQ.jpg', '<p>The HeadScript helper allows you to manage both. The HeadScript helper supports the following methods for setting and adding scripts</p>\r\n', '01286483732', '1993-10-10', '', '2014-12-10 08:55:35', 'admin', '2014-12-16 12:08:59', 'admin', '2016-04-19 22:57:23', '0000-00-00 00:00:00', NULL, '1', '0000-00-00 00:00:00', 1, 2, 1),
+(1, 'Duy Quang', 1, 'Admin01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user_h6MNE8eQ.jpg', '<p>The HeadScript helper allows you to manage both. The HeadScript helper supports the following methods for setting and adding scripts</p>\r\n', '01286483732', '1993-10-10', '', '2014-12-10 08:55:35', 'admin', '2014-12-16 12:08:59', 'admin', '2016-04-29 00:02:55', '0000-00-00 00:00:00', NULL, '1', '0000-00-00 00:00:00', 1, 2, 1),
 (17, 'Nguyễn Duy Quang', 0, 'duy_quang422@yahoo.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2015-12-28 04:29:03', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 2),
 (18, 'Nguyễn Văn A', 0, 'abc@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2016-01-02 17:24:20', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 1),
 (19, 'Nguyễn Hoài Thanh Nhi', 0, 'thanhnhi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2016-01-02 17:27:31', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 3),

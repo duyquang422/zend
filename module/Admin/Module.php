@@ -75,7 +75,7 @@ class Module
                     $adapter = $sm->get('dbConfig');
                     $resultSetPrototype = new ResultSet();
                     $resultSetPrototype->setArrayObjectPrototype(new \Admin\Model\Entity\Group());
-                    return new TableGateway('group', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_group', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\GroupTable' => function ($sm) {
                     $tableGateway = $sm->get('GroupTableGateway');
@@ -86,7 +86,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\User());
-                    return new TableGateway('user', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_user', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\UserTable' => function ($sm) {
                     $tableGateway = $sm->get('UserTableGateway');
@@ -97,7 +97,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Products());
-                    return new TableGateway('products', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_products', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\ProductsTable' => function ($sm) {
                     $tableGateway = $sm->get('ProductsTableGateway');
@@ -108,7 +108,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Nested());
-                    return new TableGateway('nested', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_nested', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\NestedTable' => function ($sm) {
                     $tableGateway = $sm->get('NestedTableGateway');
@@ -120,7 +120,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Category());
-                    return new TableGateway('category', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_category', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\CategoryTable' => function ($sm) {
                     $tableGateway = $sm->get('CategoryTableGateway');
@@ -132,7 +132,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\PostsCategory());
-                    return new TableGateway('posts_category', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_posts_category', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\PostsCategoryTable' => function ($sm) {
                     $tableGateway = $sm->get('PostsCategoryTableGateway');
@@ -144,7 +144,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Posts());
-                    return new TableGateway('posts', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_posts', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\PostsTable' => function ($sm) {
                     $tableGateway = $sm->get('PostsTableGateway');
@@ -156,7 +156,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Manufacturer());
-                    return new TableGateway('manufacturer', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_manufacturer', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\ManufacturerTable' => function ($sm) {
                     $tableGateway = $sm->get('ManufacturerTableGateway');
@@ -168,7 +168,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\ProductSize());
-                    return new TableGateway('product_size', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_product_size', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\ProductSizeTable' => function ($sm) {
                     $tableGateway = $sm->get('ProductSizeTableGateway');
@@ -179,7 +179,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\ProductSizeProduct());
-                    return new TableGateway('product_size_product', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_product_size_product', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\ProductSizeProductTable' => function ($sm) {
                     $tableGateway = $sm->get('ProductSizeProductTableGateway');
@@ -190,7 +190,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Cart());
-                    return new TableGateway('cart', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_cart', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\CartTable' => function ($sm) {
                     $tableGateway = $sm->get('CartTableGateway');
@@ -201,7 +201,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Configuration());
-                    return new TableGateway('configuration', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_configuration', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\ConfigurationTable' => function ($sm) {
                     $tableGateway = $sm->get('ConfigurationTableGateway');
@@ -212,21 +212,21 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Comment());
-                    return new TableGateway('comment', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_comment', $adapter, null, $resultSetPrototype);
                 },
                 'HistoryTableGateway' => function ($sm) {
                     $adapter = $sm->get('dbConfig');
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\History());
-                    return new TableGateway('history', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_history', $adapter, null, $resultSetPrototype);
                 },
                 'PermissionTableGateway' => function ($sm) {
                     $adapter = $sm->get('dbConfig');
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Permission());
-                    return new TableGateway('permission', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_permission', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\PermissionTable' => function ($sm) {
                     $tableGateway = $sm->get('PermissionTableGateway');
@@ -237,7 +237,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\ImagePosition());
-                    return new TableGateway('image_position', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_image_position', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\CommentTable' => function ($sm) {
                     $tableGateway = $sm->get('ConfigurationTableGateway');
@@ -248,7 +248,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Tags());
-                    return new TableGateway('tags', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_tags', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\TagsTable' => function ($sm) {
                     $tableGateway = $sm->get('TagsTableGateway');
@@ -259,7 +259,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\Pages());
-                    return new TableGateway('pages', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_pages', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\PagesTable' => function ($sm) {
                     $tableGateway = $sm->get('PagesTableGateway');
@@ -270,7 +270,7 @@ class Module
                     $resultSetPrototype = new HydratingResultSet();
                     $resultSetPrototype->setHydrator(new ObjectProperty());
                     $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\PostTag());
-                    return new TableGateway('post_tag', $adapter, null, $resultSetPrototype);
+                    return new TableGateway('hz_post_tag', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\PostTagTable' => function ($sm) {
                     $tableGateway = $sm->get('PostTagGateway');

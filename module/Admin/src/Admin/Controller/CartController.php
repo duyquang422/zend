@@ -34,7 +34,7 @@ class CartController extends ActionController
             array('db' => 'status', 'dt' => 'status'),
             array('db' => 'time_order', 'dt' => 'time_order')
         );
-        $this->datatables('cart', 'id', $columns);
+        $this->datatables('hz_cart', 'id', $columns);
         return $this->response;
     }
 

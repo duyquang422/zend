@@ -17,15 +17,13 @@ class ConfigurationTable extends AbstractTableGateway
     }
 
     public function getConfig($name){
-        $result = $this->tableGateway->select(function (Select $select) use ($name) {
-            $select->where->equalTo('name',$name);
+        return $this->tableGateway->select(function (Select $select) use ($name) {
+            $select->columns(array('value'))->where->equalTo('name',$name);
         })->current();
-        return $result;
     }
-    public function saveHostingConfig($arrParam = null,$options = null){
-        if ($arrParam) {
-            $where = array('name' => 'HOSTING_CONFIGURATION');
-            $this->tableGateway->update(['value' => json_encode($arrParam)], $where);
+    public function update($arrParam = null,$options = null){
+        foreach($arrParam as $key => $val){
+            $this->tableGateway->update(array('value' => $val), array('name' => $key));
         }
     }
 }

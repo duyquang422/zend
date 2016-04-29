@@ -1,17 +1,23 @@
 <?php
 namespace Admin\Controller;
 
-use Zend\Validator\StringLength;
+use Zendvn\Controller\ActionController;
 
-use Zend\Mvc\Controller\AbstractActionController;
-
-class ConfigController extends AbstractActionController
+class ConfigController extends ActionController
 {
+    public function init(){
+        $this->_options['tableName'] = 'Admin\Model\ConfigurationTable';
+    }
     public function indexAction()
     {
-    	return $this->redirect()->toRoute('adminRoute/default', array('controller' => 'config', 'action' => 'email'));
+        $this->_getHelper('HeadLink',$this->getServiceLocator())
+            ->appendStylesheet($this->basePath. '/public/template/backend/css/config.css');
+        var_dump($this->getConfiguration('SITE_NAME'));
     }
-    
+    public function updateAction(){
+        $this->getTable()->update($this->params()->fromQuery());
+        return $this->response;
+    }
     public function emailAction()
     {
     	return false;

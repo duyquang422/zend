@@ -17,7 +17,10 @@ class BtnFunction extends AbstractHelper{
             $show = 'Hiện';
             $hide = 'Ẩn';
         }
-        echo '
+        if($controller == 'config')
+            echo '<button type="submit" class="btn btn-info" form="configuration"><i class="fa fa-floppy-o"></i>save</button>';
+        else
+            echo '
                 <button type="button" class="btn btn-info" id="add-category" onclick="showModal(\'data-modal\')"><i class="fa fa-plus-circle"></i>Thêm</button>
                 <button type="button" class="btn btn-success" onclick="changeMultiStatus(1)"><i class="fa fa-check-circle"></i>'. $show .'</button>
                 <button type="button" class="btn btn-warning" onclick="changeMultiStatus(0)"><span class="glyphicon glyphicon-remove-circle"></span>'. $hide .'</button>

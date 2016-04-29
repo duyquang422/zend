@@ -91,6 +91,10 @@ class ActionController extends AbstractActionController{
 		return $this->_tableObj;
 	}
 
+	public function getConfiguration($name){
+        return $this->getServiceLocator()->get('Admin\Model\ConfigurationTable')->getConfig($name)->value;
+    }
+
 	public function getForm(){
 		if(empty($this->_formObj)) {
 			$this->_formObj = $this->getServiceLocator()->get('FormElementManager')->get($this->_options['formName']);

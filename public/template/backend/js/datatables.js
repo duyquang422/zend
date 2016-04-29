@@ -641,12 +641,15 @@ $(document).ready(function(){
                             return '<img src="'+ basePath +'/public/template/backend/img/pending.png" alt="pending">';
                             break;
                         case 3:
-                            return '<img src="'+ basePath +'/public/template/backend/img/shipping.png" alt="shipping">';
+                            return '<img src="'+ basePath +'/public/template/backend/img/pending.png" alt="process">';
                             break;
                         case 4:
-                            return '<img src="'+ basePath +'/public/template/backend/img/complete.png" alt="complete">';
+                            return '<img src="'+ basePath +'/public/template/backend/img/shipping.png" alt="shipping">';
                             break;
                         case 5:
+                            return '<img src="'+ basePath +'/public/template/backend/img/complete.png" alt="complete">';
+                            break;
+                        case 6:
                             return '<img src="'+ basePath +'/public/template/backend/img/cancel.png" alt="canceled">';
                             break;
                     }
@@ -665,19 +668,22 @@ $(document).ready(function(){
                 render: function (data) {
                     switch (parseInt(data.status)){
                         case 1:
-                            return '<span style="color:red">Chờ xử lý</span>';
+                            return '<span style="color:#f34541">Mới</span>';
                             break;
                         case 2:
-                            return '<span style="color:blue">Chờ duyệt</span>';
+                            return '<span style="color:#f8a326">Chờ duyệt</span>';
                             break;
                         case 3:
-                            return '<span style="color:#f0ad4e">Đang giao hàng</span>';
+                            return '<span style="color:#9564e2">Đang xử lý</span>';
                             break;
                         case 4:
-                            return '<span style="color:green">Hoàn tất</span>';
+                            return '<span style="color:#00acec">Chuyển giao</span>';
                             break;
                         case 5:
-                            return '<span style="color:#848484">Hủy</span>';
+                            return '<span style="color:#49bf67">Hoàn tất</span>';
+                            break;
+                        case 6:
+                            return '<span style="color:#999999">Hủy</span>';
                             break;
                     }
                 }

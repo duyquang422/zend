@@ -4,7 +4,7 @@ $homeRoute	= array(
 		'options' => array (
 				'route' => '/',
 				'defaults' => array (
-						'__NAMESPACE__' => 'LandingPage\Controller',
+						'__NAMESPACE__' => 'Home\Controller',
 						'controller' 	=> 'index',
 						'action' 		=> 'index' 
 				) 

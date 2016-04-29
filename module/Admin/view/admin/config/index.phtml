@@ -1,0 +1,75 @@
+<div class="tab-config">
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#general" aria-controls="home" role="tab" data-toggle="tab">Cài đặt chung</a></li>
+        <li role="presentation"><a href="#mail" aria-controls="profile" role="tab" data-toggle="tab">Mail</a></li>
+        <li role="presentation"><a href="#social" aria-controls="messages" role="tab" data-toggle="tab">Mạng Xã Hội</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="general">
+                <div class="tab-content">
+                    <div class="page-site">
+                        <div class="row-fluid">
+                            <form action="update" name="configuration" method="get" id="configuration">
+                                <div class="span6">
+                                    <fieldset class="form-horizontal">
+                                        <legend>Cài Đặt Chung</legend>
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <label id="jform_sitename-lbl" for="jform_sitename" class="hasTooltip required" title="" data-original-title="<strong>Site Name</strong><br />Enter the name of your website. This will be used in various locations (eg the Backend browser title bar and <em>Site Offline</em> pages)." aria-invalid="false">
+                                                    Tiêu đề trang<span class="star">&nbsp;*</span></label></div>
+                                            <div class="controls">
+                                                <input type="text" name="site_name" id="jform_sitename" value="Thiết Kế Website Giá Rẻ" class="required" size="50" required="required" aria-required="true" aria-invalid="false">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <label id="jform_offline-lbl" for="jform_offline" class="hasTooltip" title="" data-original-title="<strong>Site Offline</strong><br />Select whether access to the Site Frontend is available. If Yes, the Frontend will display or not a message depending on the settings below.">
+                                                    Bảo trì
+                                                </label>
+                                            </div>
+                                            <div class="controls">
+                                                <fieldset id="jform_offline" class="radio btn-group btn-group-yesno">
+                                                    <input type="radio" id="jform_offline0" name="site_off" value="1">
+                                                    <label for="jform_offline0" class="btn">Yes</label>
+                                                    <input type="radio" id="jform_offline1" name="site_off" value="0" checked="checked">
+                                                    <label for="jform_offline1" class="btn active btn-danger">No</label>
+                                                </fieldset>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                                <div class="span6">
+                                    <fieldset class="form-horizontal">
+                                        <legend>Thiết Lập Mô Tả Seo</legend>
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <label id="jform_MetaDesc-lbl" for="jform_MetaDesc" class="hasTooltip" title="" data-original-title="<strong>Site Meta Description</strong><br />Enter a description of the overall website that is to be used by search engines. Generally, a maximum of 20 words is optimal.">
+                                                    Meta Description</label>
+                                            </div>
+                                            <div class="controls">
+                                                <textarea name="meta_description" id="jform_MetaDesc" cols="60" rows="3" class="form-control">Chuyên tư vấn thiết kế website chuyên nghiệp, tinh tế, giả rẻ.</textarea></div>
+                                        </div>
+                                        <div class="control-group">
+                                            <div class="control-label">
+                                                <label id="jform_MetaKeys-lbl" for="jform_MetaKeys" class="hasTooltip" title="" data-original-title="<strong>Site Meta Keywords</strong><br />Enter the keywords and phrases that best describe your website. Separate keywords and phrases with a comma.">
+                                                    Meta Keywords</label>
+                                            </div>
+                                            <div class="controls">
+                                                <textarea name="meta_keywords" id="jform_MetaKeys" cols="60" rows="3" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mail"></div>
+            <div role="tabpanel" class="tab-pane" id="social"></div>
+
+    </div>
+
+</div>

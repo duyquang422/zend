@@ -1,8 +1,9 @@
 <?php
 $arrMenus = array(
-    array('class' => 'index', 'name' => 'Trang Chính', 'icon' => 'Trang Quản Trị', 'link' => $this->basePath('admin/index/index')),
-    array('class' => 'index', 'name' => 'Bảng Điều Khiển', 'icon' => '', 'link' => $this->basePath('admin/home/index')),
-    array('class' => 'config', 'name' => 'Quản Lý Thành Viên', 'icon' => 'users', 'link' => '#', 'children' => array(
+    array('class' => 'index', 'name' => 'Trang Chính', 'icon' => 'tachometer', 'link' => $this->basePath('admin/index/index')),
+    array('class' => 'config', 'name' => 'Cấu Hình', 'icon' => 'cogs', 'link' => $this->basePath('admin/config/index')),
+//    array('class' => 'index', 'name' => 'Bảng Điều Khiển', 'icon' => '', 'link' => $this->basePath('admin/home/index')),
+    array('class' => 'manager-user', 'name' => 'Quản Lý Thành Viên', 'icon' => 'users', 'link' => '#', 'children' => array(
         array('class' => 'group', 'name' => 'Nhóm Thành Viên', 'icon' => 'group', 'link' => $this->basePath('admin/group/index')),
         array('class' => 'user', 'name' => 'Thành viên', 'icon' => 'user', 'link' => $this->basePath('admin/user/index')),
     )),

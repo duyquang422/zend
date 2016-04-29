@@ -76,7 +76,7 @@ class ManufacturerController extends ActionController
             array('db' => 'status', 'dt' => 'status','field' => 'status'),
             array('db' => 'hits', 'dt' => 'hits','field' => 'hits'),
         );
-        $this->datatables('manufacturer', 'id', $columns);
+        $this->datatables('hz_manufacturer', 'id', $columns);
         return $this->response;
     }
 

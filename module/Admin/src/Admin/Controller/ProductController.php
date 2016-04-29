@@ -166,9 +166,9 @@ class ProductController extends ActionController
     }
 
     public function loadConfigDataTablesAction() {
-        $joinQuery = "FROM `products` AS `p`
-                    LEFT JOIN `category` AS `c` ON (`p`.`category_id` = `c`.`id`)
-                    LEFT JOIN manufacturer AS m ON (m.id = p.trademark)";
+        $joinQuery = "FROM `hz_products` AS `p`
+                    LEFT JOIN `hz_category` AS `c` ON (`p`.`category_id` = `c`.`id`)
+                    LEFT JOIN hz_manufacturer AS m ON (m.id = p.trademark)";
         $columns = array(
             array('db' => 'p.id', 'dt' => 'id','field' => 'id'),
             array('db' => 'p.name', 'dt' => 'name','field' => 'name'),
@@ -185,7 +185,7 @@ class ProductController extends ActionController
             array('db' => 'c.name', 'dt' => 'cname','field' => 'cname', 'as' => 'cname'),
             array('db' => 'm.name', 'dt' => 'mname','field' => 'mname', 'as' => 'mname')
         );
-        $this->datatables('products', 'id', $columns, $joinQuery ,'p.id > 1');
+        $this->datatables('hz_products', 'id', $columns, $joinQuery ,'p.id > 1');
         return $this->response;
     }
     public function editAction(){

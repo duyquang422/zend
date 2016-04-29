@@ -95,34 +95,28 @@ class CartTable extends NestedTable {
         $this->tableGateway->update($data,$where);
     }
 
-    public function countNew(){
-        return $this->tableGateway->select(function (Select $select){
-            $select->where->equalTo('status', 0);
-        })->count();
-    }
-    public function countInProcess(){
-        return $this->tableGateway->select(function (Select $select){
-            $select->where->equalTo('status', 1);
-        })->count();
-    }
-    public function countPending(){
-        return $this->tableGateway->select(function (Select $select){
-            $select->where->equalTo('status', 2);
-        })->count();
-    }
-    public function countShipped(){
-        return $this->tableGateway->select(function (Select $select){
-            $select->where->equalTo('status', 3);
-        })->count();
-    }
-    public function countComplete(){
-        return $this->tableGateway->select(function (Select $select){
-            $select->where->equalTo('status', 4);
-        })->count();
-    }
-    public function countCanceled(){
-        return $this->tableGateway->select(function (Select $select){
-            $select->where->equalTo('status', 5);
+    public function countStatusOrder($option = null){
+        return $this->tableGateway->select(function (Select $select) use ($option){
+            switch($option) {
+                case 'new':
+                    $select->where->equalTo('status', 1);
+                    break;
+                case 'pending':
+                    $select->where->equalTo('status', 2);
+                    break;
+                case 'process':
+                    $select->where->equalTo('status', 3);
+                    break;
+                case 'shipped':
+                    $select->where->equalTo('status', 4);
+                    break;
+                case 'complete':
+                    $select->where->equalTo('status', 5);
+                    break;
+                case 'canceled':
+                    $select->where->equalTo('status', 6);
+                    break;
+            }
         })->count();
     }
 }

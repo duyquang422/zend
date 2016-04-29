@@ -10,13 +10,13 @@ class IndexController extends ActionController{
 
     public function indexAction(){
         $this->_getHelper('HeadLink',$this->getServiceLocator())
-                    ->appendStylesheet('/public/template/frontend/css/item.home.css')
-                    ->appendStylesheet('/public/template/frontend/css/home.responsive.css');
+                    ->appendStylesheet($this->basePath. '/public/template/frontend/css/item.home.css')
+                    ->appendStylesheet($this->basePath. '/public/template/frontend/css/home.responsive.css');
         $this->_getHelper('HeadScript',$this->getServiceLocator())
-            ->appendFile('/public/template/frontend/js/jquery.countdown.js')
-            ->appendFile('/public/template/frontend/js/homepage.js');
-        $this->_getHelper('HeadTitle',$this->getServiceLocator())->append('Web.vn');
-        if(setcookie('arrIdSanPhamTrongGioHang'))
+            ->appendFile($this->basePath .'/public/template/frontend/js/jquery.countdown.js')
+            ->appendFile($this->basePath .'/public/template/frontend/js/homepage.js');
+        $this->_getHelper('HeadTitle',$this->getServiceLocator())->append($this->getConfiguration('site_name'));
+//        if(setcookie('arrIdSanPhamTrongGioHang'))
 
         return new ViewModel();
     }

@@ -25,12 +25,12 @@ class IndexController extends ActionController{
            'onlineUser' => $visistor->CountVisitors(),
             'productTotal' => $this->product->countProduct(),
             'order' => [
-                'new' => $this->order->countNew(),
-                'inProcess' => $this->order->countInProcess(),
-                'pending' => $this->order->countPending(),
-                'shipped' => $this->order->countShipped(),
-                'complete' => $this->order->countComplete(),
-                'canceled' => $this->order->countCanceled()
+                'new' => $this->order->countStatusOrder('new'),
+                'pending' => $this->order->countStatusOrder('pending'),
+                'inProcess' => $this->order->countStatusOrder('process'),
+                'shipped' => $this->order->countStatusOrder('shipped'),
+                'complete' => $this->order->countStatusOrder('complete'),
+                'canceled' => $this->order->countStatusOrder('canceled')
             ],
             'productsSold' => $this->order->countProductsSold(),
             'weeklyStatistics' => $this->weeklyOrderStatistics(),

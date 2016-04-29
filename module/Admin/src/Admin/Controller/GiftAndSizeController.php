@@ -25,7 +25,7 @@ class GiftAndSizeController extends ActionController
             array('db' => 'size', 'dt' => 'size','field' => 'size'),
             array('db' => 'status', 'dt' => 'status','field' => 'status'),
         );
-        $this->datatables('product_size', 'id', $columns);
+        $this->datatables('hz_product_size', 'id', $columns);
         return $this->response;
     }
 
