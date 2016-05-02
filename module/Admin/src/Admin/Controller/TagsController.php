@@ -32,7 +32,7 @@ class TagsController extends ActionController
             array('db' => 'create_by', 'dt' => 'create_by','field' => 'create_by','as' => 'create_by'),
             array('db' => 'status', 'dt' => 'status','field' => 'status','as' =>'status')
         );
-        $this->datatables('hz_tags', 'id', $columns);
+        $this->datatables('tags', 'id', $columns);
         return $this->response;
     }
     public function getItemAction(){

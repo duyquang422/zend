@@ -1,0 +1,44 @@
+<!--Block Criteria-->
+<div class="easy-pie-char">
+    <div class='list-chart' id='sales_criteria' data-toggle='popover' data-placement='bottom' data-html='true' data-content='<input type="text" class="form-control" id="num_sales_criteria" value="<?php echo $numSalesCriteria ? number_format($numSalesCriteria,0,',','.') : 0?>"><button type="button" class="btn btn-default" onclick="closePopover()">Đóng</button><img class="img-load"><button type="button" class="btn btn-warning update_sales_criteria" data-id="num_sales_criteria">Cập nhật</button>' title="Cập nhật tiêu chí doanh thu">
+                    <span class="income" data-percent="<?php echo $salesCriteria?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo number_format($income,0,',','.') . ' / ' . number_format($numSalesCriteria,0,',','.')?>">
+                        <span class="percent"></span>
+                    </span>
+    <span class="title">Doanh Thu</span>
+</div>
+<div class="list-chart">
+                    <span class="order" data-percent="70">
+                        <span class="percent"></span>
+                    </span>
+    <span class="title">Đơn Hàng</span>
+</div>
+<div class="list-chart">
+                    <span class="bought" data-percent="90">
+                        <span class="percent"></span>
+                    </span>
+    <span class="title">Đã Bán</span>
+</div>
+</div>
+<script>
+    showChar('.income','#00acec');
+    showChar('.order','#f8a326');
+    showChar('.bought','#f34541');
+    function showChar(object,color){
+        document.addEventListener('DOMContentLoaded', function() {
+            var chart = window.chart = new EasyPieChart(document.querySelector(object), {
+                easing: 'easeOutElastic',
+                delay: 5000,
+                barColor: color,
+                trackColor: '#eee',
+                scaleColor: false,
+                lineWidth: 4,
+                size:48,
+                trackWidth: 4,
+                lineCap: 'butt',
+                onStep: function (from, to, percent) {
+                    this.el.children[0].innerHTML = Math.round(percent);
+                }
+            });
+        })
+    }
+</script>

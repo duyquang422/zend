@@ -110,7 +110,7 @@ class PostsController extends ActionController
     }
 
     public function loadConfigDataTablesAction() {
-        $joinQuery = "FROM `hz_posts` AS `p` LEFT JOIN `hz_posts_category` AS `c` ON (`p`.`category_id` = `c`.`id`)";
+        $joinQuery = "FROM `posts` AS `p` LEFT JOIN `posts_category` AS `c` ON (`p`.`category_id` = `c`.`id`)";
         $columns = array(
             array('db' => 'p.id', 'dt' => 'id','field' => 'id'),
             array('db' => 'p.name', 'dt' => 'name','field' => 'name'),
@@ -120,7 +120,7 @@ class PostsController extends ActionController
             array('db' => 'p.status', 'dt' => 'status','field' => 'status'),
             array('db' => 'c.name', 'dt' => 'cname','field' => 'cname', 'as' => 'cname'),
         );
-        $this->datatables('hz_posts', 'id', $columns, $joinQuery ,'p.id >= 1');
+        $this->datatables('posts', 'id', $columns, $joinQuery ,'p.id >= 1');
         return $this->response;
     }
 

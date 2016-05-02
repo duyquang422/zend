@@ -3,6 +3,23 @@ $(function(){
     $('select').addClass('form-control');
 });
 
+//cập nhật chỉ tiêu doanh thu
+$(document).on('click','.update_sales_criteria',function(){
+    var elm = $(this);
+    $.ajax({
+        url: 'update-criteria',
+        type: 'get',
+        dataType: 'html',
+        data: {
+            name: elm.data('id'),
+            value: converMoneyToDouble($('#num_sales_criteria').val())
+        },
+        success: function(data){
+            window.location.reload();
+        }
+    })
+})
+
 $(document).on('click','.tag-results li',function(){
     var elm = $(this);
     $.ajax({

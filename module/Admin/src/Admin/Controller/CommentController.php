@@ -18,9 +18,9 @@ class CommentController extends ActionController
     }
     
     public function loadConfigDataTablesAction() {
-        $joinQuery = "FROM `hz_comment` AS `c`
-                    LEFT JOIN `hz_products` AS `p` ON (`c`.`product_id` = `p`.`id`)
-                    LEFT JOIN `hz_user` AS `u` ON (`c`.`user_id` = `u`.`id`)";
+        $joinQuery = "FROM `comment` AS `c`
+                    LEFT JOIN `products` AS `p` ON (`c`.`product_id` = `p`.`id`)
+                    LEFT JOIN `user` AS `u` ON (`c`.`user_id` = `u`.`id`)";
         $columns = array(
             array('db' => 'c.id', 'dt' => 'id','field' => 'id'),
             array('db' => 'c.product_id', 'dt' => 'product_id','field' => 'product_id'),
@@ -34,7 +34,7 @@ class CommentController extends ActionController
             array('db' => 'p.name', 'dt' => 'pname','field' => 'pname', 'as' => 'pname'),
             array('db' => 'u.username', 'dt' => 'uusername','field' => 'uusername', 'as' => 'uusername')
         );
-        $this->datatables('hz_comment', 'id', $columns, $joinQuery ,'c.id > 0');
+        $this->datatables('comment', 'id', $columns, $joinQuery ,'c.id > 0');
         return $this->response;
     }
 }

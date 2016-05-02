@@ -20,7 +20,7 @@ class UserController extends ActionController
     }
     
     public function loadConfigDataTablesAction() {
-        $joinQuery = "FROM `hz_user` AS `u` LEFT JOIN `hz_group` AS `ug` ON (`ug`.`id` = `u`.`group_id`)";
+        $joinQuery = "FROM `user` AS `u` LEFT JOIN `group` AS `ug` ON (`ug`.`id` = `u`.`group_id`)";
         $columns = array(
             array('db' => 'u.id', 'dt' => 'id','field' => 'id'),
             array('db' => 'u.username', 'dt' => 'username','field' => 'username'),
@@ -32,7 +32,7 @@ class UserController extends ActionController
             array('db' => 'u.status', 'dt' => 'status','field' => 'status'),
             array('db' => 'ug.name', 'dt' => 'name','field' => 'name')
         );
-        $this->datatables('hz_user', 'id', $columns ,$joinQuery);
+        $this->datatables('user', 'id', $columns ,$joinQuery);
         return $this->response;
     }
     

@@ -47,7 +47,7 @@ $(function(){
                                 selectboxGroup += "<option value='"+ key +"'>"+ val +"</option>";
                         });
                         selectboxGroup += "</select>";
-                        return '<span name="group_name" id="span-group-name-'+ data.id +'" class="group_name" onclick="showPopover('+ data.id +')" data-toggle="popover" data-placement="top" data-html="true" data-content="'+ selectboxGroup +'<button type=\'button\' class=\'btn btn-default\' onclick=\'closePopover()\'>Đóng</button><img class=\'img-load\'/><button type=\'button\' class=\'btn btn-warning update-group-name\' onclick=\'updateGroup(' + data.id + ')\'>Cập nhật</button>" title="Cập nhật nhóm"">'+ data.name +'</span>';
+                        return '<span name="group_name" id="span-group-name-'+ data.id +'" class="group_name" data-toggle="popover" data-placement="top" data-html="true" data-content="'+ selectboxGroup +'<button type=\'button\' class=\'btn btn-default\' onclick=\'closePopover()\'>Đóng</button><img class=\'img-load\'/><button type=\'button\' class=\'btn btn-warning update-group-name\' onclick=\'updateGroup(' + data.id + ')\'>Cập nhật</button>" title="Cập nhật nhóm"">'+ data.name +'</span>';
                     }
                 },
                 {data: 'created'},

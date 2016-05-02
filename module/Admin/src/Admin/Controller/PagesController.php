@@ -37,7 +37,7 @@ class PagesController extends ActionController
             array('db' => 'create_by', 'dt' => 'create_by','field' => 'create_by','as' => 'create_by'),
             array('db' => 'status', 'dt' => 'status','field' => 'status','as' =>'status')
         );
-        $this->datatables('hz_pages', 'id', $columns );
+        $this->datatables('pages', 'id', $columns );
         return $this->response;
     }
 

@@ -30,10 +30,15 @@ $(document).ready(function(){
             $('#upload').show();
     });
     //định dạng hiển thị giá
-    $(document).on('keyup','#price',function(){
+    $(document).on('keyup','#price,#num_sales_criteria',function(){
         var price = $(this).val().replace(/\./g,'');
        $(this).val(price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
     });
+
+    $(document).on('keypress', '#num_sales_criteria', function (event) {
+        return (((event.which > 47) && (event.which < 58)) || (event.which == 13));
+    });
+
     //định dạng hiện thị giá giảm
     $(document).on('keyup','#sale-off',function(){
         var price = $(this).val().replace(/\./g,'');
@@ -152,7 +157,8 @@ $(document).ready(function(){
         $(this).siblings().removeClass('active');
         $('#permission-'+ $(this).data('id')).prop('checked', false);
     })
-
+    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="tooltip"]').tooltip()
 });
 
 
@@ -175,7 +181,6 @@ function closePopover() {
     $('[data-toggle="popover"]').popover('hide');
     $('.cart-overlay').remove();
 }
-
 function showModal(nameModal){
     $('#product-image img').remove();
     $('#category-image img').remove();
@@ -194,4 +199,7 @@ function showModal(nameModal){
 
 function moneyFormat(value){
     return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+function converMoneyToDouble(price){
+    return price.replace(/\./g,'');
 }

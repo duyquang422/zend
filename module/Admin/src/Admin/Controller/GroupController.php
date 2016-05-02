@@ -52,7 +52,7 @@ class GroupController extends ActionController {
             array('db' => 'modified_by', 'dt' => 'modified_by'),
             array('db' => 'status', 'dt' => 'status')
         );
-        $this->datatables('hz_group', 'id', $columns);
+        $this->datatables('group', 'id', $columns);
         return $this->response;
     }
 

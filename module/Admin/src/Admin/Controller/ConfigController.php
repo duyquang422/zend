@@ -12,10 +12,10 @@ class ConfigController extends ActionController
     {
         $this->_getHelper('HeadLink',$this->getServiceLocator())
             ->appendStylesheet($this->basePath. '/public/template/backend/css/config.css');
-        var_dump($this->getConfiguration('SITE_NAME'));
     }
-    public function updateAction(){
-        $this->getTable()->update($this->params()->fromQuery());
+    public function updateMultiAction(){
+        if($this->getRequest()->isXmlHttpRequest())
+            $this->getTable()->update($this->params()->fromQuery(),'multi');
         return $this->response;
     }
     public function emailAction()
@@ -27,5 +27,12 @@ class ConfigController extends ActionController
     {
     	return false;
     }
-    
+
+    public function updateAction(){
+        if($this->getRequest()->isXmlHttpRequest()) {
+            $this->getTable()->update($this->params()->fromQuery());
+            var_dump($this->params()->fromQuery());
+        }
+        return $this->response;
+    }
 }

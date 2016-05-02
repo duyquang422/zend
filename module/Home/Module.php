@@ -1,6 +1,7 @@
 <?php
 namespace Home;
 
+use Block\Criteria\Criteria;
 use Block\FilterManufacturer\FilterManufacturer;
 use Block\History\History;
 use Block\MenuCategories\MenuCategories;
@@ -203,6 +204,12 @@ class Module
                 'filterManufacturer' => function($sm){
                     $helper = new FilterManufacturer();
                     $helper->setData($sm->getServiceLocator()->get('Home\Model\CategoryTable'));
+                    return $helper;
+                },
+                'criteria' => function($sm){
+                    $helper = new Criteria();
+                    $helper->setDataConfigTable($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));
+                    $helper->setDataCartTable($sm->getServiceLocator()->get('Admin\Model\CartTable'));
                     return $helper;
                 }
             )

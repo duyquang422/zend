@@ -72,7 +72,7 @@ class CategoryController extends ActionController
     }
     
     public function loadConfigDataTablesAction() {
-        $joinQuery = "FROM `hz_category` AS `ca` LEFT JOIN `hz_category` AS `c` ON (`ca`.`parent` = `c`.`id`)";
+        $joinQuery = "FROM `category` AS `ca` LEFT JOIN `category` AS `c` ON (`ca`.`parent` = `c`.`id`)";
         $columns = array(
             array('db' => 'ca.id', 'dt' => 'id','field' => 'id'),
             array('db' => 'ca.name', 'dt' => 'name','field' => 'name'),
@@ -88,7 +88,7 @@ class CategoryController extends ActionController
             array('db' => 'c.left', 'dt' => 'pleft','field' => 'pleft', 'as' => 'pleft'),
             array('db' => 'c.right', 'dt' => 'pright','field' => 'pright', 'as' => 'pright'),
         );
-        $this->datatables('hz_category', 'id', $columns, $joinQuery ,'ca.id > 1');
+        $this->datatables('category', 'id', $columns, $joinQuery ,'ca.id > 1');
         return $this->response;
     }
     

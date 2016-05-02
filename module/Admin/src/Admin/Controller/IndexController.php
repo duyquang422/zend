@@ -94,4 +94,11 @@ class IndexController extends ActionController{
         }
         return $dataArr;
     }
+
+    public function updateCriteriaAction(){
+        if($this->getRequest()->isXmlHttpRequest()) {
+            $this->getServiceLocator()->get('Admin\Model\ConfigurationTable')->update($this->params()->fromQuery());
+        }
+        return $this->response;
+    }
 }
