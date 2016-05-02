@@ -131,7 +131,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="box-content box-statistic">
-                                        <h3 class="title text-error"><?php echo $this->productsSold[0]['total_product']?></h3>
+                                        <h3 class="title text-error"><?php echo $this->productsSold[0]['total_product'] ? $this->productsSold[0]['total_product'] : 0?></h3>
                                         <small>Đã Bán</small>
                                         <div class="text-error icon-plus align-right"></div>
                                     </div>

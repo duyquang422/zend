@@ -1,0 +1,19 @@
+<?php
+$arr = [
+    ['title' => 'Tên Sản Phẩm'],
+    ['title' => 'Ảnh'],
+    ['title' => 'Code'],
+    ['title' => 'Thương hiệu'],
+    ['title' => 'Tình trạng'],
+    ['title' => 'Deal'],
+    ['title' => 'Hot'],
+    ['title' => 'Chuyên mục'],
+    ['title' => 'Giá gốc (VNĐ)'],
+    ['title' => 'Giá bán (VNĐ)'],
+    ['title' => 'Xem'],
+    ['title' => 'Chức năng'],
+    ['title' => 'Id']
+];
+$this->datatable('product', $arr);
+$this->modal('product', $this->render('edit.phtml'), 'modal-lg');
+?>

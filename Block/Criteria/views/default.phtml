@@ -1,19 +1,19 @@
 <!--Block Criteria-->
 <div class="easy-pie-char">
-    <div class='list-chart' id='sales_criteria' data-toggle='popover' data-placement='bottom' data-html='true' data-content='<input type="text" class="form-control" id="num_sales_criteria" value="<?php echo $numSalesCriteria ? number_format($numSalesCriteria,0,',','.') : 0?>"><button type="button" class="btn btn-default" onclick="closePopover()">Đóng</button><img class="img-load"><button type="button" class="btn btn-warning update_sales_criteria" data-id="num_sales_criteria">Cập nhật</button>' title="Cập nhật tiêu chí doanh thu">
+    <div class='list-chart' id='sales_criteria' data-toggle='popover' data-placement='bottom' data-html='true' data-content='<input type="text" class="form-control" id="num_sales_criteria" value="<?php echo $numSalesCriteria ? number_format($numSalesCriteria,0,',','.') : 0?>"><button type="button" class="btn btn-default" onclick="closePopover()">Đóng</button><button type="button" class="btn btn-warning update_sales_criteria" data-id="num_sales_criteria">Cập nhật</button>' title="Cập nhật tiêu chí doanh thu">
                     <span class="income" data-percent="<?php echo $salesCriteria?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo number_format($income,0,',','.') . ' / ' . number_format($numSalesCriteria,0,',','.')?>">
                         <span class="percent"></span>
                     </span>
     <span class="title">Doanh Thu</span>
 </div>
-<div class="list-chart">
-                    <span class="order" data-percent="70">
+<div class="list-chart" id='order_criteria' data-toggle='popover' data-placement='bottom' data-html='true' data-content='<input type="text" class="form-control" id="num_order_criteria" value="<?php echo $numOrderCriteria ?>"><button type="button" class="btn btn-default" onclick="closePopover()">Đóng</button><button type="button" class="btn btn-warning update_order_criteria" data-id="num_order_criteria">Cập nhật</button>' title="Cập nhật tiêu chí đơn hàng">
+                    <span class="order" data-percent="<?php echo $orderCriteria?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo $order . ' / ' . $numOrderCriteria?>">
                         <span class="percent"></span>
                     </span>
     <span class="title">Đơn Hàng</span>
 </div>
-<div class="list-chart">
-                    <span class="bought" data-percent="90">
+<div class="list-chart" id='sold_criteria' data-toggle='popover' data-placement='bottom' data-html='true' data-content='<input type="text" class="form-control" id="num_sold_criteria" value="<?php echo $numSoldCriteria ?>"><button type="button" class="btn btn-default" onclick="closePopover()">Đóng</button><button type="button" class="btn btn-warning update_sold_criteria" data-id="num_sold_criteria">Cập nhật</button>' title="Cập nhật tiêu chí số lượng đã bán">
+                    <span class="bought" data-percent="<?php echo $soldCriteria?>" data-toggle="tooltip" data-placement="bottom" title="<?php echo $productSold . ' / ' . $numSoldCriteria?>">
                         <span class="percent"></span>
                     </span>
     <span class="title">Đã Bán</span>

@@ -35,7 +35,7 @@ $(document).ready(function(){
        $(this).val(price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "."));
     });
 
-    $(document).on('keypress', '#num_sales_criteria', function (event) {
+    $(document).on('keypress', '#price,#num_sales_criteria,#num_order_criteria', function (event) {
         return (((event.which > 47) && (event.which < 58)) || (event.which == 13));
     });
 

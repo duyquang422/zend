@@ -8,7 +8,7 @@ use Zend\View\Model\ViewModel;
 use ZendVN\DirectAdmin\DirectAdmin;
 use Zendvn\File\Image;
 
-class ProductController extends ActionController
+class ProductInStockController extends ActionController
 {
     protected $strImg;
     protected $params;
@@ -185,7 +185,7 @@ class ProductController extends ActionController
             array('db' => 'c.name', 'dt' => 'cname','field' => 'cname', 'as' => 'cname'),
             array('db' => 'm.name', 'dt' => 'mname','field' => 'mname', 'as' => 'mname')
         );
-        $this->datatables('products', 'id', $columns, $joinQuery ,'p.id > 1');
+        $this->datatables('products', 'id', $columns, $joinQuery ,'p.quantity = 0');
         return $this->response;
     }
     public function editAction(){

@@ -10,8 +10,9 @@ $arrMenus = array(
     array('class' => 'manager-product', 'name' => 'Quản Lý Sản Phẩm', 'icon' => 'credit-card', 'link' => '#', 'children' => array(
         array('class' => 'category', 'name' => 'Chuyên mục sản phẩm', 'icon' => 'suitcase', 'link' => $this->basePath('admin/category/index')),
         array('class' => 'product', 'name' => 'Sản phẩm', 'icon' => 'book', 'link' => $this->basePath('admin/product/index')),
+        array('class' => 'product', 'name' => 'Sản phẩm tồn kho', 'icon' => 'warning', 'link' => $this->basePath('admin/product-in-stock/index')),
         array('class' => 'manufacturer', 'name' => 'Thương Hiệu', 'icon' => 'building-o', 'link' => $this->basePath('admin/manufacturer/index')),
-        array('class' => 'gift-and-size', 'name' => 'Quà tặng và kích thước', 'icon' => 'gift', 'link' => $this->basePath('admin/gift-and-size/index')),
+        array('class' => 'gift-and-size', 'name' => 'thuộc tính và kích thước', 'icon' => 'gift', 'link' => $this->basePath('admin/gift-and-size/index')),
         array('class' => 'comment', 'name' => 'Bình Luận', 'icon' => 'comments-o', 'link' => $this->basePath('admin/comment/index'))
     )),
     array('class' => 'manager-posts', 'name' => 'Quản lý tin tức', 'icon' => 'newspaper-o', 'link' => '#', 'children' => array(

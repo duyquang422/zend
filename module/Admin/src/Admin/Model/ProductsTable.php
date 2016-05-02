@@ -86,7 +86,8 @@ class ProductsTable extends AbstractTableGateway {
                 'deal_time' => $arrParam['deal_time'],
                 'deal' => $arrParam['deal_time'] ? 1 : 0,
                 'meta_description' => $arrParam['meta_description'],
-                'meta_keyword' => $arrParam['meta_keyword']
+                'meta_keyword' => $arrParam['meta_keyword'],
+                'quantity' => $arrParam['quantity']
             );
 
             $config = array(
@@ -175,5 +176,22 @@ class ProductsTable extends AbstractTableGateway {
             return true;
         }
         return false;
+    }
+
+    public function getTag($id){
+        $result = $this->tableGateway->select(function (Select $select) use ($id) {
+            $select->join(
+                array('pt' => 'product_tag'),
+                'products.id = pt.product_id',
+                array('pt_id' => 'id'),
+                $select::JOIN_INNER
+            )->join(
+                array('t' => 'tags'),
+                'pt.tag_id = t.id',
+                array('tag_name' => 'name'),
+                $select::JOIN_INNER
+            )->where->equalTo('products.id', $id);
+        })->toArray();
+        return $result;
     }
 }

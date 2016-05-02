@@ -5,20 +5,33 @@ $(function(){
 
 //cập nhật chỉ tiêu doanh thu
 $(document).on('click','.update_sales_criteria',function(){
-    var elm = $(this);
+    updateCriterial($(this).data('id'),converMoneyToDouble($('#num_sales_criteria').val()));
+})
+
+//cập nhật chỉ tiêu đơn hàng
+$(document).on('click','.update_order_criteria',function(){
+    updateCriterial($(this).data('id'),$('#num_order_criteria').val());
+})
+
+//cập nhật chỉ tiêu đơn hàng
+$(document).on('click','.update_sold_criteria',function(){
+    updateCriterial($(this).data('id'),$('#num_sold_criteria').val());
+})
+
+function updateCriterial(name,value){
     $.ajax({
         url: 'update-criteria',
         type: 'get',
         dataType: 'html',
         data: {
-            name: elm.data('id'),
-            value: converMoneyToDouble($('#num_sales_criteria').val())
+            name: name,
+            value: value
         },
         success: function(data){
             window.location.reload();
         }
     })
-})
+}
 
 $(document).on('click','.tag-results li',function(){
     var elm = $(this);
@@ -28,7 +41,8 @@ $(document).on('click','.tag-results li',function(){
          dataType: 'json',
          data:{
              'tag_id': elm.data('id'),
-             'post_id': $('#id').val()
+             'post_id': $('#id').val(),
+             'product_id': $('#id').val()
          },
          success: function(data){
              if(data) {
@@ -367,49 +381,50 @@ function getProduct(id){
             id: id
         },
         success: function(data){
-            CKEDITOR.instances.description.setData(data.description);
-            $('#name').val(data.name);
-            $('#alias').val(data.alias);
-            $('#trademark').val(data.trademark);
-            $('#code').val(data.code);
-            $('#price').val(data.price.replace(/\B(?=(\d{3})+(?!\d))/g, "."));
-            $('#sale-off').val(data.sale_off.replace(/\B(?=(\d{3})+(?!\d))/g, "."));
-            $('#percent-discount').val(data.percent_discount);
-            $('#created-date').val(data.created);
-            $('#created-by').val(data.created_by);
-            $('#modified-date').val(data.modified);
-            $('#modified-by').val(data.modified_by);
-            $('#hits').val(data.hits);
-            $('#id').val(data.id);
-            $('#deal_time').val(data.deal_time);
-            $('#parent option[value = '+ data.category_id +']').attr('selected','selected');
-            $('#status option[value = '+ data.status +']').attr('selected','selected');
-            if(data.image)
-                $('#product-image').append('<img src="'+ basePath +'/public/files/product/203x235/' + data.image + '">');
-            $('#meta_description').val(data.meta_description);
-            $('#meta_keyword').val(data.meta_keyword);
+            CKEDITOR.instances.description.setData(data.product.description);
+            $('#name').val(data.product.name);
+            $('#alias').val(data.product.alias);
+            $('#trademark').val(data.product.trademark);
+            $('#code').val(data.product.code);
+            $('#price').val(data.product.price.replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+            $('#sale-off').val(data.product.sale_off.replace(/\B(?=(\d{3})+(?!\d))/g, "."));
+            $('#percent-discount').val(data.product.percent_discount);
+            $('#created-date').val(data.product.created);
+            $('#created-by').val(data.product.created_by);
+            $('#modified-date').val(data.product.modified);
+            $('#modified-by').val(data.product.modified_by);
+            $('#hits').val(data.product.hits);
+            $('#id').val(data.product.id);
+            $('#deal_time').val(data.product.deal_time);
+            $('#quantity').val(data.product.quantity);
+            $('#parent option[value = '+ data.product.category_id +']').attr('selected','selected');
+            $('#status option[value = '+ data.product.status +']').attr('selected','selected');
+            if(data.product.image)
+                $('#product-image').append('<img src="'+ basePath +'/public/files/product/203x235/' + data.product.image + '">');
+            $('#meta_description').val(data.product.meta_description);
+            $('#meta_keyword').val(data.product.meta_keyword);
             $('#save-item').attr('onclick','edit('+ id +')');
             $('#show-img, #show-zoom-img').html('');
             var html = '';
-            if(data.picture) {
-                var picture = data.picture.split(',');
+            if(data.product.picture) {
+                var picture = data.product.picture.split(',');
                 html = '';
                 $.each(picture, function (key, val) {
                     html += '<div class="file-preview-frame" id="'+ val.substring(0,val.indexOf('.')) +'"><i class="icon-delete" onclick="removeImg('+ id + ',\'' + val +'\')"></i><img src="' + window.location.origin + '/public/files/product/98x105/' + val + '" /></div>';
                 });
-                html += '<input type="hidden" value="'+data.picture+'" name="picture" id="picture-'+ id +'">';
+                html += '<input type="hidden" value="'+data.product.picture+'" name="picture" id="picture-'+ id +'">';
                 $('#show-img').html(html);
             }
-            if(data.zoom_image) {
-                var picture = data.zoom_image.split(',');
+            if(data.product.zoom_image) {
+                var picture = data.product.zoom_image.split(',');
                 html = '';
                 $.each(picture, function (key, val) {
                     html += '<div class="file-preview-frame" id="'+ val.substring(0,val.indexOf('.')) +'"><i class="icon-delete" onclick="removeZoomImg('+ id + ',\'' + val +'\')"></i><img src="' + window.location.origin + '/public/files/product/100x100/' + val + '" /></div>';
                 });
-                html += '<input type="hidden" value="'+data.zoom_image+'" name="picture" id="zoom-img-'+ id +'">';
+                html += '<input type="hidden" value="'+data.product.zoom_image+'" name="picture" id="zoom-img-'+ id +'">';
                 $('#show-zoom-img').html(html);
             }
-            if(data.productSize && data.productSize.length > 0){
+            if(data.product.productSize && data.product.productSize.length > 0){
                 html = '<li>' +
                     '<div class="stt">Stt</div>' +
                     '<div class="size-name">Kích Thước</div>' +
@@ -418,7 +433,7 @@ function getProduct(id){
                     '<div class="function">Xóa</div>' +
                     '</li>';
                 var stt, sclass, status;
-                $.each(data.productSize,function(key,val){
+                $.each(data.product.productSize,function(key,val){
                     stt = key + 2;
                     sclass = stt % 2 ? 'odd' : 'even';
                     if(val.status == 1)
@@ -438,6 +453,15 @@ function getProduct(id){
             }else{
                 $('.list-size').hide();
                 $('.list-size ul .odd, .list-size ul .even').remove();
+            }
+
+            var html = '';
+            if(!$.isEmptyObject(data.tags)){
+                $('.list-tag').show();
+                $.each(data.tags,function(key,val){
+                    html += '<li class="search-choice" id="post-tag-'+ val.pt_id +'"><span>'+ val.tag_name +'</span><i class="fa fa-times" data-id="'+ val.pt_id +'"></i></li>';
+                })
+                $('.chzn-choices').html(html);
             }
         }
     });
@@ -783,7 +807,7 @@ $('body').on('keyup','#tag',function(){
                 value: $(this).val()
             },
             success: function (data) {
-                $('.span6 .fa-plus').hide();
+                $('.add-tag .fa-plus').hide();
                 var html = '';
                 if (data) {
                     $.each(data, function (key, val) {
@@ -791,7 +815,7 @@ $('body').on('keyup','#tag',function(){
                     })
                     $('.tag-results').html(html);
                     $('.tag-drop').show();
-                    $('.span6 .fa-plus').show();
+                    $('.add-tag .fa-plus').show();
                 }
                 if (data.length == 0) {
                     $('.tag-results').html('<li>Dữ liệu không có</li>');

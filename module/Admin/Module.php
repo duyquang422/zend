@@ -275,6 +275,17 @@ class Module
                 'Admin\Model\PostTagTable' => function ($sm) {
                     $tableGateway = $sm->get('PostTagGateway');
                     return new \Admin\Model\PostTagTable($tableGateway);
+                },
+                'ProductTagGateway' => function ($sm) {
+                    $adapter = $sm->get('dbConfig');
+                    $resultSetPrototype = new HydratingResultSet();
+                    $resultSetPrototype->setHydrator(new ObjectProperty());
+                    $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\ProductTag());
+                    return new TableGateway('product_tag', $adapter, null, $resultSetPrototype);
+                },
+                'Admin\Model\ProductTagTable' => function ($sm) {
+                    $tableGateway = $sm->get('ProductTagGateway');
+                    return new \Admin\Model\ProductTagTable($tableGateway);
                 }
             ),
         );

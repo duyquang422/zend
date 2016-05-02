@@ -22,6 +22,7 @@ class Products {
     public $deal;
     public $point;
     public $bought;
+    public $quantity;
     public $created_by;
     public $modified;
     public $modified_by;
@@ -49,6 +50,7 @@ class Products {
         $this->deal		= (!empty($data['deal'])) ? $data['deal'] : 0;
         $this->point		= (!empty($data['point'])) ? $data['point'] : 0;
         $this->bought		= (!empty($data['bought'])) ? $data['bought'] : 0;
+        $this->quantity		= (!empty($data['quantity'])) ? $data['quantity'] : 0;
 		$this->percent_discount	= (!empty($data['percent_discount'])) ? $data['percent_discount'] : 0;
 		$this->picture	= (!empty($data['picture'])) ? $data['picture'] : null;
         $this->image	= (!empty($data['image'])) ? $data['image'] : null;

@@ -13,9 +13,11 @@ class CartTable extends NestedTable {
         $this->tableGateway = $tableGateway;
     }
 
-    public function countProductsSold(){
-        return $this->tableGateway->select(function (Select $select) {
-            $select->columns([new \Zend\Db\Sql\Expression('SUM(`total_product`) as total_product')])->where->equalTo('status',4);
+    public function countProductsSold($arrParam = null, $option = null){
+        return $this->tableGateway->select(function (Select $select) use ($arrParam,$option) {
+            $select->columns(array(new \Zend\Db\Sql\Expression('SUM(`total_product`) as total_product')))->where->equalTo('status',5);
+            if($option['task'] == 'monthly')
+                $select->where(new Expression('month(time_order) = ? AND YEAR(NOW())',$arrParam['month']));
         })->toArray();
     }
 

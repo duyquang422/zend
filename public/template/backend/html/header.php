@@ -17,7 +17,8 @@ $aliasName = array(
         'tags' => 'Thẻ Hỗ Trợ SEO',
         'google' => 'Thống Kê Của Google',
         'pages' => 'Quản Lý Trang',
-        'home' => 'Bảng Điều Khiển'
+        'home' => 'Bảng Điều Khiển',
+        'productinstock' => 'Sản Phẩm Tồn Kho'
     )
 );
 $headerNameParent = $aliasName['controller'][$this->controller];
@@ -32,6 +33,7 @@ $xhtmlHeader = sprintf('<h2>%s</h2>', $headerNameParent);
             && $this->controller != 'cart'
             && $this->controller != 'home'
             && $this->controller != 'user'
+            && $this->controller != 'productinstock'
         )
             echo '<div class="col-sm-6 btn-function">',$this->btnFunction($this->controller), '</div>';
         if($this->controller == 'index'){

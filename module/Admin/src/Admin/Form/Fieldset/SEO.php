@@ -14,8 +14,8 @@ class SEO extends Fieldset
             'name' => 'meta_description',
             'type' => 'Textarea',
             'attributes' => array(
-                'cols' => 40,
-                'rows' => 3,
+                'cols' => 100,
+                'rows' => 5,
                 'id' => 'meta_description',
                 'class' => 'form-control'
             ),
@@ -23,7 +23,7 @@ class SEO extends Fieldset
                 'label' => 'Mô tả từ khóa SEO:',
                 'label_attributes' => array(
                     'for' => 'Meta Description',
-                    'class' => 'control-label col-xs-4',
+                    'class' => 'control-label col-xs-12',
                 )
             ),
         ));
@@ -41,7 +41,7 @@ class SEO extends Fieldset
                 'label' => 'Từ khóa SEO:',
                 'label_attributes' => array(
                     'for' => 'Meta keyword',
-                    'class' => 'control-label col-xs-4',
+                    'class' => 'control-label col-xs-12',
                 )
             ),
         ));

@@ -623,3 +623,6 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
 .list-action ul:nth-child(1){
     display: block;
 }
+#publishing .span6 textarea{
+    width: 100% !important;
+}

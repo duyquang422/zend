@@ -58,6 +58,22 @@ class Product extends Form {
         ]);
 
         $this->add([
+            'name' => 'quantity',
+            'type' => 'Text',
+            'attributes' => [
+                'class' => 'input-large-text',
+                'id' => 'quantity'
+            ],
+            'options' => [
+                'label' => 'Số lượng:',
+                'label_attributes' => [
+                    'for' => 'quantity',
+                    'class' => 'col-xs-4 control-label',
+                ]
+            ],
+        ]);
+
+        $this->add([
             'name' => 'percent_discount',
             'type' => 'Text',
             'attributes' => [
@@ -99,5 +115,18 @@ class Product extends Form {
                 'autocomplete' => "off"
             ],
         ]);
+
+        $this->add(array(
+            'name' => 'tag',
+            'type' => 'text',
+            'attributes' => array(
+                'class' => 'input-large-text',
+                'id' => 'tag',
+                'placeholder' => 'Vui lòng chọn thẻ SEO',
+                'autocomplete' => "off"
+            ),
+        ));
+
+
 	}
 }

@@ -18,7 +18,8 @@ return array(
 					'Admin\Controller\Tags' => 'Admin\Controller\TagsController',
                     'Admin\Controller\Google' => 'Admin\Controller\GoogleController',
                     'Admin\Controller\Pages' => 'Admin\Controller\PagesController',
-					'Admin\Controller\Home' => 'Admin\Controller\HomeController'
+					'Admin\Controller\Home' => 'Admin\Controller\HomeController',
+					'Admin\Controller\ProductInStock' => 'Admin\Controller\ProductInStockController'
 			)
 	),
 	'view_manager'	=> array(
