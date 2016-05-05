@@ -75,6 +75,7 @@ class ProductController extends ActionController
         $product = $this->getTable()->getProduct($_POST['id']);
         $product = $product[0];
         $product['productSize'] = $this->getServiceLocator()->get('Admin\Model\ProductSizeProductTable')->getProductSize($_POST['id']);
+        $product['productAttributes'] = $this->getServiceLocator()->get('Admin\Model\ProductAttributesProductTable')->getProductAttributes($_POST['id']);
         if($this->getRequest()->isXmlHttpRequest()){
             echo json_encode(array('product' => $product,'tags' => $this->getTable()->getTag($this->_params['id'])));
         }
@@ -247,6 +248,12 @@ class ProductController extends ActionController
     public function searchSizeAction(){
         $sizeProduct = $this->getServiceLocator()->get('admin\Model\ProductSizeTable');
         echo json_encode($sizeProduct->search($this->params()->fromPost(),['task' => 'search']));
+        return $this->response;
+    }
+
+    public function searchAttributesAction(){
+        $attributesProduct = $this->getServiceLocator()->get('admin\Model\ProductAttributesTable');
+        echo json_encode($attributesProduct->search($this->params()->fromPost(),['task' => 'search']));
         return $this->response;
     }
 

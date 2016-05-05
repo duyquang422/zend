@@ -162,7 +162,6 @@ class Module
                     $tableGateway = $sm->get('ManufacturerTableGateway');
                     return new \Admin\Model\ManufacturerTable($tableGateway);
                 },
-
                 'ProductSizeTableGateway' => function ($sm) {
                     $adapter = $sm->get('dbConfig');
                     $resultSetPrototype = new HydratingResultSet();
@@ -184,6 +183,28 @@ class Module
                 'Admin\Model\ProductSizeProductTable' => function ($sm) {
                     $tableGateway = $sm->get('ProductSizeProductTableGateway');
                     return new \Admin\Model\ProductSizeProductTable($tableGateway);
+                },
+                'ProductAttributesTableGateway' => function ($sm) {
+                    $adapter = $sm->get('dbConfig');
+                    $resultSetPrototype = new HydratingResultSet();
+                    $resultSetPrototype->setHydrator(new ObjectProperty());
+                    $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\ProductAttributes());
+                    return new TableGateway('product_attributes', $adapter, null, $resultSetPrototype);
+                },
+                'Admin\Model\ProductAttributesTable' => function ($sm) {
+                    $tableGateway = $sm->get('ProductAttributesTableGateway');
+                    return new \Admin\Model\ProductAttributesTable($tableGateway);
+                },
+                'ProductAttributesProductTableGateway' => function ($sm) {
+                    $adapter = $sm->get('dbConfig');
+                    $resultSetPrototype = new HydratingResultSet();
+                    $resultSetPrototype->setHydrator(new ObjectProperty());
+                    $resultSetPrototype->setObjectPrototype(new \Admin\Model\Entity\ProductAttributesProduct());
+                    return new TableGateway('product_attributes_product', $adapter, null, $resultSetPrototype);
+                },
+                'Admin\Model\ProductAttributesProductTable' => function ($sm) {
+                    $tableGateway = $sm->get('ProductAttributesProductTableGateway');
+                    return new \Admin\Model\ProductAttributesProductTable($tableGateway);
                 },
                 'CartTableGateway' => function ($sm) {
                     $adapter = $sm->get('dbConfig');

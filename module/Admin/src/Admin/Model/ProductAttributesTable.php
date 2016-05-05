@@ -2,10 +2,9 @@
 
 namespace Admin\Model;
 use Zend\Db\Sql\Select;
-use Zend\Db\TableGateway\AbstractTableGateway;
 use Zend\Db\TableGateway\TableGateway;
 
-class ProductSizeTable extends AbstractTableGateway {
+class ProductAttributesTable extends AbstractTableGateway {
 
     protected $tableGateway;
 
@@ -15,11 +14,11 @@ class ProductSizeTable extends AbstractTableGateway {
 
     public function search($arrParam = null, $option = null){
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$option) {
-            $select->columns(array('id','size'));
+            $select->columns(array('id','attributes'));
             if($option['task'] == 'search') {
-                $select->where->like('size', '%' . $arrParam['value'] . '%')->and->equalTo('status', 1);
+                $select->where->like('attributes', '%' . $arrParam['value'] . '%')->and->equalTo('status', 1);
             }elseif($option['task'] == 'check-exits'){
-                $select->where->like('size',$arrParam['value']);
+                $select->where->like('attributes',$arrParam['value']);
             }
         });
         return $result->toArray();
@@ -28,7 +27,7 @@ class ProductSizeTable extends AbstractTableGateway {
     public function saveData($arrParam = null, $option = null)
     {
         $data = [
-            'size' => $arrParam['value'],
+            'attributes' => $arrParam['value'],
             'status' => 1
         ];
         $this->tableGateway->insert($data);

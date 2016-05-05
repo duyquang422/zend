@@ -306,7 +306,7 @@ label, input, button, select, textarea {
 .modal-body{
     margin-top: 15px;
 }
-#size, #tag{
+#size, #tag, #attributes{
     width: 100% !important;
 }
 .close{

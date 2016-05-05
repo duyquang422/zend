@@ -111,7 +111,18 @@ class Product extends Form {
             'attributes' => [
                 'class' => 'input-large-text',
                 'id' => 'size',
-                'placeholder' => 'Kích thước',
+                'placeholder' => 'Tìm Kích thước Sản phẩm',
+                'autocomplete' => "off"
+            ],
+        ]);
+
+        $this->add([
+            'name' => 'attributes',
+            'type' => 'Text',
+            'attributes' => [
+                'class' => 'input-large-text',
+                'id' => 'attributes',
+                'placeholder' => 'Tìm Thuộc tính sản phẩm',
                 'autocomplete' => "off"
             ],
         ]);

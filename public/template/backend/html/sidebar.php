@@ -12,7 +12,7 @@ $arrMenus = array(
         array('class' => 'product', 'name' => 'Sản phẩm', 'icon' => 'book', 'link' => $this->basePath('admin/product/index')),
         array('class' => 'product', 'name' => 'Sản phẩm tồn kho', 'icon' => 'warning', 'link' => $this->basePath('admin/product-in-stock/index')),
         array('class' => 'manufacturer', 'name' => 'Thương Hiệu', 'icon' => 'building-o', 'link' => $this->basePath('admin/manufacturer/index')),
-        array('class' => 'gift-and-size', 'name' => 'thuộc tính và kích thước', 'icon' => 'gift', 'link' => $this->basePath('admin/gift-and-size/index')),
+        array('class' => 'gift-and-size', 'name' => 'thuộc tính và kích thước', 'icon' => 'delicious', 'link' => $this->basePath('admin/attributes-and-size/index')),
         array('class' => 'comment', 'name' => 'Bình Luận', 'icon' => 'comments-o', 'link' => $this->basePath('admin/comment/index'))
     )),
     array('class' => 'manager-posts', 'name' => 'Quản lý tin tức', 'icon' => 'newspaper-o', 'link' => '#', 'children' => array(

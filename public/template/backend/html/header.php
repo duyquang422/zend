@@ -12,7 +12,7 @@ $aliasName = array(
         'posts' => 'Quản Lý Tin Tức',
         'manufacturer' => 'Quản Lý Thương Hiệu',
         'hosting' => 'Hosting',
-        'giftandsize' => 'Quà tặng và kích thước',
+        'attributesandsize' => 'Thuộc tính và kích thước',
         'comment' => 'Bình Luận',
         'tags' => 'Thẻ Hỗ Trợ SEO',
         'google' => 'Thống Kê Của Google',
@@ -34,6 +34,7 @@ $xhtmlHeader = sprintf('<h2>%s</h2>', $headerNameParent);
             && $this->controller != 'home'
             && $this->controller != 'user'
             && $this->controller != 'productinstock'
+            && $this->controller != 'attributesandsize'
         )
             echo '<div class="col-sm-6 btn-function">',$this->btnFunction($this->controller), '</div>';
         if($this->controller == 'index'){

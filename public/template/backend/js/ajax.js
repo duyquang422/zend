@@ -630,6 +630,43 @@ function deleteMulti() {
     });
 }
 
+//thực hiện việc xóa nhiều kích thước sản phẩm
+function deleteMultiSize() {
+    var arr = [];
+    $('input:checkbox[type=checkbox]:checked').each(function (i, val) {
+        arr[i] = $(this).val();
+    });
+    $.ajax({
+        url: 'delete-size',
+        type: 'get',
+        dataType: 'html',
+        data:{
+            cid: arr,
+            task: 'multi-delete'
+        },
+        success: function(data){
+            $.each(arr, function(i, val){
+                $('#row-' + val).hide(500);
+            });
+        }
+    });
+}
+//thực hiện việc xóa nhiều kích thước sản phẩm
+function deleteSize(id) {
+    $.ajax({
+        url: 'delete-size',
+        type: 'get',
+        dataType: 'html',
+        data:{
+            id: id,
+            task: 'delete-item'
+        },
+        success: function(data){
+            $('#row-' + id).hide(500);
+        }
+    });
+}
+
 //xóa 1 item nào đó theo id
 function deleteOne(id){
     $.ajax({
@@ -713,15 +750,22 @@ function changeHot(id,hot){
 //thay đổi 1 lúc trạng thái cho nhiều item
 function changeMultiStatus(status) {
     var arr = [];
-    $('input:checkbox[type=checkbox]:checked').each(function (i, val) {
-        arr[i] = $(this).val();
-    });
+    if($('#checkall:checked').prop("checked"))
+        $('input:checkbox[type=checkbox]:checked').each(function (i, val) {
+            if(i > 0)
+                arr[i-1] = $(this).val();
+        });
+    else
+        $('input:checkbox[type=checkbox]:checked').each(function (i, val) {
+            arr[i] = $(this).val();
+        });
     $.ajax({
         url: 'multi-status',
         type: 'get',
         dataType: 'html',
         data: { cid: arr, status: status},
         success: function(data){
+            console.log(data);
             $.each(arr, function(i, val){
                 if(status == 1)
                     $('#row-' + val + ' .status').html('<i class="icon public" onclick="changeStatus('+ val +',0)"></i>');
@@ -776,7 +820,7 @@ $('body').on('keyup','#size',function(){
                 value: $(this).val()
             },
             success: function (data) {
-                $('.span6 .fa-plus').hide();
+                $('.choose-size .fa-plus').hide();
                 var html = '';
                 if (data) {
                     $.each(data, function (key, val) {
@@ -784,7 +828,7 @@ $('body').on('keyup','#size',function(){
                     })
                     $('.size-results').html(html);
                     $('.size-drop').show();
-                    $('.span6 .fa-plus').show();
+                    $('.choose-size .fa-plus').show();
                 }
                 if (data.length == 0) {
                     $('.size-results').html('<li>Dữ liệu không có</li>');
@@ -792,7 +836,39 @@ $('body').on('keyup','#size',function(){
             }
         });
     }else{
-        $('.span6 .fa-plus, .size-drop').hide();
+        $('.choose-size .fa-plus, .size-drop').hide();
+    }
+});
+
+//search kích thước sản phẩm bằng ajax
+$('body').on('keyup','#attributes',function(){
+    if($(this).val()) {
+        $.ajax({
+            url: 'search-attributes',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                value: $(this).val()
+            },
+            success: function (data) {
+                console.log(data);
+                $('.choose-attributes .fa-plus').hide();
+                var html = '';
+                if (data) {
+                    $.each(data, function (key, val) {
+                        html += '<li data-id="'+ val.id +'" data-attributes="'+ val.attributes +'">' + val.attributes + '</li>';
+                    })
+                    $('.attributes-results').html(html);
+                    $('.attributes-drop').show();
+                    $('.choose-attributes .fa-plus').show();
+                }
+                if (data.length == 0) {
+                    $('.attributes-results').html('<li>Dữ liệu không có</li>');
+                }
+            }
+        });
+    }else{
+        $('.choose-attributes .fa-plus, .attributes-drop').hide();
     }
 });
 

@@ -13,7 +13,7 @@ return array(
                     'Admin\Controller\PostsCategory' 	=> 'Admin\Controller\PostsCategoryController',
                     'Admin\Controller\Posts' 	=> 'Admin\Controller\PostsController',
                     'Admin\Controller\Manufacturer' 	=> 'Admin\Controller\ManufacturerController',
-					'Admin\Controller\GiftAndSize' => 'Admin\Controller\GiftAndSizeController',
+					'Admin\Controller\AttributesAndSize' => 'Admin\Controller\AttributesAndSizeController',
 					'Admin\Controller\Comment' => 'Admin\Controller\CommentController',
 					'Admin\Controller\Tags' => 'Admin\Controller\TagsController',
                     'Admin\Controller\Google' => 'Admin\Controller\GoogleController',

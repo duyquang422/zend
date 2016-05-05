@@ -575,7 +575,7 @@ $(document).ready(function(){
                 data: null,
                 width: '5%',
                 class: 'select',
-                ordertable: false,
+                orderable: false,
                 render: function(data){
                     return '<div><input type="checkbox" name="cid[]" value="'+ data.id +'"/></div>';
                 },
@@ -583,26 +583,71 @@ $(document).ready(function(){
             {data: 'size'},
             {
                 data: null,
+                class: 'status',
                 render: function (data) {
                     if (data.status == 1)
-                        return '<div class="status" data-id="' + data.id + '"><i class="fa fa-check" data-status="' + data.status + '"></i></div>';
+                        return '<i class="icon public" onclick="changeStatus('+ data.id +',0)"></i>';
                     else
-                        return '<div class="status" data-id="' + data.id + '"><i class="fa fa-times" data-status="' + data.status + '"></i></div>';
+                        return '<i class="icon un-public" onclick="changeStatus('+ data.id +',1)"></i>';
                 }
             },
             {
                 data: null,
-                ordertable: false,
                 width: '20%',
                 render: function(data, type , row){
-                    return '<div class="function"><a onclick="getManufacturer('+ data.id +')"><i class="fa fa-pencil-square-o"></i></a><a onclick="deleteOne('+ data.id +')"><i class="fa fa-trash-o"></i></a></div>';
+                    return '<div class="function"><a onclick="deleteSize('+ data.id +')"><i class="fa fa-trash-o"></i></a></div>';
                 }
             },
             {data: 'id'},
         ],
-        "order": [0, 'asc'],
+        "order": [3, 'desc'],
         fnCreatedRow: function (nRow, aData, iDataIndex) {
-            $(nRow).attr('id', 'row-' + (iDataIndex + 1));
+            $(nRow).attr('id', 'row-' + aData.id);
+        },
+        "dom": '<"top"lf>rt<"bottom"ip><"clear">',
+        "bStateSave": true,
+    });
+
+    $('#attributes-table').dataTable({
+        "processing": false,
+        "serverSide": true,
+        "ajax": {
+            url: "load-attributes-data-tables",
+            dataType: "json"
+        },
+        "columns": [
+            {
+                data: null,
+                width: '5%',
+                class: 'select',
+                orderable: false,
+                render: function(data){
+                    return '<div><input type="checkbox" name="cid[]" value="'+ data.id +'"/></div>';
+                },
+            },
+            {data: 'attributes'},
+            {
+                data: null,
+                class: 'status',
+                render: function (data) {
+                    if (data.status == 1)
+                        return '<i class="icon public" onclick="changeStatus('+ data.id +',0)"></i>';
+                    else
+                        return '<i class="icon un-public" onclick="changeStatus('+ data.id +',1)"></i>';
+                }
+            },
+            {
+                data: null,
+                width: '20%',
+                render: function(data, type , row){
+                    return '<div class="function"><a onclick="deleteAttributes('+ data.id +')"><i class="fa fa-trash-o"></i></a></div>';
+                }
+            },
+            {data: 'id'},
+        ],
+        "order": [3, 'desc'],
+        fnCreatedRow: function (nRow, aData, iDataIndex) {
+            $(nRow).attr('id', 'row-' + aData.id);
         },
         "dom": '<"top"lf>rt<"bottom"ip><"clear">',
         "bStateSave": true,

@@ -1,0 +1,50 @@
+<?php
+$arr = [
+        ['title' => 'Kích thước'],
+        ['title' => 'trạng thái'],
+        ['title' => 'Xóa'],
+        ['title' => 'id'],
+    ];
+
+$arrAttributes = [
+    ['title' => 'Kích thước'],
+    ['title' => 'trạng thái'],
+    ['title' => 'Xóa'],
+    ['title' => 'id'],
+];
+?>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="panel " id="meta_fieldset_general">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i>
+                Kích thước sản phẩm
+                <div class="btnfunction">
+                    <i class="fa fa-trash-o" onclick="deleteMultiSize()"></i>
+                    <i class="fa fa-check" onclick="changeMultiStatus(1)"></i>
+                    <i class="fa fa-times" onclick="changeMultiStatus(0)"></i>
+                </div>
+            </div>
+            <div class="panel-content">
+                <?php echo $this->datatable('size', $arr);?>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="panel " id="attr_fieldset_general">
+            <div class="panel-heading">
+                <i class="fa fa-info-circle"></i>
+                Thuộc tính sản phẩm
+                <div class="btnfunction">
+                    <i class="fa fa-trash-o" onclick="deleteMultiAttributes()"></i>
+                    <i class="fa fa-check" onclick="changeMultiStatus(1)"></i>
+                    <i class="fa fa-times" onclick="changeMultiStatus(0)"></i>
+                </div>
+            </div>
+            <div class="panel-content">
+                <?php echo $this->datatable('attributes', $arr);?>
+            </div>
+        </div>
+    </div>
+</div>
