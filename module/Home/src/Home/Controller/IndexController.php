@@ -16,7 +16,6 @@ class IndexController extends ActionController{
             ->appendFile($this->basePath .'/public/template/frontend/js/jquery.countdown.js')
             ->appendFile($this->basePath .'/public/template/frontend/js/homepage.js');
         $this->_getHelper('HeadTitle',$this->getServiceLocator())->append($this->getConfiguration('site_name'));
-//        if(setcookie('arrIdSanPhamTrongGioHang'))
 
         return new ViewModel();
     }
