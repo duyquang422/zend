@@ -261,7 +261,7 @@ class Module
                     return new TableGateway('image_position', $adapter, null, $resultSetPrototype);
                 },
                 'Admin\Model\CommentTable' => function ($sm) {
-                    $tableGateway = $sm->get('ConfigurationTableGateway');
+                    $tableGateway = $sm->get('CommentTableGateway');
                     return new \Admin\Model\CommentTable($tableGateway);
                 },
                 'TagsTableGateway' => function ($sm) {

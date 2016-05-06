@@ -454,7 +454,36 @@ function getProduct(id){
                 $('.list-size').hide();
                 $('.list-size ul .odd, .list-size ul .even').remove();
             }
-
+            if(data.product.productAttributes && data.product.productAttributes.length > 0){
+                html = '<li>' +
+                    '<div class="stt">Stt</div>' +
+                    '<div class="attributes-name">Thuộc Tính</div>' +
+                    '<div class="value">Giá trị</div>' +
+                    '<div class="status">Hiện</div>' +
+                    '<div class="function">Xóa</div>' +
+                    '</li>';
+                var stt, sclass, status;
+                $.each(data.product.productAttributes,function(key,val){
+                    stt = key + 2;
+                    sclass = stt % 2 ? 'odd' : 'even';
+                    if(val.status == 1)
+                        status = '<i class="fa fa-check"></i>';
+                    else
+                        status = '<i class="fa fa-times"></i>';
+                    html += '<li class="'+ sclass +'">' +
+                                '<div class="stt">'+ (key + 1) +'</div>' +
+                                '<div class="attributes-name">'+ val.attributesName +'</div>' +
+                                '<div class="value">'+ val.value + '</div>' +
+                                '<div class="status" data-id="'+ val.id +'" data-status="'+ val.status +'" data-stt="'+ stt +'">'+ status +'</div>' +
+                                '<div class="function" data-id="'+ val.id +'"><i class="fa fa-trash-o"></i></div>' +
+                            '</li>';
+                })
+                $('.list-attributes ul').html(html);
+                $('.list-attributes').show();
+            }else{
+                $('.list-attributes').hide();
+                $('.list-attributes ul .odd, .list-attributes ul .even').remove();
+            }
             var html = '';
             if(!$.isEmptyObject(data.tags)){
                 $('.list-tag').show();
@@ -623,6 +652,7 @@ function deleteMulti() {
             task: 'multi-delete'
         },
         success: function(data){
+            console.log(data);
             $.each(arr, function(i, val){
                $('#row-' + val).hide(500);
             });
@@ -851,7 +881,6 @@ $('body').on('keyup','#attributes',function(){
                 value: $(this).val()
             },
             success: function (data) {
-                console.log(data);
                 $('.choose-attributes .fa-plus').hide();
                 var html = '';
                 if (data) {
@@ -924,11 +953,46 @@ $(document).on('click','#save-data',function(){
     })
 })
 
+$(document).on('click','#save-attributes',function(){
+    var elm = $(this);
+    $.ajax({
+        url: 'addAttributesToProduct',
+        type: 'post',
+        dataType: 'html',
+        data: {
+            attributesId: $(this).data('attributes-id'),
+            productId: $(this).data('product-id'),
+            value: $('#value-by-attributes').val().replace(/\./g,'')
+        },
+        success: function(data){
+            $('#value-by-attributes').hide();
+            elm.prev('.value').html($('#value-by-attributes').val());
+            elm.parent().append('<div class="status"><i class="fa fa-check"></i></div>');
+            elm.parent().append('<div class="function" data-id="'+ data +'"><i class="fa fa-trash-o"></i></div>');
+            elm.remove();
+        }
+    })
+})
+
 //xóa kích thước cho sản phẩm
 $(document).on('click', '.list-size .function',function(){
     var elm = $(this);
     $.ajax({
         url: 'delete-size',
+        type: 'post',
+        dataType: 'html',
+        data:{ id: $(this).data('id') },
+        success: function(data){
+            elm.parent().remove();
+        }
+    });
+})
+
+//xóa kích thước cho sản phẩm
+$(document).on('click', '.list-attributes .function',function(){
+    var elm = $(this);
+    $.ajax({
+        url: 'delete-attributes',
         type: 'post',
         dataType: 'html',
         data:{ id: $(this).data('id') },
@@ -966,6 +1030,36 @@ function addSize(){
     });
 }
 
+//thêm thuộc tính cho sản phẩm
+function addAttributes(){
+    $.ajax({
+        url: 'add-attributes',
+        type: 'post',
+        dataType: 'html',
+        data:{ value: $('#attributes').val()},
+        success: function(data){
+            if(data) {
+                $('.list-attributes').show();
+                $('.attributes-drop').hide();
+                var stt = $('.list-attributes ul li').length + 1;
+                var sclass = stt % 2 ? 'odd' : 'even';
+                var attributesId = $(this).data('id');
+                var productId = $('#id').val();
+                var html = '<li class="' + sclass + '">' +
+                    '<div class="stt">' + $('.list-attributes ul li').length + '</div>' +
+                    '<div class="attributes-name">' + $('#attributes').val() + '</div>' +
+                    '<div class="value"><input type="text" name="value" id="value-by-attributes" placeholder="giá trị" class="form-control"></div>' +
+                    '<div style="float: right" id="save-attributes" data-product-id="' + productId + '" data-attributes-id="' + data + '"><i class="fa fa-floppy-o"></i></div>' +
+                    '</li>';
+                $('.list-attributes ul').append(html);
+            }else{
+                alert('Thuộc tính đã tồn tại trong cơ sở dữ liệu! Vui lòng chọn tên khác');
+            }
+        }
+    });
+}
+
+
 //thêm tag cho bài viết
 function addTag(){
     $.ajax({
@@ -993,7 +1087,7 @@ function addTag(){
     });
 }
 
-//cập nhật trạng thái cho user
+//cập nhật trạng thái kích thước cho sản phẩm
 $(document).on('click','.list-size li .status',function(){
     var elm = $(this);
     $.ajax({
@@ -1011,7 +1105,32 @@ $(document).on('click','.list-size li .status',function(){
                 elm.attr('data-status',0);
             }
             else{
-                elm.html('<i class="fa fa-check"></i>');
+                elm.html('<i class="fa fa-check"></i>').attr('data-status',1);
+                elm.attr('data-status',1);
+            }
+        }
+    });
+})
+
+//cập nhật trạng thái thuộc tính cho sản phẩm
+$(document).on('click','.list-attributes li .status',function(){
+    var elm = $(this);
+    $.ajax({
+        url: 'changeStatusProductAttributes',
+        type: 'post',
+        dataType: 'html',
+        data: {
+            id: elm.data('id'),
+            status: elm.data('status')
+        },
+        success: function(){
+
+            if(elm.data('status') == 1){
+                elm.html('<i class="fa fa-times"></i>').attr('data-status',0);
+                elm.attr('data-status',0);
+            }
+            else{
+                elm.html('<i class="fa fa-check"></i>').attr('data-status',1);
                 elm.attr('data-status',1);
             }
         }

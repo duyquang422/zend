@@ -29,4 +29,8 @@ $('document').ready(function(){
     $('#change-logo').click(function(){
         $('.show-modal').modal('show');
     })
+
+    $('.sub-cate-inner').click(function(){
+        $('.show-modal').modal('show');ss
+    })
 });

@@ -37,4 +37,31 @@ class CommentController extends ActionController
         $this->datatables('comment', 'id', $columns, $joinQuery ,'c.id > 0');
         return $this->response;
     }
+
+    public function deleteAction(){
+        if($this->getRequest()->isXmlHttpRequest()){
+            $this->getTable()->deleteItem($this->params()->fromPost());
+        }
+        return $this->response;
+    }
+
+    public function statusAction() {
+        if ($this->getRequest()->isXmlHttpRequest()){
+            echo json_encode($this->getTable()->changeStatus($this->params()->fromQuery(), array('task' => 'change-status')));
+        }
+        return $this->response;
+    }
+
+    public function testAction(){
+        $this->getTable()->deleteItem(array('id' => 7, 'task' => 'delete-item'));
+        return $this->response;
+    }
+
+    public function multiStatusAction()
+    {
+        if($this->getRequest()->isXmlHttpRequest()){
+            $this->getTable()->changeStatus($this->params()->fromQuery(), array('task' => 'change-multi-status'));
+        }
+        return $this->response;
+    }
 }

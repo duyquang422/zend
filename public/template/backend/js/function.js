@@ -101,6 +101,40 @@ $(document).ready(function(){
             alert('Kích thước đã tồn tại trong sản phẩm. Vui lòng chọn kích thước khác!');
         }
     });
+    
+    //thêm thuộc tính cho sản phẩm
+    $(document).on('click','.attributes-results li',function(){
+        $('.attributes-drop').hide();
+        var flag = true;
+        $('.list-attributes').show();
+        var value = '';
+        value = $(this).html();
+        var elm = $(this);
+        if($('.list-attributes ul li').length > 0) {
+            $('.list-attributes ul li').each(function () {
+                if ($(this).children('.attributes-name').html() == value) {
+                    flag = false;
+                    return false;
+                }
+            })
+        }
+        if(flag){
+            var stt = $('.list-attributes ul li').length + 1;
+            var sclass = stt % 2 ? 'odd' : 'even';
+            var attributesName = elm.data('attributes');
+            var attributesId = elm.data('id');
+            var productId = $('#id').val();
+            var html = '<li class="'+ sclass + '">' +
+                '<div class="stt">'+ $('.list-attributes ul li').length +'</div>' +
+                '<div class="attributes-name">'+ attributesName +'</div>' +
+                '<div class="value"><input type="text" name="value" id="value-by-attributes" placeholder="Giá trị" class="form-control"></div>' +
+                '<div style="float: right" id="save-attributes" data-product-id="'+ productId +'" data-attributes-id="'+ attributesId +'"><i class="fa fa-floppy-o"></i></div>' +
+                '</li>';
+            $('.list-attributes ul').append(html);
+        }else{
+            alert('Kích thước đã tồn tại trong sản phẩm. Vui lòng chọn kích thước khác!');
+        }
+    });
 
     //hiển thị phần chọn ngày tháng trong phần thống kê
     $('.pull-right').click(function(){

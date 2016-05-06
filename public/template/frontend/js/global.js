@@ -43,7 +43,7 @@ $(document).ready(function(){
 
     $('#search_keyword').keyup(function(){
         $.ajax({
-            url: window.location.origin + '/home/index/search',
+            url: basePath + 'home/index/search',
             type: 'post',
             dataType: 'html',
             data: {
@@ -235,7 +235,7 @@ function showModalSignUp(){
 //hiển thi việc lưu thông tin thành viên khi đăng ký
 $('#save-item').one('click',function(){
      $.ajax({
-        url: window.location.origin + '/home/index/sign-up',
+        url: basePath + '/home/index/sign-up',
         type: 'post',
         dataType: 'json',
         data: {

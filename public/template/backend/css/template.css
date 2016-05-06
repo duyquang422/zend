@@ -318,7 +318,7 @@ label, input, button, select, textarea {
     top: 8px;
     color: chocolate;
 }
-.list-size{
+.list-size, .list-attributes{
     margin-top: -10px;
     list-style: none;
 }

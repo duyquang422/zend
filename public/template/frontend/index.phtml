@@ -67,18 +67,23 @@ $urlImage = $this->basePath(URL_TEMPLATE . '/frontend/img');
     <script lang="javascript">(function() {var pname = document.title;var ga = document.createElement('script'); ga.type = 'text/javascript';ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=90de27bdf55b00867bd3aa16abf6ca93&data=eyJzc29faWQiOjE1MTc3NjksImhhc2giOiI1MDc5MWNmNTVjNTI5ZTIzNTQ3ZDYyZWUwMDE1Zjg1MyJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script><noscript><a href="http://www.vatgia.com" title="vatgia.com" target="_blank">Tài trợ bởi vatgia.com</a></noscript><noscript><a href="http://vchat.vn" title="vchat.vn" target="_blank">Phát triển bởi vchat.vn</a></noscript><noscript><a href="http://123doc.org" title="123doc.org" target="_blank">Partner vchat.vn</a></noscript>
 </head>
 
-<body>
+<body id="<?php echo $this->controller?>">
+
     <?php if($this->controller != 'login'){?>
     <?php include_once 'symboy/symboy.html'; ?>
+
     <section class="header-wrap">
         <?php echo $this->bartop() ?>
         <?php echo $this->header() ?>
     </section>
-    <section id="container" class="container-fluid">
+
+    <section id="home-content">
         <div class="stop-menu-fixed"></div>
         <?php echo $this->content; ?>
     </section>
+
     <div class="cls">&nbsp;</div>
+
     <section id="footer">
         <?php echo $this->policy() ?>
     </section>
@@ -88,6 +93,7 @@ $urlImage = $this->basePath(URL_TEMPLATE . '/frontend/img');
     <section id="modal">
         <?php echo $this->signUp()?>
     </section>
+
 <?php }else{
         echo $this->content;
     } ?>

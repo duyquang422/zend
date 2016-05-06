@@ -88,4 +88,8 @@ class IndexController extends ActionController{
     public function changeLogoAction(){
 
     }
+
+    public function editNavLeftHomepageAction(){
+        
+    }
 }

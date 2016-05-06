@@ -8,8 +8,11 @@ class NavLeftHomePage extends AbstractHelper{
     protected $_data;
     protected $_table;
 
-    public function __invoke(){	
-        require_once 'views/default.phtml';
+    public function __invoke($view){
+        if($view == 'config')	
+            require_once 'views/config.phtml';
+        else
+            require_once 'views/default.phtml';
     }
 
     public function setData($table){

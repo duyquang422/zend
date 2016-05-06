@@ -80,8 +80,8 @@ class ActionController extends AbstractActionController{
 	}
 
 	public function init(){
-        $session = new StandardConfig();
-        $session->setSavePath(PATH_APPLICATION. '/data/session');
+        // $session = new StandardConfig();
+        // $session->setSavePath(PATH_APPLICATION. '/data/session');
 	}
 
 	public function getTable(){

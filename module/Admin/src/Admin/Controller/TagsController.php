@@ -81,7 +81,7 @@ class TagsController extends ActionController
     }
     public function deleteAction(){
         if($this->getRequest()->isXmlHttpRequest()){
-            $this->getTable()->deleteItem($this->params()->fromPost('id'));
+            $this->getTable()->deleteItem($this->params()->fromPost());
         }
         return $this->response;
     }

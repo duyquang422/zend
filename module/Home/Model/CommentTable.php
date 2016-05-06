@@ -24,7 +24,7 @@ class CommentTable extends AbstractTableGateway {
             'email' => $arrParams['objectEmail'],
             'user_id' => isset($arrParams['user_id']) ? $arrParams['user_id'] : '',
             'parent_id' => $arrParams['comment-parent'],
-            'status' => 1,
+            'status' => 0,
             'date' => date('Y-m-d H:i:s')
         ];
         $this->tableGateway->insert($data);

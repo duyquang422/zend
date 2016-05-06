@@ -213,6 +213,13 @@ class ProductController extends ActionController
         return $this->response;
     }
 
+    public function deleteAttributesAction(){
+        if($this->getRequest()->isXmlHttpRequest()){
+            $this->getServiceLocator()->get('Admin\Model\ProductAttributesProductTable')->deleteItem($this->_params);
+        }
+        return $this->response;
+    }
+
     public function statusAction()
     {
         if($this->getRequest()->isXmlHttpRequest()){
@@ -262,6 +269,11 @@ class ProductController extends ActionController
         return $this->response;
     }
 
+    public function addAttributesToProductAction(){
+        echo json_encode((int)$this->getServiceLocator()->get('admin\Model\ProductAttributesProductTable')->saveData($this->params()->fromPost()));
+        return $this->response;
+    }
+
     public function addSizeAction(){
         $productSize = $this->getServiceLocator()->get('admin\Model\ProductSizeTable');
         if(!$productSize->search($this->params()->fromPost(),['task' => 'check-exits']))
@@ -269,8 +281,20 @@ class ProductController extends ActionController
         return $this->response;
     }
 
+    public function addAttributesAction(){
+        $productAttributes = $this->getServiceLocator()->get('admin\Model\ProductAttributesTable');
+        if(!$productAttributes->search($this->params()->fromPost(),['task' => 'check-exits']))
+            echo json_encode((int)$productAttributes->saveData($this->params()->fromPost()));
+        return $this->response;
+    }
+
     public function changeStatusProductSizeAction(){
         $this->getServiceLocator()->get('admin\Model\ProductSizeProductTable')->changeStatus($this->params()->fromPost());
+        return $this->response;
+    }
+
+    public function changeStatusProductAttributesAction(){
+        $this->getServiceLocator()->get('admin\Model\ProductAttributesProductTable')->changeStatus($this->params()->fromPost());
         return $this->response;
     }
 

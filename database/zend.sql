@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2016 at 08:37 AM
+-- Generation Time: May 05, 2016 at 12:27 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -155,6 +155,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `username` varchar(100) NOT NULL,
   `user_id` int(11) NOT NULL,
   `email` varchar(50) NOT NULL,
+  `ip` varchar(20) NOT NULL,
   `parent_id` int(11) NOT NULL,
   `content` varchar(2000) NOT NULL,
   `status` int(11) NOT NULL,
@@ -165,16 +166,13 @@ CREATE TABLE IF NOT EXISTS `comment` (
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`id`, `product_id`, `username`, `user_id`, `email`, `parent_id`, `content`, `status`, `date`) VALUES
-(1, 53, 'Duy Quang', 1, 'duy_quang422@yahoo.com', 0, 'Sản phẩm tốt', 1, '2016-03-08 00:00:00'),
-(2, 53, 'duy', 0, 'duy@yahoo.com', 0, 'tôi muốn mua 1 sản phẩm', 1, '2016-03-11 23:17:45'),
-(3, 53, 'Quang', 0, 'duy@yahoo.com', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:18:47'),
-(4, 53, 'Quang', 0, 'duy@yahoo.com', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:26:35'),
-(5, 53, 'Quang', 0, 'duy@yahoo.com', 0, 'nhìn không được đẹp cho lắm', 1, '2016-03-11 23:27:16'),
-(6, 53, 'Quang', 0, 'duy@yahoo.com', 0, 'Bạn có thể tư vấn cho tôi thêm được không. tôi vẫn chưa hiểu được vấn đề', 1, '2016-03-12 00:49:56'),
-(7, 53, 'duy', 0, 'duy@yahoo.com', 0, 'test', 1, '2016-03-12 00:52:29'),
-(8, 61, 'Quang', 0, 'duy@yahoo.com', 0, 'Hay mình cứ bất chấp yêu nhau đi', 1, '2016-03-16 22:06:09'),
-(9, 61, 'Quang', 0, 'duy@yahoo.com', 0, 'test', 1, '2016-03-16 22:16:42');
+INSERT INTO `comment` (`id`, `product_id`, `username`, `user_id`, `email`, `ip`, `parent_id`, `content`, `status`, `date`) VALUES
+(1, 53, 'Duy Quang', 1, 'duy_quang422@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-08 00:00:00'),
+(2, 53, 'duy', 0, 'duy@yahoo.com', '', 0, 'tôi muốn mua 1 sản phẩm', 1, '2016-03-11 23:17:45'),
+(3, 53, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:18:47'),
+(4, 53, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:26:35'),
+(8, 61, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Hay mình cứ bất chấp yêu nhau đi', 1, '2016-03-16 22:06:09'),
+(9, 61, 'Quang', 0, 'duy@yahoo.com', '', 0, 'test', 1, '2016-03-16 22:16:42');
 
 -- --------------------------------------------------------
 
@@ -197,9 +195,6 @@ INSERT INTO `configuration` (`id`, `name`, `value`) VALUES
 (2, 'site_name', 'Thiết Kế Website Giá Rẻ'),
 (3, 'site_off', '0'),
 (4, 'meta_description', 'Chuyên tư vấn thiết kế website chuyên nghiệp, tinh tế, giả rẻ.'),
-(5, 'meta_keywords', ''),
-(6, 'num_sales_criteria', '1200000'),
-(7, 'num_order_criteria', '120'),
 (8, 'num_sold_criteria', '110');
 
 -- --------------------------------------------------------
@@ -592,10 +587,19 @@ INSERT INTO `products` (`id`, `name`, `alias`, `code`, `trademark`, `description
 --
 
 CREATE TABLE IF NOT EXISTS `product_attributes` (
-  `id` int(11) NOT NULL,
-  `attributes` varchar(50) NOT NULL,
+`id` int(11) NOT NULL,
+  `attributes` varchar(60) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `product_attributes`
+--
+
+INSERT INTO `product_attributes` (`id`, `attributes`, `status`) VALUES
+(1, 'test', 1),
+(2, 'test1', 1),
+(3, 'test2', 1);
 
 -- --------------------------------------------------------
 
@@ -604,12 +608,19 @@ CREATE TABLE IF NOT EXISTS `product_attributes` (
 --
 
 CREATE TABLE IF NOT EXISTS `product_attributes_product` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `attributes_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `value` varchar(200) NOT NULL,
+  `value` varchar(60) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `product_attributes_product`
+--
+
+INSERT INTO `product_attributes_product` (`id`, `attributes_id`, `product_id`, `value`, `status`) VALUES
+(2, 1, 75, 'abv', 1);
 
 -- --------------------------------------------------------
 
@@ -621,15 +632,15 @@ CREATE TABLE IF NOT EXISTS `product_size` (
 `id` int(11) NOT NULL,
   `size` varchar(30) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `product_size`
 --
 
 INSERT INTO `product_size` (`id`, `size`, `status`) VALUES
-(11, 'M', 1),
-(13, 'XL', 1);
+(13, 'XL', 1),
+(15, 'L', 1);
 
 -- --------------------------------------------------------
 
@@ -643,31 +654,21 @@ CREATE TABLE IF NOT EXISTS `product_size_product` (
   `product_id` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=167 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=169 ;
 
 --
 -- Dumping data for table `product_size_product`
 --
 
 INSERT INTO `product_size_product` (`id`, `size_id`, `product_id`, `price`, `status`) VALUES
-(63, 11, 65, '250000', 1),
-(67, 11, 64, '520000', 1),
 (69, 13, 64, '540000', 1),
-(71, 11, 63, '1310000', 1),
 (73, 13, 63, '1330000', 1),
-(75, 11, 62, '130000', 1),
 (77, 13, 62, '150000', 1),
-(79, 11, 61, '110000', 1),
 (82, 13, 61, '130000', 1),
-(84, 11, 60, '230000', 1),
 (88, 13, 60, '250000', 1),
-(91, 11, 59, '130000', 1),
 (94, 13, 59, '150000', 1),
-(96, 11, 58, '290000', 1),
-(117, 11, 56, '480000', 1),
 (118, 13, 56, '490000', 1),
 (129, 13, 65, '270000', 1),
-(136, 11, 57, '310000', 1),
 (140, 13, 57, '330000', 1),
 (144, 13, 58, '310000', 1),
 (166, 13, 75, '100000', 1);
@@ -754,9 +755,6 @@ CREATE TABLE IF NOT EXISTS `tags` (
 --
 
 INSERT INTO `tags` (`id`, `description`, `create_by`, `name`, `alias`, `hits`, `status`) VALUES
-(2, '', 'Duy Quang', 'test thui mo', 'test-thui-mo', 0, 1),
-(3, '', 'Duy Quang', 'hoc the thoi', 'hoc-the-thoi', 0, 1),
-(4, '', 'Duy Quang', 'test', 'test', 0, 1),
 (5, '', 'Duy Quang', 'học mãi', 'hoc-mai', 0, 1),
 (6, '', 'Duy Quang', 'học hoài', 'hoc-hoai', 0, 1),
 (7, '', 'Duy Quang', 'hoc nưa học', 'hoc-nua-hoc', 0, 1),
@@ -897,6 +895,18 @@ ALTER TABLE `products`
  ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `product_attributes`
+--
+ALTER TABLE `product_attributes`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `product_attributes_product`
+--
+ALTER TABLE `product_attributes_product`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `product_size`
 --
 ALTER TABLE `product_size`
@@ -1007,15 +1017,25 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 ALTER TABLE `products`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
 --
+-- AUTO_INCREMENT for table `product_attributes`
+--
+ALTER TABLE `product_attributes`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT for table `product_attributes_product`
+--
+ALTER TABLE `product_attributes_product`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `product_size`
 --
 ALTER TABLE `product_size`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `product_size_product`
 --
 ALTER TABLE `product_size_product`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=167;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=169;
 --
 -- AUTO_INCREMENT for table `product_tag`
 --
