@@ -8,7 +8,6 @@
     font-weight: normal;
     font-style: normal;
 }
-
 .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -4128,4 +4127,19 @@ input::-webkit-inner-spin-button {
 }
 .modal-content{
     border-radius: 0;
+}
+label{
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 30px;
+}
+hr{
+    margin-top: 0px;
+    margin-bottom: 14px;
+}
+.modal-body{
+    display: inline-block;
+}
+.modal-title{
+    font-size: 20px;
 }

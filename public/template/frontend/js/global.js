@@ -411,3 +411,7 @@ function flyToElement(flyer, flyingTo) {
         });
 }
 
+$(document).on('change','.picture',function(){
+    $('#upload').show();
+    $(this).next().show();
+});

@@ -90,6 +90,25 @@ class IndexController extends ActionController{
     }
 
     public function editNavLeftHomepageAction(){
-        
+        if($this->getRequest()->isXmlHttpRequest()){
+
+        }
+        $viewModel = new ViewModel();
+        $viewModel->setTerminal(true);
+        return $viewModel;
+    }
+
+    public function upload($filename,$task){
+        if($this->_params['image']['name']) {
+            $filename = $this->getTable()->getImage($this->_params['id'])->image;
+            if ($filename) {
+                $imageObj = new Image();
+                $imageObj->removeImage($filename, ['task' => $task]);
+            }
+            $imageObj = new Image();
+            $filename = $imageObj->upload('image', ['task' => $task]);
+            $this->getTable()->saveImage($this->_params['id'], $filename);
+            echo json_encode($filename);
+        }
     }
 }

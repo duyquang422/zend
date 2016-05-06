@@ -31,6 +31,30 @@ $('document').ready(function(){
     })
 
     $('.sub-cate-inner').click(function(){
-        $('.show-modal').modal('show');ss
+        $('.show-modal').modal('show');
+        $.ajax({
+            url: 'home/index/edit-nav-left-homepage',
+            cache: false,
+            success: function(data){
+                $('.modal-update .data-form').html(data);
+                $('.modal-title').html('Thay đổi hình ảnh nền cho chuyên mục');
+            }
+        })
     })
 });
+
+$(document).on('submit','.data-form',function(){
+    $.ajax({
+        url: 'edit-nav-left-homepage',
+        type: 'post',
+        dataType: 'json',
+        data: new FormData(this),
+        contentType: false,
+        cache: false,
+        processData: false,
+        success: function (data) {
+
+        }
+    });
+    return false;
+})

@@ -45,7 +45,8 @@ return array(
             'modal' => 'Zendvn\View\Helper\Modal',
             'fck' => 'Zendvn\View\Helper\Fckeditor',
             'datatable' => 'Zendvn\View\Helper\Datatable',
-            'btnFunction' => 'Zendvn\View\Helper\BtnFunction'
+            'btnFunction' => 'Zendvn\View\Helper\BtnFunction',
+			'uploadImg' => 'Zendvn\View\Helper\UploadImage'
         )
 	),
 
