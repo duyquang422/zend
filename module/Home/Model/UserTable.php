@@ -67,14 +67,14 @@ class UserTable extends AbstractTableGateway {
         });
 	}
 
-	public function getOrderList(){
+	public function getOrderList($userId){
 		return $this->tableGateway->select(function (Select $select) use ($userId) {
             $select->join(
                 array('c' => 'cart'),
                 'user.id = c.user_id',
                 array('code','total_product','total_money','statusOrder' => 'status','time_order'),
                 $select::JOIN_LEFT
-            )->where->equalTo('c.status', 5)->equalTo('user.id',$userId);
+            )->where->equalTo('user.id',$userId);
         });
 	}
 

@@ -173,23 +173,13 @@
 							<?php } ?>
 							<li class="tttk">
 								<a title="Thông tin tài khoản"
-								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'User', 'action' => 'index']) ?>">Thông
+								   href="<?php echo $this->view->url('frontendRoute/default', array('controller' => 'User', 'action' => 'index')) ?>">Thông
 									tin tài khoản</a>
 							</li>
 							<li class="tddh">
 								<a title="Theo dõi đơn hàng"
-								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'order']) ?>">Theo
+								   href="<?php echo $this->view->url('frontendRoute/default', array('controller' => 'user', 'action' => 'danh-sach-don-hang')) ?>">Theo
 									dõi đơn hàng</a>
-							</li>
-							<li class="ds">
-								<a title="Ví điểm SEN"
-								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'payment-orders']) ?>">Đơn
-									hàng đã mua</a>
-							</li>
-							<li class="sqt">
-								<a title="Shop yêu thích"
-								   href="<?php echo $this->view->url('frontendRoute/default', ['controller' => 'user', 'action' => 'favorite-products']) ?>">Shop
-									yêu thích</a>
 							</li>
 							<li class="ht">
 								<a title="Hộp thư"

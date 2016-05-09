@@ -21,21 +21,18 @@
 										<th>Thời Gian đặt hàng</th>
 									</tr>
 									<?php 
-										foreach ($sanPhamDaMua as $id => $product) {
-											echo '<tr id="'. $id .'"><td>1</td><td>
-														<a href="'. $this->basePath('/'. $product['alias'] . '-' . $product['id']) . '.html' .'" title="'. $product['name'] .'">'. $product['name'] .'</a>
-													</td>
-													<td>'. $product['code'] .'</td>
-													<td>'. $product['orderCode'] .'</td>
-													<td>
-														<img src="'. $this->basePath('public/files/product/100x100/'). $product['image'] .'">
-													</td>
-													<td class="size">'. $product['size'] .'</td>
-													<td class="price-892">'. number_format($product['price'],0,',','.') .'</td>
-													<td class="soluong">'. $product['quantity'] .'</td>
-													<td class="total-amount-892">'. number_format($product['price'] * $product['quantity'],0,',','.') .'</td>
-												</tr>';
-									}?>
+									foreach ($danhSachHoaDon as $key => $hoadon) {
+										echo '<tr>
+												<td>'. ($key + 1) .'</td>
+												<td>'. $hoadon->code .'</td>
+												<td>'. $hoadon->total_product .'</td>
+												<td>'. number_format($hoadon->total_money,0,',','.') .'</td>
+												<td>'. $hoadon->statusOrder .'</td>
+												<td>'. date("d/m/Y G.i:s",strtotime($hoadon->time_order)) .'</td>
+											</tr>';
+									}
+
+									?>
 							</tbody></table>
 						<div style="clear:both"></div>
 					</div>

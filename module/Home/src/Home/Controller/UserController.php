@@ -78,7 +78,9 @@ class UserController extends ActionController{
 	}
 
     public function danhSachHoaDonAction(){
-
+        return new ViewModel(array(
+            'danhSachHoaDon' => $this->getTable()->getOrderList($this->identity()->id)
+        ));
     }
 
 	public function favoriteProductsAction(){

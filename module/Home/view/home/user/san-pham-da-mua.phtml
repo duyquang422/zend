@@ -23,9 +23,10 @@
 										<th>Số lượng </th>
 										<th>Thành tiền </th>
 									</tr>
-									<?php 
+									<?php
+										$num = 1;
 										foreach ($sanPhamDaMua as $id => $product) {
-											echo '<tr id="'. $id .'"><td>1</td><td>
+											echo '<tr><td>'. $num .'</td><td>
 														<a href="'. $this->basePath('/'. $product['alias'] . '-' . $product['id']) . '.html' .'" title="'. $product['name'] .'">'. $product['name'] .'</a>
 													</td>
 													<td>'. $product['code'] .'</td>
@@ -38,6 +39,7 @@
 													<td class="soluong">'. $product['quantity'] .'</td>
 													<td class="total-amount-892">'. number_format($product['price'] * $product['quantity'],0,',','.') .'</td>
 												</tr>';
+												$num++;
 									}?>
 							</tbody></table>
 						<div style="clear:both"></div>
