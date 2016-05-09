@@ -1067,6 +1067,7 @@ dt, dd {
     border-left: 2px solid transparent;
     border-right: none;
     background-color: #fff;
+    position: relative;
 }
 #slide_home_top #owl-home-top img{
     width: 100%;
@@ -1196,7 +1197,7 @@ dt, dd {
     background-color: transparent;
     position: absolute;
     top: -1px;
-    left: 205px;
+    left: 100%;
     z-index: 3;
     display: none;
 }
@@ -2047,7 +2048,11 @@ a.abc.login-go {
 .nav-left-homepage {
     margin: 0 auto;
 }
-
+.nav-left-homepage .menuItem span > i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
 .block-nhip-song {
     margin-top: 0;
     background: #FFF;
@@ -4109,4 +4114,9 @@ hr{
 }
 .modal-title{
     font-size: 20px;
+}
+.avatar img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
 }

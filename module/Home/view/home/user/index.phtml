@@ -10,11 +10,13 @@
 					<div class="ttl-box-profile">Thông tin tài khoản</div>
 					<div class="cont-user-account util-clearfix">
 						<div class="row">
-						<form action="#" method="post">
+						<form action="#" method="post" enctype="multipart/form-data">
 								<div class="img-user col-sm-2">
-									<img src="https://media3.scdn.vn/img/2014/7_23/avatar_user_2jb6apgefrjn9_simg_3a7818_100x100_maxb.gif" alt="" class="img-avatar">
-									<input type="hidden" name="avatar" value="/img/2014/7_23/avatar_user_2jb6apgefrjn9.gif">
-									<a href="#" onclick="upload_avatar();" title="Upload hình" class="bt-update">Upload hình</a>
+								<?php
+									$avatar = $this->identity()->avatar ? $this->identity()->avatar : 'no-avatar.gif'
+								?>
+									<img src="<?php echo $this->basePath('public/files/user/') .  $avatar ?>">
+									<input type="file" name="image" class="form-control col-sm-2">
 								</div>
 								<div class="user-info col-sm-10">
 									<div class="user-inf">
@@ -67,6 +69,10 @@
 						                		<option value="0" <?php echo $this->identity()->sex ? '' : 'selected' ?>>Nữ</option>
 						                		<option value="1" <?php echo $this->identity()->sex ? 'selected' : '' ?>>Nam</option>
 						                	</select>
+						                </div>
+						                <div class="row-inf">
+						                	<label>Địa chỉ giao hàng<span>*</span></label>
+						                	<input type="text" class="address" value="<?php echo $this->identity()->address?>" name="address">
 						                </div>
 						                <div class="row-inf">
 						                	<label>&nbsp;</label>

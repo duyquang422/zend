@@ -101,12 +101,23 @@ class Image {
             $layer->resizeInPixel(623, 424, false);
             $layer->save(PATH_FILES . '/upload', $fileName, true,null,100);
         }
+        if($options['task'] == 'user'){
+            $uploadDirectory    = PATH_FILES . '/user/';
+            $fileName           = $uploadObj->uploadFile($fileInput, $uploadDirectory, array('task' => 'rename'), 'user_');
+            $layer = ImageWorkshop::initFromPath(PATH_FILES . '/user/' . $fileName);
+            $layer->resizeInPixel(100, 100, false);
+            $layer->save(PATH_FILES . '/user', $fileName, true,null,100);
+        }
         return $fileName;
 	}
 	
 	public function removeImage($fileName, $options = null){
         if($options['task'] == 'slideshow'){
             $fileMain	= PATH_FILES . '/upload/' . $fileName;
+            @unlink($fileMain);
+        }
+        if($options['task'] == 'user'){
+            $fileMain   = PATH_FILES . '/user/' . $fileName;
             @unlink($fileMain);
         }
         if($options['task'] == 'bannerMenu'){

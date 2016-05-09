@@ -148,10 +148,16 @@
 					<div class="box-l-c da-login">
 						<a class="box-link-svg" rel="nofollow" href="javascript:void(0);" title="Thông tin tài khoản"
 						   quang="">
+						   <?php if($this->view->identity()->avatar){?>
+								<div class="avatar">
+									<img src="<?php echo $this->view->basePath('public/files/user/') . $this->view->identity()->avatar ?>" alt="<?php echo $this->view->identity()->username?>">
+								</div>
+						   <?php } else{?>
 							<svg class="icon icon-login-new">
 								<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-login-new"></use>
 							</svg>
 							<?php
+							}
                                 if(isset($this->view->identity()->username))
                                     echo '<span class="tl">Chào <b>',$this->view->identity()->username,'</b></span>';
 //                                if($userSession->offsetGet('user_facebook'))

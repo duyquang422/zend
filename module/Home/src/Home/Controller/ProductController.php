@@ -14,13 +14,13 @@ class ProductController extends ActionController{
             $this->params()->fromRoute()
         );
         $this->_getHelper('HeadLink',$this->getServiceLocator())
-            ->appendStylesheet('/public/template/frontend/css/item.product.css')
-            ->appendStylesheet('/public/template/frontend/css/product.responsive.css')
-            ->appendStylesheet('/public/template/frontend/css/rating.css');
+            ->appendStylesheet($this->basePath . '/public/template/frontend/css/item.product.css')
+            ->appendStylesheet($this->basePath . '/public/template/frontend/css/product.responsive.css')
+            ->appendStylesheet($this->basePath . '/public/template/frontend/css/rating.css');
         $this->_getHelper('HeadScript',$this->getServiceLocator())
-            ->appendFile('/public/template/frontend/js/product.js')
-            ->appendFile('/public/template/frontend/js/behavior.js')
-            ->appendFile('/public/template/frontend/js/rating.js');
+            ->appendFile($this->basePath . '/public/template/frontend/js/product.js')
+            ->appendFile($this->basePath . '/public/template/frontend/js/behavior.js')
+            ->appendFile($this->basePath . '/public/template/frontend/js/rating.js');
     }
 
     public function testAction(){

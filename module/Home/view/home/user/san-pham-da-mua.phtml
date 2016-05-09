@@ -1,0 +1,50 @@
+<div class="container-wrap -page">
+	<div id="jsMenuMarkLayer">&nbsp;</div>
+	<div id="content">
+		<!--profile-follow-product-->
+		<div class="container">
+			<div class="wrapper-profile profile-user-account">
+				<?php echo $this->leftProfileUser('payment-orders') ?>
+				<!--right-profile-->
+				<div class="right-profile">
+					<div class="ttl-box-profile">Danh sách đơn hàng đã thanh toán</div>
+					<div class="article">
+						<div class="icons">
+							<table width="100%" class="yourCart" id="yourCart774">
+								<tbody>
+									<tr>
+										<th>Thứ tự</th>
+										<th>Tên sản phẩm</th>
+										<th>Mã Sản Phẩm</th>
+										<th>Mã Hóa Đơn</th>
+										<th>Hình SP </th>
+										<th>Size</th>
+										<th>Giá bán</th>
+										<th>Số lượng </th>
+										<th>Thành tiền </th>
+									</tr>
+									<?php 
+										foreach ($sanPhamDaMua as $id => $product) {
+											echo '<tr id="'. $id .'"><td>1</td><td>
+														<a href="'. $this->basePath('/'. $product['alias'] . '-' . $product['id']) . '.html' .'" title="'. $product['name'] .'">'. $product['name'] .'</a>
+													</td>
+													<td>'. $product['code'] .'</td>
+													<td>'. $product['orderCode'] .'</td>
+													<td>
+														<img src="'. $this->basePath('public/files/product/100x100/'). $product['image'] .'">
+													</td>
+													<td class="size">'. $product['size'] .'</td>
+													<td class="price-892">'. number_format($product['price'],0,',','.') .'</td>
+													<td class="soluong">'. $product['quantity'] .'</td>
+													<td class="total-amount-892">'. number_format($product['price'] * $product['quantity'],0,',','.') .'</td>
+												</tr>';
+									}?>
+							</tbody></table>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

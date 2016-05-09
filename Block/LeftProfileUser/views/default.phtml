@@ -3,30 +3,33 @@
 						<div class="user-inf-top">
 							<img src="https://media3.scdn.vn/img/2014/7_23/avatar_user_2jb6apgefrjn9_simg_8b3ef4_40x40_maxb.gif" alt="" class="avatar">
 							<a href=""><?php echo $this->view->identity()->username ?></a>
-							<a href="<?php echo $this->view->url('frontendRoute/default',['controller'=>'user','action'=>'index'])?>" title="Chỉnh sửa tài khoản" class="edit-account">Chỉnh sửa tài khoản</a>
+							<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=>'index'))?>" title="Chỉnh sửa tài khoản" class="edit-account">Chỉnh sửa tài khoản</a>
 						</div>
 						<div class="box-quanly">
 							<div class="ttl-box">Quản lý giao dịch</div>
 							<ul class="action-list">
 								<li class="order">
-									<a href="<?php echo $this->view->url('frontendRoute/default',['controller'=>'user','action'=> 'order'])?>" title="Đơn hàng" class="<?php echo $active =='order' ? 'active' : '' ?>">Đơn hàng
+									<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=> 'order'))?>" title="Đơn hàng" class="<?php echo $active =='order' ? 'active' : '' ?>">Đơn hàng
 									</a>
 								</li>
 								<li class="payment-orders">
-									<a href="<?php echo $this->view->url('frontendRoute/default',['controller'=>'user','action'=> 'payment-orders'])?>" class="<?php echo $active =='payment-orders' ? 'active' : '' ?>">Đơn hàng đã thanh toán</a>
+									<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=> 'hoa-don-da-thanh-toan'))?>" class="<?php echo $active =='payment-orders' ? 'active' : '' ?>">Đơn hàng đã thanh toán</a>
+								</li>
+								<li class="san-pham-da-mua">
+									<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=> 'san-pham-da-mua'))?>" class="<?php echo $active =='payment-orders' ? 'active' : '' ?>">Sản phẩm đã mua</a>
 								</li>
 							</ul>
 							<div class="ttl-box">Quản lý tài khoản</div>
 							<ul class="action-list">
 								<li class="user-inf">
-									<a href="<?php echo $this->view->url('frontendRoute/default',['controller'=>'user','action'=> 'index'])?>" title="Thông tin tài khoản" class="<?php echo $active =='user-info' ? 'active' : '' ?>">Thông tin tài khoản</a>
+									<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=> 'index'))?>" title="Thông tin tài khoản" class="<?php echo $active =='user-info' ? 'active' : '' ?>">Thông tin tài khoản</a>
 								</li>
 								<li class="products">
-									<a href="<?php echo $this->view->url('frontendRoute/default',['controller'=>'user','action'=> 'favorite-products'])?>" title="Sản phẩm yêu thích" class="<?php echo $active =='favorite-products' ? 'active' : '' ?>">Sản phẩm yêu thích</a>
+									<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=> 'favorite-products'))?>" title="Sản phẩm yêu thích" class="<?php echo $active =='favorite-products' ? 'active' : '' ?>">Sản phẩm yêu thích</a>
 								</li>
-								<li class="mailbox">
-									<a href="<?php echo $this->view->url('frontendRoute/default',['controller'=>'user','action'=> 'mails'])?>" title="Hộp thư" class="<?php echo $active =='email' ? 'active' : '' ?>">Hộp thư</a>
-								</li>
+								<!-- <li class="mailbox">
+									<a href="<?php echo $this->view->url('frontendRoute/default',array('controller'=>'user','action'=> 'mails'))?>" title="Hộp thư" class="<?php echo $active =='email' ? 'active' : '' ?>">Hộp thư</a>
+								</li> -->
 							</ul>
 						</div>
 					</div>

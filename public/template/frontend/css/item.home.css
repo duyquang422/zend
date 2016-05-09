@@ -851,7 +851,9 @@ div.star:after {
     bottom: 36px;
     transition-delay: 0.1s;
 }
-
+.addtocart, .quickview{
+    display: inline-block;
+}
 .product:hover {
     -moz-box-shadow: 0 10px 20px #c7c7c7;
     -webkit-box-shadow: 0 10px 20px #c7c7c7;
@@ -915,4 +917,8 @@ div.star:after {
 }
 .hover-edit:hover .btn-edit{
     display: block;
+}
+#product-home-tabs .addtocart a:before{
+    content: '';
+    display: none;
 }

@@ -5,7 +5,7 @@ $adminRoute	= array(
 				'route' => '/admin',
 				'defaults' => array (
 						'__NAMESPACE__' => 'Admin\Controller',
-						'controller' 	=> 'Home',
+						'controller' 	=> 'Index',
 						'action' 		=> 'index' 
 				)
 		),

@@ -1,15 +1,15 @@
 <?php
 
-namespace Block\ProductsFilter;
+namespace Block\ProductHomeTabs;
 
 use Zend\View\Helper\AbstractHelper;
 
-class ProductsFilter extends AbstractHelper{
+class ProductHomeTabs extends AbstractHelper{
 
     protected $_productsTable;
 
     public function __invoke(){
-        require_once 'views/default.phtml';
+        require_once 'views/producthometabs.phtml';
     }
 
     public function setData($table){

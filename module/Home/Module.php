@@ -10,7 +10,7 @@ use Block\NavLeftHomePage\NavLeftHomePage;
 use Block\MiniBarMenu\MiniBarMenu;
 use Block\NominationProducts\NominationProducts;
 use Block\ProductsByCategory\ProductsByCategory;
-use Block\ProductsFilter\ProductsFilter;
+use Block\ProductHomeTabs\ProductHomeTabs;
 use Block\SlideHomeTop\SlideHomeTop;
 use Block\Vocation\Vocation;
 use Block\ProductDescription\ProductDescription;
@@ -130,7 +130,7 @@ class Module
                 'collectionProducts'    => 'Block\CollectionProducts\CollectionProducts',
                 'news'                  => 'Block\News\News',
                 'policy'                => 'Block\Policy\Policy',
-                'productDeal'           => 'Block\ProductDeal\ProductDeal',
+                'hotDealProducts'       => 'Block\HotDealProducts\hotDealProducts',
                 'support'               => 'Block\Support\Support',
                 'purchase'              => 'Block\Purchase\Purchase',
                 'facebookComment'       => 'Block\FacebookComment\FacebookComment',
@@ -186,8 +186,8 @@ class Module
                     $helper->setData($sm->getServiceLocator()->get('Home\Model\ProductsTable'));
                     return $helper;
                 },
-                'productsFilter' => function($sm){
-                    $helper = new ProductsFilter();
+                'productHometabs' => function($sm){
+                    $helper = new ProductHomeTabs();
                     $helper->setData($sm->getServiceLocator()->get('Home\Model\ProductsTable'));
                     return $helper;
                 },

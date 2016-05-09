@@ -15,6 +15,19 @@ class UserTable extends AbstractTableGateway {
 		$this->tableGateway	= $tableGateway;
 	}
 	
+	public function getAvatar($id){
+        $result = $this->tableGateway->select(function (Select $select) use ($id) {
+            $select->columns(array('avatar'))->where->equalTo('id', $id);
+        })->current();
+        return $result;
+    }
+
+    public function saveAvatar($id, $filename){
+        if($id > 0) {
+            $this->tableGateway->update(array('avatar' => $filename), array('id' => $id));
+        }
+    }
+
 	public function getItem($arrParam = null, $options = null){
 	
 		if($options['task'] == 'user-register') {
@@ -42,6 +55,29 @@ class UserTable extends AbstractTableGateway {
 		return $result;
 	}
 
+	//lấy ra các sản phẩm đã mua
+	public function getProductsBought($userId){
+        return $this->tableGateway->select(function (Select $select) use ($userId) {
+            $select->join(
+                array('c' => 'cart'),
+                'user.id = c.user_id',
+                array('cartId' => 'id','code','product_id','price','quantity','size_name'),
+                $select::JOIN_LEFT
+            )->where->equalTo('c.status', 5)->equalTo('user.id',$userId);
+        });
+	}
+
+	public function getOrderList(){
+		return $this->tableGateway->select(function (Select $select) use ($userId) {
+            $select->join(
+                array('c' => 'cart'),
+                'user.id = c.user_id',
+                array('code','total_product','total_money','statusOrder' => 'status','time_order'),
+                $select::JOIN_LEFT
+            )->where->equalTo('c.status', 5)->equalTo('user.id',$userId);
+        });
+	}
+
 	public function saveItem($arrParam = null, $options = null){
 
 		if($options['task'] == 'add-item') {
@@ -49,7 +85,9 @@ class UserTable extends AbstractTableGateway {
 				'username'	=> $arrParam['username'],
 				'email'		=> $arrParam['email'],
 				'password'	=> md5($arrParam['password']),
-				'group_id'	=> isset($arrParam['group']) &&  $arrParam['group'] ? $arrParam['group'] : 4,
+				'group_id'	=> $arrParam['group_id'],
+				'address' 	=> $arrParam['address'],
+				'avatar' 	=> $arrParam['avatar'],
 				'ordering'	=>isset($arrParam['ordering']) &&  $arrParam['ordering'] ? $arrParam['ordering'] : '',
 				'status'	=> 1,
 				'created'	=> date('Y-m-d H:i:s'),

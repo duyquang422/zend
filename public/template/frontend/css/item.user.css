@@ -107,10 +107,14 @@ label{
     padding: 30px 0 100px 0;
 }
 .cont-user-account .img-user .img-avatar {
-    width: 100px;
+    width: 100%;
     height: 100px;
     display: block;
+}
+.img-user{
     margin-left: 25px;
+    margin-right: -25px;
+    padding-right: 50px;
 }
 .cont-user-account .img-user .bt-update {
     color: #e5101d;
@@ -125,10 +129,6 @@ label{
 .cont-user-account .user-inf .row-inf {
     padding: 8px 0;
 }
-.cont-user-account .user-inf .row-inf label {
-    width: 100px;
-    text-align: right;
-}
 .cont-user-account .user-inf .row-inf label, .cont-user-account .user-inf .row-inf input {
     display: inline-block;
     margin-right: 10px;
@@ -142,7 +142,7 @@ label{
     border-radius: 2px;
 }
 .cont-user-account .user-inf .row-inf label {
-    width: 100px;
+    width: 110px;
     text-align: right;
 }
 .row-inf select{
@@ -382,4 +382,7 @@ table {
     font-size: 20px;
     margin-bottom: 10px;
     font-weight: bold;
+}
+.profile-user-account{
+    margin-top: 20px;
 }

@@ -4,39 +4,82 @@ namespace Home\Controller;
 use Zend\Session\Container;
 use Zend\View\Model\ViewModel;
 use Zendvn\Controller\ActionController;
+use Zendvn\File\Image;
 
 class UserController extends ActionController{
 	public function init(){
+        $this->_options['tableName'] = 'Home\Model\UserTable';
 		$this->_getHelper('HeadLink',$this->getServiceLocator())
-                    ->appendStylesheet('/public/template/frontend/css/item.user.css');
-	}
+                    ->appendStylesheet($this->basePath . '/public/template/frontend/css/item.user.css');
+	    $this->_params  = array_merge(
+            $this->params()->fromQuery(),
+            $this->getRequest()->getPost()->toArray(),
+            $this->getRequest()->getFiles()->toArray()
+        );
+    }
 
 	public function indexAction(){
 		$arrParams = $this->params()->fromPost();
 		$arrParams['id'] = $this->identity()->id;
 		if($this->getRequest()->isPost()){
-			$this->getServiceLocator()->get('Admin\Model\UserTable')->saveItem($arrParams,['task'=> 'update-item']);
+			$this->getTable()->saveItem($arrParams,['task'=> 'update-item']);
 			$user = $this->identity();
 			$user->username = $arrParams['username'];
 			$user->phone = $arrParams['phone'];
 			$user->sex = $arrParams['sex'];
+            $user->address = $arrParams['address'];
+            $user->group_id = $this->identity()->group_id;
 			$user->birthday = $arrParams['year'] . '-' . $arrParams['month'] . '-' . $arrParams['day'];
-		}
-        return new ViewModel([
+		      if($this->_params['image']['name']) {
+                $filename = $this->getTable()->getAvatar($arrParams['id'])->avatar;
+                if ($filename) {
+                    $imageObj = new Image();
+                    $imageObj->removeImage($filename, array('task' => 'user'));
+                }
+                $imageObj = new Image();
+                $filename = $imageObj->upload('image', array('task' => 'user'));
+                $this->getTable()->saveAvatar($arrParams['id'], $filename);
+            }
+            $user->avatar = $filename;
+        }
+        return new ViewModel(array(
         	'form' => new \Home\Form\UpdateUserInfo()
-        ]);
+        ));
 	}
 
 	public function orderAction(){
         $cartSS		= new Container(SECURITY_KEY . '_cart');
-        return new ViewModel([
+        return new ViewModel(array(
            'order' => $cartSS->quantity
-        ]);
+        ));
 	}
 
-	public function paymentOrdersAction(){
-		
+	public function sanPhamDaMuaAction(){
+        $sanPhamDaMua = $this->getTable()->getProductsBought($this->identity()->id);
+        $product = $this->getServiceLocator()->get('Home/Model/ProductsTable');
+        $arrProduct = $arrSize = $arrPrice = $arrQuantity =array();
+        foreach ($sanPhamDaMua as $value) {
+            $arrIdProduct = json_decode($value->product_id);
+            $arrSize = json_decode($value->size_name);
+            $arrPrice = json_decode($value->price);
+            $arrQuantity = json_decode($value->quantity);
+            foreach ($arrIdProduct as $key => $id) {
+                $arrProduct[$id] = (array)$product->getProduct(array('id' => $id));
+                $arrProduct[$id]['size'] = $arrSize[$key];
+                $arrProduct[$id]['price'] = $arrPrice[$key];
+                $arrProduct[$id]['quantity'] = $arrQuantity[$key];
+                $arrProduct[$id]['orderCode'] = $value->code;
+            }
+        }
+
+        return new ViewModel(array(
+            'sanPhamDaMua' => $arrProduct
+        ));
 	}
+
+    public function danhSachHoaDonAction(){
+
+    }
 
 	public function favoriteProductsAction(){
 		
