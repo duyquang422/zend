@@ -38,7 +38,7 @@ class ProductsTable extends AbstractTableGateway {
     }
     public function saveImage($id, $filename){
         if($id > 0) {
-            $this->tableGateway->update(['image' => $filename], array('id' => $id));
+            $this->tableGateway->update(array('image' => $filename), array('id' => $id));
         }
     }
 

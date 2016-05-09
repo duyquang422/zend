@@ -12,16 +12,16 @@ class Criteria extends AbstractHelper{
     public function __invoke(){
         $income = $this->_cartTable->income(array('month' => date('m')),array('task' => 'monthly'));
         $income = $income && $income[0]['income'] ? (int)$income[0]['income'] : 0;
-        $numSalesCriteria = $this->_configurationTable->getConfig('num_sales_criteria')->value;
+        $numSalesCriteria = $this->_configurationTable->getConfig('num_sales_criteria');
         $salesCriteria = floatval($income * 100 / $numSalesCriteria);
 
         $order = $this->_cartTable->countOrders(array('month' => date('m')),array('task' => 'monthly'));
-        $numOrderCriteria = $this->_configurationTable->getConfig('num_order_criteria')->value;
+        $numOrderCriteria = $this->_configurationTable->getConfig('num_order_criteria');
         $orderCriteria = floatval($order * 100 / $numOrderCriteria);
 
         $productSold = $this->_cartTable->countProductsSold(array('month' => date('m')),array('task' => 'monthly'));
         $productSold = $productSold && $productSold[0]['total_product'] ? $productSold[0]['total_product'] : 0;
-        $numSoldCriteria = $this->_configurationTable->getConfig('num_sold_criteria')->value;
+        $numSoldCriteria = $this->_configurationTable->getConfig('num_sold_criteria');
         $soldCriteria = floatval($productSold * 100 / $numSoldCriteria);
         require 'views/default.phtml';
     }

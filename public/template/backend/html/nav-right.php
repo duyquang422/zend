@@ -29,7 +29,7 @@
 		</ul>
 	</div>
     <div class="list-notification">
-        <a href="#">Trang chủ</a>
+        <a target="_blank" href="<?php echo $this->url('home') ?>">Trang chủ</a>
     </div>
     <!--<div class="list-notification">
         <ul>

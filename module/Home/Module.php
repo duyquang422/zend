@@ -3,6 +3,7 @@ namespace Home;
 
 use Block\Criteria\Criteria;
 use Block\FilterManufacturer\FilterManufacturer;
+use Block\Header\Header;
 use Block\History\History;
 use Block\MenuCategories\MenuCategories;
 use Block\NavLeftHomePage\NavLeftHomePage;
@@ -10,6 +11,7 @@ use Block\MiniBarMenu\MiniBarMenu;
 use Block\NominationProducts\NominationProducts;
 use Block\ProductsByCategory\ProductsByCategory;
 use Block\ProductsFilter\ProductsFilter;
+use Block\SlideHomeTop\SlideHomeTop;
 use Block\Vocation\Vocation;
 use Block\ProductDescription\ProductDescription;
 use Home\Model\CartTable;
@@ -126,11 +128,9 @@ class Module
             'invokables' => array(
                 'bartop'                => 'Block\Bartop\Bartop',
                 'collectionProducts'    => 'Block\CollectionProducts\CollectionProducts',
-                'header'                => 'Block\Header\Header',
                 'news'                  => 'Block\News\News',
                 'policy'                => 'Block\Policy\Policy',
                 'productDeal'           => 'Block\ProductDeal\ProductDeal',
-                'slideHomeTop'          => 'Block\SlideHomeTop\SlideHomeTop',
                 'support'               => 'Block\Support\Support',
                 'purchase'              => 'Block\Purchase\Purchase',
                 'facebookComment'       => 'Block\FacebookComment\FacebookComment',
@@ -144,9 +144,20 @@ class Module
                 'showModal'            => 'Block\Modal\Modal'
             ),
             'factories' => array(
+                'slideHomeTop' => function($sm){
+                    $helper = new SlideHomeTop();
+                    $helper->getConfig($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));
+                    return $helper;
+                },
+                'header' => function($sm){
+                    $helper = new Header();
+                    $helper->getConfig($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));
+                    return $helper;
+                },
                 'navLeftHomePage' => function($sm){
                     $helper = new NavLeftHomePage();
                     $helper->setData($sm->getServiceLocator()->get('Home\Model\CategoryTable'));
+                    $helper->getConfig($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));
                     return $helper;
                 },
                 'vocation' => function($sm){

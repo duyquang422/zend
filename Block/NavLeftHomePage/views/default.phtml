@@ -16,8 +16,14 @@
                         <!-- <div class="guide">
                             <a href="<?php echo $_SERVER['REQUEST_URI'] .'/' . $value['alias'] . '-' . $value['id'] ?>" title="Áo nữ">Áo nữ</a>
                         </div> -->
-                        <div class="sub-cate" id="subcategory-<?php echo $value['id']?>">
-                            <div class="sub-cate-inner">
+                        <div class="sub-cate">
+                            <?php
+                                if(isset($imgBanner[$value['id']]) && isset($imgBanner[$value['id']]))
+                                    $backImg = 'style="background: url('. $this->view->basePath('public/files/upload/') . $imgBanner[$value['id']] .')"';
+                                else
+                                    $backImg = 'style="background: white"';
+                            ?>
+                            <div class="sub-cate-inner hover-edit" <?php echo $backImg?>>
                                 <div class="list-item">
                                     <span><b>Chuyên Mục</b></span>
                                     <ul>
@@ -40,9 +46,11 @@
                                         ?>
                                     </ul>
                                 </div>
-                                <div class="btn-edit">
-                                    <img src="<?php echo $this->view->basePath('public/template/frontend/images/btn-edit.png') ?>" alt="">
-                                </div>
+                                <?php if($this->view->identity() && $this->view->identity()->group_id == 1){ ?>
+                                    <div class="btn-edit" data-id="<?php echo $value['id']?>" data-img="<?php echo isset($imgBanner[$value['id']]) ? $imgBanner[$value['id']] : ''?>">
+                                        <img src="<?php echo $this->view->basePath('public/template/frontend/images/btn-edit.png') ?>" alt="">
+                                    </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </li>

@@ -3,20 +3,19 @@
     <div class="container-fluid">
 	    <div class="row">
 		<div class="logo col-sm-3 col-md-4 col-xs-12">
-			<h1>
-				<a href="<?php echo $this->view->serverUrl() ?>">
-					<img src="<?php echo $this->view->basePath('public/template/frontend/images/logo.jpg') ?>"
-						 width="220" height="54"/>
-				</a>
-			</h1>
-            <?php
-            /*if(isset($this->view->identity()->group_id) && $this->view->identity()->group_id == 1)
-            {
-                echo '<div id="change-logo" class="isDown">
-                        <i class="fa fa-wrench"></i>
-                    </div>';
-            }*/
-            ?>
+			<div class="wrapper-logo hover-edit">
+				<h1>
+					<a href="<?php echo $this->view->url('home') ?>">
+						<img src="<?php echo $this->view->basePath('public/files/upload/') . $getLogoConfig ?>"
+							 width="220" height="54"/>
+					</a>
+				</h1>
+                <?php if($this->view->identity() && $this->view->identity()->group_id == 1){?>
+                    <div class="btn-edit" data-img="<?php echo $getLogoConfig?>">
+                        <img src="<?php echo $this->view->basePath('public/template/frontend/images/btn-edit.png') ?>">
+                    </div>
+                <?php } ?>
+			</div>
 		</div>
         <div class="col-md-2 nav-category">
             <div class="title-category-fixed">

@@ -10,11 +10,11 @@ class CategoryController extends ActionController{
     }
     public function indexAction(){
         $this->_getHelper('HeadLink',$this->getServiceLocator())
-            ->appendStylesheet('/public/template/frontend/css/jquery-ui.min.css')
-            ->appendStylesheet('/public/template/frontend/css/item.category.css');
+            ->appendStylesheet($this->basePath . '/public/template/frontend/css/jquery-ui.min.css')
+            ->appendStylesheet($this->basePath . '/public/template/frontend/css/item.category.css');
         $this->_getHelper('HeadScript',$this->getServiceLocator())
-            ->appendFile('/public/template/frontend/js/jquery-ui.min.js')
-            ->appendFile('/public/template/frontend/js/category.js');
+            ->appendFile($this->basePath . '/public/template/frontend/js/jquery-ui.min.js')
+            ->appendFile($this->basePath . '/public/template/frontend/js/category.js');
         $arrParams = $this->params()->fromRoute();
         $category = $this->getServiceLocator()->get('Home\Model\CategoryTable');
         $this->_getHelper('HeadTitle',$this->getServiceLocator())->append($category->getCategory($arrParams['id'])->name);

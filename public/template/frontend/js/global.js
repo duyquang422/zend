@@ -412,6 +412,10 @@ function flyToElement(flyer, flyingTo) {
 }
 
 $(document).on('change','.picture',function(){
+    $(".data-form input[type=file]").prop('disabled', true);
+    $(this).prop('disabled', false);
     $('#upload').show();
+    if($(this).data('id') >= 0)
+        $('.data-form').attr('data-id',$(this).data('id'));
     $(this).next().show();
 });

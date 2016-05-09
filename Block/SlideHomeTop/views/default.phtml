@@ -1,5 +1,5 @@
 <!--start block slide home top module-->
-<div id="slide_home_top">
+<div id="slide_home_top" class="hover-edit">
     <!--<img src="http://media3.scdn.vn/img1/2015/10_14/d8371a.jpg" id="image_banner" class="tmp-img" width="430" height="290"/>-->
     <div id="owl-home-top" class="owl-carousel owl-theme">
         <div class="item">
@@ -18,6 +18,11 @@
             </a>
         </div>
     </div>
+    <?php if($this->view->identity() && $this->view->identity()->group_id == 1){?>
+        <div class="btn-edit" data-img="">
+            <img src="<?php echo $this->view->basePath('public/template/frontend/images/btn-edit.png') ?>">
+        </div>
+    <?php } ?>
 </div>
 <!--end block slide home top module-->
 

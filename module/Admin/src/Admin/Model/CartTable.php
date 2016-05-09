@@ -15,7 +15,7 @@ class CartTable extends NestedTable {
 
     public function countProductsSold($arrParam = null, $option = null){
         return $this->tableGateway->select(function (Select $select) use ($arrParam,$option) {
-            $select->columns(array(new \Zend\Db\Sql\Expression('SUM(`total_product`) as total_product')))->where->equalTo('status',5);
+            $select->columns(array(new \Zend\Db\Sql\Expression('SUM(`total_product`) as total_product')))->where->equalTo('status',4);
             if($option['task'] == 'monthly')
                 $select->where(new Expression('month(time_order) = ? AND YEAR(NOW())',$arrParam['month']));
         })->toArray();
@@ -73,24 +73,24 @@ class CartTable extends NestedTable {
     public function updateStatus($id = null,$option){
         $data = $where = array();
         switch($option){
-            case 'process':
-                $data['status'] = 1;
-                $where['status'] = 0;
-                break;
             case 'pending':
                 $data['status'] = 2;
+                $where['status'] = 0;
+                break;
+            case 'process':
+                $data['status'] = 3;
                 $where = ['id' => $id,'status' => 1];
                 break;
             case 'shipping':
-                $data['status'] = 3;
-                $where['id'] = $id;
-                break;
-            case 'complete':
                 $data['status'] = 4;
                 $where['id'] = $id;
                 break;
-            case 'canceled':
+            case 'complete':
                 $data['status'] = 5;
+                $where['id'] = $id;
+                break;
+            case 'canceled':
+                $data['status'] = 6;
                 $where['id'] = $id;
                 break;
         }

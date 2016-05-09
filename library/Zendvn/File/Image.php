@@ -79,10 +79,44 @@ class Image {
             $layer->resizeInPixel(42, 42, false);
             $layer->save(PATH_FILES . '/posts/42x42', $fileName, true,null,100);
         }
+
+        if($options['task'] == 'bannerMenu'){
+            $uploadDirectory	= PATH_FILES . '/upload/';
+            $fileName			= $uploadObj->uploadFile($fileInput, $uploadDirectory, array('task' => 'rename'), 'bannerMenu_');
+            $layer = ImageWorkshop::initFromPath(PATH_FILES . '/upload/' . $fileName);
+            $layer->resizeInPixel(625, 425, false);
+            $layer->save(PATH_FILES . '/upload', $fileName, true,null,100);
+        }
+        if($options['task'] == 'logo_image'){
+            $uploadDirectory	= PATH_FILES . '/upload/';
+            $fileName			= $uploadObj->uploadFile($fileInput, $uploadDirectory, array('task' => 'rename'), 'logoImage_');
+            $layer = ImageWorkshop::initFromPath($uploadDirectory . $fileName);
+            $layer->resizeInPixel(220, 55, false);
+            $layer->save(PATH_FILES . '/upload', $fileName, true,null,100);
+        }
+        if($options['task'] == 'slideshow'){
+            $uploadDirectory	= PATH_FILES . '/upload/';
+            $fileName			= $uploadObj->uploadFile($fileInput, $uploadDirectory, array('task' => 'rename'), 'slideshow_');
+            $layer = ImageWorkshop::initFromPath(PATH_FILES . '/upload/' . $fileName);
+            $layer->resizeInPixel(623, 424, false);
+            $layer->save(PATH_FILES . '/upload', $fileName, true,null,100);
+        }
         return $fileName;
 	}
 	
 	public function removeImage($fileName, $options = null){
+        if($options['task'] == 'slideshow'){
+            $fileMain	= PATH_FILES . '/upload/' . $fileName;
+            @unlink($fileMain);
+        }
+        if($options['task'] == 'bannerMenu'){
+            $fileMain	= PATH_FILES . '/upload/' . $fileName;
+            @unlink($fileMain);
+        }
+        if($options['task'] == 'logo_image'){
+            $fileMain	= PATH_FILES . '/upload/' . $fileName;
+            @unlink($fileMain);
+        }
 		if($options['task'] == 'product-slide'){
 			$fileMain	= PATH_FILES . '/product/' . $fileName;
 			@unlink($fileMain);

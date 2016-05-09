@@ -17,9 +17,10 @@ class ConfigurationTable extends AbstractTableGateway
     }
 
     public function getConfig($name){
-        return $this->tableGateway->select(function (Select $select) use ($name) {
+        $result = $this->tableGateway->select(function (Select $select) use ($name) {
             $select->columns(array('value'))->where->equalTo('name',$name);
         })->current();
+        return $result->value;
     }
     public function update($arrParam = null,$option = null){
         if($option == 'multi')
@@ -34,5 +35,9 @@ class ConfigurationTable extends AbstractTableGateway
                 $this->tableGateway->update(array('value' => $arrParam['value']), array('name' => $arrParam['name']));
             else
                 $this->tableGateway->insert(array('value' => $arrParam['value'],'name' => $arrParam['name']));
+    }
+
+    public function saveConfig($name,$value){
+        $this->tableGateway->update(array('value' => $value),array('name' => $name));
     }
 }

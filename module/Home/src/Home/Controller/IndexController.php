@@ -4,9 +4,20 @@ namespace Home\Controller;
 
 use Zend\View\Model\ViewModel;
 use Zendvn\Controller\ActionController;
+use Zendvn\File\Image;
 use Zendvn\System\Info;
 
 class IndexController extends ActionController{
+
+    protected $_params;
+
+    public function init(){
+        $this->_params	= array_merge(
+            $this->params()->fromQuery(),
+            $this->getRequest()->getPost()->toArray(),
+            $this->getRequest()->getFiles()->toArray()
+        );
+    }
 
     public function indexAction(){
         $this->_getHelper('HeadLink',$this->getServiceLocator())
@@ -90,25 +101,76 @@ class IndexController extends ActionController{
     }
 
     public function editNavLeftHomepageAction(){
-        if($this->getRequest()->isXmlHttpRequest()){
-
+        if($this->getRequest()->isPost()) {
+            $this->updateImgConfig('image_nav_left_homepage',$this->_params,'bannerMenu');
+            return $this->response;
         }
         $viewModel = new ViewModel();
         $viewModel->setTerminal(true);
         return $viewModel;
     }
 
-    public function upload($filename,$task){
-        if($this->_params['image']['name']) {
-            $filename = $this->getTable()->getImage($this->_params['id'])->image;
+    public function editSlideshowAction(){
+        if($this->getRequest()->isPost()) {
+            $arrParam = array();
+            $arrParam['id'] = $this->_params['id'];
+            $arrParam['image'] = $this->_params['image'][$arrParam['id']];
+            $this->updateImgConfig('images_slide_hometop',$arrParam,'slideshow');
+            return $this->response;
+        }
+        $viewModel = new ViewModel();
+        $viewModel->setTerminal(true);
+        return $viewModel;
+    }
+
+    public function editLogoAction(){
+        if($this->getRequest()->isPost()) {
+            $getConfigNav = $this->getConfiguration('logo_image');
+            if($getConfigNav)
+                $filename = $this->uploadImg($getConfigNav, 'logo_image', $this->_params);
+            else
+                $filename = $this->uploadImg('', 'logo_image', $this->_params);
+            $this->updateConfiguration('logo_image',$filename);
+            echo json_encode($filename);
+            return $this->response;
+        }
+        $viewModel = new ViewModel();
+        $viewModel->setTemplate('home/index/edit-nav-left-homepage');
+        $viewModel->setTerminal(true);
+        return $viewModel;
+    }
+
+    public function updateImgConfig($nameConfig,$arrParams,$task){
+        $getConfigNav = json_decode($this->getConfiguration($nameConfig),true);
+        if (isset($getConfigNav[$arrParams['id']]) && $getConfigNav[$arrParams['id']])
+            $filename = $this->uploadImg($getConfigNav[$arrParams['id']], $task, $arrParams);
+        else
+            $filename = $this->uploadImg('', $task, $arrParams);
+
+        $idCategory = $arrParams['id'];
+        $data = array();
+        $data = $getConfigNav;
+        $data[$idCategory] = $filename;
+        $this->updateConfiguration($nameConfig, json_encode($data));
+
+        echo json_encode($filename);
+    }
+
+    public function testAction(){
+        $getConfigNav = $this->getConfiguration('logo_image');
+        var_dump($getConfigNav);
+        return $this->response;
+    }
+
+    public function uploadImg($filename,$task,$arrParam){
+        if(isset($arrParam['image']['name']) && $arrParam['image']['name']) {
             if ($filename) {
                 $imageObj = new Image();
                 $imageObj->removeImage($filename, ['task' => $task]);
             }
             $imageObj = new Image();
             $filename = $imageObj->upload('image', ['task' => $task]);
-            $this->getTable()->saveImage($this->_params['id'], $filename);
-            echo json_encode($filename);
+            return $filename;
         }
     }
 }

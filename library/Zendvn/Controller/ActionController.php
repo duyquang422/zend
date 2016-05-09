@@ -92,8 +92,11 @@ class ActionController extends AbstractActionController{
 	}
 
 	public function getConfiguration($name){
-        return $this->getServiceLocator()->get('Admin\Model\ConfigurationTable')->getConfig($name)->value;
+        return $this->getServiceLocator()->get('Admin\Model\ConfigurationTable')->getConfig($name);
     }
+	public function updateConfiguration($name,$value){
+        $this->getServiceLocator()->get('Admin\Model\ConfigurationTable')->saveConfig($name,$value);
+	}
 
 	public function getForm(){
 		if(empty($this->_formObj)) {

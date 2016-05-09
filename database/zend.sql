@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2016 at 12:27 PM
+-- Generation Time: May 09, 2016 at 02:17 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `shipping_address` varchar(200) NOT NULL,
   `status` tinyint(4) NOT NULL,
   `time_order` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=111 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=115 ;
 
 --
 -- Dumping data for table `cart`
@@ -54,15 +54,19 @@ CREATE TABLE IF NOT EXISTS `cart` (
 INSERT INTO `cart` (`id`, `code`, `product_id`, `price`, `quantity`, `total_product`, `size_name`, `voucher`, `total_money`, `user_id`, `customer_name`, `phone`, `email`, `ip_address`, `note`, `shipping_address`, `status`, `time_order`) VALUES
 (100, '28CL5V', '["33","64","55"]', '["145000","550000","370000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '1065000', 0, 'duyquang', 1286483732, '01286483732', '127.0.0.1', '', '', 2, '2014-03-25 00:00:20'),
 (101, 'BCDZQH', '["64","62"]', '["550000","120000"]', '["1","1"]', 2, '["default","default"]', '', '670000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 2, '2015-03-25 00:31:48'),
-(102, 'WGOTCM', '51', '170000', '1', 1, '', '', '170000', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 1, '2016-03-25 00:43:27'),
+(102, 'WGOTCM', '51', '170000', '1', 1, '', '', '170000', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 5, '2016-03-25 00:43:27'),
 (103, 'WM3KQV', '["58","37"]', '["290000","95580"]', '["1","1"]', 2, '["default","default"]', '', '385580', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 4, '2016-03-25 01:39:26'),
-(104, '9FGUOY', '73', '130000', '1', 1, '', '', '130000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-03-30 19:03:03'),
-(105, 'B25WJP', '61', '100000', '1', 1, '', '', '100000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-03-30 19:03:44'),
-(106, '0SYJVF', '["72","71"]', '["110000","120000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 1, '2016-02-01 19:57:56'),
-(107, 'W9TNCA', '["71","72"]', '["120000","110000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 0, 'Thượng', 1286483732, 'duy_quang422@yahoo.com', '127.0.0.1', '', '', 1, '2016-04-02 19:59:44'),
-(108, '9T2WAS', '74', '210000', '1', 1, '', '', '210000', 0, '', 0, '', '127.0.0.1', '', '', 1, '2016-04-04 00:00:33'),
-(109, '8B5USH', '["74","73","72"]', '["210000","130000","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '450000', 0, '', 0, '', '127.0.0.1', '', '', 1, '2016-04-03 00:01:21'),
-(110, 'DPJQMG', '33', '145000', '1', 1, '', '', '145000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 1, '2016-04-04 20:04:16');
+(104, '9FGUOY', '73', '130000', '1', 1, '', '', '130000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-07 19:03:03'),
+(105, 'B25WJP', '61', '100000', '1', 1, '', '', '100000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-06 19:03:44'),
+(106, '0SYJVF', '["72","71"]', '["110000","120000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-02-01 19:57:56'),
+(107, 'W9TNCA', '["71","72"]', '["120000","110000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 0, 'Thượng', 1286483732, 'duy_quang422@yahoo.com', '127.0.0.1', '', '', 4, '2016-05-06 19:59:44'),
+(108, '9T2WAS', '74', '210000', '1', 1, '', '', '210000', 0, '', 0, '', '127.0.0.1', '', '', 4, '2016-05-07 00:00:33'),
+(109, '8B5USH', '["74","73","72"]', '["210000","130000","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '450000', 0, '', 0, '', '127.0.0.1', '', '', 4, '2016-05-07 00:01:21'),
+(110, 'DPJQMG', '33', '145000', '1', 1, '', '', '145000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-02 20:04:16'),
+(111, '02ZAM1', '["71","70","72"]', '["120000","259900","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '489900', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-07 10:38:08'),
+(112, 'DJCI8E', '["73","55","60","64"]', '["130000","370000","230000","550000"]', '["1","1","1","1"]', 4, '["default","default","default","default"]', '', '1280000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-05 10:38:45'),
+(113, '4O5LF8', '["60"]', '["230000"]', '["1"]', 1, '["default"]', '', '230000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-06 10:39:14'),
+(114, 'Q2I410', '["74","60","54","59","33"]', '["210000","230000","250000","120000","145000"]', '["1","1","1","1","1"]', 5, '["default","default","default","default","default"]', '', '955000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-04 10:40:00');
 
 -- --------------------------------------------------------
 
@@ -171,7 +175,6 @@ INSERT INTO `comment` (`id`, `product_id`, `username`, `user_id`, `email`, `ip`,
 (2, 53, 'duy', 0, 'duy@yahoo.com', '', 0, 'tôi muốn mua 1 sản phẩm', 1, '2016-03-11 23:17:45'),
 (3, 53, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:18:47'),
 (4, 53, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:26:35'),
-(8, 61, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Hay mình cứ bất chấp yêu nhau đi', 1, '2016-03-16 22:06:09'),
 (9, 61, 'Quang', 0, 'duy@yahoo.com', '', 0, 'test', 1, '2016-03-16 22:16:42');
 
 -- --------------------------------------------------------
@@ -184,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `configuration` (
 `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `value` varchar(1000) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=48 ;
 
 --
 -- Dumping data for table `configuration`
@@ -195,7 +198,12 @@ INSERT INTO `configuration` (`id`, `name`, `value`) VALUES
 (2, 'site_name', 'Thiết Kế Website Giá Rẻ'),
 (3, 'site_off', '0'),
 (4, 'meta_description', 'Chuyên tư vấn thiết kế website chuyên nghiệp, tinh tế, giả rẻ.'),
-(8, 'num_sold_criteria', '110');
+(8, 'num_sold_criteria', '110'),
+(9, 'num_sales_criteria', '12000000'),
+(10, 'num_order_criteria', '150'),
+(13, 'image_nav_left_homepage', '{"133":"bannerMenu_u5cyMlq0.jpg","134":"bannerMenu_CBLl5KNv.jpg","135":"bannerMenu_4SqamhHX.jpg","136":"bannerMenu_yof2zGAm.jpg","137":"bannerMenu_yNTq6cpt.jpg","138":"bannerMenu_2ovUszAi.jpg","139":"bannerMenu_WfgCpXK3.jpg","140":"bannerMenu_utfqmzJH.jpg","undefined":"bannerMenu_vYfqGSzL.png"}'),
+(14, 'logo_image', 'logoImage_s486z0FN.jpg'),
+(47, 'images_slide_hometop', '{"1":"slideshow_srv7wPQ5.jpg","2":"slideshow_vr80WLMh.jpg","3":"slideshow_z20whfZu.jpg"}');
 
 -- --------------------------------------------------------
 
@@ -247,8 +255,6 @@ CREATE TABLE IF NOT EXISTS `history` (
 --
 
 INSERT INTO `history` (`id`, `product_id`, `date`, `rate`, `comment`, `buy`, `status`) VALUES
-(1, 830890, '2016-03-08 00:00:00', 0, 0, 4, 1),
-(2, 42302, '2016-03-07 23:56:02', 0, 0, 1, 1),
 (3, 53, '2016-03-08 00:16:31', 0, 0, 3, 1),
 (5, 64, '2016-03-08 00:18:52', 0, 0, 1, 1),
 (6, 64, '2016-03-16 22:02:10', 0, 0, 1, 1),
@@ -632,7 +638,7 @@ CREATE TABLE IF NOT EXISTS `product_size` (
 `id` int(11) NOT NULL,
   `size` varchar(30) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=16 ;
 
 --
 -- Dumping data for table `product_size`
@@ -654,7 +660,7 @@ CREATE TABLE IF NOT EXISTS `product_size_product` (
   `product_id` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=169 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=167 ;
 
 --
 -- Dumping data for table `product_size_product`
@@ -797,7 +803,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `sex`, `email`, `password`, `avatar`, `sign`, `phone`, `birthday`, `address`, `created`, `created_by`, `modified`, `modified_by`, `last_sign`, `register_time`, `register_ip`, `active_code`, `active_time`, `status`, `ordering`, `group_id`) VALUES
-(1, 'Duy Quang', 1, 'Admin01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user_h6MNE8eQ.jpg', '<p>The HeadScript helper allows you to manage both. The HeadScript helper supports the following methods for setting and adding scripts</p>\r\n', '01286483732', '1993-10-10', '', '2014-12-10 08:55:35', 'admin', '2014-12-16 12:08:59', 'admin', '2016-05-03 21:51:46', '0000-00-00 00:00:00', NULL, '1', '0000-00-00 00:00:00', 1, 2, 1),
+(1, 'Administrator', 1, 'Admin01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user_h6MNE8eQ.jpg', '<p>The HeadScript helper allows you to manage both. The HeadScript helper supports the following methods for setting and adding scripts</p>\r\n', '01286483732', '1993-10-10', '', '2014-12-10 08:55:35', 'admin', '2014-12-16 12:08:59', 'admin', '2016-05-08 20:43:25', '0000-00-00 00:00:00', NULL, '1', '0000-00-00 00:00:00', 1, 2, 1),
 (17, 'Nguyễn Duy Quang', 0, 'duy_quang422@yahoo.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2015-12-28 04:29:03', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 2),
 (18, 'Nguyễn Văn A', 0, 'abc@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2016-01-02 17:24:20', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 1),
 (19, 'Nguyễn Hoài Thanh Nhi', 0, 'thanhnhi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2016-01-02 17:27:31', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 3),
@@ -950,7 +956,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=111;
+MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
 --
 -- AUTO_INCREMENT for table `category`
 --
@@ -965,7 +971,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `configuration`
 --
 ALTER TABLE `configuration`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `group`
 --
@@ -1030,12 +1036,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `product_size`
 --
 ALTER TABLE `product_size`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `product_size_product`
 --
 ALTER TABLE `product_size_product`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=169;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=167;
 --
 -- AUTO_INCREMENT for table `product_tag`
 --
