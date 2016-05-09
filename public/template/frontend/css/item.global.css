@@ -3968,6 +3968,9 @@ input::-webkit-inner-spin-button {
 #header.menu-header-fixed  .cart_block{
     top: 40px;
 }
+.menu-header-fixed .avatar{
+    float: left;
+}
 /*Nav left home page*/
 .menuItem:hover .sub-cate{
     display: block;

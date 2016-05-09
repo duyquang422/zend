@@ -14,7 +14,10 @@ class CommentController extends ActionController
 
     public function addAction(){
         if($this->getRequest()->isPost()){
-            $this->getTable()->addItem($this->params()->fromPost());
+            $arrParam = array();
+            $arrParam = $this->params()->fromPost();
+            $arrParam['user_id'] = isset($this->identity()->id) ? $this->identity()->id : '';
+            $this->getTable()->addItem($arrParam);
             $this->getServiceLocator()->get('Home\Model\HistoryTable')->addItem($this->params()->fromPost('product-id'),['task'=> 'comment']);
             return $this->redirect()->toUrl($this->getRequest()->getHeader('Referer')->getUri());
         }

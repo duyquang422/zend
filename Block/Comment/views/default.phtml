@@ -1,7 +1,7 @@
 <?php require(PATH_PUBLIC . '/rating/_drawrating.php'); ?>
 <div id="comment" class="wrapcomment">
     <span style="font-size: 18px">Mời bạn đánh giá hoặc đặt câu hỏi về</span> <h2>Gối gòn cao cấp Wean sale off 25%</h2>
-    <form method="post" id="js_activity_feed_form" class="js_cmt_form" action="home/comment/add">
+    <form method="post" id="js_activity_feed_form" class="js_cmt_form" action="<?php echo $this->view->url('frontendRoute/default',['controller'=> 'comment','action' => 'add'])?>">
         <div class="dropfirst textarea" id="content" name="content">
             <textarea class="dropfirst textarea txtEditor" name="content" placeholder="Mời bạn tham gia đánh giá, thảo luận về sản phẩm của chúng tôi." id="txtEditor"></textarea>
             <div class="wrap-attaddsend">
@@ -9,17 +9,22 @@
                     <div class="closeIfo">
                         <i class="fa fa-times"></i>
                     </div>
+                    <?php
+                        if(!$this->view->identity()->username){
+                    ?>
                     <div class="asideleft">
                         <label>Hãy <a href="javascript:" data-toggle="modal" data-target="#myModal">đăng nhập hoặc đăng ký</a>  để trả lời một cách nhanh chóng</label>
-                        <img src="/public/template/frontend/images/login-icon.jpg" alt="đăng nhập">
+                        <img src="<?php echo $this->view->basePath()?>/public/template/frontend/images/login-icon.jpg" alt="đăng nhập">
                     </div>
                     <div class="asideright">
                         <label>Nhập thông tin của bạn</label>
-                        <input class="infoname form-control" name="objectName" id="sendwithname" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50">
-                        <input class="infoname form-control" name="objectEmail" id="sendwithemail" type="email" placeholder="Email (để nhận thông báo khi có trả lời)">
+                        <input class="infoname form-control" name="objectName" id="sendwithname" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50" value="<?php echo $username?>">
+                        <input class="infoname form-control" name="objectEmail" id="sendwithemail" type="email" placeholder="Email (để nhận thông báo khi có trả lời)" value="<?php echo $email?>">
                         <button class="finalpost" type="submit">Hoàn tất &amp; gửi</button>
                     </div>
-
+                    <?php }else{ ?>
+                            <button class="finalpost" type="submit">Hoàn tất &amp; gửi</button>
+                        <?php }?>
                 </div>
             </div>
         </div>

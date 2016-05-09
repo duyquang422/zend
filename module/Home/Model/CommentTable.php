@@ -19,9 +19,9 @@ class CommentTable extends AbstractTableGateway {
 	public function addItem($arrParams = null){
         $data = [
             'product_id' => $arrParams['product-id'],
-            'username' => $arrParams['objectName'],
+            'username' => isset($arrParams['objectName']) ? $arrParams['objectName'] : '',
             'content' => $arrParams['content'],
-            'email' => $arrParams['objectEmail'],
+            'email' => isset($arrParams['objectEmail']) ? $arrParams['objectEmail'] : '',
             'user_id' => isset($arrParams['user_id']) ? $arrParams['user_id'] : '',
             'parent_id' => $arrParams['comment-parent'],
             'status' => 0,
@@ -35,11 +35,16 @@ class CommentTable extends AbstractTableGateway {
             $select->columns(array('product_id','username','user_id','parent_id','content','status','date'))
                 ->join(
                     ['u' => 'user'],
-                    'u.id = comment.user_id',
+                    'comment.user_id = u.id',
                     ['uusername' => 'username'],
                     $select::JOIN_LEFT
+                )->join(
+                    ['p' => 'products'],
+                    'comment.product_id = p.id',
+                    ['productName' => 'name'],
+                    $select::JOIN_INNER
                 )
-                ->where(new Expression('status = 1 AND product_id = ?',$productId));
+                ->where->equalTo('comment.status',1)->equalTo('p.id',$productId);
             $select->order('comment.id DESC');
         });
     }
