@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container">
 <div class="row">
     <div class="top-content ">
         <div class="breadcrumb_detail util-clearfix">
@@ -26,10 +26,10 @@
     </div>
 </div>
 </div>
-<div class="container-fluid">
+<div class="container">
     <div class="row">
         <div id="topdetail" class="">
-        <div class="wrapbread">
+        <div class="wrapbread" id="wrapbread">
             <div class="rowtop">
                 <h1><?php echo $this->product->name ?></h1>
 
@@ -120,7 +120,7 @@
         </div>
     </div>
 </div>
-<section id="contentdetail" class="container-fluid">
+<section id="contentdetail" class="container">
     <div class="row">
     <!--start product description-->
     <?php echo $this->productDescription($this->product->id) ?>
@@ -129,7 +129,7 @@
 </section>
 
 <div class="clr"></div>
-<section id="coment" class="container-fluid">
+<section id="coment" class="container">
     <div class="boxright row">
         <div class="col-sm-6">
             <?php echo $this->comment($this->product->id)?>

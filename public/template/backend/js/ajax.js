@@ -410,7 +410,7 @@ function getProduct(id){
                 var picture = data.product.picture.split(',');
                 html = '';
                 $.each(picture, function (key, val) {
-                    html += '<div class="file-preview-frame" id="'+ val.substring(0,val.indexOf('.')) +'"><i class="icon-delete" onclick="removeImg('+ id + ',\'' + val +'\')"></i><img src="' + window.location.origin + '/public/files/product/98x105/' + val + '" /></div>';
+                    html += '<div class="file-preview-frame" id="'+ val.substring(0,val.indexOf('.')) +'"><i class="icon-delete" onclick="removeImg('+ id + ',\'' + val +'\')"></i><img src="' + basePath + 'public/files/product/98x105/' + val + '" /></div>';
                 });
                 html += '<input type="hidden" value="'+data.product.picture+'" name="picture" id="picture-'+ id +'">';
                 $('#show-img').html(html);
@@ -419,7 +419,7 @@ function getProduct(id){
                 var picture = data.product.zoom_image.split(',');
                 html = '';
                 $.each(picture, function (key, val) {
-                    html += '<div class="file-preview-frame" id="'+ val.substring(0,val.indexOf('.')) +'"><i class="icon-delete" onclick="removeZoomImg('+ id + ',\'' + val +'\')"></i><img src="' + window.location.origin + '/public/files/product/100x100/' + val + '" /></div>';
+                    html += '<div class="file-preview-frame" id="'+ val.substring(0,val.indexOf('.')) +'"><i class="icon-delete" onclick="removeZoomImg('+ id + ',\'' + val +'\')"></i><img src="' + basePath + '/public/files/product/100x100/' + val + '" /></div>';
                 });
                 html += '<input type="hidden" value="'+data.product.zoom_image+'" name="picture" id="zoom-img-'+ id +'">';
                 $('#show-zoom-img').html(html);
@@ -1154,11 +1154,11 @@ function viewOrder(id){
                     if(val.size == '' || val.size =='default')
                         val.size = 'mặc định';
                     html +='<li>' +
-                                '<a href="'+ window.location.origin + '/' + val.alias + '-'+ val.id + '.html' +'" title="'+ val.name +'">' +
-                                    '<img src="'+ window.location.origin  +'/public/files/product/100x100/'+ val.image +'" class="cart-img">' +
+                                '<a href="'+ basePath + val.alias + '-'+ val.id + '.html' +'" title="'+ val.name +'">' +
+                                    '<img src="'+ basePath  +'/public/files/product/100x100/'+ val.image +'" class="cart-img">' +
                                 '</a>' +
                                 '<h3>' +
-                                    '<a href="'+ window.location.origin + '/' + val.alias + '-'+ val.id + '.html' +'" title="'+ val.name +'">'+ val.name +'</a>' +
+                                    '<a href="'+ basePath  + val.alias + '-'+ val.id + '.html' +'" title="'+ val.name +'">'+ val.name +'</a>' +
                                 '</h3>' +
                                 '<h2>'+ moneyFormat(val.price) +'đ</h2>' +
                                 '<p>(Size: '+ val.size +')</p>' +
@@ -1167,19 +1167,17 @@ function viewOrder(id){
                 })
             }else{
                 html +='<li>' +
-                    '<a href="'+ window.location.origin + '/' + data['product'].alias + '-'+ data['product'].id + '.html' +'" title="'+ data['product'].name +'">' +
-                    '<img src="'+ window.location.origin  +'/public/files/product/100x100/'+ data['product'].image +'" class="cart-img">' +
+                    '<a href="'+ basePath + data['product'].alias + '-'+ data['product'].id + '.html' +'" title="'+ data['product'].name +'">' +
+                    '<img src="'+ basePath  +'public/files/product/100x100/'+ data['product'].image +'" class="cart-img">' +
                     '</a>' +
                     '<h3>' +
-                    '<a href="'+ window.location.origin + '/' + data['product'].alias + '-'+ data['product'].id + '.html' +'" title="'+ data['product'].name +'">'+ data['product'].name +'</a>' +
+                    '<a href="'+ basePath  + data['product'].alias + '-'+ data['product'].id + '.html' +'" title="'+ data['product'].name +'">'+ data['product'].name +'</a>' +
                     '</h3>' +
                     '<h2>'+ moneyFormat(data['product'].price) +'đ</h2>' +
                     '<p>(Size: '+ data['product'].size +')</p>' +
                     '<span class="quantity">x'+ data['product'].quantity +'</span>' +
                     '</li>';
             }
-            $('#row-' + customer.id + ' .status ').html('<span style="color:blue">Chờ duyệt</span>');
-            $('#row-' + customer.id + ' .tt').html('<img src="http://' + window.location.host + '/public/template/backend/img/pending.png" alt="pending">');
             $('#username').html(customer.customer_name);
             $('#phone').html(customer.phone);
             $('#email').html(customer.email);

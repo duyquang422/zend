@@ -13,15 +13,6 @@ footer {
     display: block;
     overflow: hidden
 }
-[class^="icon-"], [class*="icon-"] {
-    background-image: url(https://cdn3.tgdd.vn/v2015/Content/desktop/images/spritedesktop.png);
-    background-repeat: no-repeat;
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-    line-height: 30px;
-    vertical-align: middle
-}
 .breadcrumb {
     float: left;
     overflow: hidden;
@@ -568,11 +559,14 @@ footer {
 }
 .boxright {
     float: right;
-    width: 91.667%;
+    width: 91%;
     max-width: 1100px;
     padding-bottom: 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #e5e5e5
+}
+#coment .boxright{
+    width: 93.6%;
 }
 .picture {
     float: left;
@@ -1849,6 +1843,7 @@ footer {
 #topdetail section {
     margin-top: 30px;
     display: inline-block;
+    position: relative;
 }
 .stickybar.fixed{
     position: fixed;
@@ -2232,4 +2227,7 @@ footer {
     overflow: hidden;
     width: 100%;
     margin: 20px auto;
+}
+.modal-body{
+    display: block;
 }

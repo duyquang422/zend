@@ -3,9 +3,9 @@
         $num = 0;
         foreach($imgSlide as $key => $value) {
             //public function __invoke($title,$id, $filename = null, $size = null,$nameInputHidden = null,$valueInputHidden = null)
-            echo $this->view->uploadImg('Ảnh đại diện', 'update-img-' . $key, $value, 'col-sm-4',true,$key);
+            echo $this->view->uploadImg('Ảnh slide ' . $key, 'update-img-' . $key, $value, 'col-sm-4',true,$key);
             $num = $key;
         }
-        echo $this->view->uploadImg('Ảnh đại diện','update-img-'. $num + 1 ,'','col-sm-4',true,$num + 1);
+        echo $this->view->uploadImg('Ảnh slide ' . ($num + 1),'update-img-'. $num + 1 ,'','col-sm-4',true,$num + 1);
     }else
-        echo $this->view->uploadImg('Ảnh đại diện','update-img' ,'','col-sm-4',true,1);
+        echo $this->view->uploadImg('Ảnh slide 1','update-img' ,'','col-sm-4',true,1);

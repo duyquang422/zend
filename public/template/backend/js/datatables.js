@@ -102,7 +102,7 @@ $(document).ready(function(){
                                 '<a onclick="deleteOne('+ data.id +')">' +
                                     '<i class="fa fa-trash-o"></i>' +
                                 '</a>' +
-                                '<a href="http://'+ window.location.host +'/'+ data.alias + '-' + data.id + '" target="_blank">' +
+                                '<a href="'+ basePath +''+ data.alias + '-' + data.id + '" target="_blank">' +
                                     '<i class="fa fa-eye"></i>' +
                                 '</a>' +
                             '</div>';
@@ -209,7 +209,7 @@ $(document).ready(function(){
                 ordertable: false,
                 width: '8%',
                 render: function(data, type , row){
-                    return '<div class="function"><a onclick="getProduct('+ data.id +')"><i class="fa fa-pencil-square-o"></i></a><a onclick="deleteOne('+ data.id +')"><i class="fa fa-trash-o"></i></a><a href="http://'+ window.location.host +'/'+ data.alias + '-' + data.id + '.html'+ '" target="_blank"><i class="fa fa-eye"></i></a></div>';
+                    return '<div class="function"><a onclick="getProduct('+ data.id +')"><i class="fa fa-pencil-square-o"></i></a><a onclick="deleteOne('+ data.id +')"><i class="fa fa-trash-o"></i></a><a href="' + basePath + data.alias + '-' + data.id + '.html'+ '" target="_blank"><i class="fa fa-eye"></i></a></div>';
                 }
             },
             { data: 'id', width: '2%'},
@@ -859,7 +859,7 @@ $(document).ready(function(){
                         '<a onclick="deleteOne('+ data.id +')">' +
                         '<i class="fa fa-trash-o"></i>' +
                         '</a>' +
-                        '<a href="http://'+ window.location.host +'/'+ data.alias + '-' + data.id + '" target="_blank">' +
+                        '<a href="' + basePath+ data.alias + '-' + data.id + '" target="_blank">' +
                         '<i class="fa fa-eye"></i>' +
                         '</a>' +
                         '</div>';
@@ -927,7 +927,7 @@ $(document).ready(function(){
                         '<a onclick="deleteOne('+ data.id +')">' +
                         '<i class="fa fa-trash-o"></i>' +
                         '</a>' +
-                        '<a href="http://'+ window.location.host +'/'+ data.alias + '-' + data.id + '" target="_blank">' +
+                        '<a href="' + basePath+ data.alias + '-' + data.id + '" target="_blank">' +
                         '<i class="fa fa-eye"></i>' +
                         '</a>' +
                         '</div>';

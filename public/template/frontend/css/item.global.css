@@ -269,7 +269,7 @@ input:focus {
 [class^="icon-"]:active,
 [class*=" icon-"]:active,
 .icon:active {
-    fill: #e5101d;
+    fill: #fff;
 }
 
 /* end icon */
@@ -1067,7 +1067,6 @@ dt, dd {
     border-left: 2px solid transparent;
     border-right: none;
     background-color: #fff;
-    position: relative;
 }
 #slide_home_top #owl-home-top img{
     width: 100%;
@@ -2048,11 +2047,6 @@ a.abc.login-go {
 .nav-left-homepage {
     margin: 0 auto;
 }
-.nav-left-homepage .menuItem span > i {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
 .block-nhip-song {
     margin-top: 0;
     background: #FFF;
@@ -2460,6 +2454,7 @@ a.abc.login-go {
     text-align: center;
     vertical-align: middle;
     background: url("") center center no-repeat;
+    min-height: 214px;
 }
 
 .content_item .overflow_box a.img_product img {
@@ -3379,8 +3374,13 @@ a.abc.login-go {
     background: none;
     border-radius: 2px;
     float: right;
+    margin-right: 8px;
 }
-
+.menu-header-fixed .box-link-svg .avatar{
+    float: left;
+    margin-top: -3px;
+    margin-right: 5px;
+}
 #modalAddtocart .modal-header {
     height: auto;
     padding: 0;
@@ -3873,7 +3873,7 @@ input::-webkit-inner-spin-button {
 /*menu header fixed*/
 #header.menu-header-fixed{
     position: fixed;
-    top: 0;
+    top: 0 !important;
     width: 100%;
     z-index: 100;
     padding: 0;
@@ -3968,16 +3968,13 @@ input::-webkit-inner-spin-button {
 #header.menu-header-fixed  .cart_block{
     top: 40px;
 }
-.menu-header-fixed .avatar{
-    float: left;
-}
 /*Nav left home page*/
 .menuItem:hover .sub-cate{
     display: block;
 }
 .menuItem:hover .sub-cate-inner{
     height: 425px;
-    width: 625px;
+    width: 626px;
 }
 .nav-category{
     background-color: #ca181f;
@@ -4122,4 +4119,18 @@ hr{
     height: 30px;
     width: 30px;
     border-radius: 50%;
+}
+.btn-edit{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    display: none;
+    z-index: 99;
+}
+.hover-edit:hover .btn-edit{
+    display: block;
+}
+.wrapper-logo .btn-edit{
+    right: 100px;
 }

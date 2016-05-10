@@ -10,20 +10,20 @@
                         <i class="fa fa-times"></i>
                     </div>
                     <?php
-                        if(!$this->view->identity()->username){
+                        if(isset($this->view->identity()->username) && $this->view->identity()->username){
                     ?>
-                    <div class="asideleft">
-                        <label>Hãy <a href="javascript:" data-toggle="modal" data-target="#myModal">đăng nhập hoặc đăng ký</a>  để trả lời một cách nhanh chóng</label>
-                        <img src="<?php echo $this->view->basePath()?>/public/template/frontend/images/login-icon.jpg" alt="đăng nhập">
-                    </div>
-                    <div class="asideright">
-                        <label>Nhập thông tin của bạn</label>
-                        <input class="infoname form-control" name="objectName" id="sendwithname" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50" value="<?php echo $username?>">
-                        <input class="infoname form-control" name="objectEmail" id="sendwithemail" type="email" placeholder="Email (để nhận thông báo khi có trả lời)" value="<?php echo $email?>">
-                        <button class="finalpost" type="submit">Hoàn tất &amp; gửi</button>
-                    </div>
-                    <?php }else{ ?>
                             <button class="finalpost" type="submit">Hoàn tất &amp; gửi</button>
+                    <?php }else{ ?>
+                            <div class="asideleft">
+                                <label>Hãy <a href="javascript:" data-toggle="modal" data-target="#myModal">đăng nhập hoặc đăng ký</a>  để trả lời một cách nhanh chóng</label>
+                                <img src="<?php echo $this->view->basePath()?>/public/template/frontend/images/login-icon.jpg" alt="đăng nhập">
+                            </div>
+                            <div class="asideright">
+                                <label>Nhập thông tin của bạn</label>
+                                <input class="infoname form-control" name="objectName" id="sendwithname" type="text" placeholder="Họ tên (bắt buộc)" maxlength="50">
+                                <input class="infoname form-control" name="objectEmail" id="sendwithemail" type="email" placeholder="Email (để nhận thông báo khi có trả lời)">
+                                <button class="finalpost" type="submit">Hoàn tất &amp; gửi</button>
+                            </div>
                         <?php }?>
                 </div>
             </div>

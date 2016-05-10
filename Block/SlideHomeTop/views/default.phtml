@@ -2,21 +2,15 @@
 <div id="slide_home_top" class="hover-edit">
     <!--<img src="http://media3.scdn.vn/img1/2015/10_14/d8371a.jpg" id="image_banner" class="tmp-img" width="430" height="290"/>-->
     <div id="owl-home-top" class="owl-carousel owl-theme">
-        <div class="item">
-            <a href="#">
-                <img src="public/files/slider/slide3.jpg"/>
-            </a>
-        </div>
-        <div class="item">
-            <a href="#">
-                <img src="public/files/slider/slide2.jpg" width="430" height="290"/>
-            </a>
-        </div>
-        <div class="item">
-            <a href="#">
-                <img src="public/files/slider/slide1.jpg" width="430" height="290"/>
-            </a>
-        </div>
+    <?php
+        foreach ($imgSlide as $value) {
+            echo '<div class="item">
+                    <a href="#">
+                        <img src="'. $this->view->basePath('public/files/upload/') . $value .'"/>
+                    </a>
+                </div>';
+        }
+    ?>
     </div>
     <?php if($this->view->identity() && $this->view->identity()->group_id == 1){?>
         <div class="btn-edit" data-img="">

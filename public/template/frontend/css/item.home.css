@@ -907,17 +907,6 @@ div.star:after {
 #slide_home_top{
     position: relative;
 }
-.btn-edit{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    cursor: pointer;
-    display: none;
-    z-index: 99;
-}
-.hover-edit:hover .btn-edit{
-    display: block;
-}
 #product-home-tabs .addtocart a:before{
     content: '';
     display: none;

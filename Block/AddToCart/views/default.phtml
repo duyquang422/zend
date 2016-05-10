@@ -16,7 +16,7 @@
                         </p>
                         <p class="sp">Hiện đang có <b class="numb">1</b> sản phẩm trong giỏ hàng</p>
                         <div class="buttons box-btn-buy">
-                            <a href="<?php echo $this->view->url('frontendRoute/default',['controller' => 'user','action' => 'order'])?>" class="btn btn-view-cart" title="Xem giỏ hàng">
+                            <a href="<?php echo $this->view->url('frontendRoute/default',array('controller' => 'user','action' => 'order'))?>" class="btn btn-view-cart" title="Xem giỏ hàng">
                                 <i class="fa fa-shopping-cart"></i>Xem giỏ hàng
                             </a>
                             <button type="button" class="btn buynow-btn" title="Mua ngay" onclick="purchase(<?php echo $productId?>)">
