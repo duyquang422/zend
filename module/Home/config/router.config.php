@@ -73,17 +73,30 @@ $categoryRoute = array(
 		'spec' 		=> '/%name%-%id%',
 	),
 );
-$productRoute = array(
-	'type' 		=> 'Regex',
+$promotionalProducts = array(
+	'type' 		=> 'Segment',
 	'options' 	=> array(
-		'regex' 	=> '/((?<name>[a-zA-Z][a-zA-Z0-9-_]+)-(?<id>[0-9]+).(?<extension>(html)))?',
+		'regex' 	=> '/san-pham/[/:action[/:mode]][/page/:page]',
 		'defaults' 	=> array(
 			'__NAMESPACE__' 	=> 'Home\Controller',
-			'controller' 		=> 'product',
+			'controller' 		=> 'product-properties',
 			'action' 			=> 'index'
 		),
-		'spec' 		=> '/%name%-%id%.%extension%',
+		'spec' 		=> '/san-pham/%action%.%extension%',
 	),
+);
+
+$productRoute = array(
+    'type' 		=> 'Regex',
+    'options' 	=> array(
+        'regex' 	=> '/((?<name>[a-zA-Z][a-zA-Z0-9-_]+).(?<extension>(html)))?',
+        'defaults' 	=> array(
+            '__NAMESPACE__' 	=> 'Home\Controller',
+            'controller' 		=> 'product',
+            'action' 			=> 'index'
+        ),
+        'spec' 		=> '/%name%-%id%.%extension%',
+    ),
 );
 return array(
 	'router'		=> array(
@@ -91,6 +104,7 @@ return array(
 					'frontendRoute'	=> $RouteChild,
 					'category'		=> $categoryRoute,
                     'product'       => $productRoute,
+                    'promotionProduct' => $promotionalProducts,
                     'home'			=> $homeRoute
 			),
 	)

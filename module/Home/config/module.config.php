@@ -8,7 +8,8 @@ return array(
 				'Home\Controller\User' 		=> 'Home\Controller\UserController',
 				'Home\Controller\Notice'    => 'Home\Controller\NoticeController',
 				'Home\Controller\Comment'   => 'Home\Controller\CommentController',
-				'Home\Controller\Login'     => 'Home\Controller\LoginController'
+				'Home\Controller\Login'     => 'Home\Controller\LoginController',
+				'Home\Controller\ProductProperties'     => 'Home\Controller\ProductPropertiesController'
 			)
 	),
 	'view_manager'	=> array(
