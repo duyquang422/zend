@@ -72,15 +72,15 @@ $(document).ready(function () {
     })
 
     $('#js_activity_feed_form').submit(function(){
-        if(!$('#sendwithname').val() && !$('#sendwithemail').val()){
+        if(!$('#sendwithname').val() && !$('#sendwithemail').val() && $('#sendwithname').length){
             alert('Vui lòng nhập tên và email vào!');
             return false;
         }
-        else if(!$('#sendwithname').val()) {
+        else if(!$('#sendwithname').val() && $('#sendwithname').length) {
             alert('Vui lòng nhập tên vào!');
             return false;
         }
-        else if(!$('#sendwithemail').val()) {
+        else if(!$('#sendwithemail').val() && $('#sendwithname').length) {
             alert('Vui lòng nhập email vào!');
             return false;
         }
