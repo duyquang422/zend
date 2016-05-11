@@ -269,7 +269,7 @@ input:focus {
 [class^="icon-"]:active,
 [class*=" icon-"]:active,
 .icon:active {
-    fill: red;
+    fill: #fff;
 }
 
 /* end icon */
@@ -730,9 +730,6 @@ input:focus {
     text-align: center;
     font-size: 12px;
     padding-top: 6px;
-}
-.menu-header-fixed .box-info .box-link .box-l-c > a > .tl {
-    font-size: 0;
 }
 .cart_block{
     display: none;
@@ -1254,13 +1251,12 @@ dt, dd {
     overflow: hidden;
     margin-top: 14px;
     width: 100%;
-    background-color: #efefef;
 }
 
 /*POLICY*/
 #footer .policy-block {
+    background-color: #efefef;
     padding-left: 20px;
-    padding-top: 45px;
 }
 
 #footer .policy-block-cont {
@@ -1279,8 +1275,25 @@ dt, dd {
     clear: both;
 }
 
+#footer .policy-block .policy-block-left {
+    float: left;
+    width: 65%;
+    border-right: 1px solid #ddd;
+}
 
-.policy-block ul li > span {
+.policy-block .policy-block-left ul {
+    float: left;
+    width: 22%;
+}
+
+.policy-block .policy-block-left ul.link {
+    width: 34%;
+}
+
+.policy-block .policy-block-left ul li {
+}
+
+.policy-block .policy-block-left ul li > span {
     font-weight: bold;
     font-size: 13px;
     line-height: 20px;
@@ -1289,85 +1302,85 @@ dt, dd {
     display: inline-block;
 }
 
-.policy-block ul li > a {
+.policy-block .policy-block-left ul li > a {
     display: inline-block;
     line-height: 24px;
     color: #666;
 }
 
-.policy-block ul li > a:hover {
+.policy-block .policy-block-left ul li > a:hover {
     color: #e5101d;
 }
 
-.policy-block .link li {
+.policy-block .policy-block-left ul.link li {
     margin-bottom: 5px;
 }
 
-.policy-block .link li > a {
+.policy-block .policy-block-left ul.link li > a {
     position: relative;
     margin-right: 10px;
 }
 
-.policy-block .link li > a.w123mua {
+.policy-block .policy-block-left ul.link li > a.w123mua {
     margin-left: 10px;
     color: #666;
 }
 
-.policy-block .link li > a.blogsendo {
+.policy-block .policy-block-left ul.link li > a.blogsendo {
     margin-left: 10px;
     color: #666;
 }
 
-.policy-block .link li > a.w123mua:hover,
-.policy-block .link li > a.blogsendo:hover {
+.policy-block .policy-block-left ul.link li > a.w123mua:hover,
+.policy-block .policy-block-left ul.link li > a.blogsendo:hover {
     color: #000;
 }
 
-.policy-block .link li > a.myfacebook:before {
+.policy-block .policy-block-left ul.link li > a.myfacebook:before {
     content: "\f082";
     color: #225b8f;
     font-size: 22px;
 }
 
-.policy-block .link li > a.mygoogle:before {
+.policy-block .policy-block-left ul.link li > a.mygoogle:before {
     content: "\f0d4";
     color: #d34836;
     font-size: 22px;;
 }
 
-.policy-block .link li > a.mytwitter:before {
+.policy-block .policy-block-left ul.link li > a.mytwitter:before {
     content: "\f081";
     color: #55acce;
     font-size: 22px;
 }
 
-.policy-block .link li > a.youtube:before {
+.policy-block .policy-block-left ul.link li > a.youtube:before {
     content: "\f166";
     color: #b31217;
     font-size: 22px;
 }
 
-.policy-block .link li > a.pinterest:before {
+.policy-block .policy-block-left ul.link li > a.pinterest:before {
     content: "\f0d3";
     color: #C92228;
     font-size: 22px;
 }
 
-.policy-block .link li > a.payment {
+.policy-block .policy-block-left ul.link li > a.payment {
     width: 152px;
     height: 41px;
     cursor: help;
     background: url("../images/ic-home.png") -198px -756px no-repeat;
 }
 
-.policy-block .link li > a.transaction {
+.policy-block .policy-block-left ul.link li > a.transaction {
     cursor: help;
     width: 152px;
     height: 41px;
     background: url("../images/ic-home.png") -198px -796px no-repeat;
 }
 
-.policy-block .link li > a.openshop {
+.policy-block .policy-block-left ul.link li > a.openshop {
     width: 112px;
     height: 40px;
     background: url("../images/ic-home.png") -238px -673px no-repeat;
@@ -1375,6 +1388,7 @@ dt, dd {
 
 .policy-block .policy-block-right {
     float: right;
+    width: 35%;
     padding-left: 20px;
     line-height: 20px;
     color: #666;
@@ -1398,11 +1412,7 @@ dt, dd {
 #footer .policy-block .title-stm .icon-LOGOFPT {
     vertical-align: middle;
 }
-.copyright{
-    text-align: center;
-    line-height: 20px;
-    margin-top: 20px;
-}
+
 .icon-LOGOFPT {
     width: 32px;
     height: 32px;
@@ -2929,6 +2939,7 @@ a.abc.login-go {
     border: 1px solid #eee;
 }
 .other-filters li{
+    width: 10%;
     text-align: center;
 }
 .pagination-block .other-filters .complain {
@@ -3897,6 +3908,9 @@ input::-webkit-inner-spin-button {
 #header.menu-header-fixed .nav-category, #header.menu-header-fixed .logo-menu-fixed{
     display: inline-block;
 }
+.menu-header-fixed #box_link_notify{
+    display: none;
+}
 #header.menu-header-fixed .nav-category{
     height: 40px;
 }
@@ -3905,6 +3919,7 @@ input::-webkit-inner-spin-button {
     color: white;
 }
 .menu-header-fixed .box-info .box-link .cart > a .cart_qty{
+    right: 52px;
     border: 1px solid white;
 }
 .menu-header-fixed .nav-category{

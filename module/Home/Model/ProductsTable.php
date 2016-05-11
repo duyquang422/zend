@@ -52,31 +52,40 @@ class ProductsTable{
 
     public function getProducts($arrParam = null, $options = null) {
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-             $select->columns(array('id', 'name','alias','description','image','sale_off','price','deal_time'));
+             $select->columns(array('id', 'name','alias','description','image','sale_off','price','deal_time'))
+             ->join(
+                    array('r' => 'ratings'),
+                    'r.id = products.id',
+                    array('total_votes','total_value','idRating' => 'id'),
+                    $select::JOIN_LEFT
+                );
             switch($options['task']){
                 case 'nomination-product':
                     $select->where(new Expression('status = 1 AND special = 1'))
-                        ->order('id DESC')
+                        ->order('products.id DESC')
                         ->limit(11);
                     break;
                 case 'page-product':
                     $select->where->equalTo('status',1);
-                    $select->order('id DESC')
+                    $select->order('products.id DESC')
                         ->limit(4);
                     break;
                 case 'nomination-category':
                     $select->where(new Expression('status = 1 AND special = 1'))
-                        ->order('id DESC')
+                        ->order('products.id DESC')
                         ->limit(5);
                     break;
                 case 'deal':
                     $select->where(new Expression('status = 1 AND deal = 1'))
-                        ->order('id DESC')
+                        ->order('products.id DESC')
                         ->limit(5);
                     break;
                 case 'miniBarMenu':
                     $cid = implode(',', $arrParam);
-                    $select->where(new Expression('id IN (' . $cid . ')'));
+                    $select->where(new Expression('products.id IN (' . $cid . ')'));
+                    break;
+                case 'selling-product':
+                    $select->where(new Expression('sale_off > 0 AND status = 1'));
                     break;
             }
         });

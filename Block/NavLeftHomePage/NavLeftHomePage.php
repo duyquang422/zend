@@ -14,12 +14,12 @@ class NavLeftHomePage extends AbstractHelper{
         if($view == 'config')	
             require_once 'views/config.phtml';
         else
-            require_once 'views/default.phtml';
+            require_once 'views/nav-left-home-page.phtml';
     }
 
     public function setData($table){
     	$this->_table = $table;
-        $this->_data = $this->_table->listItem(null,['task'=>'category-frontend']);
+        $this->_data = $this->_table->listItem(null,array('task'=>'category-frontend'));
         return $this->_data;
     }
 

@@ -23,10 +23,6 @@ class ProductController extends ActionController{
             ->appendFile($this->basePath . '/public/template/frontend/js/rating.js');
     }
 
-    public function testAction(){
-        return $this->response;
-    }
-
     public function indexAction(){
         $product = $this->getTable()->getProduct($this->_params);
         $this->getTable()->updateView($product);

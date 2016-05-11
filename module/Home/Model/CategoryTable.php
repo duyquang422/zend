@@ -179,27 +179,28 @@ class CategoryTable{
     }
 
     public function listItem($arrParam = null, $options = null) {
-        if ($options['task'] == 'category-frontend') {
-            $result = $this->tableGateway->select(function (Select $select) use ($arrParam) {
+        return $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
                 $select->columns(array(
                     'id', 'name', 'status', 'level', 'parent', 'left', 'right','alias'
-                ))->where->greaterThan('category.level', 0);
-                $select->order(array('left ASC'));
-            })->toArray();
-        }
-        return $result;
+                ));
+                
+            if ($options['task'] == 'category-frontend')
+                $select->where->greaterThan('category.level', 0);  
+            $select->where->equalTo('status',1);
+            $select->order(array('left ASC'));
+        })->toArray();
     }
     public function getCategories($arrParam = null, $options = null) {
-        $result = $this->tableGateway->select(function (Select $select) use ($arrParam) {
+        return $this->tableGateway->select(function (Select $select) use ($arrParam) {
             $select->columns(array(
                                 'id', 'name'
                             ))->where->NEST
                             ->where->greaterThan('category.level', 0)
                             ->equalTo('parent', $arrParam['parent'])
                             ->equalTo('level', $arrParam['level'])
+                            ->equalTo('status',1)
                             ->notEqualTo('id', $arrParam['id'])
                     ->UNNEST;
         });
-        return $result;
     }
 }

@@ -7,10 +7,10 @@
 		width: 50%;
 	}
 }
-@media (max-width: 768px){
-	.top-left,  #slide_home_top{
+@media (max-width: 767px){
+	/*.top-left,  #slide_home_top{
 		display: none;
-	}
+	}*/
 	.top-center{
 		width: 100%;
 	}
@@ -35,5 +35,120 @@
 @media (max-width: 2180px) {
 	.women-col1 .owl-pagination{
 		/*display: none;*/
+	}
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+	.women-col3 .product > a {
+		display: block;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+	.list_carousel li {
+		width: 25%;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.list_carousel li {
+		width: 33.33333333%;
+	}
+	.block-collection .women-col2{
+		display: none;
+	}
+	.women-col3 .product > a img {
+		height: auto !important;
+		width: 100%;
+	}
+	.block_cat_home .women-col3 {
+		width: 100%;
+	}
+	.block-collection .women-col1 {
+		display: none;
+	}
+}
+@media (max-width: 767px) {
+	.container-fluid > .row {
+		margin: 0;
+	}
+	#slide_home_top #owl-home-top img {
+		width: 100%;
+		height: auto;
+	}
+	div#hot-deal-products {
+		
+	}
+	.good-deal .title-deal .tl {
+		border-bottom: none;
+		float: none;
+		white-space: inherit;
+	}
+	.good-deal .title-deal {
+		border-bottom: none;
+		height: auto;
+	}
+	.women-col3 .product > a {
+		display: block;
+	}
+	.women-col3 a img {
+		width: 100%;
+		height: auto;
+	}
+	.list_carousel li {
+		width: 50%;
+	}
+	#index .product .content_price {
+		line-height: 1.2;
+	}
+	.women-col3 .product-list .product {
+		width: 50%;
+	}
+}
+@media (max-width: 500px) {
+	.list_carousel li .product-item .csframe_product .product-title{
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	.list_carousel li .product-item .csframe_product .content_price {
+		float: none;
+		text-align: center;
+		width: 100%;
+	}
+	.comments_note {
+		float: none;
+		text-align: center;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	div.star {
+		float: none;
+		display: inline-block;
+	}
+	div.star.star_on {
+		display: inline-block;
+	}
+	.old-price {
+		display: inline-block;
+	}
+	.women-col2 {
+		width: 100%;
+		display: block;
+	}
+	.good-deal .box-2-deal .deal-item img {
+		width: 100%;
+	}
+}
+@media (max-width: 479px) {
+	.list_carousel li .product-item .product-container img {
+		width: 100%;
+		height: auto;
+	}
+}
+@media (max-width: 319px) {
+	.list_carousel li {
+		width: 100%;
+	}
+	.women-col3 .product-list .product {
+		width: 100%;
+		float: none;
 	}
 }

@@ -1,46 +1,47 @@
 <!--Block Filter Attr-->
-<div class="box-filter-wrapper col-sm-10">
+<div class="box-filter-wrapper col-sm-12">
     <div id="filter-cate" class="box-filter-page fullSize">
         <div class="pagination-block pagination-block-top">
             <ul class="other-filters">
-                <li class="active col-sm-1" data-fil="id">
+                <li class="active col-sm-3 col-md-2 col-lg-1" data-fil="id">
                     <span title="Sản phẩm shop đề cử">Shop đề cử</span>
                 </li>
-                <li data-fil="sale_off">
+                <li data-fil="sale_off" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="Giá"><strong>Theo giá</strong></a>
                 </li>
-                <li data-fil="id">
+                <li data-fil="id" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="Chọn sản phẩm mới được cập nhật"><strong>Hàng mới</strong></a>
                 </li>
-                <li data-fil="hits">
+                <li data-fil="hits" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="Chọn sản phẩm có lượt xem nhiều nhất"><strong>Lượt xem</strong></a>
                 </li>
-                <li data-fil="percent_discount">
+                <li data-fil="percent_discount" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="sắp xếp sản phẩm theo % giảm giá"><strong>Giảm giá</strong></a>
                 </li>
-                <li data-fil="point">
+                <li data-fil="point" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="sắp xếp sản phẩm theo điểm thưởng"><strong>Điểm thưởng</strong></a>
                 </li>
-                <li data-fil="rate">
+                <li data-fil="rate" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="sắp xếp sản phẩm theo đánh giá"><strong>Đánh giá</strong></a>
                 </li>
-                <li data-fil="bought">
+                <li data-fil="bought" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="sắp xếp sản phẩm đã mua theo thứ tự"><strong>Lượt Mua</strong></a>
                 </li>
-                <li data-fil="hot">
+                <li data-fil="hot" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="Chọn sản phẩm mang tính hot"><strong>Đang hot</strong></a>
                 </li>
-                <li data-fil="special">
+                <li data-fil="special" class="col-sm-3 col-md-2 col-lg-1">
                     <a title="Chọn sản phẩm mang tính nổi bật"><strong>Nổi bật</strong></a>
                 </li>
             </ul>
+            <ul>
+                <li class="filter-manu col-md-2 col-lg-1">
+                    <?php echo $this->view->filterManufacturer($categoryId) ?>
+                </li>
+                <li class="remove-filter col-md-2 col-lg-1">
+                    <div class="title-manu"><i class="fa fa-trash-o" style="color: red;"></i> Hủy lọc</div>
+                </li> 
+            </ul>
         </div>
     </div>
-</div>
-
-<div class="filter-manu col-sm-1">
-    <?php echo $this->view->filterManufacturer($categoryId) ?>
-</div>
-<div class="remove-filter col-sm-1">
-    <div class="title-manu"><i class="fa fa-trash-o" style="color: red;"></i> Hủy lọc</div>
 </div>

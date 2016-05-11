@@ -1,3 +1,4 @@
+
 /*CATEGORIES*/
 @media screen and (max-width: 1366px){
     .container {
@@ -5,6 +6,7 @@
     }
 }
 .container {
+    width: 1350px;
     margin: 0 auto;
     position: relative;
 }

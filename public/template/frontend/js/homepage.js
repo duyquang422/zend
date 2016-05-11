@@ -1,5 +1,4 @@
 if($(window).width() > 600) {
-    $('.women-col3 .lazy').height(parseFloat($('.women-col2 .lazy').height() / 2 - 2));
     $('.block-collection .slide-collection .col-item').height(parseFloat($('.women-col2 .lazy').height() / 2 + 5));
     $(window).resize(function () {
         if($(window).width() > 600) {
@@ -8,7 +7,6 @@ if($(window).width() > 600) {
         }
     })
 }
-
 //tự động lấy dánh sách nhật ký
 function autoLoadGetHistories(){
     $.ajax({

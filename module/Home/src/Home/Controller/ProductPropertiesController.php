@@ -19,12 +19,12 @@ class ProductPropertiesController extends ActionController{
         );
     }
 
-    public function indexAction(){
-        var_dump($this->_params);
-        return $this->response;
-    }
-
     public function sanPhamKhuyenMaiAction(){
-        return $this->response;
+        $category = $this->getServiceLocator()->get('Home\Model\CategoryTable');
+
+        return new ViewModel(array(
+            'category' => $category->getCategory(0),
+            'products' => $this->getTable()->getProducts('',array('task' => 'selling-product'))
+        ));
     }
 }

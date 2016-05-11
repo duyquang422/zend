@@ -16,6 +16,7 @@
             $('.col-left').height($('.col-right').height());
             if ($(this).scrollTop() > $('.col-left').offset().top + $('.filter-list').height() || $(this).scrollTop() + $('.filter-list').height() + 54 < $('#footer').offset().top) {
                 $('.filter-list').addClass('fixed')
+                $('.filter-list.fixed').width($('.col-left').width())
             }
             if ($(this).scrollTop() < $('.col-left').offset().top) {
                 $('.filter-list').removeClass('fixed absolute')
@@ -32,7 +33,7 @@
             type: 'post',
             dataType: 'html',
             data: {
-                attr: $('#filter-cate li.active').data('fil'),
+                attr: $('#filter-cate .other-filters li.active').data('fil'),
                 id: $('#category-id').val(),
                 idCategory: $('.filter-body .filter-button.active').data('id'),
                 star: $('.rating__stars-link.active').data('num') ? $('.rating__stars-link.active').data('num') : '',
@@ -55,7 +56,7 @@
         })
     }
     //lọc sản phẩm theo các thuộc tính
-    $('#filter-cate li').on('click',function(){
+    $('#filter-cate .other-filters li').on('click',function(){
         $('#filter-cate li').removeClass('active');
         $(this).addClass('active');
         filterAjax();

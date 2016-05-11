@@ -1,0 +1,388 @@
+label{
+    font-weight: 100;
+    font-size: 13px;
+    margin-right: 15px;
+}
+.wrapper-profile .left-profile {
+    width: 220px;
+    float: left;
+    padding-top: 15px;
+    border-right: 1px solid #eee;
+    background-color: #F3F1F2;
+}
+.left-profile .user-inf-top {
+    overflow: hidden;
+    border-bottom: 1px solid #dcdcdc;
+}
+.left-profile .user-inf-top .avatar {
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+.left-profile .user-inf-top .shopname {
+    color: #06f;
+    font-weight: bold;
+    line-height: 16px;
+    display: block;
+    font-size: 13px;
+}
+.left-profile .user-inf-top .edit-account {
+    color: #999;
+    font-size: 11px;
+    margin-top: 5px;
+    display: block;
+}
+.left-profile .ttl-box {
+    font-size: 14px;
+    color: #666666;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #ddd;
+    padding: 0 10px;
+}
+.left-profile .action-list {
+    padding-bottom: 8px;
+}
+.left-profile .action-list li {
+    padding: 2px 0;
+    border-bottom: 1px dashed #ddd;
+}
+.left-profile .action-list li a {
+    display: block;
+    position: relative;
+    color: #666;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 30px;
+}
+.action-list li.order a:before {
+    width: 16px;
+    height: 16px;
+    background-position: 0 0;
+}
+.left-profile .action-list li a:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.left-profile .ttl-box {
+    font-size: 14px;
+    color: #666666;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #ddd;
+    padding: 0 10px;
+}
+.left-profile .action-list li a:hover, .left-profile .action-list li a.active {
+    background-color: #F3F1F2;
+    color: #e5101d;
+    font-weight: bold;
+}
+.wrapper-profile .right-profile {
+    margin-left: 220px;
+    padding: 0 10px 10px 20px;
+    background-color: #fff;
+    min-height: 600px;
+    transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+}
+.ttl-box-profile {
+    color: #e5101d;
+    font-size: 16px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+    border-bottom: 1px solid #ededed;
+    text-transform: uppercase;
+}
+.profile-user-account .cont-user-account {
+    padding: 30px 0 100px 0;
+}
+.cont-user-account .img-user .img-avatar {
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+.img-user{
+    margin-left: 25px;
+    margin-right: -25px;
+    padding-right: 50px;
+}
+.cont-user-account .img-user .bt-update {
+    color: #e5101d;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+    display: block;
+}
+.cont-user-account .user-inf .row-inf:first-child {
+    padding-top: 0;
+}
+.cont-user-account .user-inf .row-inf {
+    padding: 8px 0;
+}
+.cont-user-account .user-inf .row-inf label, .cont-user-account .user-inf .row-inf input {
+    display: inline-block;
+    margin-right: 10px;
+}
+.cont-user-account .row-inf input {
+    padding-left: 5px;
+    height: 30px;
+    line-height: 30px;
+    width: 346px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+}
+.cont-user-account .user-inf .row-inf label {
+    width: 110px;
+    text-align: right;
+}
+.row-inf select{
+    width: 70px;
+    height: 30px;
+}
+.row-inf .bt-save {
+    background: #e5101d;
+    padding: 0 15px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 32px;
+    font-size: 13px;
+    border: none;
+}
+.left-profile .action-list li a:before {
+    content: '';
+    background: url(../images/icPriteProfile.png) 0 0 no-repeat;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.action-list li.products a:before {
+    width: 16px;
+    height: 14px;
+    background-position: -52px 0;
+}
+.action-list li.products a:hover:before, .action-list li.products a.active:before {
+    background-position: -52px -18px;
+}
+.left-profile .action-list li a:hover, .left-profile .action-list li a.active {
+    background-color: #F3F1F2;
+    color: #e5101d;
+    font-weight: bold;
+}
+.action-list li.payment-orders a:hover:before, .action-list li.payment-orders a.active:before {
+    background-position: -20px -18px;
+}
+.action-list li.payment-orders a:before {
+    width: 17px;
+    height: 16px;
+    background-position: -20px 0;
+}
+.action-list li.user-inf a:before {
+    width: 16px;
+    height: 16px;
+    background-position: -70px 0;
+}
+.action-list li.user-inf a:hover:before, .action-list li.user-inf a.active:before {
+    background-position: -70px -18px;
+}
+.action-list li.mailbox a:hover:before, .action-list li.mailbox a.active:before {
+    background-position: -125px -18px;
+}
+.action-list li.mailbox a:before {
+    width: 16px;
+    height: 14px;
+    background-position: -125px 0;
+}
+.article {
+    background: none repeat scroll 0 0 #FFFFFF;
+    margin-top: 23px;
+}
+.article h1 .sstep {
+    background: url(../images/steps.png) no-repeat scroll 0 0 transparent;
+    font-size: 11px;
+    position: absolute;
+    width: 48px;
+    height: 47px;
+    display: block;
+    left: -24px;
+    top: -6px;
+    text-align: center;
+    color: #FFF;
+    padding-top: 15px;
+}
+.article h1 {
+    background: none repeat scroll 0 0 #e2dff1;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 9px;
+    position: relative;
+    border: 1px solid #cdcdcd;
+    color: #083966;
+    padding-left: 35px;
+    margin-left: 20px;
+    font-size: 16px;
+}
+.icons {
+    text-align: center;
+}
+table {
+    background-color: transparent;
+}
+.yourCart tbody tr {
+    height: 50px;
+}
+.gtable thead th, .yourCart th, .seaWrap1 {
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#efefef));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#efefef 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#efefef 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#efefef 100%);
+    background: linear-gradient(top, #ffffff 0%,#efefef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 );
+    padding: 5px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+.yourCart td, .yourCart th {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #CCC;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.number{
+    width: 50px;
+    text-align: center;
+}
+.delall {
+    background: url(../images/1338519404_cart_delete.png) no-repeat scroll 0 0;
+    padding: 6px 0 5px 30px;
+    font-weight: bold;
+}
+.toltall {
+    background: url(../images/19901_currency.png) no-repeat scroll 0 1px;
+    padding: 7px 0 5px 30px;
+    font-weight: bold;
+}
+.noborderTop{
+    width: 33%;
+}
+.yourCart img{
+    width: 30px;
+}
+.cont-user-mailbox .sort-mailbox {
+    margin: 10px 0;
+}
+.cont-user-mailbox .sort-mailbox .bt-sort-mail {
+    display: inline-block;
+    margin-right: 10px;
+}
+.sort-mailbox .bt-sort-mail a.active {
+    font-weight: bold;
+}
+.sort-mailbox .bt-sort-mail a {
+    display: block;
+    border: 1px solid #e5101d;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    padding-right: 10px;
+}
+.sort-mailbox .bt-sort-mail a .ic {
+    display: inline-block;
+    width: 30px;
+    background-color: #e5101d;
+    margin-right: 10px;
+    position: relative;
+}
+.sort-mailbox .mailbox .ic:before {
+    content: '';
+    background: url(../images/icPriteProfile.png) -102px -38px no-repeat;
+    width: 16px;
+    height: 11px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.sort-mailbox .sent-item .ic:before {
+    content: '';
+    background: url(../images/icPriteProfile.png) -118px -38px no-repeat;
+    width: 11px;
+    height: 11px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+.cont-user-mailbox .select-all {
+    float: right;
+    margin: 10px;
+}
+.cont-user-mailbox .select-all a {
+    margin-left: 10px;
+    display: block;
+    line-height: 22px;
+}
+.cont-user-mailbox .select-all input, .cont-user-mailbox .select-all a {
+    float: left;
+}
+.cont-user-mailbox .select-all a:before {
+    content: '';
+    display: block;
+    float: left;
+    background: url(../images/icPriteProfile.png) -82px -37px no-repeat;
+    width: 17px;
+    height: 18px;
+    margin-right: 5px;
+}
+.cont-user-mailbox .list-mails {
+    width: 100%;
+}
+.cont-user-mailbox .list-mails .head {
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #dadada;
+    background-color: #eeeeee;
+}
+.cont-user-mailbox .list-mails tr {
+    border-top: 1px solid #e8e8e8;
+}
+.list-mails .head th {
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    width: 25%;
+}
+.cont-user-mailbox .list-mails .no-box {
+    text-align: center;
+}
+.cont-user-mailbox .list-mails td {
+    font-weight: bold;
+    line-height: 18px;
+    vertical-align: middle;
+    padding: 6px;
+}
+.purchase{
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+    line-height: 23px;
+}
+.purchase h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.profile-user-account{
+    margin-top: 20px;
+}
