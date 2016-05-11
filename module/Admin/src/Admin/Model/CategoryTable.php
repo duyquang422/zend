@@ -93,25 +93,17 @@ class CategoryTable extends NestedTable {
     }
 
     public function listItem($arrParam = null, $options = null) {
-
-        if ($options['task'] == 'list-item') {
-
-            $result = $this->tableGateway->select(function (Select $select) use ($arrParam) {
-
-                $select->columns(array(
-                    'id', 'name', 'status', 'level', 'parent', 'left', 'right'
-                ))
+        return $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
+                $select->columns(array('id', 'name', 'status', 'level', 'parent', 'left', 'right'))
 						->join(
 							array('c' => 'category'),
 							'category.parent = c.id',
 							array('pleft' => 'left', 'pright' => 'right'),
 							$select::JOIN_LEFT		
-						)
-                ->where->greaterThan('category.level', 0);
+						);
+                    $select->where->greaterThan('category.level', 0);
                 $select->order(array('left ASC'));
-            });
-        }
-        return $result;
+            })->toArray();
     }
 
     public function changeStatus($arrParam = null, $options = null) {

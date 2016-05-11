@@ -29,7 +29,7 @@ class ProductController extends ActionController
         $form = new Product();
         return new ViewModel([
             'form' => $form,
-            'itemSelectBox' => $slbCategory->listItem('',array('task' => 'list-item'))->toArray(),
+            'itemSelectBox' => $slbCategory->listItem('',array('task' => 'list-item')),
             'slbManufacturer' => $slbManufacturer->slbManufacturer()->toArray()
         ]);
     }
@@ -77,7 +77,11 @@ class ProductController extends ActionController
         $product['productSize'] = $this->getServiceLocator()->get('Admin\Model\ProductSizeProductTable')->getProductSize($_POST['id']);
         $product['productAttributes'] = $this->getServiceLocator()->get('Admin\Model\ProductAttributesProductTable')->getProductAttributes($_POST['id']);
         if($this->getRequest()->isXmlHttpRequest()){
-            echo json_encode(array('product' => $product,'tags' => $this->getTable()->getTag($this->_params['id'])));
+            echo json_encode(array(
+                'product' => $product,
+                'tags' => $this->getTable()->getTag($this->_params['id']),
+                'categories' => $this->getServiceLocator()->get('Admin\Model\CategoryTable')->listItem()
+            ));
         }
         return $this->response;
     }
@@ -117,10 +121,6 @@ class ProductController extends ActionController
             $this->getTable()->update(['id' => $this->_params['id'], 'picture' => $picture],['task' => 'update-picture']);
             echo json_encode(['success' => 1]);
         }
-        return $this->response;
-    }
-
-    public function testAction(){
         return $this->response;
     }
 
