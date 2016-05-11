@@ -81,9 +81,6 @@
 		padding-left: 15px;
 		padding-right: 15px;
 	}
-	.box-info .box-link .box-l-c > a > .tl {
-		font-size: 0;
-	}
 }
 @media (min-width: 768px) and (max-width: 1199px) {
 	/*---------------responsive table--------------------*/
@@ -118,6 +115,9 @@
 	}
 	.nav-main > li > strong > a {
 		white-space: normal;
+	}
+	.box-info .box-link .box-l-c > a > .tl {
+		font-size: 0;
 	}
 	/*---------------end responsive table--------------------*/
 	/*---------------category table----------------------*/
@@ -222,5 +222,10 @@
 	}
 	.breadcrumb_detail > div.br.link {
 		padding-left: 0;
+	}
+}
+@media (max-width: 479px) {
+	.box-info .box-link .box-l-c > a > .tl {
+		font-size: 0;
 	}
 }
