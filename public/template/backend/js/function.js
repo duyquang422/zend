@@ -19,6 +19,10 @@ $(document).ready(function(){
     $('#publishing .span6 input').attr('readonly',true);
     $('#tag').attr('readonly',false);
 
+    $(document).on('change','.select-all input',function () {
+        $("#categorychecklist input:checkbox").prop('checked', $(this).prop("checked"));
+    });
+
     $(document).on('change','#checkall',function () {
         $("input:checkbox").prop('checked', $(this).prop("checked"));
     });

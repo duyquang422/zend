@@ -30,6 +30,7 @@ class Products {
     public $meta_keyword;
     public $hits;
     public $category_id;
+    public $categories_id;
     public $status;
 
 	public function exchangeArray($data){
@@ -61,5 +62,6 @@ class Products {
         $this->modified = (!empty($data['modified'])) ? $data['modified'] : null;
         $this->hits         = (!empty($data['hits'])) ? $data['hits'] : 0;
         $this->category_id         = (!empty($data['category_id'])) ? $data['category_id'] : 0;
+        $this->categories_id         = (!empty($data['categories_id'])) ? $data['categories_id'] : null;
 	}
 }

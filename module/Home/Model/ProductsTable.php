@@ -53,12 +53,12 @@ class ProductsTable{
     public function getProducts($arrParam = null, $options = null) {
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
              $select->columns(array('id', 'name','alias','description','image','sale_off','price','deal_time'))
-             ->join(
-                    array('r' => 'ratings'),
-                    'r.id = products.id',
-                    array('total_votes','total_value','idRating' => 'id'),
-                    $select::JOIN_LEFT
-                );
+                    ->join(
+                        array('r' => 'ratings'),
+                        'r.id = products.id',
+                        array('total_votes','total_value','id' => 'idRating'),
+                        $select::JOIN_LEFT
+                    )
             switch($options['task']){
                 case 'nomination-product':
                     $select->where(new Expression('status = 1 AND special = 1'))
@@ -102,7 +102,7 @@ class ProductsTable{
                 )->join(
                     array('r' => 'ratings'),
                     'r.id = products.id',
-                    ['total_votes','total_value'],
+                    array('total_votes','total_value','id' => 'idRating'),
                     $select::JOIN_LEFT
                 );
             if(isset($arrParam['idCategory']))

@@ -381,10 +381,7 @@ function getProduct(id){
             id: id
         },
         success: function(data){
-            console.log(data.categories);
-            $.each(data.categories,function(key,category){
-                console.log(category);
-            })
+            
             CKEDITOR.instances.description.setData(data.product.description);
             $('#name').val(data.product.name);
             $('#alias').val(data.product.alias);

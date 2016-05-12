@@ -2,11 +2,134 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="552c954f-e2b6-4369-9396-b40ba42e4eda" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php" afterPath="$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php" afterPath="$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_69ICeZDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_69ICeZDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_69ICeZDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_69ICeZDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_69ICeZDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_69ICeZDS.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_7V5t4j0k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_7V5t4j0k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_7V5t4j0k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_7V5t4j0k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_7V5t4j0k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_7V5t4j0k.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_DGmA3dQs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_DGmA3dQs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_DGmA3dQs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_DGmA3dQs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_DGmA3dQs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_DGmA3dQs.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_EhtbwasT.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_EhtbwasT.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_EhtbwasT.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_EhtbwasT.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_EhtbwasT.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_EhtbwasT.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_HuYd6I9O.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_HuYd6I9O.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_HuYd6I9O.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_HuYd6I9O.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_HuYd6I9O.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_HuYd6I9O.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_INnkheag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_INnkheag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_INnkheag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_INnkheag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_INnkheag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_INnkheag.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_MOVDqrhC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_MOVDqrhC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_MOVDqrhC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_MOVDqrhC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_MOVDqrhC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_MOVDqrhC.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_NP1yaqQh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_NP1yaqQh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_NP1yaqQh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_NP1yaqQh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_NP1yaqQh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_NP1yaqQh.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_SUchfpwD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_SUchfpwD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_SUchfpwD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_SUchfpwD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_SUchfpwD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_SUchfpwD.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_WTipwyfd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_WTipwyfd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_WTipwyfd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_WTipwyfd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_WTipwyfd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_WTipwyfd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_XAMez0lq.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_XAMez0lq.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_XAMez0lq.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_XAMez0lq.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_XAMez0lq.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_XAMez0lq.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_YmIngfZ0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_YmIngfZ0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_YmIngfZ0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_YmIngfZ0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_YmIngfZ0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_YmIngfZ0.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_av7nkUfK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_av7nkUfK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_av7nkUfK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_av7nkUfK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_av7nkUfK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_av7nkUfK.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_b4L8tQpd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_b4L8tQpd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_b4L8tQpd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_b4L8tQpd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_b4L8tQpd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_b4L8tQpd.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_dRzD5xVB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_dRzD5xVB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_dRzD5xVB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_dRzD5xVB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_dRzD5xVB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_dRzD5xVB.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_gCvAkWi9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_gCvAkWi9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_gCvAkWi9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_gCvAkWi9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_gCvAkWi9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_gCvAkWi9.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_xeENwMWa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_xeENwMWa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_xeENwMWa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_xeENwMWa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_xeENwMWa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_xeENwMWa.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_xfaX1yHR.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_xfaX1yHR.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_xfaX1yHR.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_xfaX1yHR.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_xfaX1yHR.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_xfaX1yHR.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_yPvnVZIL.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_yPvnVZIL.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_yPvnVZIL.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_yPvnVZIL.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_yPvnVZIL.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_yPvnVZIL.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_yWoefV30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_yWoefV30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_yWoefV30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_yWoefV30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_yWoefV30.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_yWoefV30.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Block/MiniBarMenu/MiniBarMenu.php" afterPath="$PROJECT_DIR$/Block/MiniBarMenu/MiniBarMenu.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Admin/Model/Entity/Products.php" afterPath="$PROJECT_DIR$/module/Admin/src/Admin/Model/Entity/Products.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" afterPath="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/backend/js/ajax.js" afterPath="$PROJECT_DIR$/public/template/backend/js/ajax.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml" afterPath="$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/backend/js/function.js" afterPath="$PROJECT_DIR$/public/template/backend/js/function.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/backend/css/template.css" afterPath="$PROJECT_DIR$/public/template/backend/css/template.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/files/visitors/visitors.db" afterPath="$PROJECT_DIR$/public/files/visitors/visitors.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="zend.iws" />
@@ -32,18 +155,9 @@
       <file leaf-file-name="edit.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.115385">
-              <caret line="221" column="76" selection-start-line="221" selection-start-column="76" selection-end-line="221" selection-end-column="76" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-                <marker date="1462987368998" expanded="true" signature="2429:2445" placeholder="..." />
-                <marker date="1462987368998" expanded="true" signature="2458:2567" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.0">
+              <caret line="180" column="46" selection-start-line="180" selection-start-column="46" selection-end-line="180" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,8 +166,10 @@
         <entry file="file://$PROJECT_DIR$/public/template/backend/css/template.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="634" column="19" selection-start-line="634" selection-start-column="19" selection-end-line="634" selection-end-column="19" />
-              <folding />
+              <caret line="643" column="19" selection-start-line="643" selection-start-column="19" selection-end-line="643" selection-end-column="19" />
+              <folding>
+                <marker date="1463055442325" expanded="true" signature="13491:13577" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,17 +178,37 @@
         <entry file="file://$PROJECT_DIR$/public/template/backend/js/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="384" column="35" selection-start-line="384" selection-start-column="35" selection-end-line="384" selection-end-column="35" />
+              <caret line="380" column="18" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3327032">
+            <state vertical-scroll-proportion="0.0">
               <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProductsTable.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="visitors.db" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/files/visitors/visitors.db">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,7 +217,7 @@
       <file leaf-file-name="CategoryTable.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.730769">
+            <state vertical-scroll-proportion="0.0">
               <caret line="105" column="25" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
               <folding />
             </state>
@@ -91,7 +227,7 @@
       <file leaf-file-name="CategoryTable.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Home/Model/CategoryTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.8846154">
+            <state vertical-scroll-proportion="0.0">
               <caret line="180" column="4" selection-start-line="180" selection-start-column="4" selection-end-line="191" selection-end-column="5" />
               <folding />
             </state>
@@ -106,7 +242,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/ProductSizeTable.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Form/Product.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/ProductAttributesProductTable.php" />
         <option value="$PROJECT_DIR$/library/Zendvn/View/Helper/upload.php" />
@@ -157,6 +292,7 @@
         <option value="$PROJECT_DIR$/public/template/backend/js/ajax.js" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/public/files/visitors/visitors.db" />
       </list>
     </option>
   </component>
@@ -203,8 +339,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -323,6 +457,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -384,7 +520,7 @@
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31183612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32094082" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -440,13 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/module/Home/view/home/index/edit-nav-left-homepage.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Block/SlideHomeTop/views/default.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.03046595">
@@ -594,13 +723,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.52551985">
-          <caret line="91" column="38" selection-start-line="91" selection-start-column="38" selection-end-line="91" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/template/frontend/js/category.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4041096">
@@ -661,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="3982" column="16" selection-start-line="3982" selection-start-column="16" selection-end-line="3982" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -669,7 +790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -684,7 +804,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4874552">
           <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -699,7 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1469534">
           <caret line="7" column="33" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -707,7 +825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="104" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -715,7 +832,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -723,7 +839,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -731,7 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4265233">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -739,7 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6630824">
           <caret line="100" column="22" selection-start-line="100" selection-start-column="22" selection-end-line="100" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -747,7 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.2311828">
           <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -755,24 +867,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1218638">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.115385">
-          <caret line="221" column="76" selection-start-line="221" selection-start-column="76" selection-end-line="221" selection-end-column="76" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#div#1;n#div#0;n#div#0;n#section#0;n#div#0;n#!!top" expanded="false" />
-            <marker date="1462987368998" expanded="true" signature="2429:2445" placeholder="..." />
-            <marker date="1462987368998" expanded="true" signature="2458:2567" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="180" column="46" selection-start-line="180" selection-start-column="46" selection-end-line="180" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -780,13 +882,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82258064">
           <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Home/Model/CategoryTable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8846154">
+        <state vertical-scroll-proportion="0.0">
           <caret line="180" column="4" selection-start-line="180" selection-start-column="4" selection-end-line="191" selection-end-column="5" />
           <folding />
         </state>
@@ -795,22 +896,24 @@
     <entry file="file://$PROJECT_DIR$/public/template/backend/css/template.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="634" column="19" selection-start-line="634" selection-start-column="19" selection-end-line="634" selection-end-column="19" />
-          <folding />
+          <caret line="643" column="19" selection-start-line="643" selection-start-column="19" selection-end-line="643" selection-end-column="19" />
+          <folding>
+            <marker date="1463055442325" expanded="true" signature="13491:13577" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/template/backend/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="384" column="35" selection-start-line="384" selection-start-column="35" selection-end-line="384" selection-end-column="35" />
+          <caret line="380" column="18" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
+        <state vertical-scroll-proportion="0.0">
           <caret line="105" column="25" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
           <folding />
         </state>
@@ -818,8 +921,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3327032">
+        <state vertical-scroll-proportion="-0.0">
           <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/files/visitors/visitors.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
