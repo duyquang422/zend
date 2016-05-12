@@ -26,18 +26,18 @@ class MiniBarMenu extends AbstractHelper{
     //lấy ra các id sản phẩm đã mua từ user
     public function getBoughtProductIds(){
         $arrId = array();
-        foreach($this->_cartTable->listItem('',['task'=>'view-history']) as $val){
+        foreach($this->_cartTable->listItem('',array('task'=>'view-history')) as $val){
             if(gettype(json_decode($val->product_id)) == 'array')
                 $arrId = array_merge($arrId,array_values(json_decode($val->product_id)));
             else
-                $arrId = array_merge($arrId,[$val->product_id]);
+                $arrId = array_merge($arrId,array($val->product_id));
         }
         return $arrId;
     }
 
     public function getBoughtProducts(){
         if($this->getBoughtProductIds())
-            return $this->_productsTable->getProducts($this->getBoughtProductIds(),['task' => 'miniBarMenu']);
+            return $this->_productsTable->getProducts($this->getBoughtProductIds(),array('task' => 'miniBarMenu'));
         else
             return;
     }
@@ -47,15 +47,21 @@ class MiniBarMenu extends AbstractHelper{
     }
     //liệt kê danh sách các sản phẩm tương ứng với id được lưu trong cookie
     public function getCookie($nameCookie){
-        if(isset($_COOKIE[$nameCookie]))
-            return $this->_productsTable->getProducts(json_decode($_COOKIE[$nameCookie],true),['task'=> 'miniBarMenu']);
+        if(isset($_COOKIE[$nameCookie])){
+            $arrCookie = json_decode($_COOKIE[$nameCookie],true);
+            $arrId = array();
+            foreach ($arrCookie as $key => $value)
+                if($value > 0)
+                    $arrId[] = $value;
+            return $this->_productsTable->getProducts($arrId,array('task'=> 'miniBarMenu'));
+        }
         else
             return;
     }
     public function getProductsInCart(){
         $session = new Container(SECURITY_KEY . '_product');
         if($session->offsetExists('arrIdSanPhamTrongGioHang')){
-            return $this->_productsTable->getProducts($session->offsetGet('arrIdSanPhamTrongGioHang'),['task'=> 'miniBarMenu']);
+            return $this->_productsTable->getProducts($session->offsetGet('arrIdSanPhamTrongGioHang'),array('task'=> 'miniBarMenu'));
         }else
             return;
     }

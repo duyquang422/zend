@@ -633,7 +633,7 @@ select:focus, input[type="file"]:focus, input[type="radio"]:focus, input[type="c
     min-height: 320px;
     max-height: 350px;
     overflow: auto;
-    padding: 24px .9em;
+    padding: 24px 0;
     border: 1px solid #dfdfdf;
     background-color: #fdfdfd;
 }
@@ -681,6 +681,15 @@ ul.categorychecklist li {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-ul.categorychecklist ul{
-    margin-left: -20px;
+ul.categorychecklist .level1{
+    margin-left: 20px;
+}
+ul.categorychecklist .level2{
+    margin-left: 40px;
+}
+ul.categorychecklist .level3{
+    margin-left: 60px;
+}
+ul.categorychecklist .level4{
+    margin-left: 80px;
 }
