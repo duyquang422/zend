@@ -1,30 +1,3 @@
-/*NAV CATEGORY*/
-.nav-bar-menu span, .nav-bar-menu a{
-    font-size: 15px;
-    color: white;
-}
-.list-menu{
-    height: 40px;
-    background-color: #ed1c24;
-    margin-top: -1px;
-}
-.list-menu ul li{
-    float: left;
-}
-.list-menu ul li a{
-    display: block;
-    float: left;
-    height: 40px;
-    padding: 0 15px;
-    line-height: 40px;
-    font-size: 15px;
-    text-transform: uppercase;
-    text-decoration: initial;
-}
-.list-menu ul li a:hover{
-    background-color: #ca181f;
-    text-decoration: none;
-}
 /* SLIDE HOME TOP */
 .good-deal .title-deal {
     border-bottom: 2px solid #d9d9d9;

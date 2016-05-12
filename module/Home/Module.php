@@ -5,6 +5,7 @@ use Block\Criteria\Criteria;
 use Block\FilterManufacturer\FilterManufacturer;
 use Block\Header\Header;
 use Block\History\History;
+use Block\HorizontalMenu\HorizontalMenu;
 use Block\MenuCategories\MenuCategories;
 use Block\NavLeftHomePage\NavLeftHomePage;
 use Block\MiniBarMenu\MiniBarMenu;
@@ -146,6 +147,11 @@ class Module
             'factories' => array(
                 'slideHomeTop' => function($sm){
                     $helper = new SlideHomeTop();
+                    $helper->getConfig($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));
+                    return $helper;
+                },
+                'horizontalMenu' => function($sm){
+                    $helper = new HorizontalMenu();
                     $helper->getConfig($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));
                     return $helper;
                 },
