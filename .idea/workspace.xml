@@ -2,135 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="552c954f-e2b6-4369-9396-b40ba42e4eda" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_69ICeZDS.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_69ICeZDS.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_69ICeZDS.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_69ICeZDS.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_69ICeZDS.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_69ICeZDS.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_7V5t4j0k.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_7V5t4j0k.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_7V5t4j0k.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_7V5t4j0k.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_7V5t4j0k.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_7V5t4j0k.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_DGmA3dQs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_DGmA3dQs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_DGmA3dQs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_DGmA3dQs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_DGmA3dQs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_DGmA3dQs.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_EhtbwasT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_EhtbwasT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_EhtbwasT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_EhtbwasT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_EhtbwasT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_EhtbwasT.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_HuYd6I9O.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_HuYd6I9O.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_HuYd6I9O.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_HuYd6I9O.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_HuYd6I9O.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_HuYd6I9O.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_INnkheag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_INnkheag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_INnkheag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_INnkheag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_INnkheag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_INnkheag.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_MOVDqrhC.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_MOVDqrhC.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_MOVDqrhC.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_MOVDqrhC.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_MOVDqrhC.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_MOVDqrhC.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_NP1yaqQh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_NP1yaqQh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_NP1yaqQh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_NP1yaqQh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_NP1yaqQh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_NP1yaqQh.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_SUchfpwD.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_SUchfpwD.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_SUchfpwD.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_SUchfpwD.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_SUchfpwD.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_SUchfpwD.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_WTipwyfd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_WTipwyfd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_WTipwyfd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_WTipwyfd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_WTipwyfd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_WTipwyfd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_XAMez0lq.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_XAMez0lq.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_XAMez0lq.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_XAMez0lq.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_XAMez0lq.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_XAMez0lq.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_YmIngfZ0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_YmIngfZ0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_YmIngfZ0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_YmIngfZ0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_YmIngfZ0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_YmIngfZ0.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_av7nkUfK.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_av7nkUfK.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_av7nkUfK.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_av7nkUfK.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_av7nkUfK.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_av7nkUfK.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_b4L8tQpd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_b4L8tQpd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_b4L8tQpd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_b4L8tQpd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_b4L8tQpd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_b4L8tQpd.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_dRzD5xVB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_dRzD5xVB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_dRzD5xVB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_dRzD5xVB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_dRzD5xVB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_dRzD5xVB.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_gCvAkWi9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_gCvAkWi9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_gCvAkWi9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_gCvAkWi9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_gCvAkWi9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_gCvAkWi9.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_xeENwMWa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_xeENwMWa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_xeENwMWa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_xeENwMWa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_xeENwMWa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_xeENwMWa.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_xfaX1yHR.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_xfaX1yHR.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_xfaX1yHR.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_xfaX1yHR.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_xfaX1yHR.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_xfaX1yHR.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_yPvnVZIL.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_yPvnVZIL.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_yPvnVZIL.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_yPvnVZIL.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_yPvnVZIL.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_yPvnVZIL.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/product_yWoefV30.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/100x100/product_yWoefV30.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/203x235/product_yWoefV30.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/231x242/product_yWoefV30.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/293x293/product_yWoefV30.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/product/400x400/product_yWoefV30.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Block/MiniBarMenu/MiniBarMenu.php" afterPath="$PROJECT_DIR$/Block/MiniBarMenu/MiniBarMenu.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/src/Admin/Model/Entity/Products.php" afterPath="$PROJECT_DIR$/module/Admin/src/Admin/Model/Entity/Products.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" afterPath="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/backend/js/ajax.js" afterPath="$PROJECT_DIR$/public/template/backend/js/ajax.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml" afterPath="$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/backend/js/function.js" afterPath="$PROJECT_DIR$/public/template/backend/js/function.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/backend/css/template.css" afterPath="$PROJECT_DIR$/public/template/backend/css/template.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/files/visitors/visitors.db" afterPath="$PROJECT_DIR$/public/files/visitors/visitors.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="zend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -155,7 +27,7 @@
       <file leaf-file-name="edit.phtml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="180" column="46" selection-start-line="180" selection-start-column="46" selection-end-line="180" selection-end-column="46" />
               <folding />
             </state>
@@ -187,28 +59,18 @@
       <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductsTable.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductsTable.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="visitors.db" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/files/visitors/visitors.db">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.62544805">
+              <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -242,7 +104,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/module/Admin/src/Admin/Form/Product.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/ProductAttributesProductTable.php" />
         <option value="$PROJECT_DIR$/library/Zendvn/View/Helper/upload.php" />
         <option value="$PROJECT_DIR$/module/Admin/config/module.config.php" />
@@ -293,6 +154,7 @@
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/public/files/visitors/visitors.db" />
+        <option value="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" />
       </list>
     </option>
   </component>
@@ -882,6 +744,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.82258064">
           <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -919,6 +782,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/files/visitors/visitors.db">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
@@ -929,16 +800,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/files/visitors/visitors.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.62544805">
+          <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
           <folding />
         </state>
       </provider>

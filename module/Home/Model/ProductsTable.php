@@ -56,9 +56,9 @@ class ProductsTable{
                     ->join(
                         array('r' => 'ratings'),
                         'r.id = products.id',
-                        array('total_votes','total_value','id' => 'idRating'),
+                        array('total_votes','total_value'),
                         $select::JOIN_LEFT
-                    )
+                    );
             switch($options['task']){
                 case 'nomination-product':
                     $select->where(new Expression('status = 1 AND special = 1'))
@@ -102,7 +102,7 @@ class ProductsTable{
                 )->join(
                     array('r' => 'ratings'),
                     'r.id = products.id',
-                    array('total_votes','total_value','id' => 'idRating'),
+                    array('total_votes','total_value'),
                     $select::JOIN_LEFT
                 );
             if(isset($arrParam['idCategory']))
