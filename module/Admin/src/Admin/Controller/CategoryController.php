@@ -22,10 +22,10 @@ class CategoryController extends ActionController
 
     public function indexAction(){
         $form = new Category();
-        return new ViewModel([
+        return new ViewModel(array(
             'form' => $form,
-            'itemSelectBox' => $this->getTable()->listItem('',array('task' => 'list-item'))->toArray()
-        ]);
+            'itemSelectBox' => $this->getTable()->listItem('',array('task' => 'list-item'))
+        ));
     }
 
     public function uploadAction(){
@@ -34,10 +34,10 @@ class CategoryController extends ActionController
                 $filename = $this->getTable()->getImage($this->_params['id'])->image;
                 if ($filename) {
                     $imageObj = new Image();
-                    $imageObj->removeImage($filename, ['task' => 'category']);
+                    $imageObj->removeImage($filename, array('task' => 'category'));
                 }
                 $imageObj = new Image();
-                $filename = $imageObj->upload('image', ['task' => 'category']);
+                $filename = $imageObj->upload('image', array('task' => 'category'));
                 $this->getTable()->saveImage($this->_params['id'], $filename);
                 echo json_encode($filename);
             }
@@ -47,10 +47,10 @@ class CategoryController extends ActionController
 
     public function reloadAction(){
         $form = new Category();
-        $viewModel = new ViewModel([
+        $viewModel = new ViewModel(array(
             'form' => $form,
             'itemSelectBox' => $this->getTable()->listItem('',array('task' => 'list-item'))->toArray()
-        ]);
+        ));
         $viewModel->setTemplate('admin/category/index');
         $this->layout('layout/reload');
         return $viewModel;
@@ -61,7 +61,7 @@ class CategoryController extends ActionController
             $arrParams = $_GET;
             $arrParams['description'] = $_POST['description'];
             $arrParams['modified_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($arrParams,['task' => 'edit-item']);
+            $this->getTable()->saveItem($arrParams,array('task' => 'edit-item'));
         }
         return $this->response;
     }
@@ -123,7 +123,7 @@ class CategoryController extends ActionController
             $filename = $this->getTable()->getImage($this->_params['id'])->image;
             if ($filename) {
                 $imageObj = new Image();
-                $imageObj->removeImage($filename, ['task' => 'category']);
+                $imageObj->removeImage($filename, array('task' => 'category'));
             }
     	}
         return $this->response;
@@ -133,10 +133,10 @@ class CategoryController extends ActionController
         if($this->getRequest()->isXmlHttpRequest()){
             if($this->_params['image']['name']){
                 $imageObj = new Image();
-                $this->_params['imageName'] = $imageObj->upload('image',['task' => 'category']);
+                $this->_params['imageName'] = $imageObj->upload('image',array('task' => 'category'));
             }
             $this->_params['created_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($this->_params,['task' => 'add-item']);
+            $this->getTable()->saveItem($this->_params,array('task' => 'add-item'));
         }
         return $this->response;
     }

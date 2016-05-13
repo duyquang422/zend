@@ -27,10 +27,10 @@ class ProductSizeTable extends AbstractTableGateway {
 
     public function saveData($arrParam = null, $option = null)
     {
-        $data = [
+        $data = array(
             'size' => $arrParam['value'],
             'status' => 1
-        ];
+        );
         $this->tableGateway->insert($data);
         return $this->tableGateway->getLastInsertValue('id');
     }
@@ -57,10 +57,8 @@ class ProductSizeTable extends AbstractTableGateway {
         if ($options['task'] == 'change-multi-status') {
             if (!empty($arrParam['cid'])) {
                 $data = array('status' => $arrParam['status']);
-                var_dump($arrParam['cid']);
                 $cid = implode(',', $arrParam['cid']);
                 $where = array('id IN (' . $cid . ')');
-                var_dump($where);
                 $this->tableGateway->update($data, $where);
                 return true;
             }

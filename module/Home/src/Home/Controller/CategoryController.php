@@ -18,12 +18,12 @@ class CategoryController extends ActionController{
         $arrParams = $this->params()->fromRoute();
         $category = $this->getServiceLocator()->get('Home\Model\CategoryTable');
         $this->_getHelper('HeadTitle',$this->getServiceLocator())->append($category->getCategory($arrParams['id'])->name);
-        return new ViewModel([
+        return new ViewModel(array(
             'id' => $arrParams['id'],
             'category' => $category->getCategory($arrParams['id']),
             'parentCategory' => $category->getParentCategory($category->getCategory($arrParams['id'])->parent),
             'products' => $this->getTable()->getProductsByCategory($arrParams)
-        ]);
+        ));
     }
 
     public function countComment(){
@@ -44,7 +44,7 @@ class CategoryController extends ActionController{
             $viewModel = new ViewModel();
             $viewModel->setTerminal(true);
             return $viewModel->setVariable(
-                'products' , $this->getTable()->getProductsByCategory($this->params()->fromPost(),['task' => 'filter'])
+                'products' , $this->getTable()->getProductsByCategory($this->params()->fromPost(),array('task' => 'filter'))
             );
         }
         return $this->response;

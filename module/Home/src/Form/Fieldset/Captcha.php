@@ -12,10 +12,10 @@ class Captcha extends Fieldset
             $this->add([
                 'name' => 'captcha',
                 'type' => 'text',
-                'attributes' => [
+                'attributes' => array(
                     'class' => 'form-control',
                     'id' => 'captcha'
-                ]
+                )
             ]);
     }
 }

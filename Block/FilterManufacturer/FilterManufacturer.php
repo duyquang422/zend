@@ -17,6 +17,6 @@ class FilterManufacturer extends AbstractHelper{
     }
 
     public function getManufacturer($categoryId){
-        return $this->_categoryTable->getManufacturerByCategory($categoryId,['task'=> 'category']);
+        return $this->_categoryTable->getManufacturerByCategory($categoryId,array('task'=> 'category'));
     }
 }

@@ -18,7 +18,7 @@ class ProductsByCategory extends AbstractHelper{
         $arrData = array();
         $arrData['category'] = $this->_table->getChildCategory($id);
         $arrData['productInCategory'] = $this->_table->getProductByCategory($id,array('task' => 'home'));
-        $arrData['manufacturer'] = $this->_table->getManufacturerByCategory($id,['task' => 'index']);
+        $arrData['manufacturer'] = $this->_table->getManufacturerByCategory($id,array('task' => 'index'));
         return $this->_data = $arrData;
     }
 }

@@ -44,7 +44,7 @@ class ManufacturerTable extends AbstractTableGateway {
 
     public function savePicture($id, $filename){
         if($id > 0) {
-            $this->tableGateway->update(['picture' => $filename], array('id' => $id));
+            $this->tableGateway->update(array('picture' => $filename), array('id' => $id));
         }
     }
 
@@ -68,19 +68,18 @@ class ManufacturerTable extends AbstractTableGateway {
             }
 
             if ($options['task'] == 'edit-item') {
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                     'modified_date' => date('Y-m-d H:i:s'),
                     'modified_by' => $arrParam['modified_by']
-                ]);
+                ));
                 $this->tableGateway->update($data, array('id' => $arrParam['id']));
             }else{
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                    'created_date' => date('Y-m-d H:i:s'),
                     'created_by' => $arrParam['created_by'],
                     'status' => 1,
                     'picture' => isset($arrParam['picture']) ? $arrParam['picture'] : ''
-                ]);
-                var_dump($data);
+                ));
                 $this->tableGateway->insert($data);
             }
     }
@@ -98,7 +97,7 @@ class ManufacturerTable extends AbstractTableGateway {
                     $filename = $this->getPicture($id)->picture;
                     if($filename){
                         $imageObj = new Image();
-                        $imageObj->removeImage($filename,['task' => 'manufacturer']);
+                        $imageObj->removeImage($filename,array('task' => 'manufacturer'));
                     }
                     $this->tableGateway->delete(array('id' => $id));
                 }
@@ -107,7 +106,7 @@ class ManufacturerTable extends AbstractTableGateway {
             $filename = $this->getPicture($arrParam['id'])->picture;
             if($filename){
                 $imageObj = new Image();
-                $imageObj->removeImage($filename,['task' => 'manufacturer']);
+                $imageObj->removeImage($filename,array('task' => 'manufacturer'));
             }
             $this->tableGateway->delete(array('id' => $arrParam['id']));
         }

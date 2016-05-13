@@ -27,7 +27,7 @@ class CartTable extends AbstractTableGateway {
 		$rand = '';
 		foreach (array_rand($seed, 6) as $k) $rand .= $seed[$k];
 
-		$data = [
+		$data = array(
 			'code' => $rand,
 			'product_id' => $arrParam['productId'],
 			'price' => $arrParam['price'],
@@ -45,7 +45,7 @@ class CartTable extends AbstractTableGateway {
             'user_id' => isset($arrParam['user_id']) ? $arrParam['user_id'] : 0,
 			'ip_address' => $_SERVER['REMOTE_ADDR']
 
-		];
+		);
 		$this->tableGateway->insert($data);
 		return $this->tableGateway->getLastInsertValue('code');
 	}
@@ -55,7 +55,7 @@ class CartTable extends AbstractTableGateway {
             if($options['task'] == 'view-history') {
                     $info		= new Info();
                     $user	= $info->getUserInfo();
-                    $select->columns(['product_id'])
+                    $select->columns(array('product_id'))
                             ->order(array('id DESC'))
                             ->where->like('ip_address','%'.$_SERVER['REMOTE_ADDR'] . '%');
                     if($user){

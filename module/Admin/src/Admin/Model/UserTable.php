@@ -191,6 +191,6 @@ class UserTable extends AbstractTableGateway {
 
 	public function saveItem($arrParam = null, $options = null){
         $data['group_id'] = $arrParam['group_id'];
-        $this->tableGateway->update($data,['id'=> $arrParam['id']]);
+        $this->tableGateway->update($data,array('id'=> $arrParam['id']));
     }
 }

@@ -9,13 +9,13 @@ class Phone extends Fieldset
     public function __construct()
     {
         parent::__construct('phone');
-            $this->add([
+            $this->add(array(
                 'name' => 'phone',
                 'type' => 'number',
-                'attributes' => [
+                'attributes' => array(
                     'class' => 'form-control',
                     'id' => 'phone',
-                ]
-            ]);
+                )
+            ));
     }
 }

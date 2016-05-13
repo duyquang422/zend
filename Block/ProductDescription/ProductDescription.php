@@ -16,6 +16,6 @@ class ProductDescription extends AbstractHelper{
         return $this->_table = $table;
     }
     public function getData($id){
-        return $this->_data = $this->_table->getProduct(['id' => $id]);
+        return $this->_data = $this->_table->getProduct(array('id' => $id));
     }
 }

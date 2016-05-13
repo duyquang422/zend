@@ -9,15 +9,15 @@ class Email extends Fieldset
     public function __construct()
     {
         parent::__construct('email');
-            $this->add([
+            $this->add(array(
                 'name' => 'email-sign-up',
                 'type' => 'text',
-                'attributes' => [
+                'attributes' => array(
                     'class' => 'form-control',
                     'id' => 'email',
                     'placeholder' => 'Vui lòng nhập email',
                     'autocomplete' => "false"
-                ]
-            ]);
+                )
+            ));
     }
 }

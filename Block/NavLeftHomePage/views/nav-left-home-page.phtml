@@ -10,11 +10,11 @@
 
                     <li class="menuItem" id="category-<?php echo $i ?>" data-id="<?php echo $value['id']?>">
                         <strong>
-                            <a href="<?php echo $this->view->basePath('/' . $value['alias'] . '-' . $value['id'])?>" title="Thời trang nữ"><?php echo $value['name']?></a>
+                            <a href="<?php echo $this->view->basePath('/ao-nu-141')?>" title="Thời trang nữ"><?php echo $value['name']?></a>
                             <span><i class="fa fa-angle-right"></i></span>
                         </strong>
                         <!-- <div class="guide">
-                            <a href="<?php echo $_SERVER['REQUEST_URI'] .'/' . $value['alias'] . '-' . $value['id'] ?>" title="Áo nữ">Áo nữ</a>
+                            <a href="<?php echo $_SERVER['REQUEST_URI'] .'/ao-nu-141'?>" title="Áo nữ">Áo nữ</a>
                         </div> -->
                         <div class="sub-cate">
                             <?php
@@ -30,7 +30,7 @@
                                     <?php foreach ($data as $val){
                                         if($val['level'] == 2 && $val['parent'] == $value['id']){ ?>
                                                 <li>
-                                                    <a class="title" href="<?php echo $this->view->basePath('/' . $val['alias'] . '-' . $val['id']) ?>" title="<?php echo $val['name']?>"><?php echo $val['name']?></a>
+                                                    <a class="title" href="<?php echo $this->view->basePath('/ao-nu-141') ?>" title="<?php echo $val['name']?>"><?php echo $val['name']?></a>
                                                 </li>
                                         <?php }} ?>
                                     </ul>
@@ -39,7 +39,7 @@
                                     <span><b>Thương Hiệu</b></span>
                                     <ul>
                                         <?php 
-                                        $manufacturer = $this->_table->getManufacturerByCategory($value['id'],['task' => 'index']);
+                                        $manufacturer = $this->_table->getManufacturerByCategory($value['id'],array('task' => 'index'));
                                         foreach ($manufacturer as $val) {
                                             echo '<li><a href="#">', $val['manufacturerName'] ,'</a></li>';
                                         }

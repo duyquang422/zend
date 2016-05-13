@@ -24,7 +24,7 @@ class NominationProducts extends AbstractHelper{
         return $this->_productTable = $table;
     }
     public function getProductsDefault($option){
-        return $this->_data = $this->_productTable->getProducts('',['task' => $option]);
+        return $this->_data = $this->_productTable->getProducts('',array('task' => $option));
     }
 
     public function getProductsFromSurveyUser($categoryId){
@@ -32,7 +32,7 @@ class NominationProducts extends AbstractHelper{
     }
 
     public function getProduct($productId){
-        return $this->_productTable->getProduct(['id'=> $productId]);
+        return $this->_productTable->getProduct(array('id'=> $productId));
     }
 
     public function category($table){

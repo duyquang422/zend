@@ -87,17 +87,17 @@ class GroupTable extends AbstractTableGateway {
             'permission_id' => json_encode($arrParam['permissionId'])
         );
         if ($options['task'] == 'edit-item') {
-            $data = array_merge($data,[
+            $data = array_merge($data,array(
                 'modified' => date('Y-m-d H:i:s'),
                 'modified_by' => $arrParam['modified_by']
-            ]);
+            ));
             $this->tableGateway->update($data, array('id' => $arrParam['id']));
         }else{
-            $data = array_merge($data,[
+            $data = array_merge($data,array(
                 'created' => date('Y-m-d H:i:s'),
                 'created_by' => $arrParam['created_by'],
                 'status' => 1,
-            ]);
+            ));
             $this->tableGateway->insert($data);
         }
     }

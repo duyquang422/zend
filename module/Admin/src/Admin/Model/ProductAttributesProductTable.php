@@ -18,12 +18,12 @@ class ProductAttributesProductTable extends AbstractTableGateway
 
     public function saveData($arrParam = null, $option = null)
     {
-        $data = [
+        $data = array(
             'attributes_id' => $arrParam['attributesId'],
             'product_id' => $arrParam['productId'],
             'value' => $arrParam['value'],
             'status' => 1
-        ];
+        );
         $this->tableGateway->insert($data);
         return $this->tableGateway->getLastInsertValue('id');
     }
@@ -42,12 +42,12 @@ class ProductAttributesProductTable extends AbstractTableGateway
     }
 
     public function deleteItem($arrParam = null, $option = null){
-            $this->tableGateway->delete(['id' => $arrParam['id']]);
+            $this->tableGateway->delete(array('id' => $arrParam['id']));
     }
 
     public function changeStatus($arrParam = null, $option = null){
         $data = array('status' => $arrParam['status'] ? 0 : 1);
-        $this->tableGateway->update($data, ['id' => $arrParam['id']]);
+        $this->tableGateway->update($data, array('id' => $arrParam['id']));
     }
 
     public function deleteByattributes($arrParam = null, $option = null){

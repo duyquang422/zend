@@ -46,10 +46,14 @@ class CartController extends ActionController
             $productOfOrder = array();
             if(gettype(json_decode($order->product_id)) == 'array') {
                 for ($i = 0; $i < count(json_decode($order->product_id)); $i++) {
-                    $productOfOrder['product'][$i] = $product->getProductFromOder(json_decode($order->product_id)[$i]);
-                    $productOfOrder['product'][$i]->size = json_decode($order->size_name)[$i];
-                    $productOfOrder['product'][$i]->quantity = json_decode($order->quantity)[$i];
-                    $productOfOrder['product'][$i]->price = json_decode($order->price)[$i];
+                    $productId = json_decode($order->product_id);
+                    $productSize = json_decode($order->size_name);
+                    $quantity = json_decode($order->quantity);
+                    $price = json_decode($order->price);
+                    $productOfOrder['product'][$i] = $product->getProductFromOder($productId[$i]);
+                    $productOfOrder['product'][$i]->size = $productSize[$i];
+                    $productOfOrder['product'][$i]->quantity = $quantity[$i];
+                    $productOfOrder['product'][$i]->price = $price[$i];
                 }
             }else{
                 $productOfOrder['product'] = $product->getProductFromOder($order->product_id);

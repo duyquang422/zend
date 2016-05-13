@@ -1,13 +1,13 @@
 <?php
-$arr  = [
-    ['title' => 'Tên chuyên mục'],
-    ['title' => 'Ảnh'],
-    ['title' => 'Mô tả'],
-    ['title' => 'Hiện'],
-    ['title' => 'Nổi bật'],
-    ['title' => 'Sắp xếp'],
-    ['title' => 'Chức năng'],
-    ['title' => 'id'],
-];
+$arr  = array(
+    array('title' => 'Tên chuyên mục'),
+    array('title' => 'Ảnh'),
+    array('title' => 'Mô tả'),
+    array('title' => 'Hiện'),
+    array('title' => 'Nổi bật'),
+    array('title' => 'Sắp xếp'),
+    array('title' => 'Chức năng'),
+    array('title' => 'id'),
+);
 $this->datatable('category',$arr);
 $this->modal('category', $this->render('edit.phtml') ,'modal-lg');

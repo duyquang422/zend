@@ -34,8 +34,8 @@ class ProductController extends ActionController{
         $arrCookie = array();
         $arrCookie = isset($_COOKIE['arrViewedId']) ? json_decode($_COOKIE['arrViewedId'],true) : '';
         if(!$arrCookie) {
-            $arrCookie = [$this->_params['id']];
-            setcookie('arrViewedId',json_encode([$this->_params['id']]), time() + 60 * 60 * 24 * 365);
+            $arrCookie = array($this->_params['id']);
+            setcookie('arrViewedId',json_encode(array($this->_params['id'])), time() + 60 * 60 * 24 * 365);
         }
         else{
             if(!in_array($this->_params['id'],$arrCookie))
@@ -46,11 +46,11 @@ class ProductController extends ActionController{
 
 
         $this->_getHelper('HeadTitle',$this->getServiceLocator())->prepend($product->name);
-        return new ViewModel([
+        return new ViewModel(array(
             'product' => $product,
             'size' => $this->getServiceLocator()->get('Admin\Model\ProductSizeProductTable')->getProductSize($this->_params['id']),
             'categoryParent' =>  $this->getServiceLocator()->get('Home\Model\CategoryTable')->getParentCategory($product->parentId)
-        ]);
+        ));
     }
 
     public function loginAction(){
@@ -71,9 +71,9 @@ class ProductController extends ActionController{
     public function searchAction(){
         if($this->getRequest()->isGet()){
             $products = $this->getServiceLocator()->get('Home\Model\ProductsTable');
-            return new ViewModel([
+            return new ViewModel(array(
                 'products' => $products->search($this->params()->fromQuery('q'))
-            ]);
+            ));
         }
         return $this->redirect()->toRoute('home');
     }

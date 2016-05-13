@@ -1,11 +1,11 @@
 <?php
-$arr  = [
-    ['title' => 'Tên chuyên mục'],
-    ['title' => 'Logo'],
-    ['title' => 'Mô tả'],
-    ['title' => 'Hiện'],
-    ['title' => 'Chức năng'],
-    ['title' => 'id'],
-];
+$arr  = array(
+    array('title' => 'Tên chuyên mục'),
+    array('title' => 'Logo'),
+    array('title' => 'Mô tả'),
+    array('title' => 'Hiện'),
+    array('title' => 'Chức năng'),
+    array('title' => 'id'),
+);
 $this->datatable('manufacturer',$arr);
 $this->modal('manufacturer', $this->render('edit.phtml') ,'modal-lg');

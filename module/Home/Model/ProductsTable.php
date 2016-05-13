@@ -15,7 +15,7 @@ class ProductsTable{
     }
 
     public function updateView($arrParam){
-        $this->tableGateway->update(['hits' => $arrParam->hits + 1], array('id' => $arrParam->id));
+        $this->tableGateway->update(array('hits' => $arrParam->hits + 1), array('id' => $arrParam->id));
     }
     public function getProductsFromSurveyUser($categoryId){
         return $this->tableGateway->select(function (Select $select) use ($categoryId){
@@ -39,11 +39,11 @@ class ProductsTable{
     }
     public function getProduct($arrParam = null,$options = null){
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-                $select->columns(['id', 'name', 'alias', 'description', 'image', 'sale_off', 'price','hits','picture','code','trademark','meta_description','meta_keyword','category_id'])
+                $select->columns(array('id', 'name', 'alias', 'description', 'image', 'sale_off', 'price','hits','picture','code','trademark','meta_description','meta_keyword','category_id','percent_discount'))
                         ->join(
-                            ['c' => 'category'],
+                            array('c' => 'category'),
                             'c.id = products.category_id',
-                            ['categoryName' => 'name','categoryId' => 'id','categoryAlias' => 'alias','parentId' => 'parent'],
+                            array('categoryName' => 'name','categoryId' => 'id','categoryAlias' => 'alias','parentId' => 'parent'),
                             $select::JOIN_LEFT
                         )->where->equalTo('products.id',$arrParam['id']);
         })->current();
@@ -52,7 +52,7 @@ class ProductsTable{
 
     public function getProducts($arrParam = null, $options = null) {
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-             $select->columns(array('id', 'name','alias','description','image','sale_off','price','deal_time'))
+             $select->columns(array('id', 'name','alias','description','image','sale_off','price','deal_time','percent_discount','zoom_image'))
                     ->join(
                         array('r' => 'ratings'),
                         'r.id = products.id',
@@ -106,9 +106,9 @@ class ProductsTable{
                     $select::JOIN_LEFT
                 );
             if(isset($arrParam['idCategory']))
-                $select->where(new Expression('products.status = 1 AND (c.id = ? OR c.parent = ?)',[$arrParam['idCategory'],$arrParam['idCategory']]));
+                $select->where(new Expression('products.status = 1 AND (c.id = ? OR c.parent = ?)',array($arrParam['idCategory'],$arrParam['idCategory'])));
             else
-                $select->where(new Expression('products.status = 1 AND (c.id = ? OR c.parent = ?)',[$arrParam['id'],$arrParam['id']]));
+                $select->where(new Expression('products.status = 1 AND (c.id = ? OR c.parent = ?)',array($arrParam['id'],$arrParam['id'])));
 //            $select->order('id DESC');
             if($options['task'] == 'filter') {
                 if ($arrParam['attr'] == 'id' || $arrParam['attr'] == 'hits' ||
@@ -120,7 +120,7 @@ class ProductsTable{
                     $select->where('products.' . $arrParam['attr'], 1);
 
                 if($arrParam['star']){
-                    $select->where(new Expression('total_value / 2 / total_votes >= ? AND total_value / 2 / total_votes < ? + 1',[$arrParam['star'],$arrParam['star']]));
+                    $select->where(new Expression('total_value / 2 / total_votes >= ? AND total_value / 2 / total_votes < ? + 1',array($arrParam['star'],$arrParam['star'])));
                 }
 
                 if($arrParam['manuId']) {

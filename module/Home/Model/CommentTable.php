@@ -17,7 +17,7 @@ class CommentTable extends AbstractTableGateway {
 	}
 
 	public function addItem($arrParams = null){
-        $data = [
+        $data = array(
             'product_id' => $arrParams['product-id'],
             'username' => isset($arrParams['objectName']) ? $arrParams['objectName'] : '',
             'content' => $arrParams['content'],
@@ -26,7 +26,7 @@ class CommentTable extends AbstractTableGateway {
             'parent_id' => $arrParams['comment-parent'],
             'status' => 0,
             'date' => date('Y-m-d H:i:s')
-        ];
+        );
         $this->tableGateway->insert($data);
     }
 
@@ -34,14 +34,14 @@ class CommentTable extends AbstractTableGateway {
         return $this->tableGateway->select(function (Select $select) use ($productId){
             $select->columns(array('product_id','username','user_id','parent_id','content','status','date'))
                 ->join(
-                    ['u' => 'user'],
+                    array('u' => 'user'),
                     'comment.user_id = u.id',
-                    ['uusername' => 'username'],
+                    array('uusername' => 'username'),
                     $select::JOIN_LEFT
                 )->join(
-                    ['p' => 'products'],
+                    array('p' => 'products'),
                     'comment.product_id = p.id',
-                    ['productName' => 'name'],
+                    array('productName' => 'name'),
                     $select::JOIN_INNER
                 )
                 ->where->equalTo('comment.status',1)->equalTo('p.id',$productId);

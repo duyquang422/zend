@@ -39,7 +39,7 @@ class CartTable extends NestedTable {
 
     public function income($arrParam = null, $options = null){
         return $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-            $select->columns(['income' => new Expression('SUM(total_money)')]);
+            $select->columns(array('income' => new Expression('SUM(total_money)')));
             switch($options['task']){
                 case 'weekly':
                     $select->where(new Expression('DATE(time_order) = ? AND month(time_order) = MONTH(NOW()) AND year(time_order) = YEAR(NOW())',$arrParam['day']));
@@ -60,7 +60,7 @@ class CartTable extends NestedTable {
     //lấy tất cả các năm theo đơn hàng
     public function getAllYear(){
         return $this->tableGateway->select(function (Select $select){
-            $select->columns(['year' => new Expression('DISTINCT year(`time_order`)')])->group('time_order');
+            $select->columns(array('year' => new Expression('DISTINCT year(`time_order`)')))->group('time_order');
         })->toArray();
     }
 
@@ -79,7 +79,7 @@ class CartTable extends NestedTable {
                 break;
             case 'process':
                 $data['status'] = 3;
-                $where = ['id' => $id,'status' => 1];
+                $where = array('id' => $id,'status' => 1);
                 break;
             case 'shipping':
                 $data['status'] = 4;

@@ -25,107 +25,107 @@ class Product extends Form {
         $this->add(new Fieldset\SEO());
         $this->add(new Fieldset\Upload());
 
-        $this->add([
+        $this->add(array(
             'name' => 'price',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'price'
-            ],
-            'options' => [
+            ),
+            'options' => array(
                 'label' => 'Giá gốc:',
-                'label_attributes' => [
+                'label_attributes' => array(
                     'for' => 'price',
                     'class' => 'col-xs-4 control-label',
-                ]
-            ],
-        ]);
+                )
+            ),
+        ));
 
-        $this->add([
+        $this->add(array(
             'name' => 'sale_off',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'sale-off'
-            ],
-            'options' => [
+            ),
+            'options' => array(
                 'label' => 'Giá giảm:',
-                'label_attributes' => [
+                'label_attributes' => array(
                     'for' => 'sale off',
                     'class' => 'col-xs-4 control-label',
-                ]
-            ],
-        ]);
+                )
+            ),
+        ));
 
-        $this->add([
+        $this->add(array(
             'name' => 'quantity',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'quantity'
-            ],
-            'options' => [
+            ),
+            'options' => array(
                 'label' => 'Số lượng:',
-                'label_attributes' => [
+                'label_attributes' => array(
                     'for' => 'quantity',
                     'class' => 'col-xs-4 control-label',
-                ]
-            ],
-        ]);
+                )
+            ),
+        ));
 
-        $this->add([
+        $this->add(array(
             'name' => 'percent_discount',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'percent-discount'
-            ],
-            'options' => [
+            ),
+            'options' => array(
                 'label' => '% giảm:',
-                'label_attributes' => [
+                'label_attributes' => array(
                     'for' => 'percent discount',
                     'class' => 'col-xs-4 control-label',
-                ]
-            ],
-        ]);
+                )
+            ),
+        ));
 
-        $this->add([
+        $this->add(array(
             'name' => 'code',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'code'
-            ],
-            'options' => [
+            ),
+            'options' => array(
                 'label' => 'Mã sản phẩm',
-                'label_attributes' => [
+                'label_attributes' => array(
                     'for' => 'code',
                     'class' => 'control-label'
-                ]
-            ],
-        ]);
+                )
+            ),
+        ));
 
-        $this->add([
+        $this->add(array(
             'name' => 'size',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'size',
                 'placeholder' => 'Tìm Kích thước Sản phẩm',
                 'autocomplete' => "off"
-            ],
-        ]);
+            ),
+        ));
 
-        $this->add([
+        $this->add(array(
             'name' => 'attributes',
             'type' => 'Text',
-            'attributes' => [
+            'attributes' => array(
                 'class' => 'input-large-text',
                 'id' => 'attributes',
                 'placeholder' => 'Tìm Thuộc tính sản phẩm',
                 'autocomplete' => "off"
-            ],
-        ]);
+            ),
+        ));
 
         $this->add(array(
             'name' => 'tag',

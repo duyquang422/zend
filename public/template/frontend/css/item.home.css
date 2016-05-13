@@ -77,7 +77,7 @@
     color: red;
 }
 #block-360{
-    height: 193px;
+    height: 197px;
     overflow: hidden;
     border-bottom: none;
     font-size: 13px;
@@ -181,13 +181,25 @@
     background-color: rgba(1,1,1,0.6);
     color: #fff;
 }
+#slide_home_top{
+    margin-bottom: 30px;
+}
+#product-home-tabs{
+    margin: 30px 0;
+}
 /* block cate home */
 .block_cat_home {
-    margin-top: 10px;
+    margin: 30px 0px;
     clear: both;
     background-color: #fff;
     border: 1px solid #d9d9d9;
     border-radius: 2px;
+    display: flex;
+}
+.block_cat_home .item a{
+    display: inline-block;
+    padding: 8px;
+    text-align: center;
 }
 .title_extra_menu h3 {
     position: relative;
@@ -216,7 +228,6 @@
 }
 .block_cat_home.woman .title_extra_menu h3:hover a { color: #f14976; }
 .block-collection .women-col1 {
-    border-right: 1px solid #d9d9d9;
     background: white;
 }
 .block-collection .women-col1 .slide-brand {

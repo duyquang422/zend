@@ -72,7 +72,7 @@ class CategoryTable{
                 if($options['task'] == 'index')
                     $select->where(new Expression('category.parent = ? AND m.picture IS NOT NULL',$id));
                 else if($options['task'] == 'category')
-                    $select->where(new Expression('(category.id = ? or category.parent = ?) AND m.name IS NOT NULL',[$id,$id]));
+                    $select->where(new Expression('(category.id = ? or category.parent = ?) AND m.name IS NOT NULL',array($id,$id)));
             $select->order('m.name','asc')->limit(6);
         });
         return $items->toArray();
@@ -94,7 +94,7 @@ class CategoryTable{
                 $select::JOIN_LEFT
             );
             if($options['task'] == 'home') {
-                $select->where(new Expression('(category.parent = ? OR category.id = ?) AND p.image != ""', [$id, $id]))
+                $select->where(new Expression('(category.parent = ? OR category.id = ?) AND p.image != ""', array($id, $id)))
                         ->order('category.id', 'asc')->limit(6);
             }
             if($options['task'] == 'category'){

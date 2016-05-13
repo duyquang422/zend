@@ -131,7 +131,7 @@ class Module
                 'collectionProducts'    => 'Block\CollectionProducts\CollectionProducts',
                 'news'                  => 'Block\News\News',
                 'policy'                => 'Block\Policy\Policy',
-                'hotDealProducts'       => 'Block\HotDealProducts\hotDealProducts',
+                'hotDealProducts'       => 'Block\HotDealProducts\HotDealProducts',
                 'support'               => 'Block\Support\Support',
                 'purchase'              => 'Block\Purchase\Purchase',
                 'facebookComment'       => 'Block\FacebookComment\FacebookComment',

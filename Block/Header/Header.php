@@ -10,7 +10,7 @@ class Header extends AbstractHelper{
         $cart = new Container(SECURITY_KEY . '_cart');
         $userSession = new Container(SECURITY_KEY . '_user');
         $getLogoConfig = $this->_config->getConfig('logo_image');
-        require_once 'views/default.phtml';
+        require_once 'Block/Header/views/header.phtml';
     }
 
     public function getConfig($table){

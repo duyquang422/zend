@@ -17,7 +17,7 @@ class ProductHomeTabs extends AbstractHelper{
     }
 
     public function getDealProducts(){
-        return $this->_productsTable->getProducts('',['task' => 'deal']);
+        return $this->_productsTable->getProducts('',array('task' => 'deal'));
     }
 
 }

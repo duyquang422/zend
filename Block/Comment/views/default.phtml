@@ -1,7 +1,7 @@
 <?php require(PATH_PUBLIC . '/rating/_drawrating.php'); ?>
 <div id="comment" class="wrapcomment">
     <span style="font-size: 18px">Mời bạn đánh giá hoặc đặt câu hỏi về</span> <h2>Gối gòn cao cấp Wean sale off 25%</h2>
-    <form method="post" id="js_activity_feed_form" class="js_cmt_form" action="<?php echo $this->view->url('frontendRoute/default',['controller'=> 'comment','action' => 'add'])?>">
+    <form method="post" id="js_activity_feed_form" class="js_cmt_form" action="<?php echo $this->view->url('frontendRoute/default',array('controller'=> 'comment','action' => 'add'))?>">
         <div class="dropfirst textarea" id="content" name="content">
             <textarea class="dropfirst textarea txtEditor" name="content" placeholder="Mời bạn tham gia đánh giá, thảo luận về sản phẩm của chúng tôi." id="txtEditor"></textarea>
             <div class="wrap-attaddsend">

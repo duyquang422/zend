@@ -20,9 +20,9 @@ class ManufacturerController extends ActionController
 
     public function indexAction(){
         $form = new Manufacturer();
-        return new ViewModel([
+        return new ViewModel(array(
             'form' => $form
-        ]);
+        ));
     }
 
     public function uploadAction(){
@@ -31,10 +31,10 @@ class ManufacturerController extends ActionController
                 $filename = $this->getTable()->getPicture($this->_params['id'])->picture;
                 if ($filename) {
                     $imageObj = new Image();
-                    $imageObj->removeImage($filename, ['task' => 'manufacturer']);
+                    $imageObj->removeImage($filename, array('task' => 'manufacturer'));
                 }
                 $imageObj = new Image();
-                $filename = $imageObj->upload('picture', ['task' => 'manufacturer']);
+                $filename = $imageObj->upload('picture', array('task' => 'manufacturer'));
                 $this->getTable()->savePicture($this->_params['id'], $filename);
                 echo json_encode($filename);
             }
@@ -44,9 +44,9 @@ class ManufacturerController extends ActionController
 
     public function reloadAction(){
         $form = new Manufacturer();
-        $viewModel = new ViewModel([
+        $viewModel = new ViewModel(array(
             'form' => $form
-        ]);
+        ));
         $viewModel->setTemplate('admin/manufacturer/index');
         $this->layout('layout/reload');
         return $viewModel;
@@ -55,7 +55,7 @@ class ManufacturerController extends ActionController
     public function editAction(){
         if($this->getRequest()->isXmlHttpRequest()){
             $this->_params['modified_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($this->_params,['task' => 'edit-item']);
+            $this->getTable()->saveItem($this->_params,array('task' => 'edit-item'));
         }
         return $this->response;
     }
@@ -115,10 +115,10 @@ class ManufacturerController extends ActionController
         if($this->getRequest()->isXmlHttpRequest()){
             if(isset($this->_params['picture']) && $this->_params['picture']['name']){
                 $imageObj = new Image();
-                $this->_params['picture'] = $imageObj->upload('picture',['task' => 'manufacturer']);
+                $this->_params['picture'] = $imageObj->upload('picture',array('task' => 'manufacturer'));
             }
             $this->_params['created_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($this->_params,['task' => 'add-item']);
+            $this->getTable()->saveItem($this->_params,array('task' => 'add-item'));
         }
         return $this->response;
     }

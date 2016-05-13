@@ -156,20 +156,14 @@ class IndexController extends ActionController{
         echo json_encode($filename);
     }
 
-    public function testAction(){
-        $getConfigNav = $this->getConfiguration('logo_image');
-        var_dump($getConfigNav);
-        return $this->response;
-    }
-
     public function uploadImg($filename,$task,$arrParam){
         if(isset($arrParam['image']['name']) && $arrParam['image']['name']) {
             if ($filename) {
                 $imageObj = new Image();
-                $imageObj->removeImage($filename, ['task' => $task]);
+                $imageObj->removeImage($filename, array('task' => $task));
             }
             $imageObj = new Image();
-            $filename = $imageObj->upload('image', ['task' => $task]);
+            $filename = $imageObj->upload('image', array('task' => $task));
             return $filename;
         }
     }

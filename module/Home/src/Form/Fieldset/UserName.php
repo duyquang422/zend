@@ -9,14 +9,14 @@ class UserName extends Fieldset
     public function __construct()
     {
         parent::__construct('username');
-            $this->add([
+            $this->add(array(
                 'name' => 'username',
                 'type' => 'text',
-                'attributes' => [
+                'attributes' => array(
                     'class' => 'form-control',
                     'id' => 'username',
                     'placeholder' => 'Họ và tên của bạn',
-                ]
-            ]);
+                )
+            ));
     }
 }

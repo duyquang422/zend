@@ -98,18 +98,18 @@ class ProductsTable extends AbstractTableGateway {
             $data['description'] = $filter->filter($arrParam['description']);
 
             if ($options['task'] == 'edit-item') {
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                     'modified' => date('Y-m-d H:i:s'),
                     'modified_by' => $arrParam['modified_by']
-                ]);
+                ));
                 $this->tableGateway->update($data, array('id' => $arrParam['id']));
             }else{
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                    'created' => date('Y-m-d H:i:s'),
                     'created_by' => $arrParam['created_by'],
                     'status' => 1,
                     'image' => isset($arrParam['imageName']) ? $arrParam['imageName'] : ''
-                ]);
+                ));
                 $this->tableGateway->insert($data);
             }
     }
@@ -121,7 +121,7 @@ class ProductsTable extends AbstractTableGateway {
                     $filename = $this->getImage($id)->image;
                     if($filename){
                         $imageObj = new Image();
-                        $imageObj->removeImage($filename,['task' => 'product']);
+                        $imageObj->removeImage($filename,array('task' => 'product'));
                     }
                     $this->tableGateway->delete(array('id' => $id));
                 }
@@ -130,7 +130,7 @@ class ProductsTable extends AbstractTableGateway {
             $filename = $this->getImage($arrParam['id'])->image;
             if($filename){
                 $imageObj = new Image();
-                $imageObj->removeImage($filename,['task' => 'product']);
+                $imageObj->removeImage($filename,array('task' => 'product'));
             }
             $this->tableGateway->delete(array('id' => $arrParam['id']));
         }

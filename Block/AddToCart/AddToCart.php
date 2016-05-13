@@ -18,14 +18,14 @@ class AddToCart extends AbstractHelper{
     }
     
     public function getData($option){
-        return $this->_data = $this->_table->getProducts('',['task' => $option]);
+        return $this->_data = $this->_table->getProducts('',array('task' => $option));
     }
 
     public function getProduct($productId){
-        return $this->_data = $this->_table->getProduct(['id' => $productId]);
+        return $this->_data = $this->_table->getProduct(array('id' => $productId));
     }
 
     public function getProductsByCategory($categoryId){
-        return $this->_data = $this->_table->getProductsByCategory(['id' => $categoryId, 'limit' => 10],['task' => 'category']);
+        return $this->_data = $this->_table->getProductsByCategory(array('id' => $categoryId, 'limit' => 10),array('task' => 'category'));
     }
 }

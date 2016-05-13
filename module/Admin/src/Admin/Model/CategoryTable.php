@@ -18,7 +18,7 @@ class CategoryTable extends NestedTable {
     }
     public function saveImage($id, $filename){
         if($id > 0) {
-            $this->tableGateway->update(['image' => $filename], array('id' => $id));
+            $this->tableGateway->update(array('image' => $filename), array('id' => $id));
         }
     }
 
@@ -187,7 +187,7 @@ class CategoryTable extends NestedTable {
                     $filename = $this->getImage($id)->image;
                     if($filename){
                         $imageObj = new Image();
-                        $imageObj->removeImage($filename,['task' => 'category']);
+                        $imageObj->removeImage($filename,array('task' => 'category'));
                     }
                     $this->removeNode($id, array('type' => 'only'));
                 }
@@ -196,7 +196,7 @@ class CategoryTable extends NestedTable {
             $filename = $this->getImage($arrParam['id'])->image;
             if($filename){
                 $imageObj = new Image();
-                $imageObj->removeImage($filename,['task' => 'category']);
+                $imageObj->removeImage($filename,array('task' => 'category'));
             }
             $this->removeNode($arrParam['id'], array('type' => 'only'));
         }
@@ -232,21 +232,21 @@ class CategoryTable extends NestedTable {
         }
 
         if ($options['task'] == 'add-item') {
-            $data = array_merge($data,[
+            $data = array_merge($data,array(
                 'status' => 1,
                 'created_date' => date('Y-m-d H:i:s'),
                 'image' => isset($arrParam['imageName']) ? $arrParam['imageName'] : '',
                 'created_by' => $arrParam['created_by']
-            ]);
+            ));
 
             $this->insertNode($data, $arrParam['parent'], array('position' => 'right'));
             return $this->tableGateway->getLastInsertValue();
         }
         if ($options['task'] == 'edit-item') {
-            $data = array_merge($data,[
+            $data = array_merge($data,array(
                 'modified_date' => date('Y-m-d H:i:s'),
                 'modified_by' => $arrParam['modified_by']
-            ]);
+            ));
 
             if ($arrParam['parent'] == $arrParam['id'])
                 $arrParam['parent'] = null;

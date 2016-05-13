@@ -27,11 +27,11 @@ class ProductController extends ActionController
         $slbCategory	= $this->getServiceLocator()->get('Admin\Model\CategoryTable');
         $slbManufacturer = $this->getServiceLocator()->get('Admin\Model\ManufacturerTable');
         $form = new Product();
-        return new ViewModel([
+        return new ViewModel(array(
             'form' => $form,
             'itemSelectBox' => $slbCategory->listItem('',array('task' => 'list-item')),
             'slbManufacturer' => $slbManufacturer->slbManufacturer()->toArray()
-        ]);
+        ));
     }
 
     public function uploadAction(){
@@ -40,10 +40,10 @@ class ProductController extends ActionController
                 $filename = $this->getTable()->getImage($this->_params['id'])->image;
                 if ($filename) {
                     $imageObj = new Image();
-                    $imageObj->removeImage($filename, ['task' => 'product']);
+                    $imageObj->removeImage($filename, array('task' => 'product'));
                 }
                 $imageObj = new Image();
-                $filename = $imageObj->upload('image', ['task' => 'product']);
+                $filename = $imageObj->upload('image', array('task' => 'product'));
                 $this->getTable()->saveImage($this->_params['id'], $filename);
                 echo json_encode($filename);
             }
@@ -55,7 +55,7 @@ class ProductController extends ActionController
         if($this->getRequest()->isXmlHttpRequest()){
             if(isset($this->_params['image']) && $this->_params['image']['name']){
                 $imageObj = new Image();
-                $this->_params['imageName'] = $imageObj->upload('image',['task' => 'product']);
+                $this->_params['imageName'] = $imageObj->upload('image',array('task' => 'product'));
             }
             $this->_params['created_by'] = $this->identity()->username;
             $this->getTable()->saveItem($this->_params);
@@ -90,11 +90,11 @@ class ProductController extends ActionController
         $slbCategory = $this->getServiceLocator()->get('Admin\Model\CategoryTable');
         $slbManufacturer = $this->getServiceLocator()->get('Admin\Model\ManufacturerTable');
         $form = new Product();
-        $viewModel = new ViewModel([
+        $viewModel = new ViewModel(array(
             'form' => $form,
-            'itemSelectBox' => $slbCategory->listItem('',array('task' => 'list-item'))->toArray(),
+            'itemSelectBox' => $slbCategory->listItem('',array('task' => 'list-item')),
             'slbManufacturer' => $slbManufacturer->slbManufacturer()->toArray()
-        ]);
+        ));
         $viewModel->setTemplate('admin/product/index');
         $this->layout('layout/reload');
         return  $viewModel;
@@ -105,7 +105,7 @@ class ProductController extends ActionController
             $session = new Container('uploadImg');
             if (!empty($_FILES['file']['tmp_name'])) {
                 $imageObj = new Image();
-                $filename = $imageObj->upload('file', ['task' => 'product-slide']);
+                $filename = $imageObj->upload('file', array('task' => 'product-slide'));
                 if($session->offsetExists('strImg')) {
                     $tmp = $session->offsetGet('strImg');
                     $session->offsetSet('strImg', $tmp . ',' . $filename);
@@ -118,8 +118,8 @@ class ProductController extends ActionController
                     $picture = $session->offsetGet('strImg');
                 }
             }
-            $this->getTable()->update(['id' => $this->_params['id'], 'picture' => $picture],['task' => 'update-picture']);
-            echo json_encode(['success' => 1]);
+            $this->getTable()->update(array('id' => $this->_params['id'], 'picture' => $picture),array('task' => 'update-picture'));
+            echo json_encode(array('success' => 1));
         }
         return $this->response;
     }
@@ -129,7 +129,7 @@ class ProductController extends ActionController
             $session = new Container('uploadZoomImg');
             if (!empty($_FILES['file']['tmp_name'])) {
                 $imageObj = new Image();
-                $filename = $imageObj->upload('file', ['task' => 'product']);
+                $filename = $imageObj->upload('file', array('task' => 'product'));
                 if($session->offsetExists('strImg')) {
                     $tmp = $session->offsetGet('strImg');
                     $session->offsetSet('strImg', $tmp . ',' . $filename);
@@ -142,8 +142,8 @@ class ProductController extends ActionController
                     $picture = $session->offsetGet('strImg');
                 }
             }
-            $this->getTable()->update(['id' => $this->_params['id'], 'zoom_image' => $picture],['task' => 'update-zoom-image']);
-            echo json_encode(['success' => 1]);
+            $this->getTable()->update(array('id' => $this->_params['id'], 'zoom_image' => $picture),array('task' => 'update-zoom-image'));
+            echo json_encode(array('success' => 1));
         }
         return $this->response;
     }
@@ -151,8 +151,8 @@ class ProductController extends ActionController
     public function removeImgAction(){
         if($this->getRequest()->isXmlHttpRequest()){
             $imageObj = new Image();
-            $imageObj->removeImage($this->_params['fileName'],['task' => 'product']);
-            $this->getTable()->update(['id'=> $this->_params['id'],'picture' => $this->_params['strPicture']],['task' => 'update-picture']);
+            $imageObj->removeImage($this->_params['fileName'],array('task' => 'product'));
+            $this->getTable()->update(array('id'=> $this->_params['id'],'picture' => $this->_params['strPicture']),array('task' => 'update-picture'));
         }
         return $this->response;
     }
@@ -160,8 +160,8 @@ class ProductController extends ActionController
     public function removeZoomImgAction(){
         if($this->getRequest()->isXmlHttpRequest()){
             $imageObj = new Image();
-            $imageObj->removeImage($this->_params['fileName'],['task' => 'product']);
-            $this->getTable()->update(['id'=> $this->_params['id'],'zoom_image' => $this->_params['strPicture']],['task' => 'update-zoom-image']);
+            $imageObj->removeImage($this->_params['fileName'],array('task' => 'product'));
+            $this->getTable()->update(array('id'=> $this->_params['id'],'zoom_image' => $this->_params['strPicture']),array('task' => 'update-zoom-image'));
         }
         return $this->response;
     }
@@ -194,7 +194,7 @@ class ProductController extends ActionController
             $arrParams = $_GET;
             $arrParams['description'] = $_POST['description'];
             $this->_params['modified_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($arrParams,['task' => 'edit-item']);
+            $this->getTable()->saveItem($arrParams,array('task' => 'edit-item'));
         }
         return $this->response;
     }
@@ -254,13 +254,13 @@ class ProductController extends ActionController
 
     public function searchSizeAction(){
         $sizeProduct = $this->getServiceLocator()->get('admin\Model\ProductSizeTable');
-        echo json_encode($sizeProduct->search($this->params()->fromPost(),['task' => 'search']));
+        echo json_encode($sizeProduct->search($this->params()->fromPost(),array('task' => 'search')));
         return $this->response;
     }
 
     public function searchAttributesAction(){
         $attributesProduct = $this->getServiceLocator()->get('admin\Model\ProductAttributesTable');
-        echo json_encode($attributesProduct->search($this->params()->fromPost(),['task' => 'search']));
+        echo json_encode($attributesProduct->search($this->params()->fromPost(),array('task' => 'search')));
         return $this->response;
     }
 
@@ -276,14 +276,14 @@ class ProductController extends ActionController
 
     public function addSizeAction(){
         $productSize = $this->getServiceLocator()->get('admin\Model\ProductSizeTable');
-        if(!$productSize->search($this->params()->fromPost(),['task' => 'check-exits']))
+        if(!$productSize->search($this->params()->fromPost(),array('task' => 'check-exits')))
             echo json_encode((int)$productSize->saveData($this->params()->fromPost()));
         return $this->response;
     }
 
     public function addAttributesAction(){
         $productAttributes = $this->getServiceLocator()->get('admin\Model\ProductAttributesTable');
-        if(!$productAttributes->search($this->params()->fromPost(),['task' => 'check-exits']))
+        if(!$productAttributes->search($this->params()->fromPost(),array('task' => 'check-exits')))
             echo json_encode((int)$productAttributes->saveData($this->params()->fromPost()));
         return $this->response;
     }

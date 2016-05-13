@@ -21,17 +21,17 @@ class IndexController extends ActionController{
 
     public function indexAction() {
         $visistor = new Visitors();
-        return new ViewModel([
+        return new ViewModel(array(
            'onlineUser' => $visistor->CountVisitors(),
             'productTotal' => $this->product->countProduct(),
-            'order' => [
+            'order' => array(
                 'new' => $this->order->countStatusOrder('new'),
                 'pending' => $this->order->countStatusOrder('pending'),
                 'inProcess' => $this->order->countStatusOrder('process'),
                 'shipped' => $this->order->countStatusOrder('shipped'),
                 'complete' => $this->order->countStatusOrder('complete'),
                 'canceled' => $this->order->countStatusOrder('canceled')
-            ],
+            ),
             'productsSold' => $this->order->countProductsSold(),
             'weeklyStatistics' => $this->weeklyOrderStatistics(),
             'day' => date("N"), //cho biết ngày hiện tại là thứ mấy trong tuần,
@@ -42,7 +42,7 @@ class IndexController extends ActionController{
             'weeklyIncomeStatistics' => $this->weeklyIncomeStatistics(),
             'monthlyIncomeStatistics' => $this->monthlyIncomeStatistics(),
             'yearlyIncomeStatistics' => $this->yearlyIncomeStatistics()
-        ]);
+        ));
     }
     //lấy ngày hiện tại trừ đi số ngày truyền vào
     public function truNgay($soNgay){
@@ -55,7 +55,7 @@ class IndexController extends ActionController{
     public function weeklyIncomeStatistics(){
         $dataArr = array();
         for($i = 6; $i >= 0; $i--) {
-            $dataArr[$i] = $this->order->income(['day' => $this->truNgay($i)], ['task' => 'weekly']);
+            $dataArr[$i] = $this->order->income(array('day' => $this->truNgay($i)), array('task' => 'weekly'));
         }
         return $dataArr;
     }
@@ -63,7 +63,7 @@ class IndexController extends ActionController{
     public function weeklyOrderStatistics(){
         $dataArr = array();
         for($i = 6; $i >= 0; $i--) {
-            $dataArr[$this->truNgay($i)] = $this->order->countOrders(['day' => $this->truNgay($i)], ['task' => 'weekly']);
+            $dataArr[$this->truNgay($i)] = $this->order->countOrders(array('day' => $this->truNgay($i)), array('task' => 'weekly'));
         }
         return $dataArr;
     }
@@ -71,26 +71,26 @@ class IndexController extends ActionController{
     public function monthlyOrderStatistics(){
         $dataArr = array();
         for($i = 1; $i <= 12; $i++)
-            $dataArr[$i] = $this->order->countOrders(['month' => $i],['task' => 'monthly']);
+            $dataArr[$i] = $this->order->countOrders(array('month' => $i),array('task' => 'monthly'));
         return $dataArr;
     }
 
     public function monthlyIncomeStatistics(){
         $dataArr = array();
         for($i = 1; $i <= 12; $i++)
-            $dataArr[$i] = $this->order->income(['month' => $i],['task' => 'monthly']);
+            $dataArr[$i] = $this->order->income(array('month' => $i),array('task' => 'monthly'));
         return $dataArr;
     }
 
     public function yearlyOrderStatistics(){
         foreach($this->order->getAllYear() as $key => $val){
-            $dataArr[$key] = $this->order->countOrders(['year' => $val['year']],['task' =>'yearly']);
+            $dataArr[$key] = $this->order->countOrders(array('year' => $val['year']),array('task' =>'yearly'));
         }
         return $dataArr;
     }
     public function yearlyIncomeStatistics(){
         foreach($this->order->getAllYear() as $key => $val){
-            $dataArr[$val['year']] = $this->order->income(['year' => $val['year']],['task' =>'yearly']);
+            $dataArr[$val['year']] = $this->order->income(array('year' => $val['year']),array('task' =>'yearly'));
         }
         return $dataArr;
     }

@@ -40,10 +40,10 @@ class PagesTable extends AbstractTableGateway {
 		}
 
 		if ($options['task'] == 'add-item') {
-			$data = array_merge($data,[
+			$data = array_merge($data,array(
 				'status' => 1,
                 'create_by' => $arrParam['create_by']
-			]);
+			));
 
             $this->tableGateway->insert($data);
 			return $this->tableGateway->getLastInsertValue();

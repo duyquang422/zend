@@ -1,15 +1,15 @@
 <?php
-$arr = [
-    ['title' => 'Mã đơn hàng'],
-    ['title' => 'Người mua'],
-    ['title' => 'Điện Thoại'],
-    ['title' => 'TT'],
-    ['title' => 'Tổng tiền'],
-    ['title' => 'Ngày đặt hàng'],
-    ['title' => 'Trạng Thái'],
-    ['title' => 'Chức năng'],
-    ['title' => 'Id']
-];
+$arr = array(
+    array('title' => 'Mã đơn hàng'),
+    array('title' => 'Người mua'),
+    array('title' => 'Điện Thoại'),
+    array('title' => 'TT'),
+    array('title' => 'Tổng tiền'),
+    array('title' => 'Ngày đặt hàng'),
+    array('title' => 'Trạng Thái'),
+    array('title' => 'Chức năng'),
+    array('title' => 'Id')
+);
 $this->datatable('cart', $arr);
 $button = '<div class="modal-footer">
                  <button type="button" class="btn btn-default" id="order-canceled">Hủy đơn hàng</button>

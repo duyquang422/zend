@@ -9,23 +9,23 @@ class Password extends Fieldset
     public function __construct()
     {
         parent::__construct('password');
-            $this->add([
+            $this->add(array(
                 'name' => 'password',
                 'type' => 'password',
-                'attributes' => [
+                'attributes' => array(
                     'class' => 'form-control',
                     'id' => 'password',
                     'placeholder' => 'Vui lòng nhập mật khẩu',
-                ]
-            ]);
-            $this->add([
+                )
+            ));
+            $this->add(array(
                 'name' => 're-password',
                 'type' => 'password',
-                'attributes' => [
+                'attributes' => array(
                     'class' => 'form-control',
                     'id' => 're-password',
                     'placeholder' => 'Vui lòng nhập lại mật khẩu',
-                ]
-            ]);
+                )
+            ));
     }
 }

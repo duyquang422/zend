@@ -27,30 +27,31 @@ class HistoryTable extends AbstractTableGateway
     }
 
 	public function updateBought($productId){
-            $this->tableGateway->update(['buy' => $this->getBought($productId)[0]['buy'] + 1 ], ['product_id' => $productId]);
+        $productBought = $this->getBought($productId);
+            $this->tableGateway->update(array('buy' => $productBought[0]['buy'] + 1 ), array('product_id' => $productId));
 	}
 
     public function addItem($productId, $option = null){
-        $data = [
+        $data = array(
             'product_id' => $productId,
             'date' => date("Y-m-d H:i:s"),
             'status' => 1
-        ];
+        );
         switch($option['task']){
             case 'buy':
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                     'buy' => 1
-                ]);
+                ));
                 break;
             case 'rate':
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                     'rate' => 1
-                ]);
+                ));
                 break;
             case 'comment':
-                $data = array_merge($data,[
+                $data = array_merge($data,array(
                     'comment' => 1
-                ]);
+                ));
                 break;
         }
         $this->tableGateway->insert($data);

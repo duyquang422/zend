@@ -59,7 +59,7 @@ class GroupController extends ActionController {
     public function addAction(){
         if($this->getRequest()->isXmlHttpRequest()){
             $this->_params['created_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($this->_params,['task' => 'add-item']);
+            $this->getTable()->saveItem($this->_params,array('task' => 'add-item'));
         }
         return $this->response;
     }
@@ -81,7 +81,7 @@ class GroupController extends ActionController {
     public function editAction(){
         if($this->getRequest()->isXmlHttpRequest()){
             $this->_params['modified_by'] = $this->identity()->username;
-            $this->getTable()->saveItem($this->_params,['task' => 'edit-item']);
+            $this->getTable()->saveItem($this->_params,array('task' => 'edit-item'));
         }
         return $this->response;
     }
