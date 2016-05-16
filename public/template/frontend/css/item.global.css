@@ -996,15 +996,8 @@ dt, dd {
     display: none;
 }
 .bg-load-ajax{
-    display: none;
-    width: 100%;
-    height: 500px;
-    position: absolute;
-    top: 0;
-    background: white;
-    opacity: 0.8;
-    padding-top: 155px;
     text-align: center;
+    display: block;
 }
 /* NAV MAIN */
 
@@ -4124,12 +4117,6 @@ hr{
 }
 .wrapper-logo .btn-edit{
     right: 100px;
-}
-
-/*PAGE PRODUCT POPERTIES*/
-#productproperties .box_product{
-    padding: 15px 15px;
-    width: 20%;
 }
 .product__header {
     margin: 0 15px;

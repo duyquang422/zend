@@ -32,7 +32,7 @@ if(isset($cart->quantity) && $cart->quantity)
     </div>
 </div>
 <p class="cart-buttons">
-    <a id="button_order_cart" class="btn btn-default button button-small" href="/home/user/order" title="Check out" rel="nofollow">
+    <a id="button_order_cart" class="btn btn-default button button-small" href="<?php echo $this->url('frontendRoute/default',array('controller' => 'user','action' => 'order'))?>" title="Check out" rel="nofollow">
         <span> Thanh Toán </span>
     </a>
 </p>

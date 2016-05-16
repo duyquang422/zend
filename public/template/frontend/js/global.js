@@ -132,13 +132,13 @@ $(document).ready(function(){
                 var html = '<li>' +
                                 '<a title="Xóa" class="delete" onclick="deleteBoughtProduct()"></a>' +
                                 '<div class="picture">' +
-                                    '<a href="'+ window.location.origin + '/' + data.alias + '-'+ data.id + '.html" target="_blank">' +
-                                        '<img src="public/files/product/100x100/'+ data.image +'"">' +
+                                    '<a href="'+ basePath + data.alias + '-'+ data.id + '.html" target="_blank">' +
+                                        '<img src="'+ basePath +'public/files/product/100x100/'+ data.image +'"">' +
                                     '</a>' +
                                 '</div>' +
                                 '<div class="information">' +
                                     '<div class="name">' +
-                                        '<a href="'+ window.location.origin + '/' + data.alias + '-'+ data.id + '.html" target="_blank">' + data.name + '</a>' +
+                                        '<a href="'+ basePath + data.alias + '-'+ data.id + '.html" target="_blank">' + data.name + '</a>' +
                                 '</div>' +
                                 '<div class="price">' +
                                     moneyFormat(data.sale_off ? data.sale_off : data.price)+ '₫</div>' +
@@ -379,7 +379,7 @@ $('.item-shop').click(function() {
 function purchases(){
     $('.buy-now').modal('show');
     $('.ppu_tab_pro_info').remove();
-    $('.ppu_tab_proimg').html('<img src="'+ window.location.origin + '/public/template/frontend/images/giaohangtannoi.jpg' +'" alt="giao hang tan noi">').attr('style','width: 100%');
+    $('.ppu_tab_proimg').html('<img src="'+ basePath + 'public/template/frontend/images/giaohangtannoi.jpg' +'" alt="giao hang tan noi">').attr('style','width: 100%');
     $('.ppu_rbnt_submit').attr('type','submit');
 }
 

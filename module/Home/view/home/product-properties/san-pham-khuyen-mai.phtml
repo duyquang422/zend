@@ -32,14 +32,22 @@
                         <?php echo $this->partial('home/list-products.phtml',array('products' => $this->products))?>
                     </div>
                 </div>
+                <div class="load-more products-listing util-clearfix">
+                    <div class="row"></div>
+                </div>
             </div>
-            <div class="bg-load-ajax"><img src="<?php echo $this->basePath()?>/public/template/frontend/images/load.gif" alt=""></div>
         </div>
     </div>
-
     <div class="hide">
         <input type="hidden" value="<?php echo $this->category->id ?>" id="category-id">
     </div>
 
     <?php echo $this->miniBarMenu()?>
 </div>
+<div class="bg-load-ajax hidden">
+    <div class="wrapper-contend">
+        <img src="<?php echo $this->basePath()?>/public/template/frontend/images/load-more.gif" alt="">
+        <div class="span">Vui lòng chờ load thêm sản phẩm</div>
+    </div>
+</div>
+<input type="hidden" id="action" value="<?php echo $this->action   ?>">

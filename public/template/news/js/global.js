@@ -376,7 +376,7 @@ $('.item-shop').click(function() {
 function purchases(){
     $('.buy-now').modal('show');
     $('.ppu_tab_pro_info').remove();
-    $('.ppu_tab_proimg').html('<img src="'+ window.location.origin + '/public/template/frontend/images/giaohangtannoi.jpg' +'" alt="giao hang tan noi">').attr('style','width: 100%');
+    $('.ppu_tab_proimg').html('<img src="'+ basePath + 'public/template/frontend/images/giaohangtannoi.jpg' +'" alt="giao hang tan noi">').attr('style','width: 100%');
     $('.ppu_rbnt_submit').attr('type','submit');
 }
 

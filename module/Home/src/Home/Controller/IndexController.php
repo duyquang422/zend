@@ -21,11 +21,11 @@ class IndexController extends ActionController{
 
     public function indexAction(){
         $this->_getHelper('HeadLink',$this->getServiceLocator())
-                    ->appendStylesheet($this->basePath. '/public/template/frontend/css/item.home.css')
-                    ->appendStylesheet($this->basePath. '/public/template/frontend/css/home.responsive.css');
+                    ->appendStylesheet($this->basePath. '/public/template/frontend/css/index.css')
+                    ->appendStylesheet($this->basePath. '/public/template/frontend/css/index.responsive.css');
         $this->_getHelper('HeadScript',$this->getServiceLocator())
             ->appendFile($this->basePath .'/public/template/frontend/js/jquery.countdown.js')
-            ->appendFile($this->basePath .'/public/template/frontend/js/homepage.js');
+            ->appendFile($this->basePath .'/public/template/frontend/js/index.js');
         $this->_getHelper('HeadTitle',$this->getServiceLocator())->append($this->getConfiguration('site_name'));
 
         return new ViewModel();

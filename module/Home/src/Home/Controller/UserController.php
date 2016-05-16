@@ -97,12 +97,15 @@ class UserController extends ActionController{
         $productId = $this->params()->fromPost('productId');
         echo json_encode($this->getServiceLocator()->get('Home\Model\CartTable')->saveItem($this->params()->fromPost()));
 
+        $product = $this->getServiceLocator()->get('Home\Model\ProductsTable');
+        $product->updateBought(array('bought' => $product->getBought($productId),'id' => $productId,'quantity' => $this->params()->fromPost('quantity')));
+
         //cập nhật số lần mua cho 1 sản phẩm
         $history = $this->getServiceLocator()->get('Home\Model\HistoryTable');
         if($history->getBought($productId)){
             $history->updateBought($productId);
         }else{
-            $history->addItem($productId,['task' => 'buy']);
+            $history->addItem($productId,array('task' => 'buy'));
         }
 
         return $this->response;
@@ -228,6 +231,10 @@ class UserController extends ActionController{
             $totalProduct = 0;
             foreach($arrParam['quantity'] as $val){
                 $totalProduct += $val;
+            }
+            $product = $this->getServiceLocator()->get('Home\Model\ProductsTable');
+            foreach($arrParam['productId'] as $key => $productId){
+                $product->updateBought(array('bought' => $product->getBought($productId),'id' => $productId,'quantity' => $arrParam['quantity'][$key]));
             }
             $cartTable->saveItem([
                 'productId' => json_encode($arrParam['productId']),

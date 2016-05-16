@@ -14,7 +14,7 @@ class ProductController extends ActionController{
             $this->params()->fromRoute()
         );
         $this->_getHelper('HeadLink',$this->getServiceLocator())
-            ->appendStylesheet($this->basePath . '/public/template/frontend/css/item.product.css')
+            ->appendStylesheet($this->basePath . '/public/template/frontend/css/product.css')
             ->appendStylesheet($this->basePath . '/public/template/frontend/css/product.responsive.css')
             ->appendStylesheet($this->basePath . '/public/template/frontend/css/rating.css');
         $this->_getHelper('HeadScript',$this->getServiceLocator())

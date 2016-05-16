@@ -304,3 +304,14 @@
 .products-listing > .row {
     margin: 0;
 }
+.bg-load-ajax{
+    display: none;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    background: white;
+    opacity: 0.8;
+    padding-top: 155px;
+    text-align: center;
+}

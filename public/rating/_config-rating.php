@@ -14,9 +14,9 @@ See readme.txt for full credit details.
 
 	//Connect to  your rating database
 	$rating_dbhost        = 'localhost';
-	$rating_dbuser        = 'nvp2211_quang';
-	$rating_dbpass        = 'quang830890';
-	$rating_dbname        = 'nvp2211_halozend';
+	$rating_dbuser        = 'root';
+	$rating_dbpass        = '';
+	$rating_dbname        = 'zend';
 	$rating_tableName     = 'ratings';
 	$rating_path_db       = ''; // the path to your db.php file (not used yet!)
 	$rating_path_rpc      = ''; // the path to your rpc.php file (not used yet!)

@@ -145,6 +145,11 @@ class Module
                 'showModal'            => 'Block\Modal\Modal'
             ),
             'factories' => array(
+                'bartop' => function($sm){
+                    $helper = new SlideHomeTop();
+                    $helper->getPostsCategory($sm->getServiceLocator()->get('Home\Model\PostsCategoryTable'));
+                    return $helper;
+                },
                 'slideHomeTop' => function($sm){
                     $helper = new SlideHomeTop();
                     $helper->getConfig($sm->getServiceLocator()->get('Admin\Model\ConfigurationTable'));

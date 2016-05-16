@@ -17,6 +17,19 @@ class ProductsTable{
     public function updateView($arrParam){
         $this->tableGateway->update(array('hits' => $arrParam->hits + 1), array('id' => $arrParam->id));
     }
+
+    public function getBought($idProduct){
+        $select =  $this->tableGateway->select(function (Select $select) use ($idProduct){
+            $select->columns(array('bought'))->where->equalTo('id',$idProduct);
+        })->current();
+        return $select->bought;
+    }
+
+    public function updateBought($arrParam){
+        $this->tableGateway->update(array('bought' => $arrParam['bought'] + $arrParam['quantity']), array('id' => $arrParam['id']));
+    }
+
+
     public function getProductsFromSurveyUser($categoryId){
         return $this->tableGateway->select(function (Select $select) use ($categoryId){
             $select->columns(array('id','name','alias','image','price','sale_off','category_id'))
@@ -48,6 +61,14 @@ class ProductsTable{
                         )->where->equalTo('products.id',$arrParam['id']);
         })->current();
         return $result;
+    }
+
+    public function countProduct($options = null){
+        return $this->tableGateway->select(function (Select $select) use ($options) {
+            if($options = 'selling-product'){
+                $select->where(new Expression('sale_off > 0 AND status = 1'));
+            }
+        })->count();
     }
 
     public function getProducts($arrParam = null, $options = null) {
@@ -84,8 +105,17 @@ class ProductsTable{
                     $cid = implode(',', $arrParam);
                     $select->where(new Expression('products.id IN (' . $cid . ')'));
                     break;
-                case 'selling-product':
+                case 'promotional-product':
                     $select->where(new Expression('sale_off > 0 AND status = 1'));
+                    $select->limit($arrParam['itemCountPerPage']);
+                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    $select->order('percent_discount DESC');
+                    break;
+                case 'selling-product':
+                    $select->where(new Expression('bought > 0 AND status = 1'));
+                    $select->limit($arrParam['itemCountPerPage']);
+                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    $select->order('bought DESC');
                     break;
             }
         });

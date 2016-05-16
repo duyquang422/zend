@@ -21,7 +21,7 @@ echo $this->view->modal('sign-in',$html,'','Đăng Ký Thành Viên');
 
 $loginSuccess = '<p>Đăng ký thành công</p>
 				<p>Chúc mừng bạn đã trở thành thành viên của Webseo.vn</p>
-				<img src="public/template/frontend/images/buy-success.png" alt="signout sucess">
+				<img src="'. $this->view->basePath() .'/public/template/frontend/images/buy-success.png" alt="signout sucess">
 				<p class="home">Quay về trang chủ</p>
       			<p>Tự động chuyển đến trang chủ sau <b class="s">5</b> giây nữa</p>';
 

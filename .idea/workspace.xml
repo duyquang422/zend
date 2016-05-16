@@ -2,19 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="552c954f-e2b6-4369-9396-b40ba42e4eda" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Block/HorizontalMenu/HorizontalMenu.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Block/HorizontalMenu/views/horizontal-menu.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Home/Model/PostsCategoryTable.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/module/Home/view/home/product-properties/load-product-with-ajax.phtml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/template/frontend/css/productproperties.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/template/frontend/js/productproperties.js" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\css\item.product.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\font-awesome.min.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\global.responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\home.responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\item.category.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\item.global.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\item.globalbk.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\item.home.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\item.user.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\jquery-ui.min.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\login.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\product.responsive.css" afterPath="" />
+      <change type="DELETED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\rating.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Block/Bartop/Bartop.php" afterPath="$PROJECT_DIR$/Block/Bartop/Bartop.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php" afterPath="$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/Module.php" afterPath="$PROJECT_DIR$/module/Home/Module.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductController.php" afterPath="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php" afterPath="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" afterPath="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/src/Home/Controller/UserController.php" afterPath="$PROJECT_DIR$/module/Home/src/Home/Controller/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/rating/_config-rating.php" afterPath="$PROJECT_DIR$/public/rating/_config-rating.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Block/SignUp/views/default.phtml" afterPath="$PROJECT_DIR$/Block/SignUp/views/default.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/view/home/index/index.phtml" afterPath="$PROJECT_DIR$/module/Home/view/home/index/index.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/view/home/user/get-product-in-cart.phtml" afterPath="$PROJECT_DIR$/module/Home/view/home/user/get-product-in-cart.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/js/global.js" afterPath="$PROJECT_DIR$/public/template/frontend/js/global.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/news/js/global.js" afterPath="$PROJECT_DIR$/public/template/news/js/global.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/index.phtml" afterPath="$PROJECT_DIR$/public/template/frontend/index.phtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/css/item.category.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/item.category.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/css/item.global.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/item.global.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/css/item.home.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/item.home.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/template/frontend/css/item.user.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/item.user.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/module/Home/view/home/product-properties/san-pham-khuyen-mai.phtml" afterPath="$PROJECT_DIR$/module/Home/view/home/product-properties/san-pham-khuyen-mai.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/files/visitors/visitors.db" afterPath="$PROJECT_DIR$/public/files/visitors/visitors.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/zend.sql" afterPath="$PROJECT_DIR$/database/zend.sql" />
+      <change type="MOVED" beforePath="G:\xampp\htdocs\zend\Block\Bartop\views\default.phtml" afterPath="$PROJECT_DIR$/Block/Bartop/views/bartop.phtml" />
+      <change type="MOVED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\css\home.responsive.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/index.responsive.css" />
+      <change type="MOVED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\css\item.home.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/index.css" />
+      <change type="MOVED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\cssbk\item.product.css" afterPath="$PROJECT_DIR$/public/template/frontend/css/product.css" />
+      <change type="MOVED" beforePath="G:\xampp\htdocs\zend\public\template\frontend\js\homepage.js" afterPath="$PROJECT_DIR$/public/template/frontend/js/index.js" />
     </list>
     <ignored path="zend.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +65,88 @@
     <favorites_list name="zend" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="item.user.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.user.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="389" column="30" selection-start-line="389" selection-start-column="30" selection-end-line="389" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="productproperties.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/template/frontend/js/productproperties.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="33" column="126" selection-start-line="33" selection-start-column="126" selection-end-line="33" selection-end-column="126" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bartop.phtml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Block/Bartop/views/bartop.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.423077">
+              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+              <folding>
+                <element signature="n#ul#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PostsCategoryTable.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Home/Model/PostsCategoryTable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CategoryTable.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/module/Home/Model/CategoryTable.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.03046595">
+              <caret line="80" column="30" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/module/Home/Module.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.038462">
+              <caret line="149" column="45" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bartop.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Block/Bartop/Bartop.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075">
+              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -43,39 +154,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Block/Modal/views/default.phtml" />
-        <option value="$PROJECT_DIR$/public/template/backend/html/nav-left.php" />
-        <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/CartTable.php" />
-        <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/ProductsTable.php" />
-        <option value="$PROJECT_DIR$/Block/NavLeftHomePage/NavLeftHomePage.php" />
-        <option value="$PROJECT_DIR$/Block/Criteria/Criteria.php" />
-        <option value="$PROJECT_DIR$/public/template/backend/html/nav-right.php" />
-        <option value="$PROJECT_DIR$/Block/NavLeftHomePage/views/default.phtml" />
-        <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/ConfigurationTable.php" />
-        <option value="$PROJECT_DIR$/Block/Header/Header.php" />
-        <option value="$PROJECT_DIR$/Block/SlideHomeTop/views/default.phtml" />
-        <option value="$PROJECT_DIR$/library/Zendvn/Controller/ActionController.php" />
         <option value="$PROJECT_DIR$/module/Home/view/home/index/edit-slideshow.phtml" />
         <option value="$PROJECT_DIR$/Block/SlideHomeTop/SlideHomeTop.php" />
         <option value="$PROJECT_DIR$/library/Zendvn/File/Image.php" />
-        <option value="$PROJECT_DIR$/public/template/frontend/js/global.js" />
         <option value="$PROJECT_DIR$/library/Zendvn/View/Helper/UploadImage.php" />
         <option value="$PROJECT_DIR$/Block/SlideHomeTop/views/config.phtml" />
-        <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php" />
         <option value="$PROJECT_DIR$/public/template/frontend/js/homepage.js" />
         <option value="$PROJECT_DIR$/module/Admin/view/admin/index/index.phtml" />
         <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/CategoryController.php" />
         <option value="$PROJECT_DIR$/Block/Header/views/default.phtml" />
         <option value="$PROJECT_DIR$/module/Home/view/home/category/index.phtml" />
-        <option value="$PROJECT_DIR$/public/rating/_config-rating.php" />
         <option value="$PROJECT_DIR$/Block/Comment/Comment.php" />
         <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/CommentController.php" />
         <option value="$PROJECT_DIR$/Block/Comment/views/default.phtml" />
         <option value="$PROJECT_DIR$/module/Home/Model/CommentTable.php" />
         <option value="$PROJECT_DIR$/public/template/frontend/js/product.js" />
-        <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php" />
         <option value="$PROJECT_DIR$/module/Home/config/module.config.php" />
-        <option value="$PROJECT_DIR$/module/Home/config/router.config.php" />
         <option value="$PROJECT_DIR$/Block/MenuCategories/views/menu-categories.phtml" />
         <option value="$PROJECT_DIR$/module/Admin/view/admin/product/edit.phtml" />
         <option value="$PROJECT_DIR$/public/template/backend/css/template.css" />
@@ -83,17 +177,34 @@
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php" />
         <option value="$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/public/files/visitors/visitors.db" />
-        <option value="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" />
-        <option value="$PROJECT_DIR$/module/Home/view/home/product-properties/san-pham-khuyen-mai.phtml" />
         <option value="$PROJECT_DIR$/module/Home/view/home/index/index.phtml" />
         <option value="$PROJECT_DIR$/Block/HorizontalMenu/views/horizontal-menu.phtml" />
         <option value="$PROJECT_DIR$/Block/HorizontalMenu/HorizontalMenu.php" />
-        <option value="$PROJECT_DIR$/module/Home/Module.php" />
-        <option value="$PROJECT_DIR$/public/template/frontend/index.phtml" />
         <option value="$PROJECT_DIR$/public/template/frontend/css/item.home.css" />
         <option value="$PROJECT_DIR$/public/template/frontend/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php" />
+        <option value="$PROJECT_DIR$/module/Home/config/router.config.php" />
+        <option value="$PROJECT_DIR$/module/Home/view/home/product-properties/load-selling-product-with-ajax.phtml" />
+        <option value="$PROJECT_DIR$/Block/SignUp/views/default.phtml" />
+        <option value="$PROJECT_DIR$/public/template/frontend/index.phtml" />
         <option value="$PROJECT_DIR$/public/template/frontend/css/item.category.css" />
         <option value="$PROJECT_DIR$/public/template/frontend/css/item.global.css" />
+        <option value="$PROJECT_DIR$/public/template/frontend/css/productproperties.css" />
+        <option value="$PROJECT_DIR$/public/rating/_config-rating.php" />
+        <option value="$PROJECT_DIR$/public/template/news/js/global.js" />
+        <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/UserController.php" />
+        <option value="$PROJECT_DIR$/public/template/frontend/css/item.user.css" />
+        <option value="$PROJECT_DIR$/public/template/frontend/js/global.js" />
+        <option value="$PROJECT_DIR$/module/Home/view/home/user/get-product-in-cart.phtml" />
+        <option value="$PROJECT_DIR$/module/Home/view/home/product-properties/san-pham-khuyen-mai.phtml" />
+        <option value="$PROJECT_DIR$/public/template/frontend/js/productproperties.js" />
+        <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php" />
+        <option value="$PROJECT_DIR$/module/Home/Model/ProductsTable.php" />
+        <option value="$PROJECT_DIR$/Block/Bartop/views/default.phtml" />
+        <option value="$PROJECT_DIR$/module/Home/Module.php" />
+        <option value="$PROJECT_DIR$/Block/Bartop/Bartop.php" />
+        <option value="$PROJECT_DIR$/Block/Bartop/views/bartop.phtml" />
       </list>
     </option>
   </component>
@@ -106,9 +217,6 @@
   </component>
   <component name="PhpServers">
     <servers />
-  </component>
-  <component name="PhpTemplates">
-    <option name="NEW_PHP_FILE_LAST_EXTENSION" value="phtml" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -140,6 +248,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,6 +278,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="template" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="module" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -208,37 +350,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="module" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Home" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
+              <option name="myItemId" value="Model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,37 +365,18 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="zend" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Block" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HorizontalMenu" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../minhchuong" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -335,16 +428,25 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView" selected-index="1">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22610015" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2245827" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3251634" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32352942" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -395,160 +497,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/template/backend/js/function.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.642123">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/global.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7089041">
-          <caret line="414" column="18" selection-start-line="414" selection-start-column="18" selection-end-line="414" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Zendvn/File/Image.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71684587">
-          <caret line="98" column="50" selection-start-line="98" selection-start-column="50" selection-end-line="98" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Block/SlideHomeTop/SlideHomeTop.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.8461537">
-          <caret line="12" column="88" selection-start-line="12" selection-start-column="88" selection-end-line="12" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Zendvn/File/Upload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15232974">
-          <caret line="5" column="41" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Block/SlideHomeTop/views/config.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="85" selection-start-line="10" selection-start-column="85" selection-end-line="10" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/Zendvn/View/Helper/UploadImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923">
-          <caret line="12" column="71" selection-start-line="12" selection-start-column="71" selection-end-line="12" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/homepage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="9" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/News/src/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/index/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9390681">
-          <caret line="288" column="27" selection-start-line="288" selection-start-column="27" selection-end-line="288" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="78" selection-start-line="55" selection-start-column="78" selection-end-line="55" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Block/Header/Header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3046595">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3673835">
-          <caret line="69" column="16" selection-start-line="69" selection-start-column="14" selection-end-line="69" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/category.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4041096">
-          <caret line="38" column="91" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/CategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="69" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/rating/_config-rating.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45617172">
-          <caret line="26" column="16" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Block/Header/views/default.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35654595">
-          <caret line="33" column="149" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="149" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Block/Comment/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3041145">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/view/home/product/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Block/Comment/views/default.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/Model/CommentTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="87" selection-start-line="23" selection-start-column="87" selection-end-line="23" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="74" column="95" selection-start-line="74" selection-start-column="95" selection-end-line="74" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/CommentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4874552">
@@ -563,24 +511,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1469534">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/module/Home/config/module.config.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="104" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/config/router.config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="51" selection-start-line="78" selection-start-column="51" selection-end-line="78" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -598,45 +532,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82258064">
-          <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/Model/CategoryTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.025089607">
-          <caret line="180" column="4" selection-start-line="180" selection-start-column="4" selection-end-line="191" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/template/backend/css/template.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="643" column="19" selection-start-line="643" selection-start-column="19" selection-end-line="643" selection-end-column="19" />
-          <folding>
-            <marker date="1463055442325" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/backend/js/ajax.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="380" column="18" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="105" column="25" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -644,23 +543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.423077">
-          <caret line="104" column="53" selection-start-line="104" selection-start-column="53" selection-end-line="104" selection-end-column="53" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -668,31 +550,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.1153846">
           <caret line="180" column="46" selection-start-line="180" selection-start-column="46" selection-end-line="180" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22401434">
-          <caret line="154" column="0" selection-start-line="154" selection-start-column="0" selection-end-line="154" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/view/home/category/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3655914">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/view/home/product-properties/san-pham-khuyen-mai.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.730769">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -700,7 +557,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -708,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45698926">
           <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -716,15 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385">
           <caret line="17" column="6" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55734766">
-          <caret line="152" column="31" selection-start-line="152" selection-start-column="17" selection-end-line="152" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -732,23 +578,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/index.phtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.461538">
-          <caret line="80" column="43" selection-start-line="80" selection-start-column="43" selection-end-line="80" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.home.css">
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,22 +592,297 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36643836">
           <caret line="4" column="22429" selection-start-line="4" selection-start-column="22429" selection-end-line="4" selection-end-column="22429" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Model/CategoryTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030411448">
+          <caret line="105" column="25" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/Zend/Paginator/Paginator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3488372">
+          <caret line="274" column="20" selection-start-line="274" selection-start-column="20" selection-end-line="274" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.730769">
+          <caret line="51" column="5" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/view/home/product-properties/load-product-with-ajax.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="92" selection-start-line="0" selection-start-column="92" selection-end-line="0" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/backend/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="380" column="18" selection-start-line="380" selection-start-column="18" selection-end-line="380" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/SignUp/views/default.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6953405">
+          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/view/admin/category/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.category.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7380137">
-          <caret line="317" column="1" selection-start-line="317" selection-start-column="1" selection-end-line="317" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.9417808">
+          <caret line="316" column="1" selection-start-line="316" selection-start-column="1" selection-end-line="316" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/view/home/category/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="55" column="134" selection-start-line="55" selection-start-column="12" selection-end-line="55" selection-end-column="134" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/css/productproperties.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.global.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1849315">
-          <caret line="4128" column="0" selection-start-line="4128" selection-start-column="0" selection-end-line="4128" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1000" column="1" selection-start-line="1000" selection-start-column="1" selection-end-line="1000" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="112" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/config/router.config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52150536">
+          <caret line="78" column="90" selection-start-line="78" selection-start-column="90" selection-end-line="78" selection-end-column="90" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="80" selection-start-line="16" selection-start-column="80" selection-end-line="16" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/rating/_config-rating.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="18" column="33" selection-start-line="18" selection-start-column="33" selection-end-line="18" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/Support/views/default.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2361111">
+          <caret line="5" column="203" selection-start-line="5" selection-start-column="203" selection-end-line="5" selection-end-column="203" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/Policy/views/default.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35555556">
+          <caret line="41" column="84" selection-start-line="41" selection-start-column="84" selection-end-line="41" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/Header/views/header.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.45698926">
+          <caret line="113" column="52" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/news/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.02910959">
+          <caret line="354" column="0" selection-start-line="354" selection-start-column="0" selection-end-line="354" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.076923">
+          <caret line="236" column="151" selection-start-line="236" selection-start-column="151" selection-end-line="236" selection-end-column="151" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.29109588">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.04404145">
+          <caret line="140" column="62" selection-start-line="140" selection-start-column="62" selection-end-line="140" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/view/home/user/get-product-in-cart.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.576923">
+          <caret line="34" column="96" selection-start-line="34" selection-start-column="96" selection-end-line="34" selection-end-column="96" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36643836">
+          <caret line="183" column="20" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/Header/views/default.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22939068">
+          <caret line="112" column="216" selection-start-line="112" selection-start-column="112" selection-end-line="112" selection-end-column="216" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.user.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="389" column="30" selection-start-line="389" selection-start-column="30" selection-end-line="389" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Admin/src/Admin/Controller/CategoryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.923077">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8261648">
+          <caret line="108" column="4" selection-start-line="108" selection-start-column="4" selection-end-line="108" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/js/productproperties.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="126" selection-start-line="33" selection-start-column="126" selection-end-line="33" selection-end-column="126" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/view/home/product-properties/san-pham-khuyen-mai.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.538462">
+          <caret line="52" column="64" selection-start-line="52" selection-start-column="64" selection-end-line="52" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/Model/ProductsTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.538462">
+          <caret line="115" column="65" selection-start-line="115" selection-start-column="65" selection-end-line="115" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.230769">
+          <caret line="74" column="131" selection-start-line="74" selection-start-column="131" selection-end-line="74" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/Module.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.038462">
+          <caret line="149" column="45" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/Bartop/Bartop.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Block/Bartop/views/bartop.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077">
+          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+          <folding>
+            <element signature="n#ul#1;n#div#0;n#div#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/Model/PostsCategoryTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/module/Home/Model/CategoryTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.03046595">
+          <caret line="80" column="30" selection-start-line="80" selection-start-column="20" selection-end-line="80" selection-end-column="30" />
           <folding />
         </state>
       </provider>
