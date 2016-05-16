@@ -38,13 +38,13 @@ $RouteChild	= array(
 $categoryRoute = array(
 	'type' 		=> 'Regex',
 	'options' 	=> array(
-		'regex' 	=> '/(?<name>[a-zA-Z][a-zA-Z0-9-_]+)-(?<id>[0-9]+)',
+		'regex' 	=> '/tin-tuc/((?<name>[a-zA-Z][a-zA-Z0-9-_]+)-(?<id>[0-9]+).(?<extension>(html)))?',
 		'defaults' 	=> array(
 			'__NAMESPACE__' 	=> 'News\Controller',
-			'controller' 		=> 'category-posts',
+			'controller' 		=> 'posts-category',
 			'action' 			=> 'index'
 		),
-		'spec' 		=> '/%name%-%id%',
+		'spec' 		=> '/tin-tuc/%name%-%id%',
 	),
 );
 $productRoute = array(

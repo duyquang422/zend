@@ -992,7 +992,7 @@ footer {
 }
 #characteristics .owl-pagination {
     position: absolute;
-    top: 463px;
+    bottom: -5px;
     right: 5px
 }
 #characteristics .owl-buttons {
@@ -1917,7 +1917,7 @@ footer {
         width: 28%
     }
     #characteristics .owl-pagination {
-        top: 355px
+        bottom: 0px
     }
     .characteristics {
         width: 67.078%

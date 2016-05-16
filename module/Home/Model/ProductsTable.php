@@ -65,8 +65,19 @@ class ProductsTable{
 
     public function countProduct($options = null){
         return $this->tableGateway->select(function (Select $select) use ($options) {
-            if($options = 'selling-product'){
-                $select->where(new Expression('sale_off > 0 AND status = 1'));
+            switch ($options) {
+                case 'selling-product':
+                    $select->where(new Expression('sale_off > 0 AND status = 1'));
+                    break;
+                case 'promotional-product':
+                    $select->where(new Expression('bought > 0 AND status = 1'));
+                    break;
+                case 'new-deal':
+                    $select->where(new Expression('deal = 1 AND status = 1'));
+                case 'selling-deal':
+                    $select->where(new Expression('deal = 1 AND sale_off > 0 AND status = 1'));
+                case 'deal-hot':
+                    $select->where(new Expression('deal = 1 AND hot = 1 AND status = 1'));
             }
         })->count();
     }
@@ -116,6 +127,24 @@ class ProductsTable{
                     $select->limit($arrParam['itemCountPerPage']);
                     $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
                     $select->order('bought DESC');
+                    break;
+                case 'new-deal':
+                    $select->where(new Expression('deal = 1 AND status = 1'));
+                    $select->limit($arrParam['itemCountPerPage']);
+                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    $select->order('id DESC');
+                    break;
+                case 'selling-deal':
+                    $select->where(new Expression('deal = 1 AND sale_off > 0 AND status = 1'));
+                    $select->limit($arrParam['itemCountPerPage']);
+                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    $select->order('percent_discount DESC');
+                    break;
+                case 'deal-hot':
+                    $select->where(new Expression('deal = 1 AND hot = 1 AND status = 1'));
+                    $select->limit($arrParam['itemCountPerPage']);
+                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    $select->order('id DESC');
                     break;
             }
         });

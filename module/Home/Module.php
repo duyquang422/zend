@@ -1,6 +1,7 @@
 <?php
 namespace Home;
 
+use Block\Bartop\Bartop;
 use Block\Criteria\Criteria;
 use Block\FilterManufacturer\FilterManufacturer;
 use Block\Header\Header;
@@ -17,6 +18,7 @@ use Block\Vocation\Vocation;
 use Block\ProductDescription\ProductDescription;
 use Home\Model\CartTable;
 use Home\Model\CategoryTable;
+use Home\Model\PostsCategoryTable;
 use Admin\Model\Entity\Category;
 use Admin\Model\Entity\Products;
 use Home\Model\CommentTable;
@@ -116,6 +118,10 @@ class Module
                 'Home\Model\CartTable'  => function ($sm) {
                     $tableGateway   = $sm->get('CartTableGateway');
                     return new CartTable($tableGateway);
+                },
+                'Home\Model\PostsCategoryTable'  => function ($sm) {
+                    $tableGateway   = $sm->get('PostsCategoryTableGateway');
+                    return new PostsCategoryTable($tableGateway);
                 }
             ),
             'invokables' => array(
@@ -127,7 +133,6 @@ class Module
     public function getViewHelperConfig(){
         return array(
             'invokables' => array(
-                'bartop'                => 'Block\Bartop\Bartop',
                 'collectionProducts'    => 'Block\CollectionProducts\CollectionProducts',
                 'news'                  => 'Block\News\News',
                 'policy'                => 'Block\Policy\Policy',
@@ -146,7 +151,7 @@ class Module
             ),
             'factories' => array(
                 'bartop' => function($sm){
-                    $helper = new SlideHomeTop();
+                    $helper = new Bartop();
                     $helper->getPostsCategory($sm->getServiceLocator()->get('Home\Model\PostsCategoryTable'));
                     return $helper;
                 },

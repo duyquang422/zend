@@ -79,24 +79,19 @@ $(document).ready(function(){
         obj = $(this).data('object');
     })
 
-
-    //thực hiện việc scroll menu
-    if($('#header').length) {
-        if ($(this).scrollTop() > $('#header').offset().top + $('#header').height()) {
-            $('.header').removeClass('menu-header-fixed').addClass('menu-header-fixed');
-            if ($('.nav-category div').length < 2) {
-                $('.nav-left-homepage').clone().appendTo('#header .nav-category');
-            }
-            $('.menu-fixed').attr('style', 'top: 40px;');
-        }
+    //thực hiện việc chèn menu vào danh mục
+    if($('body').attr('id') != 'index'){
+        $('.nav-left-homepage').clone().appendTo('#horizontal-menu .nav-category');
     }
+
     $(window).bind('scroll',function(){
         if($('#header').length) {
             if ($(this).scrollTop() > $('#header').offset().top + $('#header').height()) {
                 $('.header').removeClass('menu-header-fixed').addClass('menu-header-fixed');
-                if ($('.nav-category div').length < 2) {
-                    $('.nav-left-homepage').clone().appendTo('#header .nav-category');
-                }
+                if($('body').attr('id') != 'index')
+                    $('.hidden .nav-left-homepage').clone().appendTo('#header .nav-category');
+                else
+                    $('#nav-left-homepage').clone().appendTo('#header .nav-category');
                 $('.menu-fixed').attr('style', 'top: 40px;');
             }
             if ($(this).scrollTop() < $('.stop-menu-fixed').offset().top) {

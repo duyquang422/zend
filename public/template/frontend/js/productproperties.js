@@ -12,7 +12,7 @@ $(window).scroll(function(){
 
     if ($(window).scrollTop() + $(window).height() >= $element.height()){
 
-        // N?u đang g?i ajax th? ngưng
+        // Nếu đang gửi ajax thì ngưng
         if (is_busy == true){
             return false;
         }
@@ -25,7 +25,7 @@ $(window).scroll(function(){
         // Thiết lập đang gửi ajax
         is_busy = true;
 
-        // Tăng s? trang lên 1
+        // Tăng số trang lên 1
         page++;
 
         $('.bg-load-ajax').removeClass('hidden');
@@ -36,10 +36,10 @@ $(window).scroll(function(){
                 async: false,
                 dataType: 'html',
                 success: function (data) {
-                    $('.load-more .row').append(data);
+                    $('.products-listing .row').append(data);
                 }
             }).always(function () {
-                // Sau khi th?c hi?n xong ajax th? ?n hidden và cho tr?ng thái g?i ajax = false
+                // Sau khi thực hiện xong ajax thì ẩn hidden và cho trạng thái gửi ajax = false
                 $('.bg-load-ajax').addClass('hidden');
                 is_busy = false;
             });

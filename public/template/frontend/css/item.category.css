@@ -1,15 +1,7 @@
 /*CATEGORIES*/
-@media screen and (max-width: 1366px){
-    .container {
-        width: 1190px;
-    }
-}
 .container {
     margin: 0 auto;
     position: relative;
-}
-.nav-category{
-    margin-right: -17px;
 }
 .title-category-fixed{
     padding: 0 15px;
@@ -25,11 +17,6 @@
 }
 .lazy{
     width: 100%;
-}
-@media (max-width: 992px) {
-    .container .col-md-2{
-        display: none;
-    }
 }
 .box-filter-wrapper{
     display: inline-block;

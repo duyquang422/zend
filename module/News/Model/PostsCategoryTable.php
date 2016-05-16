@@ -4,7 +4,7 @@ namespace News\Model;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\TableGateway\AbstractTableGateway;
 
-class CategoryPostsTable extends AbstractTableGateway {
+class PostsCategoryTable extends AbstractTableGateway {
 	
 	protected $tableGateway;
 	

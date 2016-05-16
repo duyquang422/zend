@@ -4,6 +4,7 @@ return array(
     'Home\Model\CategoryTable' => __DIR__ . '/Model/CategoryTable.php',
     'Home\Model\ProductsTable' => __DIR__ . '/Model/ProductsTable.php',
     'Home\Model\CartTable' => __DIR__ . '/Model/CartTable.php',
+    'Home\Model\PostsCategoryTable' => __DIR__ . '/Model/PostsCategoryTable.php',
     'Home\Model\GroupTable' => __DIR__ . '/Model/GroupTable.php',
     'Home\Model\PermissionTable' => __DIR__ . '/Model/PermissionTable.php',
     'Home\Model\UserTable' => __DIR__ . '/Model/UserTable.php',

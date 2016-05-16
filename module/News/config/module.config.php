@@ -4,7 +4,7 @@ return array(
 			'invokables' => array (
                 'News\Controller\Index' 	        => 'News\Controller\IndexController',
 				'News\Controller\Posts' 	        => 'News\Controller\PostsController',
-                'News\Controller\CategoryPosts' 	=> 'News\Controller\CategoryPostsController'
+                'News\Controller\PostsCategory' 	=> 'News\Controller\PostsCategoryController'
 			)
 	),
 	'view_manager'	=> array(

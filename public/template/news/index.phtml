@@ -1,7 +1,7 @@
 <?php
-    $urlCSS = URL_TEMPLATE . '/news/css';
-    $urlJS = URL_TEMPLATE . '/news/js';
-    $urlImage = URL_TEMPLATE . '/news/img';
+    $urlCSS = $this->basePath(URL_TEMPLATE . '/news/css');
+    $urlJS = $this->basePath(URL_TEMPLATE . '/news/js');
+    $urlImage = $this->basePath(URL_TEMPLATE . '/news/img');
 ?>
 
 <?php echo $this->doctype(); ?>

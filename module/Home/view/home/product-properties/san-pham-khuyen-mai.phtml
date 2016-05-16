@@ -8,7 +8,7 @@
                 </div>
                 <div class="br-end link">
                     <a href="" title="">
-                        <span>Sản phẩm khuyến mãi</span>
+                        <span><?php echo $this->title ?></span>
                     </a>
                 </div>
             </div>
@@ -18,7 +18,7 @@
         <div class="block  category-header" id="block-main-category-header">
             <div class="block__header  ">
                 <h1 class="block__title category-header-heading">
-                    Sản Phẩm Khuyến Mãi
+                    <?php echo $this->title ?>
                 </h1>
             </div>
         </div>
@@ -31,9 +31,6 @@
                     <div class="row">
                         <?php echo $this->partial('home/list-products.phtml',array('products' => $this->products))?>
                     </div>
-                </div>
-                <div class="load-more products-listing util-clearfix">
-                    <div class="row"></div>
                 </div>
             </div>
         </div>
