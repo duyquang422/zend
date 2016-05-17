@@ -9,7 +9,7 @@ class ProductsByCategory extends AbstractHelper{
     protected $_table;
     public function __invoke($id){
         $this->getData($id);
-        require 'views/default.phtml';
+        require 'views/products-by-category.phtml';
     }
     public function setData($table){
         return $this->_table = $table;

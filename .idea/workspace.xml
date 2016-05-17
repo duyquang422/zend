@@ -64,21 +64,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="item.global.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="item.global.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.global.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39693356">
-              <caret line="452" column="19" selection-start-line="452" selection-start-column="19" selection-end-line="452" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="451" column="15" selection-start-line="451" selection-start-column="15" selection-end-line="451" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Module.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Module.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/module/Home/Module.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.896552">
-              <caret line="153" column="43" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.7580645">
+              <caret line="155" column="44" selection-start-line="155" selection-start-column="44" selection-end-line="155" selection-end-column="44" />
               <folding>
                 <element signature="e#23#47#0#PHP" expanded="true" />
               </folding>
@@ -171,11 +171,11 @@
         <option value="$PROJECT_DIR$/module/Home/Model/CategoryTable.php" />
         <option value="$PROJECT_DIR$/module/Home/autoload_classmap.php" />
         <option value="$PROJECT_DIR$/module/Home/src/Home/Controller/IndexController.php" />
-        <option value="$PROJECT_DIR$/module/Home/Module.php" />
         <option value="$PROJECT_DIR$/Block/Bartop/views/bartop.phtml" />
         <option value="$PROJECT_DIR$/Block/Bartop/Bartop.php" />
         <option value="$PROJECT_DIR$/module/Home/Model/PostsCategoryTable.php" />
         <option value="$PROJECT_DIR$/public/template/frontend/css/item.global.css" />
+        <option value="$PROJECT_DIR$/module/Home/Module.php" />
       </list>
     </option>
   </component>
@@ -450,7 +450,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22809668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22809668" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -836,16 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/module/Home/Module.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.896552">
-          <caret line="153" column="43" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="43" />
-          <folding>
-            <element signature="e#23#47#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Block/Bartop/views/bartop.phtml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-4.137931">
@@ -870,6 +860,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="451" column="15" selection-start-line="451" selection-start-column="15" selection-end-line="451" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/module/Home/Model/PostsCategoryTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.655172">
@@ -880,11 +878,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/template/frontend/css/item.global.css">
+    <entry file="file://$PROJECT_DIR$/module/Home/Module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39693356">
-          <caret line="452" column="19" selection-start-line="452" selection-start-column="19" selection-end-line="452" selection-end-column="19" />
-          <folding />
+        <state vertical-scroll-proportion="0.7580645">
+          <caret line="155" column="44" selection-start-line="155" selection-start-column="44" selection-end-line="155" selection-end-column="44" />
+          <folding>
+            <element signature="e#23#47#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

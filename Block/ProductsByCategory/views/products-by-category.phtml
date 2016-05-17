@@ -1,5 +1,5 @@
 <!-- start block products by category -->
-    <div class="block_cat_home woman check-onscreen-woman saq_default">
+    <div class="block_cat_home woman check-onscreen-woman saq_default" id="products-by-category">
         <div class="block-collection home util-clearfix">
             <div class="col-sm-2 women-col1">
                 <div class="title_extra_menu">
@@ -105,23 +105,25 @@
     </div>
 
 <script>
-    $('#slide-brand-' + '<?php echo $id?>').owlCarousel({
-        itemsCustom : [
-            [0, 1],
-            [1600, 1]
-        ],
-        navigation : true,
-        pagination: false,
-        autoPlay: false,
-        navigationText: ['','']
-    });
-    $('#slide-collection-' + '<?php echo $id?>').owlCarousel({
-        itemsCustom : [
-            [0, 2],
-            [1600, 2]
-        ],
-        pagination: true,
-        autoPlay: false
+    $(document).ready(function(){
+        $('#slide-brand-' + '<?php echo $id?>').owlCarousel({
+            itemsCustom : [
+                [0, 1],
+                [1600, 1]
+            ],
+            navigation : true,
+            pagination: false,
+            autoPlay: false,
+            navigationText: ['','']
+        });
+        $('#slide-collection-' + '<?php echo $id?>').owlCarousel({
+            itemsCustom : [
+                [0, 2],
+                [1600, 2]
+            ],
+            pagination: true,
+            autoPlay: false
+        })
     })
 </script>
 <!-- end block products by category -->

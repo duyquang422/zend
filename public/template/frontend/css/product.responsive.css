@@ -1,3 +1,15 @@
+@media (max-width: 1199px) {
+    #coment .boxright {
+        width: 100%;
+        max-width: 100%;
+        overflow: initial;
+    }
+    #product .ratingblock {
+        display: block;
+        clear: both;
+        width: 100%;
+    }
+}
 @media (max-width: 991px) {
     .choosemarket{
         display: none;

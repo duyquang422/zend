@@ -77,6 +77,13 @@
 	#owl-home-top .owl-carousel .owl-item {
 		width: auto !important;
 	}
+	.block-collection .women-col2 {
+		width: 40%;
+	}
+	.block-collection .women-col3 {
+		width: 60%;
+	}
+
 }
 @media (min-width: 768px) and (max-width: 1199px) {
 	.women-col3 .product > a {
@@ -162,6 +169,11 @@
 @media (min-width: 665px) and (max-width: 700px) {
 	.list_carousel li .product-item {
 		min-height: 400px;
+	}
+}
+@media (min-width : 480px) and (max-width: 767px) {
+	.block-collection .women-col2 {
+		display: none;
 	}
 }
 @media (max-width: 500px) {
