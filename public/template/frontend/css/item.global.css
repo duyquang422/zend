@@ -285,7 +285,7 @@ input:focus {
     margin-top: 10px;
 }
 #home-content{
-    background: #F6F6F6;
+    background: #E9E9E9;
 }
 #horizontal-menu{
     background: #ed1c24;
@@ -4211,4 +4211,34 @@ hr{
     right: 0;
     z-index: 999;
     left: inherit;
+}
+
+/*css toi 16/5*/
+#hot-deal-products:hover .btn-edit{
+    display: block;
+}
+.center{
+    text-align: center;
+}
+.config .product-item{
+    position: relative;
+    display: inline-block;
+}
+.config .product-name{
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 2px;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    padding: 10px 0;
+    line-height: 15px;
+}
+.config .control-group{
+    position: relative;
+}
+.config .control-group .fa-search{
+    position: absolute;
+    right: 10px;
+    top: 8px;
 }

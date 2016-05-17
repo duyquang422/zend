@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Block/Criteria/views/default.phtml" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Block/HotDealProducts/views/config.phtml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Block/NavLeftHomePage/views/config.phtml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Block/SlideHomeTop/views/config.phtml" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/module/Home/src/Home/Controller/ProductPropertiesController.php" charset="UTF-8" />
