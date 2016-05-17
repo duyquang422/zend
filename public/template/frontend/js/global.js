@@ -90,8 +90,10 @@ $(document).ready(function(){
                 $('.header').removeClass('menu-header-fixed').addClass('menu-header-fixed');
                 if($('body').attr('id') != 'index')
                     $('.hidden .nav-left-homepage').clone().appendTo('#header .nav-category');
-                else
+                else{
+                    $('.title-category-fixed').next().remove();
                     $('#nav-left-homepage').clone().appendTo('#header .nav-category');
+                }
                 $('.menu-fixed').attr('style', 'top: 40px;');
             }
             if ($(this).scrollTop() < $('.stop-menu-fixed').offset().top) {

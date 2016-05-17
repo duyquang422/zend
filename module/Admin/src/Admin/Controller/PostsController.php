@@ -164,6 +164,10 @@ class PostsController extends ActionController
 
     public function addAction(){
         if($this->getRequest()->isXmlHttpRequest()){
+            if(isset($this->_params['image']) && $this->_params['image']['name']){
+                $imageObj = new Image();
+                $this->_params['imageName'] = $imageObj->upload('image',array('task' => 'posts'));
+            }
             $this->_params['created_by'] = $this->identity()->username;
             $this->getTable()->saveItem($this->_params,array('task' => 'add-item'));
         }

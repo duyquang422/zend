@@ -7,6 +7,7 @@ use Block\FilterManufacturer\FilterManufacturer;
 use Block\Header\Header;
 use Block\History\History;
 use Block\HorizontalMenu\HorizontalMenu;
+use Block\HotDealProducts\HotDealProducts;
 use Block\MenuCategories\MenuCategories;
 use Block\NavLeftHomePage\NavLeftHomePage;
 use Block\MiniBarMenu\MiniBarMenu;
@@ -136,7 +137,6 @@ class Module
                 'collectionProducts'    => 'Block\CollectionProducts\CollectionProducts',
                 'news'                  => 'Block\News\News',
                 'policy'                => 'Block\Policy\Policy',
-                'hotDealProducts'       => 'Block\HotDealProducts\HotDealProducts',
                 'support'               => 'Block\Support\Support',
                 'purchase'              => 'Block\Purchase\Purchase',
                 'facebookComment'       => 'Block\FacebookComment\FacebookComment',
@@ -150,6 +150,11 @@ class Module
                 'showModal'            => 'Block\Modal\Modal'
             ),
             'factories' => array(
+                'hotDealProducts' => function($sm){
+                    $helper = new HotDealProducts();
+                    $helper->getProductTable($sm->getServiceLocator()->get('Home\Model\ProductsTable'));
+                    return $helper;
+                },
                 'bartop' => function($sm){
                     $helper = new Bartop();
                     $helper->getPostsCategory($sm->getServiceLocator()->get('Home\Model\PostsCategoryTable'));

@@ -1,0 +1,26 @@
+<!--start block hot deal product module-->
+<div class="good-deal saq-good-deal1" id="hot-deal-products">
+    <div class="title-deal">
+        <a id="saq-deal-href" title="Deal tốt, HỐT LUÔN!" href="#" class="tl">Deal tốt, HỐT LUÔN!</a>
+    </div>
+    <div class="box-2-deal">
+        <?php
+            $products = $this->getHotDealProduct();
+            foreach ($products as $product) {
+                echo '<a class="deal-item" href="'. $this->view->basePath() . $product['alias'] . '-' . $product['id'] . '.html' .'"
+                       title="">
+                        <img src="'. $this->view->basePath('public/files/product/203x235/') . $product['image'] .'" alt="'. $product['name'] .'"/>
+                        <div class="box-name">
+                            <span class="deal-price">
+                                <span class="deal-price-n">'. number_format($product['price'],0,',','.') .' VNĐ</span>
+                                <span class="deal-price-o">'. number_format($product['sale_off'],0,',','.') .' VNĐ</span>
+                            </span>
+                            <div class="name">'. $product['name'] .'</div>
+                        </div>
+                        <div class="discout">-'. $product['percent_discount'] .'%</div>
+                    </a>';
+        
+        }?>
+    </div>
+</div>
+<!--end block product deal module-->

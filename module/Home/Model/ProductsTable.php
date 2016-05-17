@@ -118,32 +118,57 @@ class ProductsTable{
                     break;
                 case 'promotional-product':
                     $select->where(new Expression('sale_off > 0 AND status = 1'));
-                    $select->limit($arrParam['itemCountPerPage']);
-                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    if(isset($arrParam['limit']) && $arrParam['limit'])
+                        $select->limit($arrParam['limit']);
+                    else
+                        $select->limit($arrParam['itemCountPerPage']);
+
+                    if(isset($arrParam['currentPageNumber']) && isset($arrParam['itemCountPerPage']))
+                        $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
                     $select->order('percent_discount DESC');
                     break;
                 case 'selling-product':
                     $select->where(new Expression('bought > 0 AND status = 1'));
-                    $select->limit($arrParam['itemCountPerPage']);
-                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    if(isset($arrParam['limit']) && $arrParam['limit'])
+                        $select->limit($arrParam['limit']);
+                    else
+                        $select->limit($arrParam['itemCountPerPage']);
+
+                    if(isset($arrParam['currentPageNumber']) && isset($arrParam['itemCountPerPage']))
+                        $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
                     $select->order('bought DESC');
                     break;
                 case 'new-deal':
                     $select->where(new Expression('deal = 1 AND status = 1'));
-                    $select->limit($arrParam['itemCountPerPage']);
-                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    if(isset($arrParam['limit']) && $arrParam['limit'])
+                        $select->limit($arrParam['limit']);
+                    else
+                        $select->limit($arrParam['itemCountPerPage']);
+
+                    if(isset($arrParam['currentPageNumber']) && isset($arrParam['itemCountPerPage']))
+                        $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
                     $select->order('id DESC');
                     break;
                 case 'selling-deal':
                     $select->where(new Expression('deal = 1 AND sale_off > 0 AND status = 1'));
-                    $select->limit($arrParam['itemCountPerPage']);
-                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    if(isset($arrParam['limit']) && $arrParam['limit'])
+                        $select->limit($arrParam['limit']);
+                    else
+                        $select->limit($arrParam['itemCountPerPage']);
+
+                    if(isset($arrParam['currentPageNumber']) && isset($arrParam['itemCountPerPage']))
+                        $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
                     $select->order('percent_discount DESC');
                     break;
                 case 'deal-hot':
                     $select->where(new Expression('deal = 1 AND hot = 1 AND status = 1'));
-                    $select->limit($arrParam['itemCountPerPage']);
-                    $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
+                    if(isset($arrParam['limit']) && $arrParam['limit'])
+                        $select->limit($arrParam['limit']);
+                    else
+                        $select->limit($arrParam['itemCountPerPage']);
+
+                    if(isset($arrParam['currentPageNumber']) && isset($arrParam['itemCountPerPage']))
+                        $select->offset(($arrParam['currentPageNumber'] - 1) * $arrParam['itemCountPerPage']);
                     $select->order('id DESC');
                     break;
             }

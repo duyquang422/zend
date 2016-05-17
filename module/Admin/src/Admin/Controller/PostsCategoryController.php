@@ -56,7 +56,7 @@ class PostsCategoryController extends ActionController
         if($this->getRequest()->isXmlHttpRequest()){
             $arrParams = $_GET;
             $arrParams['description'] = $_POST['description'];
-            $this->_params['modified_by'] = $this->identity()->username;
+            $arrParams['modified_by'] = $this->identity()->username;
             $this->getTable()->saveItem($arrParams,array('task' => 'edit-item'));
         }
         return $this->response;
