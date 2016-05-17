@@ -137,6 +137,16 @@
 		min-height: 376px;
 		text-align: center;
 	}
+	.search-autocomplete {
+		min-width: 530px;
+		width: 100%;
+	}
+	.image-for-search {
+		width: 30%;
+	}
+	.des-pro {
+		width: 65%;
+	}
 	/*---------------end category table----------------------*/
 }
 @media (min-width: 992px) and (max-width: 1199px)  {
@@ -231,6 +241,7 @@
         width: 100%;
     }
     #category-result {
+        display: none;
     }
     .image-for-search {
         width: 40%;
