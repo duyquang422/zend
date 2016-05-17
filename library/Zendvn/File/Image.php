@@ -74,8 +74,8 @@ class Image {
             $uploadDirectory	= PATH_FILES . '/posts/';
             $fileName			= $uploadObj->uploadFile($fileInput, $uploadDirectory, array('task' => 'rename'), 'posts_');
             $layer = ImageWorkshop::initFromPath(PATH_FILES . '/posts/' . $fileName);
-            $layer->resizeInPixel(176, 98, false);
-            $layer->save(PATH_FILES . '/posts/176x98', $fileName, true,null,100);
+            $layer->resizeInPixel(390, 220, false);
+            $layer->save(PATH_FILES . '/posts/390x220', $fileName, true,null,100);
             $layer->resizeInPixel(42, 42, false);
             $layer->save(PATH_FILES . '/posts/42x42', $fileName, true,null,100);
         }
@@ -151,7 +151,7 @@ class Image {
         if($options['task'] == 'posts'){
             $fileMain	= PATH_FILES . '/posts/' . $fileName;
             @unlink($fileMain);
-            $fileMain	= PATH_FILES . '/posts/176x98/' . $fileName;
+            $fileMain	= PATH_FILES . '/posts/390x220/' . $fileName;
             @unlink($fileMain);
             $fileMain	= PATH_FILES . '/posts/42x42/' . $fileName;
             @unlink($fileMain);

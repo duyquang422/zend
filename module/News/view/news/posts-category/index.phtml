@@ -35,44 +35,31 @@
                 <p><?php echo $this->category->description ?></p>
             </div>
         </article>
-        <article id="post-66"
-            class="post-66 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion category-general">
-            <div class="featured-image">
-                <a href="http://demo.themegrill.com/colormag/2015/03/24/color-your-hair-3/" title="Color your Hair"><img
-                    width="800" height="445"
-                    src="http://demo.themegrill.com/colormag/wp-content/uploads/sites/20/2015/03/beauty-666605_1920-800x445.jpg"
-                    class="attachment-colormag-featured-image size-colormag-featured-image wp-post-image"
-                alt="beauty-666605_1920"></a>
-            </div>
-            <div class="article-content clearfix">
-                <div class="above-entry-meta"><span class="cat-links"><a
-                    href="http://demo.themegrill.com/colormag/category/fashion/" style="background:#bd4cce"
-                rel="category tag">Fashion</a>&nbsp;<a
-                href="http://demo.themegrill.com/colormag/category/general/" style="background:#a38a6d"
-            rel="category tag">General</a>&nbsp;</span></div>
-            <header class="entry-header">
-                <h2 class="entry-title">
-                <a href="http://demo.themegrill.com/colormag/2015/03/24/color-your-hair-3/" title="Color your Hair">Color
-                your Hair</a>
-                </h2>
-            </header>
-            <div class="below-entry-meta">
-                <span class="posted-on"><a href="http://demo.themegrill.com/colormag/2015/03/24/color-your-hair-3/"
-                    title="6:27 am" rel="bookmark"><i class="fa fa-calendar-o"></i>
-                    <time class="entry-date published" datetime="2015-03-24T06:27:32+00:00">March 24, 2015</time>
-                    <time class="updated" datetime="2015-03-25T07:05:13+00:00">March 25, 2015</time>
-                </a></span>
-                <span class="byline"><span class="author vcard"><i class="fa fa-user"></i><a class="url fn n"
-                    href="http://demo.themegrill.com/colormag/author/demothemegrill/"
-                    title="TG-Demo Team">TG-Demo
-                Team</a></span></span>
-            </div>
-            <div class="entry-content clearfix">
-                <p>Bear claw cake cake apple pie candy muffin. Dessert croissant soufflé cheesecake dessert croissant
-                dragée candy canes candy canes. Wafer</p>
-                <a class="more-link" title="Color your Hair"
-                    href="http://demo.themegrill.com/colormag/2015/03/24/color-your-hair-3/"><span>Read more</span></a>
-                </div>
-            </div>
-        </article>
+        <?php
+            foreach($this->products as $val) {
+                echo '<article id="post-66"
+                         class="post-66 post type-post status-publish format-standard has-post-thumbnail hentry category-fashion category-general">
+                    <div class="featured-image">
+                        <a href="#" title="'. $val['postsName'] .'">
+                            <img src="'. $this->basePath('public/files/posts/390x220/'. $val['postsImage']) .'" alt="'. $val['postsName'] .'">
+                        </a>
+                    </div>
+                    <div class="article-content clearfix">
+                        <header class="entry-header">
+                            <h2 class="entry-title">
+                                <a href="#" title="Color your Hair">'. $val['postsName'] .'</a>
+                            </h2>
+                        </header>
+                        <div class="below-entry-meta">
+                            <span class="posted-on">
+                                <a href="#" title="6:27 am" rel="bookmark">
+                                    <i class="fa fa-calendar-o"></i>
+                                    '. $val['postsCreatedDate'] .'
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </article>';
+            }
+        ?>
 </div>

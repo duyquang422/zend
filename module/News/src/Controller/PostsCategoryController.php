@@ -13,8 +13,10 @@ class PostsCategoryController extends ActionController{
 	}
 
     public function indexAction(){
+        $idCat = $this->params()->fromRoute('id');
        	return new ViewModel(array(
-       		'category' => $this->getTable()->getCategory($this->params()->fromRoute('id'))
+       		'category' => $this->getTable()->getCategory($idCat),
+            'products' => $this->getTable()->getPostsByCategory($idCat,'home')
        	));
     }
 

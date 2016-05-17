@@ -1539,6 +1539,7 @@ a#scroll-up:hover {
  #content .post:nth-child(2n+1) {
     float: right;
     width: 48.7013%;
+    min-height: 350px;
 }
  #content .post:nth-child(2n) {
     float: left;
@@ -1551,12 +1552,6 @@ a#scroll-up:hover {
 }
  #content .post:not(:first-child) .article-content .entry-title {
     font-size: 22px;
-}
-#content .post {
-}
-.single #content .post,
-#content .post {
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 #content .post {
     margin-bottom: 30px;
@@ -2595,4 +2590,10 @@ Responsive Structure
 /* search result tile hide */
 .search h1.page-title {
     display: none;
+}
+#content .entry-title a {
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #222222;
+    font-weight: normal;
+    font-size: 21px;
 }
