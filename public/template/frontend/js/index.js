@@ -23,12 +23,11 @@ function autoLoadGetHistories(){
 
 
 $('document').ready(function(){
-   setInterval(autoLoadGetHistories,20000);
+   setInterval(autoLoadGetHistories,200000);
 
     $('#change-logo').click(function(){
         $('.show-modal').modal('show');
     })
-
 
     //thực hiện việc cập nhật ảnh nền của category trên trang home
     $('.sub-cate-inner .btn-edit').click(function(){
