@@ -59,16 +59,9 @@ class PostsTable extends AbstractTableGateway {
                 'alias' => $arrParam['alias'],
                 'category_id' => $arrParam['parent'],
                 'meta_description' => $arrParam['meta_description'],
-                'meta_keyword' => $arrParam['meta_keyword']
+                'meta_keyword' => $arrParam['meta_keyword'],
+                'description' => $arrParam['description']
             );
-
-                $config = array(
-                    array('HTML.AllowedElements', 'p,s,u,em,strong,span'),
-                    array('HTML.AllowedAttributes', 'style'),
-                );
-                $filter = new \Zendvn\Filter\Purifier($config);
-                $data['description'] = $filter->filter($arrParam['description']);
-
             if ($options['task'] == 'edit-item') {
                 $data = array_merge($data,array(
                     'modified_date' => date('Y-m-d H:i:s'),

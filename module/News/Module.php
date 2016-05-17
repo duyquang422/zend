@@ -1,6 +1,7 @@
 <?php
 namespace News;
 
+use News\Model\PostsCategoryTable;
 use Zend\Db\TableGateway\Feature\GlobalAdapterFeature;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
@@ -47,7 +48,10 @@ class Module
     {
         return array(
             'factories' => array(
-
+                'News\Model\PostsCategoryTable' => function ($sm) {
+                    $tableGateway = $sm->get('PostsCategoryTableGateway');
+                    return new PostsCategoryTable($tableGateway);
+                },
             )
         );
     }
