@@ -1,5 +1,15 @@
 var defaultPrice = $('.detail_product_price strong').html();
 $(document).ready(function () {
+
+    //cập nhật bảng history khi user click vào đánh giá
+    $('.unit-rating li a').click(function(){
+        $.ajax({
+            url: basePath + 'home/product/rating?id='+ $('#productId').val(),
+            type: 'get',
+            dataType: 'html'
+        })
+    })
+
     //tạo slider cho phần mô tả sản phẩm
     $("#characteristics").owlCarousel({
         navigation: true, // Show next and prev buttons

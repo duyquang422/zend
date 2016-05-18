@@ -182,14 +182,14 @@
     color: #fff;
 }
 #slide_home_top{
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 #product-home-tabs{
-    margin: 30px 0;
+    margin-bottom: 15px;
 }
 /* block cate home */
 .block_cat_home {
-    margin: 30px 0px;
+    margin: 15px 0px;
     clear: both;
     background-color: #fff;
     border: 1px solid #d9d9d9;

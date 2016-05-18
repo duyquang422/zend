@@ -3,32 +3,34 @@
     <div class="list-history">
     <?php
         $time = new Zendvn\Time\Time();
-        foreach($this->_historyTable->getHistorys() as $key => $val){
-            if($key < 4){
-                echo '<div class="box-ac ng-scope">
-                    <div class="ng-isolate-scope">
-                            <div class="ng-scope">
-                            <a class="img" href="" title="" rel="nofollow">
-                                <img alt="" title="" src="public/files/product/100x100/'. $val->productImage .'">
-                            </a>
-                            <div class="info-ac">
-                                <p>
-                                    <a href="#" title="Máy Nghe Nhạc MP4 kiểu iPod" rel="nofollow" class="ng-binding">'. $val->productName .' </a>';
-                                    if($val->rate)
-                                        echo 'đã được đánh giá';
-                                    elseif($val->comment)
-                                        echo 'đã được bình luận';
-                                    elseif($val->buy)
-                                        echo 'đã có đơn hàng thứ <strong>'. $val->buy . '</strong>';
+        $history = $this->_historyTable->getHistorys();
+        $products = $this->_productsTable;
+        foreach($history as $key => $val)
+            if($key < 2){
+                    $product = $products->getProduct(array('id' => $val->product_id));
+                    echo '<div class="box-ac ng-scope">
+                        <div class="ng-isolate-scope">
+                                <div class="ng-scope">
+                                <a class="img" href="" title="" rel="nofollow">
+                                    <img alt="" title="" src="public/files/product/100x100/'. $val->productImage .'">
+                                </a>
+                                <div class="info-ac">
+                                    <p>
+                                        <a href="'. $this->view->basePath($val->productAlias . '-' .$val->product_id) .'.html" title="'. $val->productName .'" class="ng-binding">'. $val->productName .' </a>';
+                                        if($val->rate)
+                                            echo 'đã được đánh giá';
+                                        elseif($val->comment)
+                                            echo 'đã được bình luận';
+                                        elseif($val->buy)
+                                            echo 'đã có đơn hàng thứ <strong>'. $product->bought . '</strong>';
 
-                                echo '</p>
+                                    echo '</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <span class="ng-scope ng-binding">'.$time->time_ago(strtotime($val->date)).'</span>
-                </div>';
-            }
-        }
+                        <span class="ng-scope ng-binding">'.$time->time_ago(strtotime($val->date)).'</span>
+                    </div>';
+                }
     ?>
     </div>
 </div>

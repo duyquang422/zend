@@ -18,9 +18,19 @@ class CommentController extends ActionController
             $arrParam = $this->params()->fromPost();
             $arrParam['user_id'] = isset($this->identity()->id) ? $this->identity()->id : '';
             $this->getTable()->addItem($arrParam);
-            $this->getServiceLocator()->get('Home\Model\HistoryTable')->addItem($this->params()->fromPost('product-id'),['task'=> 'comment']);
-            return $this->redirect()->toUrl($this->getRequest()->getHeader('Referer')->getUri());
-        }
+
+            $productId = $this->params()->fromPost('product-id');
+
+            //cập nhật số lần mua cho 1 sản phẩm
+            $history = $this->getServiceLocator()->get('Home\Model\HistoryTable');
+            if($history->isProductId($productId)){
+                $history->deleteItem($productId);
+                $history->addItem($productId,array('task' => 'comment'));
+            }else{
+                $history->addItem($productId,array('task' => 'comment'));
+            }
+                return $this->redirect()->toUrl($this->getRequest()->getHeader('Referer')->getUri());
+            }
         return $this->response;
     }
 }

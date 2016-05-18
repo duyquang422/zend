@@ -77,4 +77,18 @@ class ProductController extends ActionController{
         }
         return $this->redirect()->toRoute('home');
     }
+
+    public function ratingAction(){
+        if($this->getRequest()->isXmlHttpRequest()){
+            $history = $this->getServiceLocator()->get('Home\Model\HistoryTable');
+            $productId = $this->params()->fromQuery('id');
+            if($history->isProductId($productId)){
+                $history->deleteItem($productId);
+                $history->addItem($productId,array('task' => 'rate'));
+            }else{
+                $history->addItem($productId,array('task' => 'rate'));
+            }
+        }
+        return $this->response;
+    }
 }

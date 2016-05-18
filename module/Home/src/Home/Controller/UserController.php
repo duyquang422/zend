@@ -102,11 +102,14 @@ class UserController extends ActionController{
 
         //cập nhật số lần mua cho 1 sản phẩm
         $history = $this->getServiceLocator()->get('Home\Model\HistoryTable');
-        if($history->getBought($productId)){
-            $history->updateBought($productId);
+        if($history->isProductId($productId)){
+            $history->deleteItem($productId);
+            $history->addItem($productId,array('task' => 'buy'));
         }else{
             $history->addItem($productId,array('task' => 'buy'));
         }
+
+        echo '<script type="text/javascript">autoLoadGetHistories()</script>';
 
         return $this->response;
     }
@@ -169,10 +172,10 @@ class UserController extends ActionController{
             //thêm sản phẩm vào mục giỏ hàng trên trang home
             $session = new Container(SECURITY_KEY . '_product');
             if(!$session->offsetExists('arrIdSanPhamTrongGioHang'))
-                $session->offsetSet('arrIdSanPhamTrongGioHang',[$arrParam['id']]);
+                $session->offsetSet('arrIdSanPhamTrongGioHang',array($arrParam['id']));
             else
                 if(!in_array($arrParam['id'],$session->offsetGet('arrIdSanPhamTrongGioHang')))
-                    $session->offsetSet('arrIdSanPhamTrongGioHang',array_merge([$arrParam['id']],$session->offsetGet('arrIdSanPhamTrongGioHang')));
+                    $session->offsetSet('arrIdSanPhamTrongGioHang',array_merge(array($arrParam['id']),$session->offsetGet('arrIdSanPhamTrongGioHang')));
 
             $productID	= $arrParam['id'];
             $price		= $arrParam['price'];
@@ -181,30 +184,30 @@ class UserController extends ActionController{
             $cartSS		= new Container(SECURITY_KEY . '_cart');
             $cartSS->setExpirationSeconds(24*60*60);
             if(empty($cartSS->quantity)){
-                $cartSS->quantity = [$productID => [$size => [
+                $cartSS->quantity = array($productID => array($size => array(
                     'quantity' => $quantity,
                     'price' => $price,
                     'name'  => $arrParam['name'],
                     'image' => $arrParam['image'],
                     'alias' => $arrParam['alias']
-                ]]];
+                )));
             }else{
                 if(isset($cartSS->quantity[$productID][$size]) && $cartSS->quantity[$productID][$size] && $cartSS->quantity[$productID][$size]){
-                    $cartSS->quantity[$productID][$size] = [
+                    $cartSS->quantity[$productID][$size] = array(
                             'quantity' => $cartSS->quantity[$productID][$size]['quantity'] + $quantity,
                             'price' => $price,
                             'name'  => $arrParam['name'],
                             'image' => $arrParam['image'],
                             'alias' => $arrParam['alias']
-                        ];
+                        );
                 } else {
-                    $cartSS->quantity[$productID][$size] = [
+                    $cartSS->quantity[$productID][$size] = array(
                         'quantity' => $quantity++,
                         'price' => $price,
                         'name'  => $arrParam['name'],
                         'image' => $arrParam['image'],
                         'alias' => $arrParam['alias']
-                    ];
+                    );
                 }
             }
             echo json_encode($cartSS->quantity);
@@ -233,10 +236,20 @@ class UserController extends ActionController{
                 $totalProduct += $val;
             }
             $product = $this->getServiceLocator()->get('Home\Model\ProductsTable');
+            $history = $this->getServiceLocator()->get('Home\Model\HistoryTable');
+
             foreach($arrParam['productId'] as $key => $productId){
                 $product->updateBought(array('bought' => $product->getBought($productId),'id' => $productId,'quantity' => $arrParam['quantity'][$key]));
+
+                //cập nhật lại bảng lịch sử
+                if($history->isProductId($productId)){
+                    $history->deleteItem($productId);
+                    $history->addItem($productId,array('task' => 'buy'));
+                }else{
+                    $history->addItem($productId,array('task' => 'buy'));
+                }
             }
-            $cartTable->saveItem([
+            $cartTable->saveItem(array(
                 'productId' => json_encode($arrParam['productId']),
                 'price' => json_encode($arrParam['productPrice']),
                 'quantity' => json_encode($arrParam['quantity']),
@@ -248,11 +261,12 @@ class UserController extends ActionController{
                 'email' => isset($this->identity()->email) ? $this->identity()->email : $arrParam['email'],
                 'shippingAddress' => isset($this->identity()->address) ? $this->identity()->address : $arrParam['address'],
                 'user_id' => isset($this->identity()->id) ? $this->identity()->id : 0
-            ]);
+            ));
 			$cartSS		= new Container(SECURITY_KEY . '_cart');
 			$cartSS->getManager()->getStorage()->clear(SECURITY_KEY . '_cart');
 		}
-        return $this->redirect()->toRoute('frontendRoute/default',['controller' => 'user', 'action' => 'buy-success']);
+        echo '<script type="text/javascript">autoLoadGetHistories()</script>';
+        return $this->redirect()->toRoute('frontendRoute/default',array('controller' => 'user', 'action' => 'buy-success'));
 	}
 
 	public function historyAction(){
@@ -312,7 +326,7 @@ class UserController extends ActionController{
                     foreach ($val as $size => $val1) {
                         $totalMoney += $val1['price'] * $val1['quantity'];
                 }
-            echo json_encode(['totalMoney' => $totalMoney]);
+            echo json_encode(array('totalMoney' => $totalMoney));
         }
         return $this->response;
     }

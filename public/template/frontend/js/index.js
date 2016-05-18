@@ -14,16 +14,14 @@ function autoLoadGetHistories(){
         url: 'home/index/get-histories',
         cache: false,
         success: function(data){
-            $('.list-history').fadeOut(800, function(){
-                $('.list-history').html(data).fadeIn().delay(2000);
-            });
+                $('.list-history').html(data);
         }
     })
 }
 
 
 $('document').ready(function(){
-   setInterval(autoLoadGetHistories,200000);
+   setInterval(autoLoadGetHistories,1000);
 
     $('#change-logo').click(function(){
         $('.show-modal').modal('show');

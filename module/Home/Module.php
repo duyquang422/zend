@@ -215,6 +215,7 @@ class Module
                 'history' => function($sm){
                     $helper = new History();
                     $helper->setData($sm->getServiceLocator()->get('Home\Model\HistoryTable'));
+                    $helper->getProductTable($sm->getServiceLocator()->get('Home\Model\ProductsTable'));
                     return $helper;
                 },
                 'comment' => function($sm){

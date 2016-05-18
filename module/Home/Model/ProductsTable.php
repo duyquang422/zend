@@ -52,7 +52,7 @@ class ProductsTable{
     }
     public function getProduct($arrParam = null,$options = null){
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-                $select->columns(array('id', 'name', 'alias', 'description', 'image', 'sale_off', 'price','hits','picture','code','trademark','meta_description','meta_keyword','category_id','percent_discount'))
+                $select->columns(array('id', 'name', 'alias', 'description', 'image', 'sale_off', 'price','hits','picture','code','trademark','meta_description','meta_keyword','category_id','percent_discount','bought'))
                         ->join(
                             array('c' => 'category'),
                             'c.id = products.category_id',

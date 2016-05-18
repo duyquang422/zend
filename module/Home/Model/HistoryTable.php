@@ -17,19 +17,19 @@ class HistoryTable extends AbstractTableGateway
 		$this->tableGateway = $tableGateway;
 	}
 
-    //lấy số lần mua 1 sản phẩm trong ngày hiện tại
-    public function getBought($productId){
-        return $this->tableGateway->select(function (Select $select) use ($productId) {
-            $select->where->equalTo('product_id',$productId)
-                    ->and->greaterThan('buy',0);
-            $select->where('DATE(date) = CURDATE()');
-        })->toArray();
+    //kiểm tra xem id của product có tồn tại trong bảng history hay chưa
+    public function isProductId($productId){
+        if($this->tableGateway->select(function (Select $select) use ($productId) {
+            $select->where->equalTo('product_id',$productId);
+        })->current())
+            return true;
+        else
+            return false;
     }
 
-	public function updateBought($productId){
-        $productBought = $this->getBought($productId);
-            $this->tableGateway->update(array('buy' => $productBought[0]['buy'] + 1 ), array('product_id' => $productId));
-	}
+    public function deleteItem($id){
+        $this->tableGateway->delete(array('product_id' => $id));
+    }
 
     public function addItem($productId, $option = null){
         $data = array(
