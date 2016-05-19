@@ -1,0 +1,68 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-6 col-md-6">
+			<div class="image-zoom row">
+				<img class="p-product-image-feature" src="<?php echo $this->basePath('public/files/product/400x400/' . $this->product->image) ?>">
+				
+				<div id="p-sliderproduct">
+					<ul class="slides">
+						<li class="product-thumb" >
+							<a href="javascript:" rel="nofollow">
+								<img src="<?php echo  $this->basePath('public/files/product/100x100/' . $this->product->image) ?>">
+							</a>
+						</li>
+						<?php
+							if(!$this->product->zoom_image)
+								if(strpos($this->product->zoom_image, ',')){
+									$arrZoomImg = explode(',', $this->product->zoom_image);
+									foreach ($arrZoomImg as $img) {
+										echo '<li class="product-thumb" >
+												<a href="javascript:" rel="nofollow">
+													<img src="'.  $this->basePath('public/files/product/100x100/' . $img) .'">
+												</a>
+											</li>';
+									}
+								}
+								else
+									echo '<li class="product-thumb" >
+												<a href="javascript:" rel="nofollow">
+													<img src="'.  $this->basePath('public/files/product/100x100/' . $this->product->zoom_image) .'">
+												</a>
+											</li>';
+						?>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-md-6 pull-right" style="padding: 0px 10px;">
+			<div class="form-input">
+				<div class="p-title"><h1><?php echo $this->product->name ?></h1></div>
+				<div class="product-price">
+					<span class="p-price "><?php echo $this->product->sale_off ? number_format($this->product->sale_off,0,',','.') : number_format($this->product->price,0,',','.') ?>đ</span>
+					<del></del>
+				</div>
+			</div>
+			<div class="form-input vid ">
+			<?php
+				if($this->product->manuName)
+					echo '<div class="m-vendor"><span>Nhà cung cấp: </span>'. $this->product->manuName .'</div>';
+				if($this->product->code)
+					echo '<div class="m-sku"><span>Mã sản phẩm: </span>'. $this->product->code .'</div>';
+				if(!$this->product->quantity)
+					echo '<div class="m-vendor"><span>Tình trạng: </span><b>hết hàng</b></div>';
+			?>
+			</div>
+			<div class="form-input ">
+				<label>Số lượng</label>
+				<input name="quantity" type="number" min="1" value="1">
+			</div>
+			<div class="form-input" style="width: 100%">
+				<button type="submit" class="btn-detail  btn-color-add btn-min-width btn-mgt btn-addcart" style="display: block;">Thêm vào giỏ</button>
+				<button disabled="" class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" style="display: none;">Hết hàng</button>
+				<div class="qv-readmore">
+					<span> hoặc </span><a class="read-more p-url" href="/products/giay-slip-on-sl42-2" role="button">Xem chi tiết</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

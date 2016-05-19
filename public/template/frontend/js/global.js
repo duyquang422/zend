@@ -1,4 +1,23 @@
 $(document).ready(function(){
+    //thực hiện chức năng xem nhanh
+    $('.quickview').click(function(){
+        var elm = $(this);
+        $.ajax({
+            url : basePath + 'home/product/quick-view',
+            type: 'post',
+            dataType: 'html',
+            data: {
+                id: elm.data('id')
+            },
+            success: function(data){
+                $('.show-modal').modal('show');
+                $('.modal-dialog').addClass('modal-lg');
+                $('.modal-content').attr('id','quick-view-product');
+                $('.modal-body').html(data);
+            }
+        })
+    })
+
     //Block header
     $('#login-default .box-link-svg').click(function(){
         $('#login-default').css('z-index',100);

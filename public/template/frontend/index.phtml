@@ -71,25 +71,31 @@ $urlImage = $this->basePath(URL_TEMPLATE . '/frontend/img');
 
     <?php if($this->controller != 'login'){?>
     <?php include_once 'symboy/symboy.html'; ?>
+    <section id="outer-wrap">
+        <section id="td-mobile-nav">
+            <?php echo $this->menuMobile() ?>
+        </section>
+        <section id="inner-wrap">
+            <section class="header-wrap">
+                <?php echo $this->bartop() ?>
+                <?php echo $this->header() ?>
+            </section>
 
-    <section class="header-wrap">
-        <?php echo $this->bartop() ?>
-        <?php echo $this->header() ?>
-    </section>
+            <section id="horizontal-menu">
+                <?php echo $this->horizontalMenu() ?>
+            </section>
 
-    <section id="horizontal-menu">
-        <?php echo $this->horizontalMenu() ?>
-    </section>
+            <section id="home-content">
+                <div class="stop-menu-fixed"></div>
+                <?php echo $this->content; ?>
+            </section>
 
-    <section id="home-content">
-        <div class="stop-menu-fixed"></div>
-        <?php echo $this->content; ?>
-    </section>
+            <div class="cls">&nbsp;</div>
 
-    <div class="cls">&nbsp;</div>
-
-    <section id="footer">
-        <?php echo $this->policy() ?>
+            <section id="footer">
+                <?php echo $this->policy() ?>
+            </section>
+        </section>
     </section>
     <!-- <section id="fixed">
         <?php echo $this->miniBarMenu()?>

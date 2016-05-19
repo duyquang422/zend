@@ -9,6 +9,7 @@ use Block\History\History;
 use Block\HorizontalMenu\HorizontalMenu;
 use Block\HotDealProducts\HotDealProducts;
 use Block\MenuCategories\MenuCategories;
+use Block\MenuMobile\MenuMobile;
 use Block\NavLeftHomePage\NavLeftHomePage;
 use Block\MiniBarMenu\MiniBarMenu;
 use Block\NominationProducts\NominationProducts;
@@ -150,6 +151,11 @@ class Module
                 'showModal'            => 'Block\Modal\Modal'
             ),
             'factories' => array(
+                'menuMobile' => function($sm){
+                    $helper = new MenuMobile();
+                    $helper->getCategoryTable($sm->getServiceLocator()->get('Home\Model\categoryTable'));
+                    return $helper;
+                },
                 'hotDealProducts' => function($sm){
                     $helper = new HotDealProducts();
                     $helper->getProductTable($sm->getServiceLocator()->get('Home\Model\ProductsTable'));

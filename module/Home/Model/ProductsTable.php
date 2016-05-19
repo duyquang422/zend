@@ -52,11 +52,20 @@ class ProductsTable{
     }
     public function getProduct($arrParam = null,$options = null){
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-                $select->columns(array('id', 'name', 'alias', 'description', 'image', 'sale_off', 'price','hits','picture','code','trademark','meta_description','meta_keyword','category_id','percent_discount','bought'))
-                        ->join(
+                $select->join(
                             array('c' => 'category'),
                             'c.id = products.category_id',
                             array('categoryName' => 'name','categoryId' => 'id','categoryAlias' => 'alias','parentId' => 'parent'),
+                            $select::JOIN_LEFT
+                        )->join(
+                            array('m' => 'manufacturer'),
+                            'm.id = products.trademark',
+                            array('manuName' => 'name'),
+                            $select::JOIN_LEFT
+                        )->join(
+                            array('r' => 'ratings'),
+                            'r.id = products.id',
+                            array('total_votes' , 'total_value'),
                             $select::JOIN_LEFT
                         )->where->equalTo('products.id',$arrParam['id']);
         })->current();

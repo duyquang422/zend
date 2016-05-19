@@ -68,6 +68,18 @@ class ProductController extends ActionController{
         return $this->response;
     }
 
+    public function quickViewAction(){
+        if($this->getRequest()->isXmlHttpRequest()){
+            $viewModel = new ViewModel();
+            $viewModel->setTerminal(true);
+            $viewModel->setVariables(array(
+                'product' => $this->getTable()->getProduct($this->params()->fromPost())
+            ));
+            return $viewModel;
+        }
+        return $this->response;
+    }
+
     public function searchAction(){
         if($this->getRequest()->isGet()){
             $products = $this->getServiceLocator()->get('Home\Model\ProductsTable');

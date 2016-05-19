@@ -1,13 +1,3 @@
-$(window).on('load',function(){
-    if($(window).width() > 600) {
-        $('.block-collection .slide-collection .col-item').height(parseFloat($('.women-col2 .lazy').height() / 2 + 5));
-        $(window).resize(function () {
-            if($(window).width() > 600) {
-                $('.block-collection .slide-collection .col-item').height(parseFloat($('.women-col2 .lazy').height() / 2 + 5));
-            }
-        })
-    }
-})
 //tự động lấy dánh sách nhật ký
 function autoLoadGetHistories(){
     $.ajax({
