@@ -7,7 +7,7 @@
         <?php
             $products = $this->getHotDealProduct();
             foreach ($products as $product) {
-                echo '<a class="deal-item" href="'. $this->view->basePath() . $product['alias'] . '-' . $product['id'] . '.html' .'"
+                echo '<a class="deal-item" href="'. $this->view->basePath($product['alias'] . '-' . $product['id']) . '.html' .'"
                        title="">
                         <img src="'. $this->view->basePath('public/files/product/203x235/') . $product['image'] .'" alt="'. $product['name'] .'"/>
                         <div class="box-name">

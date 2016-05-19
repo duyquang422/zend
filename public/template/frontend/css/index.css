@@ -487,9 +487,6 @@
     position: absolute;
     bottom: 5%;
 }
-.comments_note{
-    float: left;
-}
 .list_carousel li .product-item .csframe_product {
     display: inline-block;
     width: 100%;

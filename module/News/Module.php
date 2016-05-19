@@ -1,7 +1,9 @@
 <?php
 namespace News;
 
+use Block\NewNews\NewNews;
 use News\Model\PostsCategoryTable;
+use News\Model\PostsTable;
 use Zend\Db\TableGateway\Feature\GlobalAdapterFeature;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
@@ -52,6 +54,10 @@ class Module
                     $tableGateway = $sm->get('PostsCategoryTableGateway');
                     return new PostsCategoryTable($tableGateway);
                 },
+                'News\Model\PostsTable' => function ($sm) {
+                    $tableGateway = $sm->get('PostsTableGateway');
+                    return new PostsTable($tableGateway);
+                },
             )
         );
     }
@@ -60,8 +66,14 @@ class Module
         return array(
             'invokables' => array(
                 'headerNews' => 'Block\HeaderNews\HeaderNews',
-                'menuNews' => 'Block\MenuNews\MenuNews',
-                'newNews' => 'Block\NewNews\NewNews'
+                'menuNews' => 'Block\MenuNews\MenuNews'
+            ),
+            'factories' => array(
+                'newNews' => function($sm){
+                    $helper = new NewNews();
+                    $helper->getPostsTable($sm->getServiceLocator()->get('News\Model\PostsTable'));
+                    return $helper;
+                }
             )
         );
     }

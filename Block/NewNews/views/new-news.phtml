@@ -1,0 +1,29 @@
+<aside id="new-news" class="widget widget_featured_posts widget_featured_posts_vertical widget_featured_meta clearfix">
+    <h3 class="widget-title" style="border-bottom-color:#a38a6d;">
+        <span style="background-color:#a38a6d;">Tin Mới Nhất</span>
+    </h3>
+    <?php
+        $posts = $this->getNewPosts();
+        foreach($posts as $val)
+            echo '<div class="following-post">
+                <div class="single-article clearfix">
+                    <figure>
+                        <a href="" title="">
+                            <img width="130" height="90" src="'. $this->view->basePath('public/files/posts/390x220/' . $val['image']) .'" alt="'. $val['name'] .'" title="'. $val['name'] .'">
+                        </a>
+                    </figure>
+                    <div class="article-content">
+                        <h3 class="entry-title">
+                            <a href="" title="'. $val['name'] .'">'. $val['name'] .'</a>
+                        </h3>
+                        <div class="below-entry-meta">
+                            <span class="posted-on">
+                                <time class="entry-date published">'. $val['created_date'] .'</time>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>';
+    ?>
+</aside>

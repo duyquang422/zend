@@ -80,12 +80,16 @@
                                             </div>
                                             <div class="content_price">
                                                 <div class="comments_note">
+                                                    <?php
+                                                        $numStar = $val['total_value'] ? $val['total_value'] / $val['total_votes'] / 2 : 5;
+                                                    ?>
                                                     <div class="star_content clearfix">
-                                                        <div class="star star_on"></div>
-                                                        <div class="star star_on"></div>
-                                                        <div class="star star_on"></div>
-                                                        <div class="star star_on"></div>
-                                                        <div class="star"></div>
+                                                        <?php
+                                                            for($i = 1; $i <= $numStar; $i++)
+                                                                echo '<div class="star star_on"></div>';
+                                                            for($i = 1; $i <= 5 - $numStar; $i++)
+                                                                echo '<div class="star"></div>';
+                                                        ?>
                                                     </div>
                                                 </div>
                                                 <?php
