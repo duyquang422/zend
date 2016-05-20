@@ -10,6 +10,7 @@ return array(
     'Home\Model\UserTable' => __DIR__ . '/Model/UserTable.php',
     'Home\Model\HistoryTable' => __DIR__ . '/Model/HistoryTable.php',
     'Home\Model\CommentTable' => __DIR__ . '/Model/CommentTable.php',
+    'Home\Model\ProductAttributesProductTable' => __DIR__ . '/Model/ProductAttributesProductTable.php',
     'Home\Form\Register' => __DIR__ . '/src/Form/Register.php',
     'Home\Form\UpdateUserInfo' => __DIR__ . '/src/Form/UpdateUserInfo.php',
     'Home\Form\Fieldset\Email' => __DIR__ . '/src/Form/Fieldset/Email.php',

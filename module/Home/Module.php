@@ -27,6 +27,7 @@ use Home\Model\CommentTable;
 use Home\Model\GroupTable;
 use Home\Model\HistoryTable;
 use Home\Model\PermissionTable;
+use Home\Model\ProductAttributesProductTable;
 use Home\Model\ProductsTable;
 use Home\Model\UserTable;
 use Zend\Db\ResultSet\HydratingResultSet;
@@ -124,7 +125,12 @@ class Module
                 'Home\Model\PostsCategoryTable'  => function ($sm) {
                     $tableGateway   = $sm->get('PostsCategoryTableGateway');
                     return new PostsCategoryTable($tableGateway);
+                },
+                'Home\Model\ProductAttributesProductTable'  => function ($sm) {
+                    $tableGateway   = $sm->get('ProductAttributesProductTableGateway');
+                    return new ProductAttributesProductTable($tableGateway);
                 }
+
             ),
             'invokables' => array(
                 'Zend\Authentication\AuthenticationService' => 'Zend\Authentication\AuthenticationService',

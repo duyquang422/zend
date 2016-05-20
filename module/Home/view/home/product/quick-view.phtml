@@ -1,3 +1,6 @@
+<?php
+	// var_dump($this->productAttr);
+?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-6 col-md-6">
@@ -43,18 +46,44 @@
 				</div>
 			</div>
 			<div class="form-input vid ">
-			<?php
-				if($this->product->manuName)
-					echo '<div class="m-vendor"><span>Nhà cung cấp: </span>'. $this->product->manuName .'</div>';
-				if($this->product->code)
-					echo '<div class="m-sku"><span>Mã sản phẩm: </span>'. $this->product->code .'</div>';
-				if(!$this->product->quantity)
-					echo '<div class="m-vendor"><span>Tình trạng: </span><b>hết hàng</b></div>';
-			?>
+				<?php
+					if($this->product->manuName)
+						echo '<div class="m-vendor"><span>Nhà cung cấp: </span>'. $this->product->manuName .'</div>';
+					if($this->product->code)
+						echo '<div class="m-sku"><span>Mã sản phẩm: </span>'. $this->product->code .'</div>';
+					if(!$this->product->quantity)
+						echo '<div class="m-vendor"><span>Tình trạng: </span><b>hết hàng</b></div>';
+					if($this->productAttr){
+						$productAttr = $this->productAttr;
+						foreach ($productAttr as  $attr) {
+							echo '<div><span>'. $attr['attrName'] .': </span>'. $attr['value'] .'</div>';
+						}
+					}
+				?>
 			</div>
+				<?php
+					$sizes = $this->sizes;
+					if($sizes){
+						echo '<div class="swatch clearfix" data-option-index="1">
+								<div class="header">Kích thước</div>
+									<div class="select-swap">';
+							foreach ($sizes as $size) {
+								echo '<div class="n-sd swatch-element available each" data-price="'. $size['price'] .'">
+									<input id="swatch-'. $size['id'] .'" type="radio" name="size" value="'. $size['id'] .'" checked="">
+									
+									<label for="swatch-'. $size['id'] .'">
+										'. $size['sizeName'] .'
+									</label>	
+								</div>';
+							}
+						echo '</div>
+						</div>';
+					}
+				?>
+				
 			<div class="form-input ">
 				<label>Số lượng</label>
-				<input name="quantity" type="number" min="1" value="1">
+				<input name="quantity" type="number" min="1" value="1" class="form-control">
 			</div>
 			<div class="form-input" style="width: 100%">
 				<button type="submit" class="btn-detail  btn-color-add btn-min-width btn-mgt btn-addcart" style="display: block;">Thêm vào giỏ</button>

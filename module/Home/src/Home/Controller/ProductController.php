@@ -73,7 +73,9 @@ class ProductController extends ActionController{
             $viewModel = new ViewModel();
             $viewModel->setTerminal(true);
             $viewModel->setVariables(array(
-                'product' => $this->getTable()->getProduct($this->params()->fromPost())
+                'product' => $this->getTable()->getProduct($this->params()->fromPost()),
+                'sizes' => $this->getServiceLocator()->get('Admin\Model\ProductSizeProductTable')->getProductSize($this->params()->fromPost('id')),
+                'productAttr' => $this->getServiceLocator()->get('Home\Model\ProductAttributesProductTable')->getProductAttr($this->params()->fromPost('id'))
             ));
             return $viewModel;
         }
