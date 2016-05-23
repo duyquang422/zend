@@ -25,6 +25,6 @@ See readme.txt for full credit details.
 	// if you changed your graphic to be 50 pixels wide, you should change the value above
 	
 $rating_conn = mysql_connect($rating_dbhost, $rating_dbuser, $rating_dbpass) or die  ('Error connecting to mysql');
-	mysql_select_db($rating_dbname);
+	//mysql_select_db($rating_dbname);
 
 ?>

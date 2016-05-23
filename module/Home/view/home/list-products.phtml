@@ -4,15 +4,21 @@
             <div class="overflow_box">
                 <input type='hidden' class="track-info" name='track-info' value=''/>
                 <div class="box-go">
-                                <span class="track-search interested" title="Yêu thích"><svg class="icon-favorite2">
-                                        <use xlink:href="#icon-favorite2"></use>
-                                    </svg>
-                                </span>
-                                <span class="track-search quick-view" title="Xem nhanh">
-                                    <svg class="icon icon-iconview">
-                                        <use xlink:href="#icon-iconview"></use>
-                                    </svg>
-                                </span>
+                    <span class="track-search interested wishlist" data-id="<?php echo $val['id']?>" data-toggle="tooltip" data-placement="top" title="Thêm vào yêu thích">
+                        <svg class="icon-favorite2">
+                            <use xlink:href="#icon-favorite2"></use>
+                        </svg>
+                    </span>
+                    <span class="track-search quickview" data-id="<?php echo $val['id']?>" data-toggle="tooltip" data-placement="top" title="Xem nhanh">
+                        <svg class="icon icon-iconview">
+                            <use xlink:href="#icon-iconview"></use>
+                        </svg>
+                    </span>
+                    <span class="track-search addtocart" data-id="<?php echo $val['id']?>" title="Thêm vào giỏ hàng" data-toggle="tooltip" data-placement="top">
+                        <svg class="icon icon-shopping">
+                            <use xlink:href="#icon-shopping"></use>
+                        </svg>
+                    </span>
                 </div>
                 <div class="description">
                     <a class="img_product" href="<?php echo $this->basePath('/' . $val['alias'] . '-' . $val['id'] . '.html') ?>" title="<?php echo $val['name'] ?>">
@@ -36,19 +42,19 @@
                         </a>
                     <div class="mota-them">
                         <ul>
-                            <li>
+                            <li data-toggle="tooltip" data-placement="top" title="Điểm tích lũy">
                                 <i class="fa fa-trophy"></i>
                                 <span><?php echo $val['point'] ? $val['point'] : 0 ?></span>
                             </li>
-                            <li>
+                            <li data-toggle="tooltip" data-placement="top" title="Lượt xem">
                                 <i class="fa fa-eye"></i>
                                 <span><?php echo $val['hits'] ? $val['hits'] : 0 ?></span>
                             </li>
-                            <li>
+                            <li data-toggle="tooltip" data-placement="top" title="Lượt đánh giá">
                                 <i class="fa fa-star"></i>
                                 <span><?php echo $val['total_votes'] ? $val['total_votes'] : 0?></span>
                             </li>
-                            <li>
+                            <li data-toggle="tooltip" data-placement="top" title="Đã mua">
                                 <i class="fa fa-shopping-cart"></i>
                                 <span><?php echo $val['bought'] ? $val['bought'] : 0?></span>
                             </li>

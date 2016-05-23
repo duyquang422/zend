@@ -5,10 +5,17 @@ use Zend\View\Model\ViewModel;
 use Zendvn\Controller\ActionController;
 
 class CategoryController extends ActionController{
+
+    protected $_paginationParams = array(
+        'itemCountPerPage' => 16,
+        'pageRange' => 3
+    );
+
     public function init(){
         $this->_options['tableName'] = 'Home\Model\ProductsTable';
     }
     public function indexAction(){
+        $this->_paginationParams['currentPageNumber'] = 1;
         $this->_getHelper('HeadLink',$this->getServiceLocator())
             ->appendStylesheet($this->basePath . '/public/template/frontend/css/jquery-ui.min.css')
             ->appendStylesheet($this->basePath . '/public/template/frontend/css/item.category.css');
@@ -18,6 +25,11 @@ class CategoryController extends ActionController{
         $arrParams = $this->params()->fromRoute();
         $category = $this->getServiceLocator()->get('Home\Model\CategoryTable');
         $this->_getHelper('HeadTitle',$this->getServiceLocator())->append($category->getCategory($arrParams['id'])->name);
+
+//        if($this->getRequest()->isXmlHttpRequest()){
+//            $this->_paginationParams['currentPageNumber'] = $this->params()->fromQuery('page');
+//            $arrParams = array_merge($arrParams,$this->_paginationParams);
+//        }
         return new ViewModel(array(
             'id' => $arrParams['id'],
             'category' => $category->getCategory($arrParams['id']),

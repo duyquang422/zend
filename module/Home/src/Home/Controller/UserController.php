@@ -318,14 +318,17 @@ class UserController extends ActionController{
     }
 
     public function removeProductFromCartAction(){
-        if($this->getRequest()->isPost()){
-            $cartSS		= new Container(SECURITY_KEY . '_cart');
-            unset($cartSS->quantity[$this->params()->fromPost('id')][$this->params()->fromPost('size')]);
+        if($this->getRequest()->isPost()) {
+            $cartSS = new Container(SECURITY_KEY . '_cart');
+            if (isset($cartSS->quantity[$this->params()->fromPost('id')][$this->params()->fromPost('size')]) && count($cartSS->quantity[$this->params()->fromPost('id')][$this->params()->fromPost('size')]) > 1)
+                unset($cartSS->quantity[$this->params()->fromPost('id')][$this->params()->fromPost('size')]);
+            else
+                $cartSS->offsetUnset($this->params()->fromPost('id'));
             $totalMoney = 0;
-                foreach ($cartSS->quantity as $productId => $val)
-                    foreach ($val as $size => $val1) {
-                        $totalMoney += $val1['price'] * $val1['quantity'];
-                }
+            $quantity = 0;
+            foreach ($cartSS->quantity as $productId => $val)
+                foreach ($val as $size => $val1)
+                    $totalMoney += $val1['price'] * $val1['quantity'];
             echo json_encode(array('totalMoney' => $totalMoney));
         }
         return $this->response;

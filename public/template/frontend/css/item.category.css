@@ -52,12 +52,6 @@
  }
 
 /*LIST PRODUCT*/
-.box_product{
-    margin-bottom: 22px;
-    margin-top: 0;
-    padding: 0 10px;
-    min-height: 350px;
-}
 .price__symbol {
     vertical-align: super;
     font-size: 80%;

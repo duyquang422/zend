@@ -50,7 +50,7 @@ if(!$voted) {     //if the user hasn't yet voted, then vote normally...
 
 if (($vote_sent >= 1 && $vote_sent <= $units) && ($ip == $ip_num)) { // keep votes within range
 	$update = "UPDATE $rating_dbname.$rating_tableName SET total_votes='".$added."', total_value='".$sum."', used_ips='".$insertip."' WHERE id='$id_sent'";
-	$result = mysql_query($update);		
+	$result = mysql_query($update);
 } 
 header("Location: $referer"); // go back to the page we came from 
 exit;

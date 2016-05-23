@@ -187,8 +187,7 @@ class ProductsTable{
 
     public function getProductsByCategory($arrParam,$options = null){
         $result = $this->tableGateway->select(function (Select $select) use ($arrParam,$options) {
-            $select->columns(array('id', 'name','alias','description','image','sale_off','price','percent_discount','hits','zoom_image'))
-                ->join(
+            $select->join(
                     array('c'=> 'category'),
                     'c.id = products.category_id',
                     $select::JOIN_LEFT
@@ -203,6 +202,8 @@ class ProductsTable{
             else
                 $select->where(new Expression('products.status = 1 AND (c.id = ? OR c.parent = ?)',array($arrParam['id'],$arrParam['id'])));
 //            $select->order('id DESC');
+            if($options['task'] == 'product-page' && isset($arrParam['idProduct']))
+                $select->where->notEqualTo('products.id',$arrParam['idProduct']);
             if($options['task'] == 'filter') {
                 if ($arrParam['attr'] == 'id' || $arrParam['attr'] == 'hits' ||
                     $arrParam['attr'] == 'percent_discount' || $arrParam['attr'] == 'point' ||

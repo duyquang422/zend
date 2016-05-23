@@ -5,9 +5,9 @@ Created:        Aug 2006
 Last Mod:       Mar 18 2007
 This page handles the 'AJAX' type response if the user
 has Javascript enabled.
----------------------------------------------------------
+--------------------------------------------------------- 
 ryan masuga, masugadesign.com
-ryan@masugadesign.com
+ryan@masugadesign.com 
 Licensed under a Creative Commons Attribution 3.0 License.
 http://creativecommons.org/licenses/by/3.0/
 See readme.txt for full credit details.
@@ -50,8 +50,8 @@ if(!$voted) {     //if the user hasn't yet voted, then vote normally...
 
 	if (($vote_sent >= 1 && $vote_sent <= $units) && ($ip == $ip_num)) { // keep votes within range, make sure IP matches - no monkey business!
 		$update = "UPDATE $rating_dbname.$rating_tableName SET total_votes='".$added."', total_value='".$sum."', used_ips='".$insertip."' WHERE id='$id_sent'";
-		$result = mysql_query($update);
-	}
+		$result = mysql_query($update);		
+	} 
 } //end for the "if(!$voted)"
 // these are new queries to get the new values!
 $newtotals = mysql_query("SELECT total_votes, total_value, used_ips FROM $rating_dbname.$rating_tableName WHERE id='$id_sent' ")or die(" Error: ".mysql_error());

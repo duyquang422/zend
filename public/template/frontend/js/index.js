@@ -11,7 +11,7 @@ function autoLoadGetHistories(){
 
 
 $('document').ready(function(){
-   setInterval(autoLoadGetHistories,1000);
+   //setInterval(autoLoadGetHistories,1000);
 
     $('#change-logo').click(function(){
         $('.show-modal').modal('show');

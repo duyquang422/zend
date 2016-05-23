@@ -1,4 +1,67 @@
 $(document).ready(function(){
+
+    //thiết lập hiển thị tooltip
+    $('[data-toggle="tooltip"]').tooltip();
+
+    //thêm sản phẩm vào giỏ hàng
+    $(document).on('click','#add-to-cart',function(){
+        $('#modalAddtocart').modal('show');
+        if($('#product-size').val()){
+            if($('#product-size option').length){
+                var size = $('#product-size option:selected').html();
+            }else{
+                var size = $('.n-sd label.active').html()
+            }
+        }else{
+            var size = 'mặc định';
+        }
+        $.ajax({
+            url: basePath + 'home/user/addProductToCart',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                id: $(this).data('id'),
+                price: $('#product-size').val() > 0 ? $('#product-size').val() : $('#productPrice').val(),
+                quantity: $('#numberOfProducts').val(),
+                size: size,
+                image: $('#productImage').val(),
+                name: $('#productName').val(),
+                alias: $('#productAlias').val()
+            },
+            success: function(data){
+                if($('body').attr('id') !='product')
+                    window.location.href = basePath + 'home/user/order';
+                var count = 0,totalMoney = 0;
+                var html = '';
+                $.each(data,function(productId,val){
+                    $.each(val,function(size,val1){
+                        html += '<li id="'+ productId + '-' + size +'"><a href="'+ basePath + val1.alias + '-'+ productId + '.html' +'" title="'+ val1.name +'"><img src="public/files/product/100x100/'+ val1.image +'" class="cart-img"></a><h3><a href="'+ basePath + val1.alias + '.html' +'" title="'+ val1.title +'">'+ val1.name +'</a></h3><h2>'+ moneyFormat(val1.price) +'đ</h2><p>(Size: '+ size + ')</p><span class="quantity">x'+ val1.quantity +'</span><a onclick="removeProductFromCart('+ productId + ',\'' + size +'\')" class="cart-remove">Hủy</a></li>';
+                        count++;
+                        totalMoney += val1.price * val1.quantity;
+                    })
+                })
+                $('#cart_loader ul').html(html);
+                $('.cart_qty').html(count);
+                $('#gio_hang_tong').html(moneyFormat(totalMoney) + 'đ');
+                $('.numb').html(count);
+            }
+        })
+    });
+
+    //thay đổi hình ảnh khi click vào ảnh zoom ở chế độ quickview
+    $(document).on('click','.product-thumb',function(){
+        $('.p-product-image-feature').attr('src',basePath + 'public/files/product/400x400/' + $(this).data('img'));
+        $('.product-thumb').removeClass('active');
+        $(this).addClass('active');
+    })
+
+    //chọn kích thước sản phẩm ở chế độ quick view
+    $(document).on('click','.n-sd',function(){
+        $(this).children('input').attr('checked',true);
+        $('.n-sd label').removeClass('active');
+        $(this).children('label').addClass('active');
+    })
+
     //thực hiện chức năng xem nhanh
     $('.quickview').click(function(){
         var elm = $(this);
@@ -10,10 +73,10 @@ $(document).ready(function(){
                 id: elm.data('id')
             },
             success: function(data){
-                $('.show-modal').modal('show');
-                $('.modal-dialog').addClass('modal-lg');
-                $('.modal-content').attr('id','quick-view-product');
-                $('.modal-body').html(data);
+                $('#modal-global').modal('show');
+                $('#modal-global .modal-dialog').addClass('modal-lg');
+                $('#modal-global .modal-content').attr('id','quick-view-product');
+                $('#modal-global .modal-body').html(data);
             }
         })
     })
@@ -232,7 +295,8 @@ $(document).ready(function(){
     });
 
     $('.cart').hover(function(){
-        $('.cart_block').slideDown(300);
+        if($('.cart_block_list .products dt').length)
+            $('.cart_block').slideDown(300);
     },function(){
         $('.cart_block').slideUp(300);
     })
@@ -287,7 +351,7 @@ function moneyFormat(value){
 
 function removeProductFromCart(id,size){
     $.ajax({
-        url: 'home/user/removeProductFromCart',
+        url: basePath + 'home/user/removeProductFromCart',
         type: 'post',
         dataType: 'json',
         data: {
@@ -295,8 +359,12 @@ function removeProductFromCart(id,size){
             size: size
         },
         success: function(data){
-            $('#' + id + '-' + size).hide(500);
+            $('#' + id + '-' + size).remove();
             $('#gio_hang_tong').html(moneyFormat(data.totalMoney) +'đ')
+            $('.ajax_block_cart_total').html(moneyFormat(data.totalMoney) +'đ');
+            if($('.cart_block_list .products dt').length)
+                $('.cart_block_list .products').html();
+            $('.cart_qty').html($('.cart_block_list .products dt').length);
             if($('#cart_loader ul').length == 0){
                 $('#cart_loader ul').html('<li>Không Có sản phẩm nào trong giỏ hàng.</li>');
                 $('#gio_hang_tong').html('0đ');
@@ -351,38 +419,6 @@ function hideMap() {
     $('.ppu_tab_proimg, .ppu_tab_pro_info').show();
 }
 
-
-//hiển thị bản đồ google khi click vào địa chỉ cửa hàng trong phần mua ngay
-var focus = 0;
-function showMap(x, y, id) {
-    var address = $('#ddlShop .item-shop-' + id).attr('title');
-    $('#shipping-address').val(address);
-    $('.item-shop-' + focus).removeClass('active');
-    $('.item-shop-' + id).addClass('active');
-    $('#map-google').fadeIn();
-    $('.lmap-' + focus).hide();
-    $('.lmap-' + id).show();
-    $('.ppu_tab_proimg, .ppu_tab_pro_info').hide();
-    var map;
-    var myLatlng = new google.maps.LatLng(x, y);
-    var myOptions = {
-        zoom: 16,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    map = new google.maps.Map(document.getElementById("map-google"), myOptions);
-    var infowindow = new google.maps.InfoWindow(
-        {
-            size: new google.maps.Size(100, 50),
-            position: myLatlng
-        });
-    var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: map,
-        title: ""
-    });
-    focus = id;
-}
 
 //thao tác chọn địa chỉ khi đặt mua tại cửa hàng
 var focus = 0;

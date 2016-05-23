@@ -1,14 +1,25 @@
+//chèn thư viện fb vào website
+(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6&appId=1239429816072262";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+
+
+
 var defaultPrice = $('.detail_product_price strong').html();
 $(document).ready(function () {
 
-    //cập nhật bảng history khi user click vào đánh giá
+    /*//cập nhật bảng history khi user click vào đánh giá
     $('.unit-rating li a').click(function(){
         $.ajax({
             url: basePath + 'home/product/rating?id='+ $('#productId').val(),
             type: 'get',
             dataType: 'html'
         })
-    })
+    })*/
 
     //tạo slider cho phần mô tả sản phẩm
     $("#characteristics").owlCarousel({
@@ -42,40 +53,6 @@ $(document).ready(function () {
     $('#numberOfProducts').change(function(){
         caculatorPrice();
     })
-
-    //thêm sản phẩm vào giỏ hàng
-    $('#add-to-cart').click(function(){
-        $('#modalAddtocart').modal('show');
-        $.ajax({
-            url: 'home/user/addProductToCart',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                id: $(this).data('id'),
-                price: $('#product-size').val() > 0 ? $('#product-size').val() : $('#productPrice').val(),
-                quantity: $('#numberOfProducts').val(),
-                size: $('#product-size').val() > 0 ? $('#product-size option:selected').html() : 'default',
-                image: $('#productImage').val(),
-                name: $('#productName').val(),
-                alias: $('#productAlias').val()
-            },
-            success: function(data){
-                var count = 0,totalMoney = 0;
-                var html = '';
-                $.each(data,function(productId,val){
-                    $.each(val,function(size,val1){
-                        html += '<li id="'+ productId + '-' + size +'"><a href="'+ window.location.origin + '/' + val1.alias + '-'+ productId + '.html' +'" title="'+ val1.name +'"><img src="public/files/product/100x100/'+ val1.image +'" class="cart-img"></a><h3><a href="'+ window.location.origin + '/' + val1.alias + '.html' +'" title="'+ val1.title +'">'+ val1.name +'</a></h3><h2>'+ moneyFormat(val1.price) +'đ</h2><p>(Size: '+ size + ')</p><span class="quantity">x'+ val1.quantity +'</span><a onclick="removeProductFromCart('+ productId + ',\'' + size +'\')" class="cart-remove">Hủy</a></li>';
-                        count++;
-                        totalMoney += val1.price * val1.quantity;
-                    })
-                })
-                $('#cart_loader ul').html(html);
-                $('.cart_qty').html(count);
-                $('#gio_hang_tong').html(moneyFormat(totalMoney) + 'đ');
-                $('.numb').html(count);
-            }
-        })
-    });
 
     $('#txtEditor').click(function(){
         $('#showdropdown').show();

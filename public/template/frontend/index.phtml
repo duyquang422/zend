@@ -47,22 +47,6 @@ $urlImage = $this->basePath(URL_TEMPLATE . '/frontend/img');
             var basePath = window.location.origin + SourcePath + '/';
         else
             var basePath = window.location.origin + '/';
-
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId      : '1239429816072262',
-                xfbml      : true,
-                version    : 'v2.5'
-            });
-        };
-
-        (function(d, s, id){
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
     </script>
     <script lang="javascript">(function() {var pname = document.title;var ga = document.createElement('script'); ga.type = 'text/javascript';ga.src = '//live.vnpgroup.net/js/web_client_box.php?hash=90de27bdf55b00867bd3aa16abf6ca93&data=eyJzc29faWQiOjE1MTc3NjksImhhc2giOiI1MDc5MWNmNTVjNTI5ZTIzNTQ3ZDYyZWUwMDE1Zjg1MyJ9&pname='+pname;var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script><noscript><a href="http://www.vatgia.com" title="vatgia.com" target="_blank">Tài trợ bởi vatgia.com</a></noscript><noscript><a href="http://vchat.vn" title="vchat.vn" target="_blank">Phát triển bởi vchat.vn</a></noscript><noscript><a href="http://123doc.org" title="123doc.org" target="_blank">Partner vchat.vn</a></noscript>
 </head>
@@ -102,6 +86,7 @@ $urlImage = $this->basePath(URL_TEMPLATE . '/frontend/img');
     </section> -->
     <section id="modal">
         <?php echo $this->signUp()?>
+        <?php echo $this->showModal('modal-global')?>
     </section>
 
 <?php }else{

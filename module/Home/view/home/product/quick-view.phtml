@@ -1,6 +1,3 @@
-<?php
-	// var_dump($this->productAttr);
-?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-6 col-md-6">
@@ -9,29 +6,29 @@
 				
 				<div id="p-sliderproduct">
 					<ul class="slides">
-						<li class="product-thumb" >
+						<li class="product-thumb active" data-img="<?php echo $this->product->image ?>">
 							<a href="javascript:" rel="nofollow">
 								<img src="<?php echo  $this->basePath('public/files/product/100x100/' . $this->product->image) ?>">
 							</a>
 						</li>
 						<?php
-							if(!$this->product->zoom_image)
-								if(strpos($this->product->zoom_image, ',')){
-									$arrZoomImg = explode(',', $this->product->zoom_image);
-									foreach ($arrZoomImg as $img) {
-										echo '<li class="product-thumb" >
+							if($this->product->zoom_image) {
+                                if (strpos($this->product->zoom_image, ',')) {
+                                    $arrZoomImg = explode(',', $this->product->zoom_image);
+                                    foreach ($arrZoomImg as $img) {
+                                        echo '<li class="product-thumb" data-img="'. $img .'">
 												<a href="javascript:" rel="nofollow">
-													<img src="'.  $this->basePath('public/files/product/100x100/' . $img) .'">
+													<img src="' . $this->basePath('public/files/product/100x100/' . $img) . '">
 												</a>
 											</li>';
-									}
-								}
-								else
-									echo '<li class="product-thumb" >
+                                    }
+                                } else
+                                    echo '<li class="product-thumb" data-img="'. $this->product->zoom_image .'">
 												<a href="javascript:" rel="nofollow">
-													<img src="'.  $this->basePath('public/files/product/100x100/' . $this->product->zoom_image) .'">
+													<img src="' . $this->basePath('public/files/product/100x100/' . $this->product->zoom_image) . '">
 												</a>
 											</li>';
+                            }
 						?>
 					</ul>
 				</div>
@@ -67,11 +64,12 @@
 						echo '<div class="swatch clearfix" data-option-index="1">
 								<div class="header">Kích thước</div>
 									<div class="select-swap">';
-							foreach ($sizes as $size) {
-								echo '<div class="n-sd swatch-element available each" data-price="'. $size['price'] .'">
-									<input id="swatch-'. $size['id'] .'" type="radio" name="size" value="'. $size['id'] .'" checked="">
+							foreach ($sizes as $key => $size) {
+								$active = !$key ? 'active' : '';
+                                echo '<div class="n-sd swatch-element available each" data-price="'. $size['price'] .'">
+									<input id="product-size" type="radio" name="size" value="'. $size['price'] .'" checked="">
 									
-									<label for="swatch-'. $size['id'] .'">
+									<label for="swatch-'. $size['id'] .'" class="'. $active . '">
 										'. $size['sizeName'] .'
 									</label>	
 								</div>';
@@ -83,10 +81,10 @@
 				
 			<div class="form-input ">
 				<label>Số lượng</label>
-				<input name="quantity" type="number" min="1" value="1" class="form-control">
+				<input name="quantity" type="number" min="1" value="1" class="form-control" id="numberOfProducts">
 			</div>
 			<div class="form-input" style="width: 100%">
-				<button type="submit" class="btn-detail  btn-color-add btn-min-width btn-mgt btn-addcart" style="display: block;">Thêm vào giỏ</button>
+				<button type="button" data-id="<?php echo $this->product->id?>" id="add-to-cart" class="btn-detail  btn-color-add btn-min-width btn-mgt btn-addcart">Thêm vào giỏ</button>
 				<button disabled="" class="btn-detail addtocart btn-color-add btn-min-width btn-mgt btn-soldout" style="display: none;">Hết hàng</button>
 				<div class="qv-readmore">
 					<span> hoặc </span><a class="read-more p-url" href="/products/giay-slip-on-sl42-2" role="button">Xem chi tiết</a>
@@ -95,3 +93,20 @@
 		</div>
 	</div>
 </div>
+<div class="hidden">
+    <input type="hidden" id="productPrice" value="<?php echo $this->product->sale_off > 0 ? $this->product->sale_off : $this->product->price ?>">
+    <input type="hidden" id="productName" value="<?php echo $this->product->name?>">
+    <input type="hidden" id="productAlias" value="<?php echo $this->product->alias?>">
+    <input type="hidden" id="productImage" value="<?php echo $this->product->image?>">
+</div>
+<script>
+    $('.slides').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:true,
+        items:3,
+        navigation: true,
+        navigationText: ['',''],
+        pagination: false
+    })
+</script>

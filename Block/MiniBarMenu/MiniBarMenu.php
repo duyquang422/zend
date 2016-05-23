@@ -59,11 +59,7 @@ class MiniBarMenu extends AbstractHelper{
             return;
     }
     public function getProductsInCart(){
-        $session = new Container(SECURITY_KEY . '_product');
-        if($session->offsetExists('arrIdSanPhamTrongGioHang')){
-            return $this->_productsTable->getProducts($session->offsetGet('arrIdSanPhamTrongGioHang'),array('task'=> 'miniBarMenu'));
-        }else
-            return;
+        return $session = new Container(SECURITY_KEY . '_cart');
     }
 
     public function getLikeProducts(){

@@ -49,7 +49,8 @@ class ProductController extends ActionController{
         return new ViewModel(array(
             'product' => $product,
             'size' => $this->getServiceLocator()->get('Admin\Model\ProductSizeProductTable')->getProductSize($this->_params['id']),
-            'categoryParent' =>  $this->getServiceLocator()->get('Home\Model\CategoryTable')->getParentCategory($product->parentId)
+            'categoryParent' =>  $this->getServiceLocator()->get('Home\Model\CategoryTable')->getParentCategory($product->parentId),
+            'products' => $this->getTable()->getProductsByCategory(array('id' => $product->category_id,'idProduct' => $product->id), array('task' => 'product-page'))
         ));
     }
 

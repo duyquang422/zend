@@ -2,12 +2,11 @@
     <div class="promotion_box_left">
         <h3 class="title">
             <span title="Sản phẩm shop đề cử">SẢN PHẨM SHOP ĐỀ CỬ</span>
-            <i>&nbsp;</i>
         </h3>
         <div class="promotion-box">
             <?php
             $html = '';
-            foreach($this->_data as $val){
+            foreach($this->_data as $key => $val){
                 $html .= '<div class="product-box">
                         <a href="'. $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') .'" title="'. $val['name'] .'" class="img">
                             <img class="lazy" src="'. $this->view->basePath('public/files/product/100x100/'.$val['image']) .'" alt="'. $val['name'] .'" title="'. $val['name'] .'">
@@ -24,24 +23,6 @@
                         </div>
                     </div>';
                 }
-                /*if(count($surveyProduct) < 5 && $productSameCategory)
-                    foreach($productSameCategory as $val){
-                        $html .= '<div class="product-box">
-                                <a href="'. $this->view->basePath('/'. $val['alias'] . '-' . $val['id'] . '.html') .'" title="'. $val['name'] .'" class="img">
-                                    <img class="lazy" src="'. $this->view->basePath('public/files/product/100x100/'.$val['image']) .'" alt="'. $val['name'] .'" title="'. $val['name'] .'">
-                                </a>
-                                <div class="content">';
-                        if($val['sale_off']){
-                            $html .= '<div class="price old">'.  number_format($val['price'],0,",",".") .' VNĐ</div>
-                                    <div class="price">'. number_format($val['sale_off'],0,",",".") .' VNĐ</div>';
-                        }else{
-                            $html .= '<div class="price">'. number_format($val['price'],0,",",".") .' VNĐ</div>';
-                        }
-
-                        $html .= '<a class="name" title="'. $val['name'] .'">'. $val['name'] .'</a>
-                                </div>
-                            </div>';
-                    }*/
                 echo $html;
             ?>
         </div>
