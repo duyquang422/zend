@@ -18,7 +18,9 @@ $aliasName = array(
         'google' => 'Thống Kê Của Google',
         'pages' => 'Quản Lý Trang',
         'home' => 'Bảng Điều Khiển',
-        'productinstock' => 'Sản Phẩm Tồn Kho'
+        'productinstock' => 'Sản Phẩm Tồn Kho',
+        'facebook' => 'Facebook Marketing',
+        'vchat' => 'Quản lý chát'
     )
 );
 $headerNameParent = $aliasName['controller'][$this->controller];
@@ -35,6 +37,8 @@ $xhtmlHeader = sprintf('<h2>%s</h2>', $headerNameParent);
             && $this->controller != 'user'
             && $this->controller != 'productinstock'
             && $this->controller != 'attributesandsize'
+            && $this->controller != 'facebook'
+            && $this->controller != 'vchat'
         )
             echo '<div class="col-sm-6 btn-function">',$this->btnFunction($this->controller), '</div>';
         if($this->controller == 'index'){

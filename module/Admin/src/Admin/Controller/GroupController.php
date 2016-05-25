@@ -32,11 +32,17 @@ class GroupController extends ActionController {
         return $this->response;
     }
 
+    public function testAction(){
+        $group = $this->getTable()->getGroup(2);
+        var_dump($group);
+        return $this->response;
+    }
+
     public function getItemAction(){
-        $group = $this->getTable()->getGroup($this->params()->fromPost('id'));
+        $group = (array)$this->getTable()->getGroup($this->params()->fromPost('id'));
         echo json_encode(array(
-            'name' => $group[0]['name'],
-            'permission' => json_decode($group[0]['permission_id'])
+            'name' => $group['name'],
+            'permission' => json_decode($group['permission_id'])
             ));
         return $this->response;
     }

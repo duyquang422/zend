@@ -109,6 +109,14 @@ class PostsController extends ActionController
         return $this->response;
     }
 
+    public function specialAction()
+    {
+        if($this->getRequest()->isXmlHttpRequest()){
+            $this->getTable()->changeSpecialStatus($this->params()->fromQuery());
+        }
+        return $this->response;
+    }
+
     public function loadConfigDataTablesAction() {
         $joinQuery = "FROM `posts` AS `p` LEFT JOIN `posts_category` AS `c` ON (`p`.`category_id` = `c`.`id`)";
         $columns = array(
@@ -116,6 +124,7 @@ class PostsController extends ActionController
             array('db' => 'p.name', 'dt' => 'name','field' => 'name'),
             array('db' => 'p.image', 'dt' => 'postsImage','field' => 'postsImage','as' => 'postsImage'),
             array('db' => 'p.description', 'dt' => 'description','field' => 'description'),
+            array('db' => 'p.special', 'dt' => 'special','field' => 'special'),
             array('db' => 'p.hits', 'dt' => 'phits','field' => 'phits','as' => 'phits'),
             array('db' => 'p.status', 'dt' => 'status','field' => 'status'),
             array('db' => 'c.name', 'dt' => 'cname','field' => 'cname', 'as' => 'cname'),

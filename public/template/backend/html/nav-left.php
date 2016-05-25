@@ -1,3 +1,3 @@
-<a href="<?php echo $this->url('adminRoute');?>" class="logo">
+<a href="javascript:" class="logo">
 	HaloZend
 </a>

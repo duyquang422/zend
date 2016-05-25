@@ -453,6 +453,17 @@ $(document).ready(function(){
                 }
             },
             { data: 'cname', width: '12%', class: 'cname'},
+            {
+                data: null,
+                class: 'special',
+                width: '4%',
+                render: function(data){
+                    if(data.special == 1)
+                        return '<i class="icon icon-special" onclick="changeSpecialStatus('+ data.id +',0)"></i>';
+                    else
+                        return '<i class="icon icon-un-special" onclick="changeSpecialStatus('+ data.id +',1)"></i>';
+                }
+            },
             { data: 'phits', width: '5%', class: 'phits'},
             {
                 data: null,

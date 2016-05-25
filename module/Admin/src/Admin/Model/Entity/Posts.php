@@ -7,6 +7,7 @@ class Posts{
     public $name;
     public $image;
     public $status;
+    public $special;
     public $description;
     public $category_id;
     public $create_date;
@@ -26,6 +27,7 @@ class Posts{
         $this->meta_keyword         = (!empty($data['meta_keyword'])) ? $data['meta_keyword'] : null;
         $this->meta_description         = (!empty($data['meta_description'])) ? $data['meta_description'] : null;
         $this->status		= (!empty($data['status'])) ? $data['status'] : 0;
+        $this->special		= (!empty($data['special'])) ? $data['special'] : 0;
         $this->description	= (!empty($data['description'])) ? $data['description'] : 0;
         $this->category_id		= (!empty($data['category_id'])) ? $data['category_id'] : null;
         $this->create_date	= (!empty($data['created_date'])) ? $data['created_date'] : null;

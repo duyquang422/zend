@@ -1,0 +1,1 @@
+G:\xampp\mysql\bin\mysqldump -d --comments=FALSE -u root zend > 1_schema.sql

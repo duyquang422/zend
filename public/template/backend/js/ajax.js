@@ -306,6 +306,7 @@ function getPosts(id){
     });
 }
 
+
 function getGroup(id){
     $('.data-modal').modal('show');
     $('#action').val('edit');
@@ -578,11 +579,13 @@ $(document).on('submit','#data-form',function(){
 });
 function edit(id){
 
-    if(typeof (CKEDITOR.instances['description']) != 'undefined')
+    if(typeof (CKEDITOR.instances['description']) != 'undefined') {
         var description = CKEDITOR.instances['description'].getData();
+        CKEDITOR.instances['description'].setData('');
+    }
     else
         var description = '';
-    CKEDITOR.instances['description'].setData('');
+
     var data = $('#data-form').serialize();
     $.ajax({
         url: 'edit?' + data + '&id=' +id,

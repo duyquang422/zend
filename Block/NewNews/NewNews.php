@@ -8,16 +8,17 @@ class NewNews extends AbstractHelper
 {
     protected $_postsTable;
 
-    public function __invoke()
+    public function __invoke($attr)
     {
-        require_once 'views/new-news.phtml';
+        $posts = $this->getPosts($attr);
+        require 'views/new-news.phtml';
     }
 
     public function getPostsTable($table){
         return $this->_postsTable = $table;
     }
 
-    public function getNewPosts(){
-        return $this->_postsTable->getPosts(array('limit' => 5),'new-posts');
+    public function getPosts($attr){
+        return $this->_postsTable->getPosts(array('limit' => 5),$attr);
     }
 }

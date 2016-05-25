@@ -2,12 +2,11 @@
 
 namespace Admin\Model;
 
-use Zend\Db\Sql\Where;
+use Zend\Db\Sql\Predicate\Expression;
 use Zend\Db\Sql\Select;
 use Zend\Db\TableGateway\TableGateway;
-use Zend\Db\TableGateway\AbstractTableGateway;
 
-class GroupTable extends AbstractTableGateway {
+class GroupTable {
 
     protected $tableGateway;
 
@@ -78,7 +77,7 @@ class GroupTable extends AbstractTableGateway {
     public function getGroup($id){
         return $this->tableGateway->select(function (Select $select) use ($id){
             $select->where->equalTo('id',$id);
-        })->toArray();
+        })->current();
     }
 
     public function saveItem($arrParam = null, $options = null){

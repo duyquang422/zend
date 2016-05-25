@@ -31,6 +31,12 @@ class IndexController extends ActionController{
         return new ViewModel();
     }
 
+    public function updateKeyAction(){
+        if($this->getRequest()->isPost())
+            $this->updateConfiguration('key',$this->params()->fromPost('value'));
+        return $this->response;
+    }
+
     public function searchAction(){
         if($this->getRequest()->isPost()) {
             $category = $this->getServiceLocator()->get('Home\Model\CategoryTable');

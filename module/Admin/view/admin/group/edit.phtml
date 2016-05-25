@@ -30,9 +30,10 @@
                                             $class = !$i ? 'class="active"' : '';
                                             $arrAction[$permission->controller][$key]['id'] = $permission->id;
                                             $arrAction[$permission->controller][$key]['action'] = $permission->action;
+                                            $arrAction[$permission->controller][$key]['description'] = $permission->description;
                                             $arrAction[$permission->controller][$key]['name'] = $permission->name;
                                             if ($temp != $permission->controller)
-                                                $controllers .= '<li data-controller="' . $permission->controller . '"' . $class . '>' . $permission->controller . '</li>';
+                                                $controllers .= '<li data-controller="' . $permission->controller . '"' . $class . '>' . $permission->name . '</li>';
                                         $temp = $permission->controller;
                                         $i++;
                                     }
@@ -47,7 +48,7 @@
                                             echo '<ul data-controller="'. $key .'">';
                                             foreach($val as $action){
                                                 echo '<li>
-                                                        <span class="name">'. $action['name'] .'</span>
+                                                        <span class="name">'. $action['description'] .'</span>
                                                         <div class="controls">
                                                             <fieldset class="radio btn-group btn-group-yesno">
                                                                 <input type="checkbox" id="permission-'.$action['id'].'" name="permissionId[]" value="'. $action['id'] .'">

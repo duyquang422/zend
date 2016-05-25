@@ -24,7 +24,6 @@
                     <ul class="nav nav-tabs" id="myTabTabs">
                         <li class="active"><a href="#general" data-toggle="tab">Mô Tả</a></li>
                         <li class=""><a href="#publishing" data-toggle="tab">Thông Tin</a></li>
-                        <li class=""><a href="#attrib-basic" data-toggle="tab">Options</a></li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
 
@@ -74,7 +73,7 @@
 
                         <div id="publishing" class="tab-pane">
                             <div class="row-fluid form-horizontal-desktop">
-                                <div class="span6">
+                                <div class="span6 col-md-4">
                                     <div class="control-group">
                                         <?php echo $this->formRow($this->form->get('info')->get('created_date')); ?>
                                     </div>
@@ -95,7 +94,7 @@
                                         <?php echo $this->formRow($this->form->get('info')->get('hits')); ?>
                                     </div>
                                 </div>
-                                <div class="span6">
+                                <div class="span6 col-md-4">
 
 
                                     <div class="control-group">
@@ -107,10 +106,6 @@
                                     </div>
                                 </div>
                             </div>
-
-                        </div>
-
-                        <div id="attrib-basic" class="tab-pane">
 
                         </div>
 

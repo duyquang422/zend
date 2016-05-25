@@ -31,6 +31,16 @@ class PostsTable extends AbstractTableGateway {
         return $result;
     }
 
+    public function changeSpecialStatus($arrParam = null){
+        if ($arrParam['id'] > 0) {
+            $data = array('special' => $arrParam['special']);
+            $where = array('id' => $arrParam['id']);
+            $this->tableGateway->update($data, $where);
+            return true;
+        }
+        return false;
+    }
+
     public function getPosts($id){
         $result = $this->tableGateway->select(function (Select $select) use ($id) {
             $select->join(

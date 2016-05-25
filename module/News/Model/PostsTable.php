@@ -53,10 +53,13 @@ class PostsTable{
         return $this->tableGateway->select(function (Select $select) use ($arrParam,$task) {
              $select->columns(array('id', 'name','alias','description','image','created_date'));
             switch($task){
-                case 'new-posts':
+                case 'new':
                     $select->where(new Expression('status = 1'))
                         ->order('id DESC');
                     break;
+                case 'special':
+                    $select->where(new Expression('special = 1'))
+                        ->order('id DESC');
             }
             if(isset($arrParam['limit']))
                 $select->limit($arrParam['limit']);

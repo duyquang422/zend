@@ -1,9 +1,16 @@
 <aside id="new-news" class="widget widget_featured_posts widget_featured_posts_vertical widget_featured_meta clearfix">
     <h3 class="widget-title" style="border-bottom-color:#a38a6d;">
-        <span style="background-color:#a38a6d;">Tin Mới Nhất</span>
+        <?php
+            if($attr == 'new')
+                $title = 'Mới Nhất';
+            elseif($attr = 'special')
+                $title = 'Nổi Bật';
+            else
+                $title = 'Ngẫu Nhiên'
+        ?>
+        <span style="background-color:#a38a6d;"><?php echo $title ?></span>
     </h3>
     <?php
-        $posts = $this->getNewPosts();
         foreach($posts as $val)
             echo '<div class="following-post">
                 <div class="single-article clearfix">

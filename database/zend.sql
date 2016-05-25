@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2016 at 06:55 PM
+-- Generation Time: May 23, 2016 at 03:07 PM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -45,38 +45,39 @@ CREATE TABLE IF NOT EXISTS `cart` (
   `shipping_address` varchar(200) NOT NULL,
   `status` tinyint(4) NOT NULL,
   `time_order` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=125 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=126 ;
 
 --
 -- Dumping data for table `cart`
 --
 
 INSERT INTO `cart` (`id`, `code`, `product_id`, `price`, `quantity`, `total_product`, `size_name`, `voucher`, `total_money`, `user_id`, `customer_name`, `phone`, `email`, `ip_address`, `note`, `shipping_address`, `status`, `time_order`) VALUES
-(100, '28CL5V', '["33","64","55"]', '["145000","550000","370000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '1065000', 0, 'duyquang', 1286483732, '01286483732', '127.0.0.1', '', '', 2, '2014-03-25 00:00:20'),
-(101, 'BCDZQH', '["64","62"]', '["550000","120000"]', '["1","1"]', 2, '["default","default"]', '', '670000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 2, '2015-03-25 00:31:48'),
-(102, 'WGOTCM', '51', '170000', '1', 1, '', '', '170000', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 5, '2016-03-25 00:43:27'),
-(103, 'WM3KQV', '["58","37"]', '["290000","95580"]', '["1","1"]', 2, '["default","default"]', '', '385580', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 4, '2016-03-25 01:39:26'),
-(104, '9FGUOY', '73', '130000', '1', 1, '', '', '130000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-07 19:03:03'),
+(100, '28CL5V', '["33","64","55"]', '["145000","550000","370000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '1065000', 0, 'duyquang', 1286483732, '01286483732', '127.0.0.1', '', '', 2, '2014-03-19 00:00:20'),
+(101, 'BCDZQH', '["64","62"]', '["550000","120000"]', '["1","1"]', 2, '["default","default"]', '', '670000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 2, '2015-03-19 00:31:48'),
+(102, 'WGOTCM', '51', '170000', '1', 1, '', '', '170000', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 5, '2016-05-19 00:43:27'),
+(103, 'WM3KQV', '["58","37"]', '["290000","95580"]', '["1","1"]', 2, '["default","default"]', '', '385580', 0, 'duyquang', 0, '', '127.0.0.1', '', '', 4, '2016-05-19 01:39:26'),
+(104, '9FGUOY', '73', '130000', '1', 1, '', '', '130000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-18 19:03:03'),
 (105, 'B25WJP', '61', '100000', '1', 1, '', '', '100000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-06 19:03:44'),
-(106, '0SYJVF', '["72","71"]', '["110000","120000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 5, '2016-02-01 19:57:56'),
-(107, 'W9TNCA', '["71","72"]', '["120000","110000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 0, 'Thượng', 1286483732, 'duy_quang422@yahoo.com', '127.0.0.1', '', '', 4, '2016-05-06 19:59:44'),
-(108, '9T2WAS', '74', '210000', '1', 1, '', '', '210000', 0, '', 0, '', '127.0.0.1', '', '', 4, '2016-05-07 00:00:33'),
-(109, '8B5USH', '["74","73","72"]', '["210000","130000","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '450000', 0, '', 0, '', '127.0.0.1', '', '', 4, '2016-05-07 00:01:21'),
-(110, 'DPJQMG', '33', '145000', '1', 1, '', '', '145000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-02 20:04:16'),
-(111, '02ZAM1', '["71","70","72"]', '["120000","259900","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '489900', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 5, '2016-05-07 10:38:08'),
-(112, 'DJCI8E', '["73","55","60","64"]', '["130000","370000","230000","550000"]', '["1","1","1","1"]', 4, '["default","default","default","default"]', '', '1280000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-05 10:38:45'),
+(106, '0SYJVF', '["72","71"]', '["110000","120000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 1, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 5, '2016-02-19 19:57:56'),
+(107, 'W9TNCA', '["71","72"]', '["120000","110000"]', '["1","1"]', 2, '["default","default"]', '', '230000', 0, 'Thượng', 1286483732, 'duy_quang422@yahoo.com', '127.0.0.1', '', '', 4, '2016-05-18 19:59:44'),
+(108, '9T2WAS', '74', '210000', '1', 1, '', '', '210000', 0, '', 0, '', '127.0.0.1', '', '', 4, '2016-05-18 00:00:33'),
+(109, '8B5USH', '["74","73","72"]', '["210000","130000","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '450000', 0, '', 0, '', '127.0.0.1', '', '', 4, '2016-05-18 00:01:21'),
+(110, 'DPJQMG', '33', '145000', '1', 1, '', '', '145000', 0, 'Duy Quang', 1286483732, 'Admin01@gmail.com', '127.0.0.1', '', '', 4, '2016-05-21 20:04:16'),
+(111, '02ZAM1', '["71","70","72"]', '["120000","259900","110000"]', '["1","1","1"]', 3, '["default","default","default"]', '', '489900', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 5, '2016-05-18 10:38:08'),
+(112, 'DJCI8E', '["73","55","60","64"]', '["130000","370000","230000","550000"]', '["1","1","1","1"]', 4, '["default","default","default","default"]', '', '1280000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-21 10:38:45'),
 (113, '4O5LF8', '["60"]', '["230000"]', '["1"]', 1, '["default"]', '', '230000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 5, '2016-05-06 10:39:14'),
-(114, 'Q2I410', '["74","60","54","59","33"]', '["210000","230000","250000","120000","145000"]', '["1","1","1","1","1"]', 5, '["default","default","default","default","default"]', '', '955000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-04 10:40:00'),
-(115, 'H05WI1', '61', '130000', '1', 1, 'XL', '', '130000', 0, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 5, '2016-05-09 15:01:57'),
-(116, 'VK530Y', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:00:08'),
-(117, '9JAS80', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:02:19'),
-(118, 'DHB05T', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:09:13'),
-(119, 'O54RN3', '53', '250000', '3', 1, '', '', '750000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:26:30'),
-(120, 'UBEGN5', '53', '250000', '3', 1, '', '', '750000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:28:20'),
-(121, '5GRWQX', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:29:33'),
-(122, 'VZJMIS', '["73","70"]', '["130000","259900"]', '["1","1"]', 2, '["default","default"]', '', '389900', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:38:36'),
-(123, '053WS1', '["74","75"]', '["210000","310000"]', '["5","8"]', 13, '["default","default"]', '', '520000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:43:07'),
-(124, '6PV52A', '["74","75"]', '["210000","310000"]', '["9","20"]', 29, '["default","default"]', '', '520000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 0, '2016-05-14 21:45:04');
+(114, 'Q2I410', '["74","60","54","59","33"]', '["210000","230000","250000","120000","145000"]', '["1","1","1","1","1"]', 5, '["default","default","default","default","default"]', '', '955000', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 4, '2016-05-20 10:40:00'),
+(115, 'H05WI1', '61', '130000', '1', 1, 'XL', '', '130000', 0, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 5, '2016-05-18 15:01:57'),
+(116, 'VK530Y', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-16 21:00:08'),
+(117, '9JAS80', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-17 21:02:19'),
+(118, 'DHB05T', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-17 21:09:13'),
+(119, 'O54RN3', '53', '250000', '3', 1, '', '', '750000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-17 21:26:30'),
+(120, 'UBEGN5', '53', '250000', '3', 1, '', '', '750000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-17 21:28:20'),
+(121, '5GRWQX', '53', '250000', '1', 1, '', '', '250000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-16 21:29:33'),
+(122, 'VZJMIS', '["73","70"]', '["130000","259900"]', '["1","1"]', 2, '["default","default"]', '', '389900', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-16 21:38:36'),
+(123, '053WS1', '["74","75"]', '["210000","310000"]', '["5","8"]', 13, '["default","default"]', '', '520000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-15 21:43:07'),
+(124, '6PV52A', '["74","75"]', '["210000","310000"]', '["9","20"]', 29, '["default","default"]', '', '520000', 0, 'Nguyễn Duy Quang', 1286483732, 'duy_quang422@yahoo.com', '::1', '', '', 2, '2016-05-15 21:45:04'),
+(125, 'PWD27X', '["70"]', '["259900"]', '["1"]', 1, '["default"]', '', '259900', 1, 'Administrator', 1286483732, 'Admin01@gmail.com', '::1', '', '', 2, '2016-05-23 12:43:01');
 
 -- --------------------------------------------------------
 
@@ -172,18 +173,7 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` varchar(2000) NOT NULL,
   `status` int(11) NOT NULL,
   `date` datetime NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
-
---
--- Dumping data for table `comment`
---
-
-INSERT INTO `comment` (`id`, `product_id`, `username`, `user_id`, `email`, `ip`, `parent_id`, `content`, `status`, `date`) VALUES
-(1, 53, 'Duy Quang', 1, 'duy_quang422@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-08 00:00:00'),
-(2, 53, 'duy', 0, 'duy@yahoo.com', '', 0, 'tôi muốn mua 1 sản phẩm', 1, '2016-03-11 23:17:45'),
-(3, 53, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:18:47'),
-(4, 53, 'Quang', 0, 'duy@yahoo.com', '', 0, 'Sản phẩm tốt', 1, '2016-03-11 23:26:35'),
-(9, 61, 'Quang', 0, 'duy@yahoo.com', '', 0, 'test', 1, '2016-03-16 22:16:42');
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -237,7 +227,7 @@ CREATE TABLE IF NOT EXISTS `group` (
 --
 
 INSERT INTO `group` (`id`, `name`, `status`, `group_acp`, `permission_id`, `ordering`, `created`, `created_by`, `modified`, `modified_by`) VALUES
-(2, 'Manager', 1, 1, '["1","2","3","4","5","6","9","10","13","22","23","24"]', 2, '2013-11-07 00:00:00', 'admin', '2016-04-19 00:02:51', 'admin'),
+(2, 'Manager', 1, 1, '["1","2","3","4","5","6","7","8","9","10","13","22","23","24"]', 2, '2013-11-07 00:00:00', 'admin', '2016-05-23 19:32:11', 'Administrator'),
 (3, 'Member', 1, 0, '0', 1, '2013-11-12 00:00:00', 'admin', '2014-02-18 00:00:00', 'admin'),
 (1, 'Admin', 1, 1, 'full', 3, '2014-12-02 05:54:41', 'admin', '2014-12-03 05:10:41', 'admin'),
 (4, 'Register', 1, 0, 'false', 4, '2015-08-12 00:00:00', 'Duy Quang', '2015-08-12 00:00:00', 'Duy Quang');
@@ -256,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `history` (
   `comment` tinyint(1) NOT NULL,
   `buy` tinyint(4) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
 
 --
 -- Dumping data for table `history`
@@ -281,7 +271,9 @@ INSERT INTO `history` (`id`, `product_id`, `date`, `rate`, `comment`, `buy`, `st
 (20, 33, '2016-04-04 20:04:17', 0, 0, 1, 1),
 (21, 61, '2016-05-09 15:01:57', 0, 0, 1, 1),
 (22, 53, '2016-05-14 21:00:08', 0, 0, 6, 1),
-(23, 60, '2016-05-18 23:28:57', 1, 0, 0, 1);
+(23, 60, '2016-05-18 23:28:57', 1, 0, 0, 1),
+(26, 45, '2016-05-22 17:18:55', 1, 0, 0, 1),
+(27, 70, '2016-05-23 12:43:01', 0, 0, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -363,7 +355,8 @@ INSERT INTO `pages` (`id`, `name`, `alias`, `create_by`, `hits`, `description`, 
 
 CREATE TABLE IF NOT EXISTS `permission` (
 `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `description` varchar(200) NOT NULL,
   `module` varchar(45) NOT NULL,
   `controller` varchar(45) NOT NULL,
   `action` varchar(45) NOT NULL
@@ -373,49 +366,49 @@ CREATE TABLE IF NOT EXISTS `permission` (
 -- Dumping data for table `permission`
 --
 
-INSERT INTO `permission` (`id`, `name`, `module`, `controller`, `action`) VALUES
-(1, 'Truy cập bảng quản trị', 'admin', 'index', 'index'),
-(2, 'Hiển thị danh sách các sản phẩm', 'admin', 'product', 'index'),
-(3, 'Xóa sản phẩm', 'admin', 'product', 'delete'),
-(4, 'thêm sản phẩm', 'admin', 'product', 'add'),
-(5, 'Xem thông tin sản phẩm', 'admin', 'product', 'get-product'),
-(6, 'chỉnh sửa sản phẩm', 'admin', 'product', 'edit'),
-(7, 'Hiển thị các đơn hàng', 'admin', 'cart', 'index'),
-(8, 'Xem đơn hàng', 'admin', 'cart', 'view-cart'),
-(9, 'Hủy đơn hàng', 'admin', 'cart', 'orderCanceled'),
-(10, 'Chuyển trạng thái đơn hàng thành đang giao', 'admin', 'cart', 'order-shipping'),
-(11, 'Trạng thái đơn hàng thành công', 'admin', 'cart', 'orderComplete'),
-(12, 'Truy cập vào trang chuyên mục sản phẩm', 'admin', 'category', 'index'),
-(13, 'Chỉnh sửa chuyên mục sản phẩm', 'admin', 'category', 'edit'),
-(14, 'Xem thông tin chuyên mục sản phẩm', 'admin', 'category', 'getCategory'),
-(15, 'Xóa chuyên mục sản phẩm', 'admin', 'category', 'delete'),
-(16, 'Thêm Chuyên mục sản phẩm', 'admin ', 'category', 'add'),
-(17, 'Xem bình luận của sản phẩm', 'admin', 'comment', 'index'),
-(18, 'Xóa bình luận của sản phẩm', 'admin', 'comment', 'delete'),
-(19, 'Trả lời bình luận cho sản phẩm', 'admin', 'comment', 'add'),
-(20, 'Xem quản lý nhóm', 'admin', 'group', 'index'),
-(21, 'Thêm một nhóm mới', 'admin', 'group', 'add'),
-(22, 'Cập nhật group', 'admin', 'group', 'update'),
-(23, 'Xem danh sách các thương hiệu', 'admin', 'manufacturer', 'index'),
-(24, 'Cập nhật danh sách thương hiệu', 'admin', 'manufacturer', 'edit'),
-(25, 'Thêm mới một thương hiệu', 'admin', 'manufacturer', 'add'),
-(26, 'Xóa thương hiệu', 'admin', 'manufacturer', 'delete'),
-(27, 'Xem danh sách Pages', 'admin', 'pages', 'index'),
-(28, 'Thêm mới một Page', 'admin', 'pages', 'add'),
-(29, 'cập nhật Page', 'admin', 'pages', 'edit'),
-(30, 'xóa Page', 'admin', 'pages', 'delete'),
-(31, 'Xem thông tin Page', 'admin', 'pages', 'get-item'),
-(32, 'Xem Chuyên mục bài viết', 'admin', 'postscategory', 'index'),
-(33, 'Xem thông tin chuyên mục bài viết', 'admin', 'postscategory', 'get-category'),
-(34, 'Thêm mới một chuyên mục bài viết', 'admin', 'postscategory', 'add'),
-(35, 'Cập nhật chuyên mục bài viết', 'admin', 'postscategory', 'edit'),
-(36, 'Xóa chuyên mục bài viết', 'admin', 'postscategory', 'delete'),
-(37, 'Xem danh sách các bài viết', 'admin', 'posts', 'index'),
-(38, 'xem thông tin bài viết', 'admin', 'posts', 'getPosts'),
-(39, 'Thêm mới bài viết', 'admin', 'posts', 'add'),
-(40, 'Cập nhật bài viết', 'admin', 'posts', 'edit'),
-(41, 'Xóa bài viết', 'admin', 'posts', 'delete'),
-(42, 'Xem danh sách các user', 'admin', 'user', 'index');
+INSERT INTO `permission` (`id`, `name`, `description`, `module`, `controller`, `action`) VALUES
+(1, 'Quản trị', 'Truy cập bảng quản trị', 'admin', 'index', 'index'),
+(2, 'sản phẩm', 'Hiển thị danh sách các sản phẩm', 'admin', 'product', 'index'),
+(3, 'sản phẩm', 'Xóa sản phẩm', 'admin', 'product', 'delete'),
+(4, 'sản phẩm', 'thêm sản phẩm', 'admin', 'product', 'add'),
+(5, 'sản phẩm', 'Xem thông tin sản phẩm', 'admin', 'product', 'get-product'),
+(6, 'sản phẩm', 'chỉnh sửa sản phẩm', 'admin', 'product', 'edit'),
+(7, 'Đơn Hàng', 'Hiển thị các đơn hàng', 'admin', 'cart', 'index'),
+(8, 'Đơn hàng', 'Xem đơn hàng', 'admin', 'cart', 'view-cart'),
+(9, 'Đơn hàng', 'Hủy đơn hàng', 'admin', 'cart', 'orderCanceled'),
+(10, 'Đơn hàng', 'Chuyển trạng thái đơn hàng thành đang giao', 'admin', 'cart', 'order-shipping'),
+(11, 'Đơn hàng', 'Trạng thái đơn hàng thành công', 'admin', 'cart', 'orderComplete'),
+(12, 'Chuyên mục sản phẩm', 'Truy cập vào trang chuyên mục sản phẩm', 'admin', 'category', 'index'),
+(13, 'Chuyên mục sản phẩm', 'Chỉnh sửa chuyên mục sản phẩm', 'admin', 'category', 'edit'),
+(14, 'Chuyên mục sản phẩm', 'Xem thông tin chuyên mục sản phẩm', 'admin', 'category', 'getCategory'),
+(15, 'Chuyên mục sản phẩm', 'Xóa chuyên mục sản phẩm', 'admin', 'category', 'delete'),
+(16, 'Chuyên mục sản phẩm', 'Thêm Chuyên mục sản phẩm', 'admin ', 'category', 'add'),
+(17, 'Bình luận', 'Xem bình luận của sản phẩm', 'admin', 'comment', 'index'),
+(18, 'Bình luận', 'Xóa bình luận của sản phẩm', 'admin', 'comment', 'delete'),
+(19, 'Bình luận', 'Trả lời bình luận cho sản phẩm', 'admin', 'comment', 'add'),
+(20, 'Nhóm thành viên', 'Xem quản lý nhóm', 'admin', 'group', 'index'),
+(21, 'Nhóm thành viên', 'Thêm một nhóm mới', 'admin', 'group', 'add'),
+(22, 'Nhóm thành viên', 'Cập nhật group', 'admin', 'group', 'update'),
+(23, 'Thương Hiệu', 'Xem danh sách các thương hiệu', 'admin', 'manufacturer', 'index'),
+(24, 'Thương Hiệu', 'Cập nhật danh sách thương hiệu', 'admin', 'manufacturer', 'edit'),
+(25, 'Thương Hiệu', 'Thêm mới một thương hiệu', 'admin', 'manufacturer', 'add'),
+(26, 'Thương Hiệu', 'Xóa thương hiệu', 'admin', 'manufacturer', 'delete'),
+(27, 'Trang', 'Xem danh sách Pages', 'admin', 'pages', 'index'),
+(28, 'Trang', 'Thêm mới một Page', 'admin', 'pages', 'add'),
+(29, 'Trang', 'cập nhật Page', 'admin', 'pages', 'edit'),
+(30, 'Trang', 'xóa Page', 'admin', 'pages', 'delete'),
+(31, 'Trang', 'Xem thông tin Page', 'admin', 'pages', 'get-item'),
+(32, 'Chuyên mục bài viết', 'Xem Chuyên mục bài viết', 'admin', 'postscategory', 'index'),
+(33, 'Chuyên mục bài viết', 'Xem thông tin chuyên mục bài viết', 'admin', 'postscategory', 'get-category'),
+(34, 'Chuyên mục bài viết', 'Thêm mới một chuyên mục bài viết', 'admin', 'postscategory', 'add'),
+(35, 'Chuyên mục bài viết', 'Cập nhật chuyên mục bài viết', 'admin', 'postscategory', 'edit'),
+(36, 'Bài viết', 'Xóa chuyên mục bài viết', 'admin', 'postscategory', 'delete'),
+(37, 'Bài viết', 'Xem danh sách các bài viết', 'admin', 'posts', 'index'),
+(38, 'Bài viết', 'xem thông tin bài viết', 'admin', 'posts', 'getPosts'),
+(39, 'Bài viết', 'Thêm mới bài viết', 'admin', 'posts', 'add'),
+(40, 'Bài viết', 'Cập nhật bài viết', 'admin', 'posts', 'edit'),
+(41, 'Bài viết', 'Xóa bài viết', 'admin', 'posts', 'delete'),
+(42, 'Thành viên', 'Xem danh sách các user', 'admin', 'user', 'index');
 
 -- --------------------------------------------------------
 
@@ -558,7 +551,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 
 INSERT INTO `products` (`id`, `name`, `alias`, `code`, `trademark`, `description`, `price`, `special`, `hot`, `sale_off`, `percent_discount`, `deal_time`, `deal`, `point`, `bought`, `quantity`, `picture`, `image`, `zoom_image`, `created`, `created_by`, `modified`, `modified_by`, `hits`, `meta_description`, `meta_keyword`, `status`, `category_id`) VALUES
 (28, 'ÁO KHOÁC KAKI SIVER', 'ao-khoac-kaki-siver', 'BY4043', 32, '', '700000', 0, 0, 350000, 50, '0000-00-00', 0, 0, 28, 0, NULL, 'product_2dX30M5y.jpg', 'product_JXE9Ksoy.jpg', '2015-10-29', NULL, '2016-05-12', '', 2, '', '', 1, 143),
-(32, 'Áo somi phối ren oversize', 'ao-somi-phoi-ren-oversize', 'BY2015', 0, '', '370000', 1, 0, 175000, 52, '0000-00-00', 0, 0, 0, 36, 'product_0raJ1yNv.jpg,product_Xpa8oAI3.jpg', 'product_AS3ZBzEN.jpg', 'product_EPr4u2Ua.jpg,product_PDNV4Zle.jpg', '2015-10-29', NULL, '2016-05-10', '', 68, '', '', 1, 141),
+(32, 'Áo somi phối ren oversize', 'ao-somi-phoi-ren-oversize', 'BY2015', 0, '', '370000', 1, 0, 175000, 52, '0000-00-00', 0, 0, 0, 36, 'product_0raJ1yNv.jpg,product_Xpa8oAI3.jpg', 'product_AS3ZBzEN.jpg', 'product_EPr4u2Ua.jpg,product_PDNV4Zle.jpg', '2015-10-29', NULL, '2016-05-10', '', 70, '', '', 1, 141),
 (33, 'Sơ Mi Sọc Cổ Trụ', 'so-mi-soc-co-tru', 'SMK05', 30, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '300000', 0, 0, 145000, 51, '0000-00-00', 0, 0, 0, 69, 'product_N78OY6QA.jpg,product_J1G8hMEH.jpg', 'product_pZbzwEPF.jpg', 'product_TCFBZxNL.jpg,product_h63gjZ7m.jpg', '2015-10-29', NULL, '2016-05-10', '', 19, '', '', 1, 141),
 (34, 'Đầm body tay dài', 'dam-body-tay-dai', 'AHG91S', 31, '', '540000', 0, 1, 275000, 49, '0000-00-00', 0, 0, 0, 0, NULL, 'product_iyIv5gk6.jpg', 'product_Jqp29KsS.jpg', '2015-10-29', NULL, '2016-05-12', '', 0, '', '', 1, 142),
 (35, 'Quần thun Alibaba', 'quan-thun-alibaba', 'AHGJHG', 31, '', '284000', 0, 1, 150000, 47, '0000-00-00', 0, 0, 0, 0, NULL, 'product_bptMCHR2.jpg', 'product_Bvjm9QqV.jpg', '2015-10-29', NULL, '2016-05-12', '', 0, '', '', 1, 144),
@@ -570,13 +563,13 @@ INSERT INTO `products` (`id`, `name`, `alias`, `code`, `trademark`, `description
 (42, 'Bộ đồ caravat', 'bo-do-caravat', 'DB139', 33, '', '200000', 1, 1, 120000, 40, '0000-00-00', 0, 0, 0, 0, NULL, 'product_av7nkUfK.jpg', 'product_yPvnVZIL.jpg', '2015-10-29', NULL, '2016-05-12', '', 0, '', '', 1, 142),
 (43, ' Máy bay cánh bằng Flycam Syma X8C', 'may-bay-canh-bang-flycam-syma-x8c', 'AJGOJH', 34, '', '500000', 1, 1, 450000, 10, '0000-00-00', 0, 0, 0, 0, NULL, 'product_gCvAkWi9.jpg', 'product_EhtbwasT.jpg', '2015-10-29', NULL, '2016-05-14', '', 0, '', '', 1, 138),
 (44, 'Mũ vải che tai bé gái, đính hình thỏ trắng dễ thương', 'mu-vai-che-tai-be-gai-dinh-hinh-tho-trang-de-thuong', 'KGHUEB', 37, '', '50000', 1, 1, 40000, 20, '2016-05-31', 1, 0, 0, 0, NULL, 'product_SUchfpwD.jpg', 'product_MOVDqrhC.jpg', '2015-10-29', NULL, '2016-05-16', '', 0, '', '', 1, 152),
-(45, 'Trọn gói đi sinh cho mẹ bầu', 'tron-goi-di-sinh-cho-me-bau', 'HGUNHJ', 38, '', '590000', 1, 1, 240000, 59, '2016-05-31', 1, 0, 0, 0, NULL, 'product_HuYd6I9O.jpg', '', '2015-10-29', NULL, '2016-05-16', '', 3, '', '', 1, 153),
+(45, 'Trọn gói đi sinh cho mẹ bầu', 'tron-goi-di-sinh-cho-me-bau', 'HGUNHJ', 38, '', '590000', 1, 1, 240000, 59, '2016-05-31', 1, 0, 0, 0, NULL, 'product_HuYd6I9O.jpg', '', '2015-10-29', NULL, '2016-05-16', '', 37, '', '', 1, 153),
 (46, 'ĐỒNG HỒ NAM BURBERRY MỚI 2015', 'dong-ho-nam-burberry-moi-2015', 'DH872BU', 33, '', '1200000', 1, 1, 600000, -128, '2016-05-31', 1, 0, 0, 0, NULL, 'product_DGmA3dQs.jpg', 'product_NP1yaqQh.jpg', '2015-10-29', NULL, '2016-05-16', '', 29, '', '', 1, 154),
 (47, 'Đồng hồ nữ sang trọng', 'dong-ho-nu-sang-trong', 'HUGHEJ', 0, '', '200000', 1, 1, 100000, 50, '2016-05-31', 1, 0, 0, 0, NULL, 'product_INnkheag.jpg', 'product_YmIngfZ0.jpg', '2015-10-29', NULL, '2016-05-16', '', 0, '', '', 1, 155),
 (48, 'Tủ đựng đồng hồ và trang sức', 'tu-dung-dong-ho-va-trang-suc', 'HUGHEJ', 0, '', '200000', 1, 1, 100000, 50, '2016-05-31', 1, 0, 0, 0, 'product_ioZQ5Fj1.jpg,product_BOxNAyKn.jpg,product_miIgUWc1.jpg,product_xjRsk6IA.jpg', 'product_yWoefV30.jpg', 'product_XAMez0lq.jpg', '2015-10-29', NULL, '2016-05-16', '', 0, '', '', 1, 158),
 (49, 'Sữa Dưỡng Da Aveeno Daily', 'sua-duong-da-aveeno-daily', 'GHUGH', 35, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '590000', 1, 1, 390000, 33, '2016-05-31', 1, 0, 0, 58, 'product_weQaUxyF.jpg,product_nVFzl5Ug.jpg', 'product_D8LzkRpb.jpg', 'product_y7M0nID6.jpg', '2015-10-29', NULL, '2016-05-16', '', 0, '', '', 1, 159),
 (50, 'Giầy dép nữ cáo cấp', 'giay-dep-nu-cao-cap', 'MSHUWH', 33, '', '300000', 1, 1, 250000, 16, '2016-05-31', 1, 0, 0, 0, NULL, 'product_pf69l3YA.jpg', 'product_5LBE4hWP.jpg', '2015-11-08', NULL, '2016-05-16', '', 1, '', '', 1, 179),
-(51, 'Đầm bé gái cao cấp', 'dam-be-gai-cao-cap', 'GHEID', 34, '', '250000', 1, 1, 170000, 32, '2016-05-31', 1, 0, 0, 0, NULL, 'product_yIL0oXsV.jpg', 'product_s5t4cUwO.jpg', '2015-11-10', NULL, '2016-05-16', '', 18, '', '', 1, 149),
+(51, 'Đầm bé gái cao cấp', 'dam-be-gai-cao-cap', 'GHEID', 34, '', '250000', 1, 1, 170000, 32, '2016-05-31', 1, 0, 0, 50, NULL, 'product_yIL0oXsV.jpg', 'product_s5t4cUwO.jpg', '2015-11-10', NULL, '2016-05-23', '', 19, '', '', 1, 149),
 (52, 'Đầm MuLet Phối Ren Sang Chảnh', 'dam-mulet-phoi-ren-sang-chanh', 'F9439', 37, '', '270000', 0, 1, 150000, 44, '2016-05-31', 1, 0, 0, 29, NULL, 'product_bAvtBucV.jpg', 'product_srnC3Quy.jpg', '2015-11-10', NULL, '2016-05-16', '', 2, '', '', 1, 142),
 (53, 'Áo khoác hàn quốc cao cấp', 'ao-khoac-han-quoc-cao-cap', 'MSHTJ', 37, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '375000', 0, 1, 250000, 33, '2016-05-31', 1, 0, 11, 28, '', 'product_6kwDcVF0.jpg', 'product_35BOpa6E.jpg,product_ReTo5Pcj.jpg', '2015-11-14', NULL, '2016-05-16', '', 240, '', '', 1, 141),
 (54, 'Áo thời trang eva', 'ao-thoi-trang-eva', 'UHGJD', 31, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '350000', 0, 1, 250000, 28, '2016-05-31', 1, 0, 0, 34, 'product_4D6yVjEr.jpg,product_NnBsU5W3.jpg', 'product_0MZqVint.jpg', 'product_jFgMuiZ5.jpg,product_Zqalb49A.jpg', '2015-11-14', NULL, '2016-05-16', '', 28, '', '', 1, 141),
@@ -584,19 +577,19 @@ INSERT INTO `products` (`id`, `name`, `alias`, `code`, `trademark`, `description
 (57, 'Áo công sở đi làm nữ', 'ao-cong-so-di-lam-nu', 'GHJEGH', 30, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '340000', 0, 1, 310000, 8, '2016-05-31', 1, 0, 16, 19, 'product_icul8zhk.jpg,product_Hc2p06wU.jpg', 'product_7A5mZxHS.jpg', 'product_gwfoOPR1.jpg,product_WFjBipMr.jpg', '2015-11-14', NULL, '2016-05-16', '', 18, '', '', 1, 141),
 (58, 'Đầm váy nữ hàn quốc', 'dam-vay-nu-han-quoc', 'JGHEJG', 30, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '320000', 0, 1, 290000, 9, '2016-09-30', 1, 0, 37, 25, 'product_kT6SvUOR.jpg,product_n9RZgmaq.jpg', 'product_jRyLD71r.jpg', 'product_guDzsVH6.jpg,product_xEuk48nZ.jpg', '2015-11-14', NULL, '2016-05-10', '', 25, '', '', 1, 141),
 (59, 'Áo sơ mi sang trọng', 'ao-so-mi-sang-trong', 'KGHEUS', 34, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '150000', 0, 1, 120000, 20, '0000-00-00', 0, 0, 0, 26, 'product_04SyPes9.jpg,product_GW9iXDFv.jpg', 'product_MuJH2fDc.jpg', 'product_YXwifEmc.jpg,product_zMDdyJmN.jpg', '2015-11-14', NULL, '2016-05-10', '', 8, '', '', 1, 141),
-(60, 'Áo sơ mi nữ', 'ao-so-mi-nu', 'KGHEYG', 32, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '250000', 0, 1, 230000, 8, '2016-06-25', 1, 0, 22, 39, 'product_tOzVeFAQ.jpg,product_jDbN132h.jpg', 'product_oDgXzmwH.jpg', 'product_0zjDvkxB.jpg,product_dOIFhHze.jpg', '2015-11-14', NULL, '2016-05-10', '', 70, '', '', 1, 141),
-(61, 'Áo khoách sành điệu cho giới nữ', 'ao-khoach-sanh-dieu-cho-gioi-nu', 'KGHUES', 30, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '220000', 0, 1, 100000, 54, '2017-01-27', 1, 0, 0, 70, 'product_hTs3NwJl.jpg,product_aK9n7IPL.jpg', 'product_e0PoE9Lq.jpg', 'product_kBvbYheV.jpg,product_YuFs9KHA.jpg', '2015-11-14', NULL, '2016-05-10', '', 96, '', '', 1, 141),
+(60, 'Áo sơ mi nữ', 'ao-so-mi-nu', 'KGHEYG', 32, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '250000', 0, 1, 230000, 8, '2016-06-25', 1, 0, 22, 39, 'product_tOzVeFAQ.jpg,product_jDbN132h.jpg', 'product_oDgXzmwH.jpg', 'product_0zjDvkxB.jpg,product_dOIFhHze.jpg', '2015-11-14', NULL, '2016-05-10', '', 74, '', '', 1, 141),
+(61, 'Áo khoách sành điệu cho giới nữ', 'ao-khoach-sanh-dieu-cho-gioi-nu', 'KGHUES', 30, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '220000', 0, 1, 100000, 54, '2017-01-27', 1, 0, 0, 70, 'product_hTs3NwJl.jpg,product_aK9n7IPL.jpg', 'product_e0PoE9Lq.jpg', 'product_kBvbYheV.jpg,product_YuFs9KHA.jpg', '2015-11-14', NULL, '2016-05-20', '', 105, '', '', 1, 141),
 (62, 'Áo đầm xòe duyên dáng', 'ao-dam-xoe-duyen-dang', 'KGHUEN', 34, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '150000', 0, 1, 120000, 20, '2016-04-30', 1, 0, 0, 20, 'product_KtEfd61R.jpg,product_S9ywnlfX.jpg', 'product_c0GTSnza.jpg', 'product_oDjrwR2J.jpg,product_5pK0g289.jpg', '2015-11-14', NULL, '2016-05-10', '', 83, '', '', 1, 141),
 (63, 'Áo nữ thời trang', 'ao-nu-thoi-trang', 'GKHUEA', 35, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '1400000', 0, 1, 1300000, 7, '0000-00-00', 0, 0, 31, 20, 'product_ncNk6dTD.jpg,product_uf8SM3hy.jpg', 'product_wxD7XBNz.jpg', 'product_ex70IGCl.jpg,product_Pw71Jils.jpg', '2015-11-14', NULL, '2016-05-10', '', 46, '', '', 1, 141),
 (64, 'Áo váy đầm nữ', 'ao-vay-dam-nu', 'UGHEJH', 36, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '590000', 0, 1, 550000, 6, '2016-07-29', 1, 0, 0, 40, 'product_YAWI6MGh.jpg,product_lW5ROTPD.jpg', 'product_mHMcNq0f.jpg', '', '2015-11-14', NULL, '2016-05-10', '', 219, '', '', 1, 141),
-(65, 'Tinh Chất Dưỡng Da Chia Seed', 'tinh-chat-duong-da-chia-seed', 'NLGEH', 33, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '200000', 0, 1, 150000, 25, '0000-00-00', 0, 0, 25, 50, 'product_lVcW6FN2.jpg,product_zB9Y7RPe.jpg', 'product_bjgnwUmI.png', 'product_w1BGh52X.jpg,product_GTjb9uUL.jpg', '2016-03-30', NULL, '2016-05-10', '', 1, '', '', 1, 159),
+(65, 'Tinh Chất Dưỡng Da Chia Seed', 'tinh-chat-duong-da-chia-seed', 'NLGEH', 33, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '200000', 0, 1, 150000, 25, '0000-00-00', 0, 0, 25, 50, 'product_lVcW6FN2.jpg,product_zB9Y7RPe.jpg', 'product_bjgnwUmI.png', 'product_w1BGh52X.jpg,product_GTjb9uUL.jpg', '2016-03-30', NULL, '2016-05-10', '', 3, '', '', 1, 159),
 (66, 'Kem dưỡng da trắng chống nắng', 'kem-duong-da-trang-chong-nang', 'KGHEU', 33, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '290000', 0, 1, 190000, 34, '0000-00-00', 0, 0, 0, 50, 'product_gVMp1803.jpg,product_B9GhbWAe.jpg', 'product_jb3ZrLde.jpg', 'product_ex2CYHO4.png,product_WxAonUsb.jpg', '2016-03-30', NULL, '2016-05-10', '', 1, '', '', 1, 159),
 (67, 'Kem Dưỡng Da Secret Cream', 'kem-duong-da-secret-cream', 'KHGUHE', 34, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '315000', 0, 0, 210000, 33, '0000-00-00', 0, 0, 25, 20, 'product_PoHd72hS.jpg,product_iVqbICrS.jpg', 'product_hYBZj0El.jpg', 'product_nbJlD7FW.png,product_RQYcPDjM.jpg', '2016-03-30', NULL, '2016-05-10', '', 0, '', '', 1, 159),
 (68, 'Dưỡng Thể Nước Hoa Perfume', 'duong-the-nuoc-hoa-perfume', 'KHGUH', 35, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '650000', 0, 0, 520000, 20, '0000-00-00', 0, 0, 0, 40, 'product_8PKFdEwU.jpg,product_hxrlsvIO.jpg', 'product_2OrsdmJl.jpg', 'product_IAiRT4Yr.jpg,product_SgsQrkBV.png', '2016-03-30', NULL, '2016-05-10', '', 0, '', '', 1, 159),
 (69, 'Tinh dầu Argan', 'tinh-dau-argan', 'KHGEH', 35, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '259000', 0, 1, 220000, 15, '0000-00-00', 0, 0, 10, 49, 'product_lqxDiRtS.jpg,product_Vbdh9PnF.jpg', 'product_wc7hTr5o.jpg', 'product_uQRErG8d.jpg,product_gMJp3m0G.png', '2016-03-30', NULL, '2016-05-10', '', 4, '', '', 1, 159),
-(70, 'Buffet Thái Chính Hiệu', 'buffet-thai-chinh-hieu', 'HGKLHD', 31, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '399000', 0, 0, 259900, 34, '0000-00-00', 0, 0, 1, 50, 'product_eEuHh0tj.jpg,product_7KdLvp5q.jpg', 'product_vrqHfMCi.jpg', 'product_SWdjBCq6.jpg', '2016-03-30', NULL, '2016-05-11', '', 16, '', '', 1, 139),
+(70, 'Buffet Thái Chính Hiệu', 'buffet-thai-chinh-hieu', 'HGKLHD', 31, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '399000', 0, 0, 259900, 34, '0000-00-00', 0, 0, 2, 50, 'product_eEuHh0tj.jpg,product_7KdLvp5q.jpg', 'product_vrqHfMCi.jpg', 'product_SWdjBCq6.jpg', '2016-03-30', NULL, '2016-05-11', '', 27, '', '', 1, 139),
 (71, 'Lotteria Combo Giá Sốc nhất', 'lotteria-combo-gia-soc-nhat', 'GHKHG', 38, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '150000', 0, 1, 120000, 20, '0000-00-00', 0, 0, 3, 60, 'product_ztObTKVB.jpg,product_yCkbIV1m.jpg', 'product_74ynMTkl.jpg', 'product_q3DdQEJf.jpg', '2016-03-30', NULL, '2016-05-11', '', 2, '', '', 1, 139),
-(72, 'Pizza Ý Đúng Điệu', 'pizza-y-dung-dieu', 'HGKUHE', 32, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '120000', 0, 0, 110000, 8, '0000-00-00', 0, 0, 21, 40, 'product_C8PXSlz9.jpg,product_Eorfbk71.jpg', 'product_JwstueCV.jpg', 'product_1HVzKLjy.jpg', '2016-03-30', NULL, '2016-05-11', '', 2, '', '', 1, 139),
+(72, 'Pizza Ý Đúng Điệu', 'pizza-y-dung-dieu', 'HGKUHE', 32, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '120000', 0, 0, 110000, 8, '0000-00-00', 0, 0, 21, 40, 'product_C8PXSlz9.jpg,product_Eorfbk71.jpg', 'product_JwstueCV.jpg', 'product_1HVzKLjy.jpg', '2016-03-30', NULL, '2016-05-11', '', 3, '', '', 1, 139),
 (73, 'Cua Chế Biến Tùy Chọn', 'cua-che-bien-tuy-chon', 'GOHOHOD', 34, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '150000', 0, 1, 130000, 13, '0000-00-00', 0, 0, 1, 50, 'product_6iJt1fyb.jpg,product_pO5igxlk.jpg', 'product_lXsa6bFz.jpg', 'product_MlJEsPiW.jpg', '2016-03-30', NULL, '2016-05-11', '', 2, '', '', 1, 139),
 (74, 'Combo 2 Kem Xôi Dừa/ Pizza', 'combo-2-kem-xoi-dua-pizza', 'LOGHE', 31, '<p>Kiểu dáng: Áo ren hoa thêu nổi là sản phẩm đảm bảo 100% như hình, với thiết kể cổ tròn, tay ngắn form suông sẽ mang đến cho người mặc cảm giác nhẹ nhàng kín đáo nhưng vẫn không kém phần duyên dáng, sang trọng.</p>\r\n\r\n<p>Với việc sở hữu nó đồng nghĩa với việc bạn đang mang trên mình một kiểu dáng sang nhã và đầy quyến rũ.</p>\r\n', '250000', 0, 0, 210000, 16, '0000-00-00', 0, 0, 14, 20, 'product_IHZLd8zF.jpg,product_7fDjMt2b.jpg', 'product_L5whOipE.jpg', 'product_7sl1YG3v.jpg', '2016-03-30', NULL, '2016-05-11', '', 1, '', '', 1, 167),
 (75, 'Buffet Chooki BBQ & Hotpot', 'buffet-chooki-bbq-hotpot', 'LJGIB', 36, '', '320000', 0, 1, 310000, 3, '0000-00-00', 0, 0, 28, 50, 'product_6VtF5jL3.jpg,product_Hz7Excqv.jpg', 'product_ZInxjVet.jpg', 'product_xAKVhO56.jpg', '2016-03-30', NULL, '2016-05-11', '', 2, '', '', 1, 168);
@@ -611,7 +604,7 @@ CREATE TABLE IF NOT EXISTS `product_attributes` (
 `id` int(11) NOT NULL,
   `attributes` varchar(60) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `product_attributes`
@@ -620,7 +613,9 @@ CREATE TABLE IF NOT EXISTS `product_attributes` (
 INSERT INTO `product_attributes` (`id`, `attributes`, `status`) VALUES
 (1, 'test', 1),
 (2, 'test1', 1),
-(3, 'test2', 1);
+(3, 'test2', 1),
+(4, 'Chất liệu vải', 1),
+(5, 'Màu sắc', 1);
 
 -- --------------------------------------------------------
 
@@ -634,14 +629,16 @@ CREATE TABLE IF NOT EXISTS `product_attributes_product` (
   `product_id` int(11) NOT NULL,
   `value` varchar(60) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `product_attributes_product`
 --
 
 INSERT INTO `product_attributes_product` (`id`, `attributes_id`, `product_id`, `value`, `status`) VALUES
-(2, 1, 75, 'abv', 1);
+(2, 1, 75, 'abv', 1),
+(3, 4, 61, 'cotton', 1),
+(4, 5, 61, 'đỏ', 1);
 
 -- --------------------------------------------------------
 
@@ -653,7 +650,7 @@ CREATE TABLE IF NOT EXISTS `product_size` (
 `id` int(11) NOT NULL,
   `size` varchar(30) NOT NULL,
   `status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `product_size`
@@ -662,7 +659,9 @@ CREATE TABLE IF NOT EXISTS `product_size` (
 INSERT INTO `product_size` (`id`, `size`, `status`) VALUES
 (13, 'XL', 1),
 (15, 'L', 1),
-(16, 'test', 1);
+(16, 'test', 1),
+(17, 'M', 1),
+(18, 'XXL', 1);
 
 -- --------------------------------------------------------
 
@@ -676,7 +675,7 @@ CREATE TABLE IF NOT EXISTS `product_size_product` (
   `product_id` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=167 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=170 ;
 
 --
 -- Dumping data for table `product_size_product`
@@ -693,7 +692,10 @@ INSERT INTO `product_size_product` (`id`, `size_id`, `product_id`, `price`, `sta
 (129, 13, 65, '270000', 1),
 (140, 13, 57, '330000', 1),
 (144, 13, 58, '310000', 1),
-(166, 13, 75, '100000', 1);
+(166, 13, 75, '100000', 1),
+(167, 17, 61, '150000', 1),
+(168, 15, 61, '140000', 1),
+(169, 18, 61, '120000', 1);
 
 -- --------------------------------------------------------
 
@@ -732,31 +734,9 @@ CREATE TABLE IF NOT EXISTS `ratings` (
 --
 
 INSERT INTO `ratings` (`id`, `total_votes`, `total_value`, `used_ips`) VALUES
-('32', 1, 6, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('57', 1, 8, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('62', 1, 10, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('64', 1, 2, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('53', 1, 8, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('33', 1, 6, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('63', 0, 0, ''),
-('54', 1, 10, 'a:1:{i:0;s:9:"127.0.0.1";}'),
-('61', 0, 0, ''),
-('36', 0, 0, ''),
-('39', 0, 0, ''),
-('38', 0, 0, ''),
 ('51', 0, 0, ''),
-('60', 0, 0, ''),
-('59', 0, 0, ''),
-('41', 0, 0, ''),
-('55', 0, 0, ''),
-('37', 0, 0, ''),
-('73', 0, 0, ''),
-('71', 0, 0, ''),
-('74', 0, 0, ''),
 ('70', 0, 0, ''),
-('72', 0, 0, ''),
-('66', 0, 0, ''),
-('75', 0, 0, ''),
+('61', 0, 0, ''),
 ('45', 0, 0, '');
 
 -- --------------------------------------------------------
@@ -782,9 +762,7 @@ CREATE TABLE IF NOT EXISTS `tags` (
 INSERT INTO `tags` (`id`, `description`, `create_by`, `name`, `alias`, `hits`, `status`) VALUES
 (5, '', 'Duy Quang', 'học mãi', 'hoc-mai', 0, 1),
 (6, '', 'Duy Quang', 'học hoài', 'hoc-hoai', 0, 1),
-(7, '', 'Duy Quang', 'hoc nưa học', 'hoc-nua-hoc', 0, 1),
-(8, '', 'Duy Quang', 'hinhe', 'hinhe', 0, 1),
-(9, '', 'Duy Quang', 'Quang E', 'quang-e', 0, 1);
+(7, '', 'Duy Quang', 'hoc nưa học', 'hoc-nua-hoc', 0, 1);
 
 -- --------------------------------------------------------
 
@@ -822,7 +800,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `sex`, `email`, `password`, `avatar`, `sign`, `phone`, `birthday`, `address`, `created`, `created_by`, `modified`, `modified_by`, `last_sign`, `register_time`, `register_ip`, `active_code`, `active_time`, `status`, `ordering`, `group_id`) VALUES
-(1, 'Administrator', 1, 'Admin01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user_DqlrdZVQ.jpg', '<p>The HeadScript helper allows you to manage both. The HeadScript helper supports the following methods for setting and adding scripts</p>\r\n', '01286483732', '1993-10-10', '', '2014-12-10 08:55:35', 'admin', '2014-12-16 12:08:59', 'admin', '2016-05-18 00:57:00', '0000-00-00 00:00:00', NULL, '1', '0000-00-00 00:00:00', 1, 2, 1),
+(1, 'Administrator', 1, 'Admin01@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', 'user_DqlrdZVQ.jpg', '<p>The HeadScript helper allows you to manage both. The HeadScript helper supports the following methods for setting and adding scripts</p>\r\n', '01286483732', '1993-10-10', '', '2014-12-10 08:55:35', 'admin', '2014-12-16 12:08:59', 'admin', '2016-05-23 18:53:16', '0000-00-00 00:00:00', NULL, '1', '0000-00-00 00:00:00', 1, 2, 1),
 (17, 'Nguyễn Duy Quang', 0, 'duy_quang422@yahoo.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2015-12-28 04:29:03', NULL, '0000-00-00 00:00:00', NULL, '2016-05-16 11:34:55', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 2),
 (18, 'Nguyễn Văn A', 0, 'abc@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2016-01-02 17:24:20', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 1),
 (19, 'Nguyễn Hoài Thanh Nhi', 0, 'thanhnhi@gmail.com', 'e10adc3949ba59abbe56e057f20f883e', '', '', '', '0000-00-00', '', '2016-01-02 17:27:31', NULL, '0000-00-00 00:00:00', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '127.0.0.1', '1', '0000-00-00 00:00:00', 1, 0, 3),
@@ -975,7 +953,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=125;
+MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=126;
 --
 -- AUTO_INCREMENT for table `category`
 --
@@ -985,7 +963,7 @@ MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=187;
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `configuration`
 --
@@ -1000,7 +978,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=73;
 -- AUTO_INCREMENT for table `history`
 --
 ALTER TABLE `history`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=24;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `image_position`
 --
@@ -1045,22 +1023,22 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=76;
 -- AUTO_INCREMENT for table `product_attributes`
 --
 ALTER TABLE `product_attributes`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `product_attributes_product`
 --
 ALTER TABLE `product_attributes_product`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `product_size`
 --
 ALTER TABLE `product_size`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `product_size_product`
 --
 ALTER TABLE `product_size_product`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=167;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=170;
 --
 -- AUTO_INCREMENT for table `product_tag`
 --

@@ -529,10 +529,10 @@ label, input, button, select, textarea {
     display: inline-block;
     width: 180px;
     border: 1px solid green;
-    padding: 10px 20px;
+    padding: 10px 10px;
     text-align: center;
     cursor: pointer;
-    text-transform: uppercase;
+    text-transform: capitalize;
     margin-bottom: 6px;
     margin-right: 10px;
 }

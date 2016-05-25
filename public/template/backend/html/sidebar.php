@@ -10,7 +10,7 @@ $arrMenus = array(
     array('class' => 'manager-product', 'name' => 'Quản Lý Sản Phẩm', 'icon' => 'credit-card', 'link' => '#', 'children' => array(
         array('class' => 'category', 'name' => 'Chuyên mục sản phẩm', 'icon' => 'suitcase', 'link' => $this->basePath('admin/category/index')),
         array('class' => 'product', 'name' => 'Sản phẩm', 'icon' => 'book', 'link' => $this->basePath('admin/product/index')),
-        array('class' => 'product', 'name' => 'Sản phẩm tồn kho', 'icon' => 'warning', 'link' => $this->basePath('admin/product-in-stock/index')),
+        array('class' => 'product', 'name' => 'Hết hàng', 'icon' => 'warning', 'link' => $this->basePath('admin/product-in-stock/index')),
         array('class' => 'manufacturer', 'name' => 'Thương Hiệu', 'icon' => 'building-o', 'link' => $this->basePath('admin/manufacturer/index')),
         array('class' => 'gift-and-size', 'name' => 'thuộc tính và kích thước', 'icon' => 'delicious', 'link' => $this->basePath('admin/attributes-and-size/index')),
         array('class' => 'comment', 'name' => 'Bình Luận', 'icon' => 'comments-o', 'link' => $this->basePath('admin/comment/index'))
@@ -23,8 +23,8 @@ $arrMenus = array(
     array('class' => 'cart', 'name' => 'Xử Lý Đơn Hàng', 'icon' => 'shopping-cart', 'link' => $this->basePath('admin/cart/index')),
     array('class' => 'pages', 'name' => 'Quản Lý Trang', 'icon' => 'file-o', 'link' => $this->basePath('admin/pages/index')),
     array('class' => 'tags', 'name' => 'Thẻ Hỗ Trợ SEO', 'icon' => 'tags', 'link' => $this->basePath('admin/tags/index')),
-    array('class' => 'vgchat', 'name' => 'Quản Lý Chát', 'icon' => 'comment', 'link' => '#'),
-    array('class' => 'page365', 'name' => 'Tiếp Thị Với Facebook', 'icon' => 'facebook-square', 'link' => '#'),
+    array('class' => 'vgchat', 'name' => 'Quản Lý Chát', 'icon' => 'comment', 'link' => $this->basePath('admin/vchat/index')),
+    array('class' => 'page365', 'name' => 'Tiếp Thị Với Facebook', 'icon' => 'facebook-square', 'link' => $this->basePath('admin/facebook/index')),
     array('class' => 'seo', 'name' => 'Hỗ Trợ SEO', 'icon' => 'globe', 'link' => '#'),
     array('class' => 'google', 'name' => 'Thống Kê Của Google', 'icon' => 'google', 'link' => $this->basePath('admin/google/index'))
 );

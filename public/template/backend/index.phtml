@@ -81,9 +81,14 @@ $urlImage = $this->basePath(URL_TEMPLATE . '/backend/img');
 
     <!-- CONTENT START -->
     <aside class="right-side">
+        <?php
+            if($this->controller != 'facebook' && $this->controller != 'vchat'){
+        ?>
         <section class="content-header">
             <?php include_once 'html/header.php'; ?>
         </section>
+
+        <?php } ?>
         <section class="content">
             <?php echo $this->content; ?>
         </section>

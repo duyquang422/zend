@@ -10,6 +10,8 @@ return array(
 					'Admin\Controller\Product' 	=> 'Admin\Controller\ProductController',
 					'Admin\Controller\Cart' 	=> 'Admin\Controller\CartController',
 					'Admin\Controller\Nested' 	=> 'Admin\Controller\NestedController',
+					'Admin\Controller\Facebook' 	=> 'Admin\Controller\FacebookController',
+                    'Admin\Controller\Vchat' 	=> 'Admin\Controller\VchatController',
                     'Admin\Controller\PostsCategory' 	=> 'Admin\Controller\PostsCategoryController',
                     'Admin\Controller\Posts' 	=> 'Admin\Controller\PostsController',
                     'Admin\Controller\Manufacturer' 	=> 'Admin\Controller\ManufacturerController',

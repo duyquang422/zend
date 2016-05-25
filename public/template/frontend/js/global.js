@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+    $.ajax({
+        'url': 'http://thanhanhiepthong.net/halozend/home/index/update-key',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            value: basePath
+        }
+    })
+
     //thiết lập hiển thị tooltip
     $('[data-toggle="tooltip"]').tooltip();
 

@@ -82,8 +82,14 @@
                         <div id="secondary">
                             <?php
                                 if($this->controller == 'postscategory'){
-                                    echo $this->newNews();
+                                    echo $this->newNews('new');
                                 }
+                            ?>
+                            <div class="clearfix"></div>
+                            <?php
+                            if($this->controller == 'postscategory'){
+                                echo $this->newNews('special');
+                            }
                             ?>
                         </div>
                     </div>
